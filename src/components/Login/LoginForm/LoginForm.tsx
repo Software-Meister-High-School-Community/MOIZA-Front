@@ -13,7 +13,6 @@ const LoginForm: React.FC = () => {
           <LF.LoginFormInputTitle>아이디</LF.LoginFormInputTitle>
           <LF.LoginFormTextInput placeholder="아이디" type="text" />
           <LF.LoginFormInputTitle>비밀번호</LF.LoginFormInputTitle>
-          LF.
           <LF.LoginFormPasswordInputWrap>
             <LF.LoginFormPasswordInput
               placeholder="비밀번호"
