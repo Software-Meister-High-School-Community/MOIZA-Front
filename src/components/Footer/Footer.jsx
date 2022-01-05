@@ -1,9 +1,20 @@
 import React from 'react'
-import {Container} from "./Footer.style.ts"
+import LOGO_IMG from "../../assets/img/footerLogo.png"
+
+import {Container,ItemContainer,LogoItem,TextItem} from "./Footer.style.ts"
 
 const Footer = () => {
     return (
-        <Container>footer</Container>
+        <Container>
+            <ItemContainer>
+                <LogoItem src={LOGO_IMG}></LogoItem>
+                <TextItem>이용약관&nbsp;&nbsp; | &nbsp;&nbsp;개인정보처리방침</TextItem>
+            </ItemContainer>
+            <ItemContainer>
+                <TextItem>©2022. 팀이름. All rights reserved&nbsp;&nbsp;&nbsp;&nbsp;</TextItem>
+                <TextItem>sofmoiza@gmail.com</TextItem>
+            </ItemContainer>
+        </Container>
     )
 }
 
