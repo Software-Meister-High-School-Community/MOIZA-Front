@@ -30,6 +30,6 @@ declare module "styled-components" {
       button_medium: string;
       button_small: string;
 
-    }
+    };
   }
 }

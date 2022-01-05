@@ -28,4 +28,6 @@ export const Theme: DefaultTheme = {
     button_medium: "16pt",
     button_small: "14pt"
   }
+  
+  
 };
