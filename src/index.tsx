@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { createGlobalStyle, ThemeProvider } from "styled-components";
 import App from "./App";
-import { Theme } from "./Theme";
+import { Theme } from "./styles/Theme";
 
 const GlobalStyle = createGlobalStyle`
   html, body, div, span, applet, object, iframe,
