@@ -12,12 +12,12 @@ export const SubmitButtonBox = styled.button<IBlueButtonBoxProps>`
       ? css`
           width: 111px;
           height: 50px;
-          font-size: 20px;
+          font-size: ${props.theme.fontSize.button_large};
         `
       : css`
           width: 84px;
           height: 34px;
-          font-size: 14px;
+          font-size: ${props.theme.fontSize.head_small};
         `};
 
   ${(props) =>
