@@ -1,13 +1,16 @@
 import React, { useState } from "react";
 import {
   LoginFormBox,
-  LoginFormInput,
+  LoginFormTextInput,
   LoginFormInputTitle,
   LoginFormInputWrap,
   LoginFormSaveInputWrap,
-  LoginFormSaveCheckButtonWrap,
   LoginFormSaveCheckButton,
   LoginFormSaveCheckButtonRect,
+  LoginFormTextInputWrap,
+  LoginFormCategoryInputWrap,
+  LoginFormCategoryInput,
+  LoginFormCategoryInputLine,
 } from "./LoginForm.style";
 
 const LoginForm: React.FC = () => {
@@ -16,10 +19,12 @@ const LoginForm: React.FC = () => {
   return (
     <LoginFormBox>
       <LoginFormInputWrap>
-        <LoginFormInputTitle>아이디</LoginFormInputTitle>
-        <LoginFormInput placeholder="아이디" />
-        <LoginFormInputTitle>비밀번호</LoginFormInputTitle>
-        <LoginFormInput placeholder="비밀번호" />
+        <LoginFormTextInputWrap>
+          <LoginFormInputTitle>아이디</LoginFormInputTitle>
+          <LoginFormTextInput placeholder="아이디" />
+          <LoginFormInputTitle>비밀번호</LoginFormInputTitle>
+          <LoginFormTextInput placeholder="비밀번호" />
+        </LoginFormTextInputWrap>
         <LoginFormSaveInputWrap>
           <LoginFormSaveCheckButton
             checked={isCheck}
@@ -27,7 +32,15 @@ const LoginForm: React.FC = () => {
           >
             <LoginFormSaveCheckButtonRect />
           </LoginFormSaveCheckButton>
+          로그인 저장
         </LoginFormSaveInputWrap>
+        <LoginFormCategoryInputWrap>
+          <LoginFormCategoryInput>회원가입</LoginFormCategoryInput>
+          <LoginFormCategoryInputLine />
+          <LoginFormCategoryInput>아이디 찾기</LoginFormCategoryInput>
+          <LoginFormCategoryInputLine />
+          <LoginFormCategoryInput>비밀번호 찾기</LoginFormCategoryInput>
+        </LoginFormCategoryInputWrap>
       </LoginFormInputWrap>
     </LoginFormBox>
   );
