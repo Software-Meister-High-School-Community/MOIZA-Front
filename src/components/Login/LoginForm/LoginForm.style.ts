@@ -26,7 +26,7 @@ export const LoginFormTextInputWrap = styled.div`
 `;
 
 export const LoginFormInputTitle = styled.h1`
-  font-size: 18px;
+  font-size: ${(props) => props.theme.fontSize.body_large};
   line-height: 21px;
   font-style: normal;
   font-weight: normal;
@@ -43,11 +43,51 @@ export const LoginFormTextInput = styled.input`
   outline: none;
   padding: 9px 12px;
   box-sizing: border-box;
-  font-size: 16px;
+  font-size: ${(props) => props.theme.fontSize.body_medium};
+  color: #707070;
+`;
 
-  &:last-child {
-    margin-bottom: 0px;
-  }
+export const LoginFormPasswordInput = styled.input`
+  width: 100%;
+  height: 40px;
+  border-radius: 5px;
+  background-color: ${(props) => props.theme.color.gray_color2};
+  border: 1px solid ${(props) => props.theme.color.gray_color3};
+  outline: none;
+  padding: 9px 12px;
+  box-sizing: border-box;
+  font-size: ${(props) => props.theme.fontSize.body_medium};
+  color: ${(props) => props.theme.color.gray_color5} !important;
+`;
+
+export const LoginFormPasswordInputWrap = styled.div`
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin-top: 13px;
+`;
+
+export const LoginFormPasswordInputEyeButton = styled.div`
+  position: absolute;
+  width: 20px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 0px;
+  background: none;
+  outline: none;
+  cursor: pointer;
+  right: 14px;
+  top: 50%;
+  transform: translate(0%, -50%);
+`;
+
+export const LoginFormPasswordInputEyeImg = styled.img`
+  width: 100%;
+  object-fit: scale-down;
 `;
 
 export const LoginFormSaveInputWrap = styled.div`
@@ -56,7 +96,7 @@ export const LoginFormSaveInputWrap = styled.div`
   display: flex;
   align-items: center;
   column-gap: 7px;
-  font-size: 14px;
+  font-size: ${(props) => props.theme.fontSize.body_small};
   font-style: normal;
   font-weight: normal;
   line-height: 16px;
@@ -97,7 +137,7 @@ export const LoginFormCategoryInputWrap = styled.div`
 export const LoginFormCategoryInput = styled.button`
   height: 16px;
   padding: 0px;
-  font-size: 14px;
+  font-size: ${(props) => props.theme.fontSize.body_small};
   line-height: 16px;
   display: flex;
   align-items: center;

@@ -10,7 +10,7 @@ export const LoginBox = styled.div`
 
 export const LoginTitle = styled.h1`
   font-style: normal;
-  font-size: 32px;
+  font-size: ${(props) => props.theme.fontSize.head_small};
   line-height: 37px;
   color: black;
   font-weight: bold;
