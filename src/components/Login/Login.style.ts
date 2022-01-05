@@ -17,3 +17,10 @@ export const LoginTitle = styled.h1`
   margin-right: auto;
   margin-bottom: auto;
 `;
+
+export const LoginSubmitButtonWrap = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
