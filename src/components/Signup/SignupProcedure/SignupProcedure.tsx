@@ -2,6 +2,7 @@ import React from "react";
 import {
   SignupProcedureBox,
   SignupProcedureLine,
+  SignupProcedureLineWrap,
   SignupProcedurePoint,
   SignupProcedurePointOutside,
   SignupProcedureText,
@@ -9,36 +10,40 @@ import {
 } from "./SignupProcedure.style";
 
 const SignupProcedure: React.FC = () => {
-  const first = true;
-  const second = false;
+  //임의 절차 상태
+  const first = false;
+  const second = true;
   const third = false;
 
   return (
     <SignupProcedureBox>
-      <SignupProcedureLine>
+      <SignupProcedureLineWrap>
         <SignupProcedureWrap>
-          <SignupProcedurePointOutside isArrival={first}>
-            <SignupProcedurePoint isArrival={first} />
-          </SignupProcedurePointOutside>
+          <SignupProcedurePoint isArrival={first}>
+            <SignupProcedurePointOutside isArrival={first} />
+          </SignupProcedurePoint>
+
           <SignupProcedureText isArrival={first}>약관 동의</SignupProcedureText>
         </SignupProcedureWrap>
         <SignupProcedureWrap>
-          <SignupProcedurePointOutside isArrival={second}>
-            <SignupProcedurePoint isArrival={second} />
-          </SignupProcedurePointOutside>
+          <SignupProcedurePoint isArrival={second}>
+            <SignupProcedurePointOutside isArrival={second} />
+          </SignupProcedurePoint>
           <SignupProcedureText isArrival={second}>
             정보 입력
           </SignupProcedureText>
         </SignupProcedureWrap>
+        <SignupProcedureLine isArrival={second} />
+        <SignupProcedureLine isArrival={third} />
         <SignupProcedureWrap>
-          <SignupProcedurePointOutside isArrival={third}>
-            <SignupProcedurePoint isArrival={third} />
-          </SignupProcedurePointOutside>
+          <SignupProcedurePoint isArrival={third}>
+            <SignupProcedurePointOutside isArrival={third} />
+          </SignupProcedurePoint>
           <SignupProcedureText isArrival={third}>
             아이디 / 비밀번호
           </SignupProcedureText>
         </SignupProcedureWrap>
-      </SignupProcedureLine>
+      </SignupProcedureLineWrap>
     </SignupProcedureBox>
   );
 };

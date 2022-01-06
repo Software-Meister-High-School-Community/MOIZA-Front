@@ -4,12 +4,26 @@ export const SignupProcedureBox = styled.div`
   width: 22px;
   display: flex;
   justify-content: center;
+  margin-right: auto;
+  margin-top: 12px;
 `;
 
-export const SignupProcedureLine = styled.div`
+export const SignupProcedureLineWrap = styled.div`
   position: relative;
   height: 220px;
-  border-right: 2px solid ${(props) => props.theme.color.gray_color3};
+  display: flex;
+  flex-direction: column;
+  padding: 0px;
+`;
+
+export const SignupProcedureLine = styled.div<{ isArrival: boolean }>`
+  border-right: 2px solid
+    ${(props) =>
+      props.isArrival
+        ? props.theme.color.main_yellow_color
+        : props.theme.color.gray_color3};
+  height: 110px;
+  box-sizing: border-box;
 `;
 
 export const SignupProcedureWrap = styled.div`
@@ -20,17 +34,17 @@ export const SignupProcedureWrap = styled.div`
   width: auto;
 
   &:first-child {
-    transform: translate(0%, -50%);
+    transform: translate(-4px, -50%);
     top: 0px;
   }
 
   &:nth-child(2) {
-    transform: translate(0%, -50%);
+    transform: translate(-4px, -50%);
     top: 50%;
   }
 
   &:last-child {
-    transform: translate(0%, 50%);
+    transform: translate(-4px, 50%);
     bottom: 0px;
   }
 `;
@@ -46,43 +60,44 @@ export const SignupProcedurePointOutside = styled.div<{ isArrival: boolean }>`
           align-items: center;
           justify-content: center;
           display: flex;
+          border-radius: 100px;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
         `
       : css`
-          min-width: 10px;
-          min-height: 10px;
-          background-color: ${(props) => props.theme.color.gray_color3};
+          display: none;
         `}
-
-  border-radius: 100px;
 `;
 
 export const SignupProcedurePoint = styled.div<{ isArrival: boolean }>`
   width: 10px;
   height: 10px;
-  background-color: ${(props) => props.theme.color.main_yellow_color};
+  background-color: ${(props) =>
+    props.isArrival
+      ? props.theme.color.main_yellow_color
+      : props.theme.color.gray_color3};
   border: 0px;
   border-radius: 100px;
-  display: none;
-
-  ${(props) => props.isArrival && "display : block"}
+  position: relative;
 `;
 
 export const SignupProcedureText = styled.div<{ isArrival: boolean }>`
   font-size: ${(props) => props.theme.fontSize.body_large};
   font-style: normal;
   font-weight: normal;
-  height: 100%;
   width: auto;
   text-align: start;
+  white-space: nowrap;
+  margin-left: 23px;
 
   ${(props) =>
     props.isArrival
       ? css`
           color: ${props.theme.color.main_yellow_color};
-          margin-left: 17px;
         `
       : css`
           color: ${props.theme.color.gray_color3};
-          margin-left: 23px;
         `}
 `;
