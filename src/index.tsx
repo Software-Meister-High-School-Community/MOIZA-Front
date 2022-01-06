@@ -66,6 +66,10 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+html {
+	height:100%
+}
+
 `;
 
 ReactDOM.render(
