@@ -22,7 +22,11 @@ const LoginForm: React.FC = () => {
               onClick={() => setIsShow((prev) => !prev)}
             >
               <LF.LoginFormPasswordInputEyeImg
-                src={isShow ? Imgs.PasswordNoShowImg : Imgs.PasswordShowImg}
+                src={
+                  isShow
+                    ? Imgs.LoginPasswordNoShowImg
+                    : Imgs.LoginPasswordShowImg
+                }
               />
             </LF.LoginFormPasswordInputEyeButton>
           </LF.LoginFormPasswordInputWrap>
