@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 export const SignupFormBox = styled.div`
   width: 718px;
@@ -24,13 +24,15 @@ export const SignupFormFlexWrap = styled.div`
   margin-bottom: 75px;
 `;
 
-export const SignupFormRadioButtonWrap = styled.div`
+export const SignupFormRadioButtonWrap = styled.div<{ marginLeft?: number }>`
   display: flex;
   column-gap: 11px;
   align-items: center;
-  &:last-child {
-    margin-left: 251px;
-  }
+  ${(props) =>
+    props.marginLeft &&
+    css`
+      margin-left: ${props.marginLeft}px;
+    `}
 `;
 
 export const SignupFormRadioButtonText = styled.p`

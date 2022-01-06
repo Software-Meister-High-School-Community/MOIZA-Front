@@ -26,7 +26,7 @@ const SignupForm: React.FC = () => {
           <RadioButton isSelected={isCheck1} onClick={setIsCheck1} />
           <SignupFormRadioButtonText>재학생</SignupFormRadioButtonText>
         </SignupFormRadioButtonWrap>
-        <SignupFormRadioButtonWrap>
+        <SignupFormRadioButtonWrap marginLeft={251}>
           <RadioButton isSelected={isCheck2} onClick={setIsCheck2} />
           <SignupFormRadioButtonText>졸업생</SignupFormRadioButtonText>
         </SignupFormRadioButtonWrap>
@@ -42,13 +42,14 @@ const SignupForm: React.FC = () => {
       <SignupFormFlexWrap>
         <SignupFormRadioButtonWrap>
           <RadioButton isSelected={isCheck3} onClick={setIsCheck3} />
-          <SignupFormRadioButtonText>재학생</SignupFormRadioButtonText>
+          <SignupFormRadioButtonText>남성</SignupFormRadioButtonText>
         </SignupFormRadioButtonWrap>
-        <SignupFormRadioButtonWrap>
+        <SignupFormRadioButtonWrap marginLeft={265}>
           <RadioButton isSelected={isCheck4} onClick={setIsCheck4} />
-          <SignupFormRadioButtonText>졸업생</SignupFormRadioButtonText>
+          <SignupFormRadioButtonText>여성</SignupFormRadioButtonText>
         </SignupFormRadioButtonWrap>
       </SignupFormFlexWrap>
+      <SignupFormTitle marginBottom={13}>학교선택</SignupFormTitle>
     </SignupFormBox>
   );
 };
