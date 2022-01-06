@@ -1,3 +1,5 @@
+import { Dispatch, SetStateAction } from "react";
+
 export interface ISubmitButtonProps {
   big: boolean;
   text: string;
@@ -5,4 +7,15 @@ export interface ISubmitButtonProps {
   blue?: boolean;
   yellow?: boolean;
   handleClick?: () => void | Promise<void>;
+}
+
+export interface IOptionButtonProps {
+  text: string;
+  isSelected: boolean;
+  onClick?: Dispatch<SetStateAction<boolean>>;
+}
+
+export interface IRadioButtonProps {
+  isSelected: boolean;
+  onClick?: Dispatch<SetStateAction<boolean>>;
 }
