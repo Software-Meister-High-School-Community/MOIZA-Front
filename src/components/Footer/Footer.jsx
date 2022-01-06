@@ -1,5 +1,5 @@
 import React from 'react'
-import LOGO_IMG from "../../assets/img/footerLogo.png"
+import LOGO_IMG from "../../assets/img/logo/white모이자.svg"
 
 import {Container,ItemContainer,LogoItem,TextItem} from "./Footer.style.ts"
 

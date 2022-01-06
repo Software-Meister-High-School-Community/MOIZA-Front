@@ -20,7 +20,7 @@ export const Container = styled.footer`
     `
     
     export const LogoItem = styled.img`
-    width: 130px;
+    width: 100px;
     `
     
     export const TextItem = styled.div`
