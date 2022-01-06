@@ -12,7 +12,11 @@ const Gwangju = () => {
         <S.Hr />
         <S.SchoolClass1>소프트웨어개발과</S.SchoolClass1>
         <S.SchoolClass2>스마트IOT과</S.SchoolClass2>
-        <S.SchoolHomePage>홈페이지 바로가기</S.SchoolHomePage>
+        <S.SchoolHomePage
+          onClick={() => window.open("http://gsm.gen.hs.kr/main/main.php")}
+        >
+          홈페이지 바로가기
+        </S.SchoolHomePage>
       </S.Gwangju>
     </S.Wrapper>
   );
