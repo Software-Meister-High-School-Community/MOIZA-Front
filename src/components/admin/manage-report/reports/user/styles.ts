@@ -4,9 +4,9 @@ interface StyleProps {
     isOpen : boolean
 }
 
-export const Wrapper = styled.section`
+export const Wrapper = styled.section<StyleProps>`
   border-radius: 5px;
-  height:${(props:StyleProps) => props.isOpen ? "130":"60"}px;
+  height:${(props) => props.isOpen ? "130":"60"}px;
   border: 1px solid #E0E0E0;
   background-color: #FFFFFF;
 `
@@ -69,8 +69,13 @@ export const Count = styled.p`
     color: ${props => props.theme.color.main_blue_color};
   }
 `
-export const Arrow = styled.img`
+interface ArrowType{
+    isFold : boolean
+}
+export const Arrow = styled.img<ArrowType>`
   margin-left: 54px;
+  transition: all ease 300ms;
+  transform: rotate(${(props)=>props.isFold ? "180":"0"}deg);
 `
 
 export const DetailWrapper = styled.section`
