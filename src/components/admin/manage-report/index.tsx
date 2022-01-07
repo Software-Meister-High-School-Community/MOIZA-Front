@@ -5,7 +5,7 @@ import ReportOfUser from "./reports/user";
 import ReportOfPost from "./reports/post";
 import ReportsofComment from "./reports/comment";
 
-const ManageReport = () => {
+const ManageReport:React.FC = () => {
     const [seleted,setSeleted] = useState('users');
     const onChangeRadio = (id:string) => {
         setSeleted(id)

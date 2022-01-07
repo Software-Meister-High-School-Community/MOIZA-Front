@@ -1,7 +1,7 @@
 import * as S from './styles'
 import Type from '../../../../../assets/img/admin/post-type.svg'
 
-const ReportOfPost = () => {
+const ReportOfPost:React.FC = () => {
     return(
         <S.Wrapper>
             <S.Summary>

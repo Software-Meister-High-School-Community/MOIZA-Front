@@ -1,7 +1,7 @@
 import * as S from './styles'
 import Arrow from '../../../../../assets/img/admin/arrow.svg'
 import {useState} from "react";
-const ReportOfUser = () => {
+const ReportOfUser:React.FC = () => {
     const [showDetail,setShowDetail] = useState(false)
     return (
         <S.Wrapper isOpen={showDetail}>

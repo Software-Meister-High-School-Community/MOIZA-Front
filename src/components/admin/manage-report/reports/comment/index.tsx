@@ -1,5 +1,5 @@
 import * as S from './styles'
-const ReportsofComment = () => {
+const ReportsofComment:React.FC = () => {
     return (
         <S.Wrapper>
             <div style={{display:"flex"}}>

@@ -1,6 +1,6 @@
 import AdminMain from "./main";
 
-const Admin = () => {
+const Admin:React.FC = () => {
     return (
         <AdminMain/>
     )
