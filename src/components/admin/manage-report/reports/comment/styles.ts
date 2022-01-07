@@ -101,7 +101,7 @@ export const Buttons = styled.div`
     width: 95px;
     height: 40px;
     box-sizing: border-box;
-    padding: 10px 16px;
+    padding: 10px 12px;
     font-family: Roboto;
     font-style: normal;
     font-weight: normal;

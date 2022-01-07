@@ -148,7 +148,7 @@ export const UserFreeze = styled.div`
     border-radius: 5px;
     margin-left: 49px;
     box-sizing: border-box;
-    padding: 10.5px 16px;
+    padding: 10.5px 14px;
   }
 `
 
