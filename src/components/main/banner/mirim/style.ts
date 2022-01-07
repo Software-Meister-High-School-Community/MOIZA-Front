@@ -85,7 +85,7 @@ export const SchoolHomePage = styled.p`
   margin-left: 79px;
   cursor: pointer;
   text-decoration: underline 1px;
-  font-weight: 500;
+  font-weight: 600;
   font-family: "Roboto", sans-serif;
   font-size: ${(props) => props.theme.fontSize.body_medium};
 `;
