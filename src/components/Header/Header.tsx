@@ -7,7 +7,8 @@ import profileImg from '../../assets/img/header/profileImg.svg'
 import noticeImg from '../../assets/img/header/noticeImg.svg'
 const Header = () => {
 
-    const loginCheck = localStorage.getItem('Token')
+    const loginCheck = localStorage.getItem('Token');
+    console.log(loginCheck);
 
     return (
         <H.Container>
@@ -26,7 +27,7 @@ const Header = () => {
 
             <H.AuthContainer>
                 {
-                    loginCheck ?
+                    loginCheck ? 
                     <H.AuthText>로그아웃</H.AuthText>
                     : 
                     <>
@@ -34,6 +35,7 @@ const Header = () => {
                     |
                     <H.AuthText>로그인</H.AuthText>
                     </>
+            
                 }
             </H.AuthContainer>
         </H.Container>
