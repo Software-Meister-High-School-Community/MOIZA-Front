@@ -1,10 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 import * as H from './Header.styled'
 import headerLogo from '../../assets/img/header/headerLogo.svg'
 import categoryImg from '../../assets/img/header/categoryImg.svg'
 import serchImg from '../../assets/img/header/serchImg.svg'
 import profileImg from '../../assets/img/header/profileImg.svg'
 import noticeImg from '../../assets/img/header/noticeImg.svg'
+import Notice from './Notice'
+import { NoticeForm } from './Notice/Notice.style'
 const Header = () => {
 
     const loginCheck = localStorage.getItem('Token');
@@ -22,7 +24,9 @@ const Header = () => {
             <H.ItemContainer>
                 <H.ItemImg src={serchImg}/>
                 <H.ItemImg src={profileImg}/>
-                <H.ItemImg src={noticeImg}/>
+                <H.ItemImg src={noticeImg}>
+                    {/* <Notice></Notice> */}
+                </H.ItemImg>
             </H.ItemContainer>
 
             <H.AuthContainer>
