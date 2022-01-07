@@ -7,6 +7,7 @@ import { schoolEmailTransform } from "../../../util/schoolEmailTransform";
 import OptionButton from "../../Common/Select/OptionButton";
 import RadioButton from "../../Common/Select/RadioButton";
 import {
+  SignupFormAlertText,
   SignupFormBirthTitle,
   SignupFormBirthTitleWrap,
   SignupFormBox,
@@ -110,6 +111,9 @@ const SignupForm: React.FC = () => {
           인증번호 보내기
         </SignupFormSubmitButton>
       </SignupFormFlexWrap>
+      <SignupFormAlertText>
+        ※ 가입 후 졸업 인증을 하시면 모이자 이용이 가능합니다.
+      </SignupFormAlertText>
     </SignupFormBox>
   );
 };

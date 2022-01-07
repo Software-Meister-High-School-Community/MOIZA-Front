@@ -1,7 +1,7 @@
 import styled, { css } from "styled-components";
 
 interface ISubmitButtonBoxProps {
-  big: boolean;
+  big: boolean | undefined;
   yellow?: boolean;
   blue?: boolean;
 }
@@ -59,4 +59,14 @@ export const SubmitButtonBox = styled.button<ISubmitButtonBoxProps>`
   border: 0px;
   padding: 13px 16px;
   font-weight: bold;
+
+  a {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: ${(props) => props.theme.color.gray_color1};
+  }
 `;

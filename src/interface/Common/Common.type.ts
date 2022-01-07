@@ -1,7 +1,7 @@
 import { Dispatch, SetStateAction } from "react";
 
 export interface ISubmitButtonProps {
-  big: boolean;
+  big?: boolean | undefined;
   text: string;
   disable?: boolean;
   blue?: boolean;
@@ -16,7 +16,7 @@ export interface IOptionButtonProps {
 }
 
 export interface IRadioButtonProps {
-  name : string;
+  name: string;
   isSelected: boolean;
-  onClick?: Dispatch<SetStateAction<boolean>> | (()=> void)
+  onClick?: Dispatch<SetStateAction<boolean>> | (() => void);
 }

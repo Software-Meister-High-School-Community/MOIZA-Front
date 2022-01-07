@@ -1,9 +1,15 @@
 import React from "react";
-import { SignupBox, SignupMiddleWrap, SignupTitle } from "./Signup.style";
-import { useLocation } from "react-router-dom";
+import {
+  SignupBox,
+  SignupMiddleWrap,
+  SignupNextButton,
+  SignupTitle,
+} from "./Signup.style";
+import { Link, useLocation } from "react-router-dom";
 import SignupForm from "./SignupForm";
 import SignupProcedure from "./SignupProcedure";
 import SignupTermsForm from "./SignupTermsForm";
+import SubmitButton from "../Common/Button/SubmitButton";
 
 const Signup: React.FC = () => {
   const { pathname } = useLocation();
@@ -17,6 +23,16 @@ const Signup: React.FC = () => {
         {location === "" && <SignupTermsForm />}
         {location === "/info" && <SignupForm />}
       </SignupMiddleWrap>
+      {location === "" && (
+        <Link to="info">
+          <SubmitButton text={"다음 단계"} blue big />
+        </Link>
+      )}
+      {location === "/info" && (
+        <Link to="idpw">
+          <SubmitButton text={"다음 단계"} blue big />
+        </Link>
+      )}
     </SignupBox>
   );
 };

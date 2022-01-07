@@ -130,3 +130,10 @@ export const SignupFormSubmitButton = styled.button<{ isGraduate?: boolean }>`
       margin-left: 36px;
     `}
 `;
+
+export const SignupFormAlertText = styled.p`
+  color: ${(props) => props.theme.color.gray_color5};
+  font-style: normal;
+  font-weight: normal;
+  font-size: ${(props) => props.theme.fontSize.body_large};
+`;
