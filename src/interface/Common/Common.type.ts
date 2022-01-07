@@ -16,6 +16,7 @@ export interface IOptionButtonProps {
 }
 
 export interface IRadioButtonProps {
+  name : string;
   isSelected: boolean;
-  onClick?: Dispatch<SetStateAction<boolean>>;
+  onClick?: Dispatch<SetStateAction<boolean>> | (()=> void)
 }
