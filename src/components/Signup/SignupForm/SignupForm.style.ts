@@ -1,3 +1,4 @@
+import { REPL_MODE_SLOPPY } from "repl";
 import styled, { css } from "styled-components";
 
 export const SignupFormBox = styled.div`
@@ -22,6 +23,7 @@ export const SignupFormTitle = styled.h1<{ marginBottom: number }>`
 export const SignupFormFlexWrap = styled.div`
   display: flex;
   margin-bottom: 75px;
+  align-items: center;
 `;
 
 export const SignupFormRadioButtonWrap = styled.div<{ marginLeft?: number }>`
@@ -33,6 +35,10 @@ export const SignupFormRadioButtonWrap = styled.div<{ marginLeft?: number }>`
     css`
       margin-left: ${props.marginLeft}px;
     `}
+
+  &:last-child {
+    margin-left: 50%;
+  }
 `;
 
 export const SignupFormRadioButtonText = styled.p`
@@ -40,8 +46,8 @@ export const SignupFormRadioButtonText = styled.p`
   color: black;
 `;
 
-export const SignupFormTextInput = styled.input<{ width: number }>`
-  width: ${(props) => props.width}px;
+export const SignupFormTextInput = styled.input<{ width: string }>`
+  width: ${(props) => props.width};
   height: 40px;
   border: 1px solid ${(props) => props.theme.color.gray_color3};
   box-sizing: border-box;
@@ -82,7 +88,8 @@ export const SignupFormGuideBirthRule = styled.p`
 export const SignupFormSchoolWrap = styled.div`
   display: flex;
   flex-direction: column;
-  row-gap: 10px;
+  row-gap: 5px;
+  margin-bottom: 95px;
 `;
 
 export const SignupFormSchoolButton = styled.button`
@@ -92,4 +99,34 @@ export const SignupFormSchoolButton = styled.button`
   outline: none;
   background: none;
   margin-right: auto;
+  padding: 0px;
+`;
+
+export const SignupFormSchoolMailText = styled.p`
+  min-width: 139px;
+  color: ${(props) => props.theme.color.gray_color5};
+  font-size: ${(props) => props.theme.fontSize.body_medium};
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  margin: 0px 10px;
+`;
+
+export const SignupFormSubmitButton = styled.button<{ isGraduate?: boolean }>`
+  min-width: 139px;
+  height: 40px;
+  border: 1px solid ${(props) => props.theme.color.gray_color3};
+  box-sizing: border-box;
+  background-color: ${(props) => props.theme.color.gray_color1};
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: black;
+  outline: none;
+  border-radius: 5px;
+  ${(props) =>
+    props.isGraduate &&
+    css`
+      margin-left: 36px;
+    `}
 `;
