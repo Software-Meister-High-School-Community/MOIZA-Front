@@ -1,4 +1,4 @@
-import AdminMain from "./main";
+import AdminMain from "../../components/admin/main";
 
 const Admin:React.FC = () => {
     return (
