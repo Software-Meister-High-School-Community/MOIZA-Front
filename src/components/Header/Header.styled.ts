@@ -43,7 +43,7 @@ export const AuthContainer = styled.div`
     justify-content:space-between;
 `
 
-export const AuthText = styled.button`
+export const AuthText = styled.a`
     font-size:${(props)=> props.theme.fontSize.body_medium};
     cursor: pointer;
 `
