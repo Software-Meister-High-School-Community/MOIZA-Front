@@ -79,8 +79,17 @@ export const SignupFormGuideBirthRule = styled.p`
   margin-left: 90px;
 `;
 
-export const SignupFormSchoolWrap = styled.ul`
+export const SignupFormSchoolWrap = styled.div`
   display: flex;
   flex-direction: column;
   row-gap: 10px;
+`;
+
+export const SignupFormSchoolButton = styled.button`
+  display: inline-block;
+  justify-content: start;
+  border: 0px;
+  outline: none;
+  background: none;
+  margin-right: auto;
 `;

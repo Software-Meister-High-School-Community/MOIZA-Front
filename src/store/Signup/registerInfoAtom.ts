@@ -12,13 +12,7 @@ export const registerInfo = atom({
   },
 });
 
-export const registerSchoolSelect = atom({
+export const registerSchoolSelect = atom<string>({
   key: "registerSchoolSelect",
-  default: {
-    gwangju: true,
-    daegu: false,
-    daeduck: false,
-    mirim: false,
-    busan: false,
-  },
+  default: "광주소프트웨어마이스터고등학교",
 });
