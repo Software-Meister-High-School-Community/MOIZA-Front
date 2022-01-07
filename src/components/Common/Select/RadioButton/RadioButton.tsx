@@ -9,7 +9,6 @@ const RadioButton: React.FC<IRadioButtonProps> = ({ name,isSelected, onClick }) 
           type='radio'
           name={name}
         checked={isSelected}
-        // onClick={() => (onClick ? onClick((prev) => !prev) : null)}
       />
       </RadioButtonRect>
   );
