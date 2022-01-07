@@ -10,9 +10,9 @@ const ReportOfUser:React.FC = () => {
                     <S.Name>
                         장정원
                     </S.Name>
-                    <S.School>
+                    <S.Name>
                         미림마이스터고
-                    </S.School>
+                    </S.Name>
                     <S.Type>
                         재학생
                     </S.Type>

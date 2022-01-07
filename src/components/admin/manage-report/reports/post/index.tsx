@@ -11,7 +11,7 @@ const ReportOfPost:React.FC = () => {
                 </S.Title>
                 <S.Info>
                     <S.Name>멩쓴쥬</S.Name>
-                    <S.School>미림마이스터고</S.School>
+                    <S.Name>미림마이스터고</S.Name>
                     <S.UserType>재학생</S.UserType>
                 </S.Info>
             </S.Summary>

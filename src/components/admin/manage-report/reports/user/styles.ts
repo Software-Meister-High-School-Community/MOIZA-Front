@@ -43,7 +43,6 @@ export const Name = styled.p`
     content: "";
   }
 `
-export const School = styled(Name)``
 export const Type = styled(Name)`
   :after {
     width: 0;
