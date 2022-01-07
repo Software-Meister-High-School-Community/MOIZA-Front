@@ -109,7 +109,7 @@ export const Button = styled.button`
   height: 40px;
   border-radius: 5px;
   box-sizing: border-box;
-  padding: 10px 16px 10px 16px;
+  padding: 10px 12px;
   border: 1px solid #E0E0E0;
   background-color: #ffffff;
   font-family: Roboto;
