@@ -27,13 +27,13 @@ const Header = () => {
             <H.AuthContainer>
                 {
                     loginCheck ?
+                    <H.AuthText>로그아웃</H.AuthText>
+                    : 
                     <>
                     <H.AuthText>회원가입</H.AuthText>
                     |
                     <H.AuthText>로그인</H.AuthText>
                     </>
-                    : 
-                    <H.AuthText>로그아웃</H.AuthText>
                 }
             </H.AuthContainer>
         </H.Container>
