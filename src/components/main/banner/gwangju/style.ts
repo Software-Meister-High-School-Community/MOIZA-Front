@@ -49,7 +49,7 @@ export const SchoolClass1 = styled.p`
   height: 20px;
   margin-left: 654px;
   margin-right: 70px;
-  margin-bottom: 10px;
+  margin-bottom: 13px;
   font-weight: 400;
   font-family: "Roboto", sans-serif;
   font-size: ${(props) => props.theme.fontSize.body_medium};
