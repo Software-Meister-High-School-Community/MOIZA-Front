@@ -78,3 +78,9 @@ export const SignupFormGuideBirthRule = styled.p`
   font-weight: normal;
   margin-left: 90px;
 `;
+
+export const SignupFormSchoolWrap = styled.ul`
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+`;
