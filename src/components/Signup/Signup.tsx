@@ -1,10 +1,5 @@
 import React from "react";
-import {
-  SignupBox,
-  SignupMiddleWrap,
-  SignupNextButton,
-  SignupTitle,
-} from "./Signup.style";
+import * as S from "./Signup.style";
 import { Link, useLocation } from "react-router-dom";
 import SignupForm from "./SignupForm";
 import SignupProcedure from "./SignupProcedure";
@@ -17,30 +12,15 @@ const Signup: React.FC = () => {
   const location = pathname.slice(7);
 
   return (
-    <SignupBox>
-      <SignupTitle>회원가입</SignupTitle>
-      <SignupMiddleWrap>
+    <S.SignupBox>
+      <S.SignupTitle>회원가입</S.SignupTitle>
+      <S.SignupMiddleWrap>
         <SignupProcedure />
         {location === "" && <SignupTermsForm />}
         {location === "/info" && <SignupForm />}
         {location === "/idpw" && <SignupIdPwForm />}
-      </SignupMiddleWrap>
-      {location === "" && (
-        <Link to="info">
-          <SubmitButton text={"다음 단계"} blue big />
-        </Link>
-      )}
-      {location === "/info" && (
-        <Link to="idpw">
-          <SubmitButton text={"다음 단계"} blue big />
-        </Link>
-      )}
-      {location === "/idpw" && (
-        <Link to="idpw">
-          <SubmitButton text={"다음 단계"} blue big />
-        </Link>
-      )}
-    </SignupBox>
+      </S.SignupMiddleWrap>
+    </S.SignupBox>
   );
 };
 

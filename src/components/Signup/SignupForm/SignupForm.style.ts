@@ -1,4 +1,3 @@
-import { REPL_MODE_SLOPPY } from "repl";
 import styled, { css } from "styled-components";
 
 export const SignupFormBox = styled.div`
@@ -124,6 +123,7 @@ export const SignupFormSubmitButton = styled.button<{ isGraduate?: boolean }>`
   color: black;
   outline: none;
   border-radius: 5px;
+  cursor: pointer;
   ${(props) =>
     props.isGraduate &&
     css`

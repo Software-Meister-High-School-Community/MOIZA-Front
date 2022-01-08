@@ -1,13 +1,5 @@
 import React from "react";
-import {
-  SignupProcedureBox,
-  SignupProcedureLine,
-  SignupProcedureLineWrap,
-  SignupProcedurePoint,
-  SignupProcedurePointOutside,
-  SignupProcedureText,
-  SignupProcedureWrap,
-} from "./SignupProcedure.style";
+import * as SP from "./SignupProcedure.style";
 
 const SignupProcedure: React.FC = () => {
   //임의 절차 상태
@@ -16,35 +8,37 @@ const SignupProcedure: React.FC = () => {
   const third = false;
 
   return (
-    <SignupProcedureBox>
-      <SignupProcedureLineWrap>
-        <SignupProcedureWrap>
-          <SignupProcedurePoint isArrival={first}>
-            <SignupProcedurePointOutside isArrival={first} />
-          </SignupProcedurePoint>
+    <SP.SignupProcedureBox>
+      <SP.SignupProcedureLineWrap>
+        <SP.SignupProcedureWrap>
+          <SP.SignupProcedurePoint isArrival={first}>
+            <SP.SignupProcedurePointOutside isArrival={first} />
+          </SP.SignupProcedurePoint>
 
-          <SignupProcedureText isArrival={first}>약관 동의</SignupProcedureText>
-        </SignupProcedureWrap>
-        <SignupProcedureWrap>
-          <SignupProcedurePoint isArrival={second}>
-            <SignupProcedurePointOutside isArrival={second} />
-          </SignupProcedurePoint>
-          <SignupProcedureText isArrival={second}>
+          <SP.SignupProcedureText isArrival={first}>
+            약관 동의
+          </SP.SignupProcedureText>
+        </SP.SignupProcedureWrap>
+        <SP.SignupProcedureWrap>
+          <SP.SignupProcedurePoint isArrival={second}>
+            <SP.SignupProcedurePointOutside isArrival={second} />
+          </SP.SignupProcedurePoint>
+          <SP.SignupProcedureText isArrival={second}>
             정보 입력
-          </SignupProcedureText>
-        </SignupProcedureWrap>
-        <SignupProcedureLine isArrival={second} />
-        <SignupProcedureLine isArrival={third} />
-        <SignupProcedureWrap>
-          <SignupProcedurePoint isArrival={third}>
-            <SignupProcedurePointOutside isArrival={third} />
-          </SignupProcedurePoint>
-          <SignupProcedureText isArrival={third}>
+          </SP.SignupProcedureText>
+        </SP.SignupProcedureWrap>
+        <SP.SignupProcedureLine isArrival={second} />
+        <SP.SignupProcedureLine isArrival={third} />
+        <SP.SignupProcedureWrap>
+          <SP.SignupProcedurePoint isArrival={third}>
+            <SP.SignupProcedurePointOutside isArrival={third} />
+          </SP.SignupProcedurePoint>
+          <SP.SignupProcedureText isArrival={third}>
             아이디 / 비밀번호
-          </SignupProcedureText>
-        </SignupProcedureWrap>
-      </SignupProcedureLineWrap>
-    </SignupProcedureBox>
+          </SP.SignupProcedureText>
+        </SP.SignupProcedureWrap>
+      </SP.SignupProcedureLineWrap>
+    </SP.SignupProcedureBox>
   );
 };
 
