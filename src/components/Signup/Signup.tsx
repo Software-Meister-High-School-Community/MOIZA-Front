@@ -1,10 +1,9 @@
 import React from "react";
 import * as S from "./Signup.style";
-import { Link, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import SignupForm from "./SignupForm";
 import SignupProcedure from "./SignupProcedure";
 import SignupTermsForm from "./SignupTermsForm";
-import SubmitButton from "../Common/Button/SubmitButton";
 import SignupIdPwForm from "./SignupIdPwForm";
 
 const Signup: React.FC = () => {

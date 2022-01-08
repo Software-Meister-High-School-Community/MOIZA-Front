@@ -5,16 +5,25 @@ import { SignupFormsWrap } from "../Signup.style";
 import { Link } from "react-router-dom";
 import SubmitButton from "../../Common/Button/SubmitButton";
 import { useRecoilState } from "recoil";
-import { SignupIdPwFormData } from "../../../store/Signup/registerInfoAtom";
+import {
+  SignupFormData,
+  SignupIdPwFormData,
+} from "../../../store/Signup/registerInfoAtom";
 import { signupIdPwFormDataNullCheck } from "../../../util/signupDataNullCheck";
 
 const SignupIdPwForm: React.FC = () => {
   const [authData, setAuthData] = useRecoilState(SignupIdPwFormData);
+  const [userInfo, setUserInfo] = useRecoilState(SignupFormData);
 
   const [isPwShow, setIsPwShow] = useState(false);
   const [isCheckPwShow, setIsCheckPwShow] = useState(false);
 
   const isNull = signupIdPwFormDataNullCheck(authData);
+
+  const onClick = () => {
+    console.log(userInfo);
+    console.log(authData);
+  };
 
   return (
     <SignupFormsWrap>
@@ -102,7 +111,13 @@ const SignupIdPwForm: React.FC = () => {
         </SIPF.SignupIdPwInputWrap>
       </SIPF.SignupIdPwFormBox>
       <Link to="idpw">
-        <SubmitButton text={"다음 단계"} blue big disable={isNull} />
+        <SubmitButton
+          text={"다음 단계"}
+          blue
+          big
+          disable={isNull}
+          handleClick={onClick}
+        />
       </Link>
     </SignupFormsWrap>
   );

@@ -18,6 +18,9 @@ const SignupForm: React.FC = () => {
   const [sexSelect, setSexSelect] = useState("남성");
   const [studentStatus, setStudentStatus] = useState("재학생");
   const [userInfo, setUserInfo] = useRecoilState(SignupFormData);
+  const [sendCertificationNumber, setSendCertificationNumber] = useState(false);
+  const [notCheckCertificationNumber, setNotCheckCertificationNumber] =
+    useState(true);
 
   const schoolList = [
     "광주소프트웨어마이스터고등학교",
@@ -39,12 +42,11 @@ const SignupForm: React.FC = () => {
     }));
   }, [sexSelect, schoolSelect, studentStatus, setUserInfo]);
 
-  const onClick = (): void => {
+  const setFullEmail = (): void => {
     setUserInfo((prev) => ({
       ...prev,
       email: userInfo.email + schoolEmailTransform(userInfo.schoolSelect),
     }));
-    console.log(userInfo);
   };
 
   const isNull = signupFormDataNullcheck(userInfo);
@@ -54,10 +56,11 @@ const SignupForm: React.FC = () => {
       <SF.SignupFormBox>
         <SF.SignupFormTitle marginBottom={36}>구분</SF.SignupFormTitle>
         <SF.SignupFormFlexWrap>
-          {studentStatusList.map((item) => {
+          {studentStatusList.map((item, index) => {
             return (
               <SF.SignupFormRadioButtonWrap
                 onClick={() => setStudentStatus(item)}
+                key={index}
               >
                 <RadioButton
                   name={"studentStatus"}
@@ -100,9 +103,12 @@ const SignupForm: React.FC = () => {
         />
         <SF.SignupFormTitle marginBottom={36}>성별</SF.SignupFormTitle>
         <SF.SignupFormFlexWrap>
-          {sexList.map((item) => {
+          {sexList.map((item, index) => {
             return (
-              <SF.SignupFormRadioButtonWrap onClick={() => setSexSelect(item)}>
+              <SF.SignupFormRadioButtonWrap
+                onClick={() => setSexSelect(item)}
+                key={index}
+              >
                 <RadioButton name={"sex"} isSelected={sexSelect === item} />
                 <SF.SignupFormRadioButtonText>
                   {item}
@@ -113,9 +119,9 @@ const SignupForm: React.FC = () => {
         </SF.SignupFormFlexWrap>
         <SF.SignupFormTitle marginBottom={13}>학교선택</SF.SignupFormTitle>
         <SF.SignupFormSchoolWrap>
-          {schoolList.map((item) => {
+          {schoolList.map((item, index) => {
             return (
-              <SF.SignupFormSchoolButton name={item}>
+              <SF.SignupFormSchoolButton name={item} key={index}>
                 <OptionButton
                   isSelected={schoolSelect === item}
                   text={item}
@@ -144,7 +150,10 @@ const SignupForm: React.FC = () => {
               {schoolEmailTransform(schoolSelect)}
             </SF.SignupFormSchoolMailText>
           )}
-          <SF.SignupFormSubmitButton isGraduate={studentStatus === "졸업생"}>
+          <SF.SignupFormSubmitButton
+            isGraduate={studentStatus === "졸업생"}
+            onClick={() => setSendCertificationNumber(true)}
+          >
             인증번호 보내기
           </SF.SignupFormSubmitButton>
         </SF.SignupFormFlexWrap>
@@ -161,8 +170,12 @@ const SignupForm: React.FC = () => {
                 [e.target.name]: e.target.value,
               }))
             }
+            disabled={!sendCertificationNumber}
           />
-          <SF.SignupFormSubmitButton isGraduate>
+          <SF.SignupFormSubmitButton
+            isGraduate
+            onClick={() => setNotCheckCertificationNumber(false)}
+          >
             인증하기
           </SF.SignupFormSubmitButton>
         </SF.SignupFormFlexWrap>
@@ -175,8 +188,8 @@ const SignupForm: React.FC = () => {
           text={"다음 단계"}
           blue
           big
-          handleClick={onClick}
-          disable={isNull}
+          disable={isNull || notCheckCertificationNumber}
+          handleClick={setFullEmail}
         />
       </Link>
     </SignupFormsWrap>
