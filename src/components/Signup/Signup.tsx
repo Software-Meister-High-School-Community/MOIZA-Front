@@ -10,6 +10,7 @@ import SignupForm from "./SignupForm";
 import SignupProcedure from "./SignupProcedure";
 import SignupTermsForm from "./SignupTermsForm";
 import SubmitButton from "../Common/Button/SubmitButton";
+import SignupIdPwForm from "./SignupIdPwForm";
 
 const Signup: React.FC = () => {
   const { pathname } = useLocation();
@@ -22,6 +23,7 @@ const Signup: React.FC = () => {
         <SignupProcedure />
         {location === "" && <SignupTermsForm />}
         {location === "/info" && <SignupForm />}
+        {location === "/idpw" && <SignupIdPwForm />}
       </SignupMiddleWrap>
       {location === "" && (
         <Link to="info">
@@ -29,6 +31,11 @@ const Signup: React.FC = () => {
         </Link>
       )}
       {location === "/info" && (
+        <Link to="idpw">
+          <SubmitButton text={"다음 단계"} blue big />
+        </Link>
+      )}
+      {location === "/idpw" && (
         <Link to="idpw">
           <SubmitButton text={"다음 단계"} blue big />
         </Link>
