@@ -20,3 +20,13 @@ export interface IRadioButtonProps {
   isSelected: boolean;
   onClick?: Dispatch<SetStateAction<boolean>> | (()=> void)
 }
+
+export interface OptionArrType {
+  option : string
+}
+
+export interface IDropdownProps {
+  options : Array<OptionArrType>
+  value : string;
+  setValue : (value:string) => void
+}
