@@ -15,14 +15,7 @@ const Notice:React.FC<NoticeProps> = ({modalState,modalClose}) => {
         {id:1 , name:'정우재', message:'공지사항이 올라 왔습니다', date:date },
     ]
 
-    const handleDisplay:any = () =>{
-        let isDisplay = 'none';
-        modalState  ? isDisplay ='block': isDisplay='none';
-        return isDisplay
-    }
-
     return (<>
-        <N.Vertex isDisplay={handleDisplay}/>
         <Modal isOpen={modalState} onRequestClose={modalClose} style={{
             overlay:{
                 backgroundColor: 'rgba(0, 0, 0, 0)',

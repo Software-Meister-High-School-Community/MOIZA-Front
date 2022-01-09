@@ -6,12 +6,20 @@ import serchImg from '../../assets/img/header/serchImg.svg'
 import profileImg from '../../assets/img/header/profileImg.svg'
 import noticeImg from '../../assets/img/header/noticeImg.svg'
 import Notice from './Notice'
+import * as N from "./Notice/Notice.style"
 import { Link } from 'react-router-dom'
 
 const Header:React.FC = () => {
 
     const loginCheck = localStorage.getItem('Token');    
     const [modalState, setModalState] = useState<boolean>(false);
+
+    const handleDisplay:any = () =>{
+        let isDisplay = 'none';
+        modalState  ? isDisplay ='block': isDisplay='none';
+        return isDisplay
+    }
+
     return (
       <>
         <H.Container>
@@ -27,8 +35,12 @@ const Header:React.FC = () => {
             <H.ItemContainer>
                 <H.ItemImg src={serchImg}/>
                 <H.ItemImg src={profileImg}/>
-                <H.ItemImg src={noticeImg} onClick={() => setModalState(!modalState)}>
-                </H.ItemImg>
+
+                <H.ImgContaner>
+                    <H.ItemImg src={noticeImg} onClick={() => setModalState(!modalState)}/>
+                    <H.Vertex isDisplay={handleDisplay}/>
+                </H.ImgContaner>
+
             </H.ItemContainer>
 
             <H.AuthContainer>
