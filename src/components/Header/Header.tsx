@@ -5,10 +5,10 @@ import categoryImg from '../../assets/img/header/categoryImg.svg'
 import serchImg from '../../assets/img/header/serchImg.svg'
 import profileImg from '../../assets/img/header/profileImg.svg'
 import noticeImg from '../../assets/img/header/noticeImg.svg'
-import Modal from 'react-modal'
 import Notice from './Notice'
+import { Link } from 'react-router-dom'
 
-const Header = () => {
+const Header:React.FC = () => {
 
     const loginCheck = localStorage.getItem('Token');    
     const [modalState, setModalState] = useState<boolean>(false);
