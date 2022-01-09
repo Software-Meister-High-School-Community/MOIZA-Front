@@ -1,7 +1,7 @@
 import * as S from "./style";
 import MirimImg from "../../../assets/img/banner/미림.svg";
 
-const Mirim = () => {
+const Mirim: React.FC = () => {
   return (
     <S.Wrapper>
       <S.Banner style={{ backgroundImage: `url(${MirimImg})` }}>

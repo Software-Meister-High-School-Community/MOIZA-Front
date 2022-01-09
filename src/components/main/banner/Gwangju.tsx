@@ -1,7 +1,7 @@
 import * as S from "./style";
 import GwangjuImg from "../../../assets/img/banner/광주.svg";
 
-const Gwangju = () => {
+const Gwangju: React.FC = () => {
   return (
     <S.Wrapper>
       <S.Banner style={{ backgroundImage: `url(${GwangjuImg})` }}>

@@ -1,7 +1,7 @@
 import * as S from "./style";
 import DaeduckImg from "../../../assets/img/banner/대덕.svg";
 
-const Daeduck = () => {
+const Daeduck: React.FC = () => {
   return (
     <S.Wrapper>
       <S.Banner style={{ backgroundImage: `url(${DaeduckImg})` }}>

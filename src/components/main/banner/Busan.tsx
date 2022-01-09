@@ -1,7 +1,7 @@
 import * as S from "./style";
 import BusanImg from "../../../assets/img/banner/부산.svg";
 
-const Busan = () => {
+const Busan: React.FC = () => {
   return (
     <S.Wrapper>
       <S.Banner style={{ backgroundImage: `url(${BusanImg})` }}>
