@@ -6,7 +6,7 @@ const Notification = () => {
     const [value,setValue] = useState(OptionArr[0].option);
     return (
         <S.Wrapper>
-            <DropDown value={value} setValue={setValue} options={OptionArr}/>
+            <DropDown value={value} onChangeValue={setValue} options={OptionArr}/>
         </S.Wrapper>
     )
 }
