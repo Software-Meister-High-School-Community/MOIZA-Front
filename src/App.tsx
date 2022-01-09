@@ -1,5 +1,7 @@
+import Router from "./Router";
+
 const App: React.FC = () => {
-  return <div></div>;
+  return <Router />;
 };
 
 export default App;
