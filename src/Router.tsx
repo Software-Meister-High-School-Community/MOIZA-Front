@@ -3,6 +3,7 @@ import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Admin from "./pages/admin";
 import LoginPage from "./pages/Login/LoginPage";
+import SignupPage from "./pages/Signup/SignupPage";
 
 const Router = () => {
   return (
@@ -12,9 +13,9 @@ const Router = () => {
         <Route path="/" />
         <Route path="/admin" element={<Admin />} />
         <Route path="/login" element={<LoginPage />} />
-        <Route path="/signup/*" element={<></>}>
-          <Route path="Info" element={<></>} />
-          <Route path="idpw" element={<></>} />
+        <Route path="/signup/*" element={<SignupPage />}>
+          <Route path="Info" element={<SignupPage />} />
+          <Route path="idpw" element={<SignupPage />} />
         </Route>
       </Routes>
     </BrowserRouter>

@@ -14,7 +14,7 @@ const OptionButton: React.FC<IOptionButtonProps> = ({
   return (
     <OptionButtonBox
       isSelected={isSelected}
-      onClick={() => (onClick ? onClick((prev) => !prev) : null)}
+      onClick={() => (onClick ? onClick(text) : null)}
     >
       <OptionButtonBoxText>{text}</OptionButtonBoxText>
       <OptionButtonCheckRect
