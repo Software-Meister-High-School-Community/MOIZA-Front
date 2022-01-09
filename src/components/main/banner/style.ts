@@ -42,11 +42,12 @@ export const SchoolText = styled.p<{
   font-size: ${({ theme }) => theme.fontSize.body_large};
 `;
 
-export const Hr = styled.hr`
+export const Hr = styled.hr<{
+  margin: string;
+}>`
   width: 181px;
   height: 1px;
-  margin-bottom: 21px;
-  margin-left: 82px;
+  margin: ${(props) => props.margin};
   border: none;
   background-color: #eeb322;
 `;
