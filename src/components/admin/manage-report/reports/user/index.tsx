@@ -19,7 +19,7 @@ const ReportOfUser:React.FC = () => {
                 </S.UserInfo>
                 <S.History>
                     <S.Count>누적 <p>7</p>회</S.Count>
-                    <S.Arrow src={Arrow} onClick={()=>setShowDetail(!showDetail)}/>
+                    <S.Arrow isFold={showDetail} src={Arrow} onClick={()=>setShowDetail(!showDetail)}/>
                 </S.History>
             </S.Summary>
             {

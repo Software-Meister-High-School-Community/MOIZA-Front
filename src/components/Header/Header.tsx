@@ -7,13 +7,17 @@ import profileImg from '../../assets/img/header/profileImg.svg'
 import noticeImg from '../../assets/img/header/noticeImg.svg'
 import Modal from 'react-modal'
 import Notice from './Notice'
+
 const Header = () => {
 
     const loginCheck = localStorage.getItem('Token');    
-    const [modalState, setModalState] = useState<boolean>(false)
-    return (<>
+    const [modalState, setModalState] = useState<boolean>(false);
+    return (
+      <>
         <H.Container>
-            <H.LogoImg src={headerLogo}/>
+            <Link to="/">
+                <H.LogoImg src={headerLogo} />
+            </Link>
             
             <H.CategoryContainer>
                 <H.CategoryImg src={categoryImg}/>

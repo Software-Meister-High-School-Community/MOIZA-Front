@@ -17,7 +17,6 @@ const Router = () => {
           <Route path="idpw" element={<></>} />
         </Route>
       </Routes>
-      <Footer />
     </BrowserRouter>
   );
 };
