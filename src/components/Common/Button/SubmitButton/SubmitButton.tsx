@@ -2,7 +2,7 @@ import React from "react";
 import { ISubmitButtonProps } from "../../../../interface/Common/Common.type";
 import { SubmitButtonBox } from "./SubmitButton.style";
 
-const BlueButton: React.FC<ISubmitButtonProps> = ({
+const SubmitButton: React.FC<ISubmitButtonProps> = ({
   big,
   text,
   handleClick,
@@ -23,4 +23,4 @@ const BlueButton: React.FC<ISubmitButtonProps> = ({
   );
 };
 
-export default BlueButton;
+export default SubmitButton;
