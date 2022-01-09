@@ -1,11 +1,11 @@
-import FindId from "../../components/FindId";
+import FindAuthData from "../../components/FindAuthData";
 
-const FindIdPage: React.FC = () => {
+const FindAuthDataPage: React.FC = () => {
   return (
     <section id="findId">
-      <FindId />
+      <FindAuthData />
     </section>
   );
 };
 
-export default FindIdPage;
+export default FindAuthDataPage;
