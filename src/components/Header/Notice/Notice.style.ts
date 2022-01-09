@@ -1,9 +1,5 @@
 import styled, { StyledProps } from "styled-components";
 
-interface StyleProps{
-    isDisplay:string
-}
-
 export const Container = styled.div`
     position:relative;
     width: 506.3px; 
@@ -20,19 +16,7 @@ export const NoticeForm = styled.div`
     padding: 20px 0 0 20px;
 `
 
-export const Vertex = styled.div`
-    display:${(props:StyleProps) => props.isDisplay};
-    position:absolute;
-    top:53px;
-    right:32%;
-    z-index:2;
-    width:14px;
-    height:14px;
-    background-color:${(props)=>props.theme.color.gray_color1};
-    border-top:2px solid ${(props) => props.theme.color.gray_color3};
-    border-left:2px solid ${(props) => props.theme.color.gray_color3};
-    transform: rotate(45deg);
-`
+
 
 export const ItemContainer = styled.div`
     width:80%;
@@ -41,7 +25,7 @@ export const ItemContainer = styled.div`
     align-items:center;
     border-bottom: 1px solid ${(props)=>props.theme.color.gray_color3};
     margin: 0 0 10px 0;
-
+    min-height:22px;
     &:last-child{
         border-bottom:none
     }

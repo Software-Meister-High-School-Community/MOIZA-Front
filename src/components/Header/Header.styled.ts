@@ -1,5 +1,9 @@
 import styled from "styled-components";
 
+interface StyleProps{
+    isDisplay:string
+}
+
 export const Container = styled.header`
     display: flex;
     align-items: center;
@@ -46,4 +50,21 @@ export const AuthContainer = styled.div`
 export const AuthText = styled.a`
     font-size:${(props)=> props.theme.fontSize.body_medium};
     cursor: pointer;
+`
+export const ImgContaner = styled.div`
+    position:relative;
+`
+
+
+export const Vertex = styled.div`
+    position:absolute;
+    top:40px;
+    display:${(props:StyleProps) => props.isDisplay};
+    z-index:2;
+    width:14px;
+    height:14px;
+    background-color:${(props)=>props.theme.color.gray_color1};
+    border-top:2px solid ${(props) => props.theme.color.gray_color3};
+    border-left:2px solid ${(props) => props.theme.color.gray_color3};
+    transform: rotate(45deg);
 `

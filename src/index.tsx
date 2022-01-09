@@ -4,6 +4,8 @@ import { RecoilRoot } from "recoil";
 import { createGlobalStyle, ThemeProvider } from "styled-components";
 import App from "./App";
 import { Theme } from "./styles/Theme";
+// import Modal from 'react-modal'
+
 
 const GlobalStyle = createGlobalStyle`
 	html{
