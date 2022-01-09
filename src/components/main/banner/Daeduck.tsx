@@ -1,5 +1,5 @@
 import * as S from "./style";
-import DaeduckImg from "../../../assets/img/banner/대덕.jpg";
+import DaeduckImg from "../../../assets/img/banner/대덕.svg";
 
 const Daeduck = () => {
   return (
@@ -11,7 +11,7 @@ const Daeduck = () => {
         <S.SchoolText width="400px" height="22px" margin="0 60px 70px 82px">
           창의성과 인간미를 품은 소프트웨어 영재의 육성
         </S.SchoolText>
-        <S.Hr />
+        <S.Hr margin="0 0 21px 82px" />
         <S.SchoolClass1 width="128px" height="20px" margin="0 619px 13px 79px">
           소프트웨어개발과
         </S.SchoolClass1>

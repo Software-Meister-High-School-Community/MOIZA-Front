@@ -1,5 +1,5 @@
 import * as S from "./style";
-import MirimImg from "../../../assets/img/banner/미림.jpg";
+import MirimImg from "../../../assets/img/banner/미림.svg";
 
 const Mirim = () => {
   return (
@@ -11,7 +11,7 @@ const Mirim = () => {
         <S.SchoolText width="430px" height="22px" margin="0 69px 70px 82px">
           IT 시대의 꿈과 희망이 있는 곳. 미림에서 열어갑니다.
         </S.SchoolText>
-        <S.Hr />
+        <S.Hr margin="0 0 21px 82px" />
         <S.SchoolClass1 width="160px" height="20px" margin="0 619px 13px 79px">
           뉴미디어소프트웨어과
         </S.SchoolClass1>

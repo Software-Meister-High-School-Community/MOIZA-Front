@@ -1,5 +1,5 @@
 import * as S from "./style";
-import BusanImg from "../../../assets/img/banner/부산.jpg";
+import BusanImg from "../../../assets/img/banner/부산.svg";
 
 const Busan = () => {
   return (
@@ -11,7 +11,7 @@ const Busan = () => {
         <S.SchoolText width="278px" height="22px" margin="92px 0 21px 82px">
           꿈을 향한 도전, 미래를 여는 학교
         </S.SchoolText>
-        <S.Hr />
+        <S.Hr margin="0 0 21px 82px" />
         <S.SchoolClass1 width="160px" height="20px" margin="0 619px 13px 82px">
           소프트웨어개발과
         </S.SchoolClass1>

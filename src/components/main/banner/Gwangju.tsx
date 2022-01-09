@@ -1,5 +1,5 @@
 import * as S from "./style";
-import GwangjuImg from "../../../assets/img/banner/광주.jpg";
+import GwangjuImg from "../../../assets/img/banner/광주.svg";
 
 const Gwangju = () => {
   return (
@@ -11,7 +11,7 @@ const Gwangju = () => {
         <S.SchoolText width="485px" height="22px" margin="0 69px 70px 320px">
           창의 융합력을 갖춘 글로벌 소프트웨어 마이스터 육성
         </S.SchoolText>
-        <S.Hr />
+        <S.Hr margin="0 60px 21px 600px" />
         <S.SchoolClass1 width="128px" height="20px" margin="0 70px 13px 654px">
           소프트웨어개발과
         </S.SchoolClass1>

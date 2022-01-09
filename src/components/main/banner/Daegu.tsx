@@ -1,5 +1,5 @@
 import * as S from "./style";
-import DaeguImg from "../../../assets/img/banner/대구.jpg";
+import DaeguImg from "../../../assets/img/banner/대구.svg";
 
 const Daegu = () => {
   return (
@@ -11,7 +11,7 @@ const Daegu = () => {
         <S.SchoolText width="560px" height="22px" margin="0 69px 70px 77px">
           더 나은 세상을 만들어 갈 sw인재가 모이는 대구소프트웨어고등학교
         </S.SchoolText>
-        <S.Hr />
+        <S.Hr margin="0 0 21px 82px" />
         <S.SchoolClass1 width="128px" height="20px" margin="0 619px 10px 79px">
           소프트웨어개발과
         </S.SchoolClass1>
