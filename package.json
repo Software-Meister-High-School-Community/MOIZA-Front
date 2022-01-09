@@ -15,6 +15,7 @@
     "global": "^4.4.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-modal": "^3.14.4",
     "react-notifications": "^1.7.3",
     "react-router": "^6.2.1",
     "react-router-dom": "^6.2.1",
@@ -52,7 +53,11 @@
     ]
   },
   "devDependencies": {
+
     "@types/react-slick": "^0.23.8"
+
+    "@types/react-modal": "^3.13.1",
+
     "nth-check": "^2.0.1"
   }
 }
