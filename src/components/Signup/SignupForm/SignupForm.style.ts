@@ -25,26 +25,6 @@ export const SignupFormFlexWrap = styled.div`
   align-items: center;
 `;
 
-export const SignupFormRadioButtonWrap = styled.div<{ marginLeft?: number }>`
-  display: flex;
-  column-gap: 11px;
-  align-items: center;
-  ${(props) =>
-    props.marginLeft &&
-    css`
-      margin-left: ${props.marginLeft}px;
-    `}
-
-  &:last-child {
-    margin-left: 50%;
-  }
-`;
-
-export const SignupFormRadioButtonText = styled.p`
-  font-size: ${(props) => props.theme.fontSize.body_medium};
-  color: black;
-`;
-
 export const SignupFormTextInput = styled.input<{ width: string }>`
   width: ${(props) => props.width};
   height: 40px;
