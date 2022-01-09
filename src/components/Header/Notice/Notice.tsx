@@ -4,9 +4,7 @@ import NoticeProfile from '../../../assets/img/header/noticeProfileImg.svg'
 import Modal from 'react-modal'
 const Notice:React.FC<NoticeProps> = ({modalState,modalClose}) => {
 
-    const date = new Date()
-
-    console.log(date);
+    const date = new Date();
 
     const notices= [
         {id:1 , name:'', message:'공지사항이 올라 왔습니다', date:date },
