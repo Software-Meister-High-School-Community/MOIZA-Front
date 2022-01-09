@@ -2,6 +2,7 @@ import * as N from "./Notice.style"
 import { NoticeProps } from "../../../interface/Header/Notice.type"
 import NoticeProfile from '../../../assets/img/header/noticeProfileImg.svg'
 import Modal from 'react-modal'
+import { useState } from "react"
 const Notice:React.FC<NoticeProps> = ({modalState,modalClose}) => {
 
     const date = new Date();
@@ -14,7 +15,14 @@ const Notice:React.FC<NoticeProps> = ({modalState,modalClose}) => {
         {id:1 , name:'정우재', message:'공지사항이 올라 왔습니다', date:date },
     ]
 
-    return (
+    const handleDisplay:any = () =>{
+        let isDisplay = 'none';
+        modalState  ? isDisplay ='block': isDisplay='none';
+        return isDisplay
+    }
+
+    return (<>
+        <N.Vertex isDisplay={handleDisplay}/>
         <Modal isOpen={modalState} onRequestClose={modalClose} style={{
             overlay:{
                 backgroundColor: 'rgba(0, 0, 0, 0)',
@@ -25,7 +33,7 @@ const Notice:React.FC<NoticeProps> = ({modalState,modalClose}) => {
                 marginTop:'20px',
                 marginLeft:'50%',
                 width:'508px',
-                height:'300px',
+                height:'400px',
                 overflow:'hidden',
                 backgroundColor: 'rgba(0, 0, 0, 0)'   
             }
@@ -54,6 +62,7 @@ const Notice:React.FC<NoticeProps> = ({modalState,modalClose}) => {
         </N.NoticeForm>
             </N.Container>
         </Modal>
+            </>
     )
 }
 
