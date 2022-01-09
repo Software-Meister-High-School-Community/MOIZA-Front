@@ -1,17 +1,19 @@
-import React from 'react'
+import React, { useState } from 'react'
 import * as H from './Header.styled'
 import headerLogo from '../../assets/img/header/headerLogo.svg'
 import categoryImg from '../../assets/img/header/categoryImg.svg'
 import serchImg from '../../assets/img/header/serchImg.svg'
 import profileImg from '../../assets/img/header/profileImg.svg'
 import noticeImg from '../../assets/img/header/noticeImg.svg'
+import Notice from './Notice'
 import { Link } from 'react-router-dom'
 
-const Header = () => {
+const Header:React.FC = () => {
 
-    const loginCheck = localStorage.getItem('Token');
-
+    const loginCheck = localStorage.getItem('Token');    
+    const [modalState, setModalState] = useState<boolean>(false);
     return (
+      <>
         <H.Container>
             <Link to="/">
                 <H.LogoImg src={headerLogo} />
@@ -25,7 +27,8 @@ const Header = () => {
             <H.ItemContainer>
                 <H.ItemImg src={serchImg}/>
                 <H.ItemImg src={profileImg}/>
-                <H.ItemImg src={noticeImg}/>
+                <H.ItemImg src={noticeImg} onClick={() => setModalState(!modalState)}>
+                </H.ItemImg>
             </H.ItemContainer>
 
             <H.AuthContainer>
@@ -39,9 +42,11 @@ const Header = () => {
                     <H.AuthText>로그인</H.AuthText>
                     </>
             
-                }
+        }
             </H.AuthContainer>
         </H.Container>
+        <Notice modalState={modalState} modalClose={()=> setModalState(!modalState)}/>
+        </>
     )
 }
 
