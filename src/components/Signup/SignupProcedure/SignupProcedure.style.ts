@@ -1,10 +1,8 @@
 import styled, { css } from "styled-components";
 
-export const SignupProcedureBox = styled.div`
-  width: 22px;
-  display: flex;
-  justify-content: center;
+export const SignupProcedureBox = styled.img`
   margin-right: auto;
+  margin-bottom: auto;
   margin-top: 12px;
 `;
 

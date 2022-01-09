@@ -11,6 +11,11 @@ export const LoginFormBox = styled.div`
   justify-content: center;
   border: 1px solid ${(props) => props.theme.color.gray_color3};
   margin-bottom: 90px;
+
+  a {
+    text-decoration: none;
+    color: ${(props) => props.theme.color.gray_color4};
+  }
 `;
 
 export const LoginFormInputWrap = styled.div`
