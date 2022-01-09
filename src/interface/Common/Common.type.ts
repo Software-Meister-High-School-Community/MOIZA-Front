@@ -16,9 +16,13 @@ export interface IOptionButtonProps {
 }
 
 export interface IRadioButtonProps {
-  name: string;
-  isSelected: boolean;
-  onClick?: Dispatch<SetStateAction<boolean>> | (() => void);
+  name : string;
+  radioArray : Array<{
+    summary : string;
+    id : string;
+  }>
+  selected : string;
+  setSelected : (selectId:string) => void;
 }
 
 export interface OptionArrType {

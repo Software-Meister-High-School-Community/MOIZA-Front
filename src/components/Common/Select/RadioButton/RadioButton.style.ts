@@ -1,5 +1,22 @@
 import styled from "styled-components";
 
+export const Wrapper = styled.label`
+  display: flex;
+  align-items: center;
+  margin-right: 55px;
+  > p {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+    color:#555555;
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+  }
+`
+
 export const RadioButtonRect = styled.div`
   width: 20px;
   height: 20px;
