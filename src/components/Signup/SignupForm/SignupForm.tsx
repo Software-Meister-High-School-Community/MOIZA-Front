@@ -12,6 +12,7 @@ import OptionButton from "../../Common/Select/OptionButton";
 import RadioButton from "../../Common/Select/RadioButton";
 import { SignupFormsWrap } from "../Signup.style";
 import * as SF from "./SignupForm.style";
+import * as CONST from "../Constant/index";
 
 const SignupForm: React.FC = () => {
   const [schoolSelect, setSchoolSelect] = useRecoilState(registerSchoolSelect);
@@ -21,17 +22,6 @@ const SignupForm: React.FC = () => {
   const [sendCertificationNumber, setSendCertificationNumber] = useState(false);
   const [notCheckCertificationNumber, setNotCheckCertificationNumber] =
     useState(true);
-
-  const schoolList = [
-    "광주소프트웨어마이스터고등학교",
-    "대구소프트웨어마이스터고등학교",
-    "대덕소프트웨어마이스터고등학교",
-    "미림마이스터고등학교",
-    "부산소프트웨어마이스터고등학교",
-  ];
-
-  const sexList = ["남성", "여성"];
-  const studentStatusList = ["재학생", "졸업생"];
 
   useEffect(() => {
     setUserInfo((prev) => ({
@@ -56,7 +46,7 @@ const SignupForm: React.FC = () => {
       <SF.SignupFormBox>
         <SF.SignupFormTitle marginBottom={36}>구분</SF.SignupFormTitle>
         <SF.SignupFormFlexWrap>
-          {studentStatusList.map((item, index) => {
+          {CONST.StudentStatusList.map((item, index) => {
             return (
               <SF.SignupFormRadioButtonWrap
                 onClick={() => setStudentStatus(item)}
@@ -103,7 +93,7 @@ const SignupForm: React.FC = () => {
         />
         <SF.SignupFormTitle marginBottom={36}>성별</SF.SignupFormTitle>
         <SF.SignupFormFlexWrap>
-          {sexList.map((item, index) => {
+          {CONST.SexList.map((item, index) => {
             return (
               <SF.SignupFormRadioButtonWrap
                 onClick={() => setSexSelect(item)}
@@ -119,7 +109,7 @@ const SignupForm: React.FC = () => {
         </SF.SignupFormFlexWrap>
         <SF.SignupFormTitle marginBottom={13}>학교선택</SF.SignupFormTitle>
         <SF.SignupFormSchoolWrap>
-          {schoolList.map((item, index) => {
+          {CONST.SchoolList.map((item, index) => {
             return (
               <SF.SignupFormSchoolButton name={item} key={index}>
                 <OptionButton
