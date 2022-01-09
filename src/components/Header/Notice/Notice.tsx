@@ -1,8 +1,8 @@
-import React from 'react'
 import * as N from "./Notice.style"
+import { NoticeProps } from "../../../interface/Header/Notice.type"
 import NoticeProfile from '../../../assets/img/header/noticeProfileImg.svg'
-
-const Notice = () => {
+import Modal from 'react-modal'
+const Notice:React.FC<NoticeProps> = ({modalState,modalClose}) => {
 
     const date = new Date()
 
@@ -17,8 +17,24 @@ const Notice = () => {
     ]
 
     return (
+        <Modal isOpen={modalState} onRequestClose={modalClose} style={{
+            overlay:{
+                backgroundColor: 'rgba(0, 0, 0, 0)',
+            },
+            content: {
+                border:'none',
+                padding:'0',
+                marginTop:'20px',
+                marginLeft:'50%',
+                width:'508px',
+                height:'300px',
+                overflow:'hidden',
+                backgroundColor: 'rgba(0, 0, 0, 0)'   
+            }
+        }}>
         <N.Container>
         <N.NoticeForm >
+            <N.Day>오늘</N.Day>
             {
                 notices.map((item)=>(
                     
@@ -27,7 +43,8 @@ const Notice = () => {
                             item.name ? 
                             <>
                             <N.ItemImg src={NoticeProfile}/>
-                            <N.ItemText>{item.message}</N.ItemText>
+                            <N.Name>{item.name}</N.Name>
+                            <N.ItemText>님 {item.message}</N.ItemText>
                             </>
                             :
                             <N.ItemText>{item.message}</N.ItemText>
@@ -38,6 +55,7 @@ const Notice = () => {
         
         </N.NoticeForm>
             </N.Container>
+        </Modal>
     )
 }
 

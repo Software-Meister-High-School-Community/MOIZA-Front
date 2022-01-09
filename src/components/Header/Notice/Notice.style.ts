@@ -13,9 +13,9 @@ export const NoticeForm = styled.div`
     border-radius:10px;
     display:flex;
     flex-direction: column;
-    align-items:center;
     background-color:${(props)=> props.theme.color.gray_color1};
     overflow: auto;
+    padding: 20px 0 0 20px;
 `
 
 export const Vertex = styled.div`
@@ -31,11 +31,11 @@ export const Vertex = styled.div`
 
 export const ItemContainer = styled.div`
     width:80%;
-    padding:20px;
+    padding: 15px 20px 20px 20px;
     display:flex;
     align-items:center;
     border-bottom: 1px solid ${(props)=>props.theme.color.gray_color3};
-    margin: 10px 0 10px 0;
+    margin: 0 0 10px 0;
 
     &:last-child{
         border-bottom:none
@@ -44,13 +44,19 @@ export const ItemContainer = styled.div`
 
 export const ItemImg = styled.img`
     width:30px;
-    margin-right: 20px;
+    margin-right:10px;
 `
 
 export const ItemText = styled.p`
-    font-size: ${(props) => props.theme.fontSize.body_medium};
+    font-size: ${(props) => props.theme.fontSize.body_small};
 `
 
 export const Day = styled.p`
-    width:20px
+    font-size: ${(props) => props.theme.fontSize.body_small};
+    width:40px;
+    font-weight:400;
+`
+export const Name = styled.a`
+    font-size: ${(props) => props.theme.fontSize.body_small};
+    font-weight:400;
 `
