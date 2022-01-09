@@ -1,9 +1,9 @@
 import * as S from "./style";
-import Daeduck from "../banner/daeduck/Daeduck";
-import Daegu from "../banner/daegu/Daegu";
-import Gwangju from "../banner/gwangju/Gwangju";
-import Mirim from "../banner/mirim/Mirim";
-import Busan from "../banner/busan/Busan";
+import Daeduck from "../banner/Daeduck";
+import Daegu from "../banner/Daegu";
+import Gwangju from "../banner/Gwangju";
+import Mirim from "../banner/Mirim";
+import Busan from "../banner/Busan";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
