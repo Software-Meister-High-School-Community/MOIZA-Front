@@ -1,4 +1,3 @@
-import * as S from "./style";
 import Daeduck from "../banner/Daeduck";
 import Daegu from "../banner/Daegu";
 import Gwangju from "../banner/Gwangju";
@@ -22,7 +21,7 @@ const Slide = () => {
   };
 
   return (
-    <S.Wrapper>
+    <div>
       <Slider {...settings}>
         <div>
           <Daeduck />
@@ -40,7 +39,7 @@ const Slide = () => {
           <Busan />
         </div>
       </Slider>
-    </S.Wrapper>
+    </div>
   );
 };
 
