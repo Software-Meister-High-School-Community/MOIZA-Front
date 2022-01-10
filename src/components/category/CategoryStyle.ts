@@ -7,20 +7,19 @@ interface styleProps {
 
 
 export const Container = styled.div`
-    margin: 0 auto;
     position: relative;
+    margin: 0 auto;
     display: flex;
     justify-content:space-around;
     flex-wrap:wrap;
-    margin-top:80px;
     width: 1270px;
-    height: 524px;
 `
 export const Item = styled.div`
     display: flex;
     justify-content:center;
     align-items:center;
     margin-right:30px;
+    margin-bottom:30px;
     width: 175px;
     height: 175px;
     border: 1px solid ${(porps) => porps.theme.color.gray_color3};
@@ -40,7 +39,7 @@ export const Img = styled.img`
 `
 
 export const TitleBox = styled.div`
-    margin: 220px auto 100px auto;
+    margin: 110px auto 80px auto;
     width: 1270px;
     display: flex;
     align-items:center;

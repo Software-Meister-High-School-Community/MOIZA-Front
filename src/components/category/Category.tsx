@@ -15,9 +15,9 @@ const Category:React.FC = () => {
            <C.Line/>
         </C.TitleBox>
         
-            <C.Img src={CImg1} top='480px' left='1522px'/>
-            <C.Img src={CImg2} top='740px' left='295px'/>
         <C.Container>
+            <C.Img src={CImg1} top='60px' left='1200px'/>
+            <C.Img src={CImg2} top='320px' left='-20px'/>
 
             <C.Item>Front-End</C.Item>
             <C.Item>Back-End</C.Item>

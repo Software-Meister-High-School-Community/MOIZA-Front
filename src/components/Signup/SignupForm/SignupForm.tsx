@@ -52,10 +52,10 @@ const SignupForm: React.FC = () => {
                 onClick={() => setStudentStatus(item)}
                 key={index}
               >
-                <RadioButton
+                {/* <RadioButton
                   name={"studentStatus"}
                   isSelected={studentStatus === item}
-                />
+                /> */}
                 <SF.SignupFormRadioButtonText>
                   {item}
                 </SF.SignupFormRadioButtonText>
@@ -99,7 +99,7 @@ const SignupForm: React.FC = () => {
                 onClick={() => setSexSelect(item)}
                 key={index}
               >
-                <RadioButton name={"sex"} isSelected={sexSelect === item} />
+                {/* <RadioButton name={"sex"} isSelected={sexSelect === item} /> */}
                 <SF.SignupFormRadioButtonText>
                   {item}
                 </SF.SignupFormRadioButtonText>
