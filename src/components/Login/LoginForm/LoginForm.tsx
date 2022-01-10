@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import * as LF from "./LoginForm.style";
 import * as Imgs from "../../../assets/img";
+import { Link } from "react-router-dom";
 
 const LoginForm: React.FC = () => {
   const [isCheck, setIsCheck] = useState<boolean>(false);
@@ -41,7 +42,9 @@ const LoginForm: React.FC = () => {
           로그인 저장
         </LF.LoginFormSaveInputWrap>
         <LF.LoginFormCategoryInputWrap>
-          <LF.LoginFormCategoryInput>회원가입</LF.LoginFormCategoryInput>
+          <LF.LoginFormCategoryInput>
+            <Link to="/signup">회원가입</Link>
+          </LF.LoginFormCategoryInput>
           <LF.LoginFormCategoryInputLine />
           <LF.LoginFormCategoryInput>아이디 찾기</LF.LoginFormCategoryInput>
           <LF.LoginFormCategoryInputLine />
