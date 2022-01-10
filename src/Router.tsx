@@ -11,13 +11,14 @@ const Router = () => {
     <BrowserRouter>
       <Header />
       <Routes>
-        <Route path="/" element={<FindAuthDataPage />} />
+        <Route path="/" />
         <Route path="/admin" element={<Admin />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/signup/*" element={<SignupPage />}>
           <Route path="Info" element={<SignupPage />} />
           <Route path="idpw" element={<SignupPage />} />
         </Route>
+        <Route path="/findauthdata/*" element={<FindAuthDataPage />} />
       </Routes>
     </BrowserRouter>
   );

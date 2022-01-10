@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components";
 
-export const FindIdFormBox = styled.div`
+export const FindIdFormBox = styled.div<{ isFind: boolean }>`
   width: 100%;
   display: flex;
   justify-content: center;
@@ -9,7 +9,16 @@ export const FindIdFormBox = styled.div`
   border-top: 0px;
   box-sizing: border-box;
   background-color: ${(props) => props.theme.color.gray_color1};
-  padding: 58px 84px;
+  ${(props) =>
+    props.isFind
+      ? css`
+          padding: 0px 84px;
+          padding-top: 81px;
+          padding-bottom: 127px;
+        `
+      : css`
+          padding: 58px 84px;
+        `}
 `;
 
 export const FindIdFormWrap = styled.div`
