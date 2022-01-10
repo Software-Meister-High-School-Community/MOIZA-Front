@@ -9,3 +9,7 @@ export interface IFindIdDataProps {
   email: string;
   certificationNumber: string;
 }
+
+export interface IFindPwDataProps extends IFindIdDataProps {
+  id: string;
+}

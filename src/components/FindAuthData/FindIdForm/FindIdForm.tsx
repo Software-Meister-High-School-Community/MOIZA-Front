@@ -5,8 +5,8 @@ import { findIdDataNullCheck } from "../../../util/findAuthDataNullCheck";
 import SubmitButton from "../../Common/Button/SubmitButton";
 import { FindAuthDataSubmitButtonWrap } from "../FindAuthData.style";
 import {
-  FindFormCertificationButton,
-  FindFormTextInput,
+  FindIdFormCertificationButton,
+  FindIdFormTextInput,
   FindIdFormBox,
   FindIdFormInputWrap,
   FindIdFormTextInputWrap,
@@ -58,7 +58,7 @@ const FindIdForm: React.FC = () => {
               <FindIdFormTitle>이메일 인증</FindIdFormTitle>
               <FindIdFormInputWrap>
                 <FindIdFormTextInputWrap>
-                  <FindFormTextInput
+                  <FindIdFormTextInput
                     placeholder="이름"
                     isWrite={checkData.name !== ""}
                     value={name}
@@ -72,7 +72,7 @@ const FindIdForm: React.FC = () => {
                   />
                 </FindIdFormTextInputWrap>
                 <FindIdFormTextInputWrap>
-                  <FindFormTextInput
+                  <FindIdFormTextInput
                     isWrite={checkData.birth !== ""}
                     placeholder="생년월일 8자리 입력"
                     value={birth}
@@ -86,7 +86,7 @@ const FindIdForm: React.FC = () => {
                   />
                 </FindIdFormTextInputWrap>
                 <FindIdFormTextInputWrap>
-                  <FindFormTextInput
+                  <FindIdFormTextInput
                     isWrite={checkData.email !== ""}
                     placeholder="회원가입 시 입력한 이메일 주소"
                     value={email}
@@ -98,16 +98,16 @@ const FindIdForm: React.FC = () => {
                       }))
                     }
                   />
-                  <FindFormCertificationButton
+                  <FindIdFormCertificationButton
                     isWrite={checkData.email !== ""}
                     disabled={checkData.email === ""}
                     onClick={onClickSendCertification}
                   >
                     인증메일 보내기
-                  </FindFormCertificationButton>
+                  </FindIdFormCertificationButton>
                 </FindIdFormTextInputWrap>
                 <FindIdFormTextInputWrap>
-                  <FindFormTextInput
+                  <FindIdFormTextInput
                     isWrite={checkData.certificationNumber !== ""}
                     placeholder="인증번호"
                     value={certificationNumber}
@@ -127,7 +127,22 @@ const FindIdForm: React.FC = () => {
         </FindIdFormWrap>
       </FindIdFormBox>
       <FindAuthDataSubmitButtonWrap>
-        {isFind ? null : (
+        {isFind ? (
+          <>
+            <SubmitButton
+              big
+              text={"비밀번호 찾기"}
+              yellow
+              handleClick={() => navigate("/findauthdata/findpw")}
+            />
+            <SubmitButton
+              big
+              text={"로그인 하기"}
+              blue
+              handleClick={() => navigate("/login")}
+            />
+          </>
+        ) : (
           <SubmitButton
             big
             text={"다음"}

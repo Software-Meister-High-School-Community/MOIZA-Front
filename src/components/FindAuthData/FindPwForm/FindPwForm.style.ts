@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components";
 
-export const FindIdFormBox = styled.div<{ isFind: boolean }>`
+export const FindPwFormBox = styled.div`
   width: 100%;
   display: flex;
   justify-content: center;
@@ -9,25 +9,16 @@ export const FindIdFormBox = styled.div<{ isFind: boolean }>`
   border-top: 0px;
   box-sizing: border-box;
   background-color: ${(props) => props.theme.color.gray_color1};
-  ${(props) =>
-    props.isFind
-      ? css`
-          padding: 0px 84px;
-          padding-top: 81px;
-          padding-bottom: 127px;
-        `
-      : css`
-          padding: 58px 84px;
-        `}
+  padding: 58px 84px;
 `;
 
-export const FindIdFormWrap = styled.div`
+export const FindPwFormWrap = styled.div`
   width: 550px;
   display: flex;
   flex-direction: column;
 `;
 
-export const FindIdFormTitle = styled.h1`
+export const FindPwFormTitle = styled.h1`
   font-size: ${(props) => props.theme.fontSize.body_large};
   font-style: normal;
   font-weight: normal;
@@ -35,14 +26,14 @@ export const FindIdFormTitle = styled.h1`
   margin-right: auto;
 `;
 
-export const FindIdFormInputWrap = styled.div`
+export const FindPwFormInputWrap = styled.div`
   display: flex;
   flex-direction: column;
   margin: 0px auto;
   margin-top: 42px;
 `;
 
-export const FindIdFormTextInputWrap = styled.div`
+export const FindPwFormTextInputWrap = styled.div`
   width: 500px;
   height: 40px;
   display: flex;
@@ -53,7 +44,7 @@ export const FindIdFormTextInputWrap = styled.div`
   }
 `;
 
-export const FindIdFormTextInput = styled.input<{ isWrite: boolean }>`
+export const FindPwFormTextInput = styled.input<{ isWrite: boolean }>`
   width: 100%;
   height: 100%;
   border: 1px solid ${(props) => props.theme.color.gray_color3};
@@ -69,7 +60,7 @@ export const FindIdFormTextInput = styled.input<{ isWrite: boolean }>`
   border-radius: 5px;
 `;
 
-export const FindIdFormCertificationButton = styled.button<{
+export const FindPwFormCertificationButton = styled.button<{
   isWrite: boolean;
 }>`
   min-width: 139px;

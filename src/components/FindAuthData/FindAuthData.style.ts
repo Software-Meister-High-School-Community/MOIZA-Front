@@ -62,4 +62,6 @@ export const FindAuthDataTab = styled.button<{ seleted: boolean }>`
 export const FindAuthDataSubmitButtonWrap = styled.div`
   margin: 0px auto;
   margin-top: 50px;
+  display: flex;
+  column-gap: 34px;
 `;

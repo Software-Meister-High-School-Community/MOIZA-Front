@@ -18,7 +18,7 @@ const Router = () => {
           <Route path="Info" element={<SignupPage />} />
           <Route path="idpw" element={<SignupPage />} />
         </Route>
-        <Route path="/findauthdata" />
+        <Route path="/findauthdata/*" element={<FindAuthDataPage />} />
       </Routes>
     </BrowserRouter>
   );
