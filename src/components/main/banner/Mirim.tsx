@@ -1,5 +1,6 @@
 import * as S from "./style";
 import MirimImg from "../../../assets/img/banner/미림.svg";
+import { WindowOpenUtil } from "../../../util/openWindow";
 
 const Mirim: React.FC = () => {
   return (
@@ -22,7 +23,7 @@ const Mirim: React.FC = () => {
           뉴미디어디자인과
         </S.SchoolClass3>
         <S.SchoolHomePage
-          onClick={() => window.open("https://www.e-mirim.hs.kr/main.do")}
+          onClick={() => WindowOpenUtil("https://www.e-mirim.hs.kr/main.do")}
           width="140px"
           margin="0 623px 0 79px"
         >

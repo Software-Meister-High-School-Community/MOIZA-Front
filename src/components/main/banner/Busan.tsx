@@ -1,5 +1,7 @@
+import React from "react";
 import * as S from "./style";
 import BusanImg from "../../../assets/img/banner/부산.svg";
+import { WindowOpenUtil } from "../../../util/openWindow";
 
 const Busan: React.FC = () => {
   return (
@@ -20,7 +22,7 @@ const Busan: React.FC = () => {
         </S.SchoolClass2>
         <S.SchoolHomePage
           onClick={() =>
-            window.open("https://school.busanedu.net/bssm-h/main.do")
+            WindowOpenUtil("https://school.busanedu.net/bssm-h/main.do")
           }
           width="140px"
           margin="0 623px 0 82px"
