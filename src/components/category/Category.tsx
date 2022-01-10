@@ -9,15 +9,15 @@ import CImg2 from '../../assets/img/category/img2.svg'
 
 const Category:React.FC = () => {
     return (
-        <C.Wrapper>
-            <C.TitleBox>
-                <C.Title>게시물 카테고리</C.Title>
-                <C.Line/>
-            </C.TitleBox>
-            
+        <C.Wrapper>     
             <C.Container>
-                <C.Img src={CImg1} top='60px' left='1200px'/>
-                <C.Img src={CImg2} top='320px' left='-20px'/>
+                <C.TitleBox>
+                    <C.Title>게시물 카테고리</C.Title>
+                    <C.Line/>
+                </C.TitleBox>
+
+                <C.Img src={CImg1} top='180px' left='1200px'/>
+                <C.Img src={CImg2} top='375px' left='-20px'/>
 
                 <C.Item>Front-End</C.Item>
                 <C.Item>Back-End</C.Item>
