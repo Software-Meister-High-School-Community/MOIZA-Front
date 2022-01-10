@@ -1,8 +1,14 @@
 import { useEffect, useState } from "react";
 import { Route, Routes, useLocation, useNavigate } from "react-router";
 import { useRecoilState, useResetRecoilState } from "recoil";
-import { findPwData } from "../../../store/FindAuthData/findCheckDataAtom";
-import { findPwDataNullCheck } from "../../../util/findAuthDataNullCheck";
+import {
+  findPwData,
+  findPwResetData,
+} from "../../../store/FindAuthData/findCheckDataAtom";
+import {
+  findPwDataNullCheck,
+  findPwResetDataNullCheck,
+} from "../../../util/findAuthDataNullCheck";
 import SubmitButton from "../../Common/Button/SubmitButton";
 import { FindAuthDataSubmitButtonWrap } from "../FindAuthData.style";
 import FindPwCheck from "./FindPwCheck";
@@ -13,18 +19,22 @@ import FindPwResult from "./FindPwResult";
 const FindPwForm: React.FC = () => {
   const navigate = useNavigate();
 
-  const { pathname } = useLocation();
-  const querys = pathname.slice(1, pathname.length).split("/");
-  const query = querys[querys.length - 1];
-
   const [checkData, setCheckData] = useRecoilState(findPwData);
+  const [resetData, setResetData] = useRecoilState(findPwResetData);
   const resetCheckData = useResetRecoilState(findPwData);
+  const resetResetData = useResetRecoilState(findPwResetData);
 
   useEffect(() => {
     resetCheckData();
-  }, [resetCheckData]);
+    resetResetData();
+  }, [resetCheckData, resetResetData]);
 
-  const isNull = findPwDataNullCheck(checkData);
+  const checkPartIsNull = findPwDataNullCheck(checkData);
+  const resetPartIsNull = findPwResetDataNullCheck(resetData);
+
+  const { pathname } = useLocation();
+  const querys = pathname.slice(1, pathname.length).split("/");
+  const query = querys[querys.length - 1];
 
   const onClickCertification = () => {
     navigate("findpwreset");
@@ -36,7 +46,7 @@ const FindPwForm: React.FC = () => {
 
   return (
     <>
-      <FindPwFormBox>
+      <FindPwFormBox isReset={query === "findpwresult"}>
         <FindPwFormWrap>
           <Routes>
             <Route path="" element={<FindPwCheck />} />
@@ -51,12 +61,18 @@ const FindPwForm: React.FC = () => {
             big
             text={"다음"}
             blue
-            disable={isNull}
+            disable={checkPartIsNull}
             handleClick={onClickCertification}
           />
         )}
         {query === "findpwreset" && (
-          <SubmitButton big text={"다음"} blue handleClick={onClickResetPw} />
+          <SubmitButton
+            big
+            text={"다음"}
+            blue
+            handleClick={onClickResetPw}
+            disable={resetPartIsNull}
+          />
         )}
         {query === "findpwresult" && (
           <SubmitButton

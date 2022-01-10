@@ -13,3 +13,8 @@ export interface IFindIdDataProps {
 export interface IFindPwDataProps extends IFindIdDataProps {
   id: string;
 }
+
+export interface IFindPwResetDataProps {
+  pw: string;
+  checkPw: string;
+}
