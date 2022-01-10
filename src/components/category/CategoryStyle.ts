@@ -5,6 +5,9 @@ interface styleProps {
     left: string
 }
 
+export const Wrapper = styled.div`
+    margin-top:7%;
+`
 
 export const Container = styled.div`
     position: relative;
@@ -39,7 +42,7 @@ export const Img = styled.img`
 `
 
 export const TitleBox = styled.div`
-    margin: 110px auto 80px auto;
+    margin: 0 auto 80px auto;
     width: 1270px;
     display: flex;
     align-items:center;

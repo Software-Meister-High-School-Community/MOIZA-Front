@@ -9,36 +9,36 @@ import CImg2 from '../../assets/img/category/img2.svg'
 
 const Category:React.FC = () => {
     return (
-        <>
-        <C.TitleBox>
-           <C.Title>게시물 카테고리</C.Title>
-           <C.Line/>
-        </C.TitleBox>
-        
-        <C.Container>
-            <C.Img src={CImg1} top='60px' left='1200px'/>
-            <C.Img src={CImg2} top='320px' left='-20px'/>
+        <C.Wrapper>
+            <C.TitleBox>
+                <C.Title>게시물 카테고리</C.Title>
+                <C.Line/>
+            </C.TitleBox>
+            
+            <C.Container>
+                <C.Img src={CImg1} top='60px' left='1200px'/>
+                <C.Img src={CImg2} top='320px' left='-20px'/>
 
-            <C.Item>Front-End</C.Item>
-            <C.Item>Back-End</C.Item>
-            <C.Item>
-                <C.ItemImg src={itemImg1}/>
-            </C.Item>
-            <C.Item>IOS</C.Item>
-            <C.Item>Android</C.Item>
-            <C.Item>Design</C.Item>
-            <C.Item>Game</C.Item>
-            <C.Item>
-                <C.ItemImg src={itemImg2}/>
-            </C.Item>
-            <C.Item>Security</C.Item>
-            <C.Item>Embedded</C.Item>
-            <C.Item>AI</C.Item>
-            <C.Item>
-                <C.ItemImg src={itemImg3}/>
-            </C.Item>
-        </C.Container>
-        </>
+                <C.Item>Front-End</C.Item>
+                <C.Item>Back-End</C.Item>
+                <C.Item>
+                    <C.ItemImg src={itemImg1}/>
+                </C.Item>
+                <C.Item>IOS</C.Item>
+                <C.Item>Android</C.Item>
+                <C.Item>Design</C.Item>
+                <C.Item>Game</C.Item>
+                <C.Item>
+                    <C.ItemImg src={itemImg2}/>
+                </C.Item>
+                <C.Item>Security</C.Item>
+                <C.Item>Embedded</C.Item>
+                <C.Item>AI</C.Item>
+                <C.Item>
+                    <C.ItemImg src={itemImg3}/>
+                </C.Item>
+            </C.Container>
+        </C.Wrapper>
     )
 }
 
