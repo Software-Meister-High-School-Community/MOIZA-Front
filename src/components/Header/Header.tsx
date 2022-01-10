@@ -6,7 +6,6 @@ import serchImg from '../../assets/img/header/serchImg.svg'
 import profileImg from '../../assets/img/header/profileImg.svg'
 import noticeImg from '../../assets/img/header/noticeImg.svg'
 import Notice from './Notice'
-import * as N from "./Notice/Notice.style"
 import { Link } from 'react-router-dom'
 
 const Header:React.FC = () => {
@@ -27,10 +26,12 @@ const Header:React.FC = () => {
                 <H.LogoImg src={headerLogo} />
             </Link>
             
+            <Link to="/category">
             <H.CategoryContainer>
                 <H.CategoryImg src={categoryImg}/>
                 <H.CategoryText>카테고리</H.CategoryText>
             </H.CategoryContainer>
+            </Link>
 
             <H.ItemContainer>
                 <H.ItemImg src={serchImg}/>
