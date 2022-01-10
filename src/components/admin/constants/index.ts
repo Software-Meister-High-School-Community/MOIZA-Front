@@ -24,7 +24,7 @@ export const OptionArr:OptionArrType[] = [
         option : "최신 순"
     },
     {
-        option : "오랜된 순"
+        option : "오래된 순"
     },
     {
         option : "조회수 순"
