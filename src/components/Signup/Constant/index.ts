@@ -6,6 +6,23 @@ export const SchoolList: string[] = [
   "부산소프트웨어마이스터고등학교",
 ];
 
-export const SexList: string[] = ["남성", "여성"];
+interface ISexListProps {
+  id: string;
+  summary: string;
+}
 
-export const StudentStatusList = ["재학생", "졸업생"];
+export const SexList: ISexListProps[] = [
+  {
+    id: "남성",
+    summary: "남성",
+  },
+  {
+    id: "여성",
+    summary: "여성",
+  },
+];
+
+export const StudentStatusList: ISexListProps[] = [
+  { id: "재학생", summary: "재학생" },
+  { id: "졸업생", summary: "졸업생" },
+];

@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useRecoilState } from "recoil";
 import {
@@ -46,22 +46,7 @@ const SignupForm: React.FC = () => {
       <SF.SignupFormBox>
         <SF.SignupFormTitle marginBottom={36}>구분</SF.SignupFormTitle>
         <SF.SignupFormFlexWrap>
-          {CONST.StudentStatusList.map((item, index) => {
-            return (
-              <SF.SignupFormRadioButtonWrap
-                onClick={() => setStudentStatus(item)}
-                key={index}
-              >
-                {/* <RadioButton
-                  name={"studentStatus"}
-                  isSelected={studentStatus === item}
-                /> */}
-                <SF.SignupFormRadioButtonText>
-                  {item}
-                </SF.SignupFormRadioButtonText>
-              </SF.SignupFormRadioButtonWrap>
-            );
-          })}
+
         </SF.SignupFormFlexWrap>
         <SF.SignupFormTitle marginBottom={13}>이름</SF.SignupFormTitle>
         <SF.SignupFormTextInput
@@ -93,19 +78,6 @@ const SignupForm: React.FC = () => {
         />
         <SF.SignupFormTitle marginBottom={36}>성별</SF.SignupFormTitle>
         <SF.SignupFormFlexWrap>
-          {CONST.SexList.map((item, index) => {
-            return (
-              <SF.SignupFormRadioButtonWrap
-                onClick={() => setSexSelect(item)}
-                key={index}
-              >
-                {/* <RadioButton name={"sex"} isSelected={sexSelect === item} /> */}
-                <SF.SignupFormRadioButtonText>
-                  {item}
-                </SF.SignupFormRadioButtonText>
-              </SF.SignupFormRadioButtonWrap>
-            );
-          })}
         </SF.SignupFormFlexWrap>
         <SF.SignupFormTitle marginBottom={13}>학교선택</SF.SignupFormTitle>
         <SF.SignupFormSchoolWrap>
