@@ -48,12 +48,12 @@ export const TitleBox = styled.div`
     width: 1270px;
     display: flex;
     align-items:center;
-    justify-content:space-between;
+    justify-content:space-around;
 `
 
 export const Title = styled.h1`
     font-weight:400;
-    font-size:${(props) => props.theme.fontSize.head_large };
+    font-size:${(props) => props.theme.fontSize.head_small};
 `
 export const Line = styled.div`
     width: 944px;
