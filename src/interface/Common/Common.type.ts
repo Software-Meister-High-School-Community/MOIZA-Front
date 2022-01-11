@@ -32,5 +32,5 @@ export interface OptionArrType {
 export interface IDropdownProps {
   options : Array<OptionArrType>
   value : string;
-  setValue : (value:string) => void
+  onChangeValue : (value:string) => void
 }

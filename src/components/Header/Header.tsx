@@ -6,7 +6,6 @@ import serchImg from '../../assets/img/header/serchImg.svg'
 import profileImg from '../../assets/img/header/profileImg.svg'
 import noticeImg from '../../assets/img/header/noticeImg.svg'
 import Notice from './Notice'
-import * as N from "./Notice/Notice.style"
 import { Link } from 'react-router-dom'
 
 const Header:React.FC = () => {
@@ -23,14 +22,17 @@ const Header:React.FC = () => {
     return (
       <>
         <H.Container>
-            <Link to="/">
+            <H.StyleLink to='/'>
                 <H.LogoImg src={headerLogo} />
-            </Link>
+            </H.StyleLink>
+        
             
-            <H.CategoryContainer>
-                <H.CategoryImg src={categoryImg}/>
-                <H.CategoryText>카테고리</H.CategoryText>
-            </H.CategoryContainer>
+            <H.StyleLink to='/category'>
+                <H.CategoryContainer>
+                    <H.CategoryImg src={categoryImg}/>
+                    <H.CategoryText>카테고리</H.CategoryText>
+                </H.CategoryContainer>
+            </H.StyleLink>
 
             <H.ItemContainer>
                 <H.ItemImg src={serchImg}/>
@@ -49,9 +51,13 @@ const Header:React.FC = () => {
                     <H.AuthText>로그아웃</H.AuthText>
                     : 
                     <>
-                    <H.AuthText>회원가입</H.AuthText>
+                        <H.StyleLink to='/signup'>
+                            <H.AuthText>회원가입</H.AuthText>
+                        </H.StyleLink>
                     |
-                    <H.AuthText>로그인</H.AuthText>
+                        <H.StyleLink to='/login'>
+                            <H.AuthText>로그인</H.AuthText>
+                        </H.StyleLink>
                     </>
             
         }

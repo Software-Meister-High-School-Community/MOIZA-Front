@@ -1,9 +1,10 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Admin from "./pages/admin";
 import LoginPage from "./pages/Login/LoginPage";
 import SignupPage from "./pages/Signup/SignupPage";
+import Category from "./components/category/Category";
+import CategoryPage from "./pages/category/CategoryPage";
 
 const Router = () => {
   return (
