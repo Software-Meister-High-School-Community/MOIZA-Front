@@ -1,20 +1,15 @@
-import { useEffect } from "react";
 import { IFindIdResultProps } from "../../../../interface/FindAuthData/FindAuthData.type";
-import {
-  FindIdResultGuideText,
-  FindIdResultIdText,
-  FindIdResultTextWrap,
-} from "./FindIdResult.style";
+import * as FIR from "./FindIdResult.style";
 
 const FindIdResult: React.FC<IFindIdResultProps> = ({ name, resultId }) => {
   return (
     <>
-      <FindIdResultTextWrap>
-        <FindIdResultGuideText>
+      <FIR.FindIdResultTextWrap>
+        <FIR.FindIdResultGuideText>
           <strong>{name}</strong> 님의 정보와 일치하는 아이디입니다.
-        </FindIdResultGuideText>
-        <FindIdResultIdText>{resultId}</FindIdResultIdText>
-      </FindIdResultTextWrap>
+        </FIR.FindIdResultGuideText>
+        <FIR.FindIdResultIdText>{resultId}</FIR.FindIdResultIdText>
+      </FIR.FindIdResultTextWrap>
     </>
   );
 };

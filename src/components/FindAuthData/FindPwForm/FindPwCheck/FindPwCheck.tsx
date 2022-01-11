@@ -1,14 +1,7 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router";
 import { useRecoilState } from "recoil";
 import { findPwData } from "../../../../store/FindAuthData/findCheckDataAtom";
-import {
-  FindPwFormCertificationButton,
-  FindPwFormInputWrap,
-  FindPwFormTextInput,
-  FindPwFormTextInputWrap,
-  FindPwFormTitle,
-} from "../FindPwForm.style";
+import * as FIF from "../FindPwForm.style";
 
 const FindPwCheck: React.FC = () => {
   const [checkData, setCheckData] = useRecoilState(findPwData);
@@ -22,10 +15,10 @@ const FindPwCheck: React.FC = () => {
 
   return (
     <>
-      <FindPwFormTitle>이메일 인증</FindPwFormTitle>
-      <FindPwFormInputWrap>
-        <FindPwFormTextInputWrap>
-          <FindPwFormTextInput
+      <FIF.FindPwFormTitle>이메일 인증</FIF.FindPwFormTitle>
+      <FIF.FindPwFormInputWrap>
+        <FIF.FindPwFormTextInputWrap>
+          <FIF.FindPwFormTextInput
             isWrite={id !== ""}
             value={id}
             placeholder="아이디"
@@ -37,9 +30,9 @@ const FindPwCheck: React.FC = () => {
               }))
             }
           />
-        </FindPwFormTextInputWrap>
-        <FindPwFormTextInputWrap>
-          <FindPwFormTextInput
+        </FIF.FindPwFormTextInputWrap>
+        <FIF.FindPwFormTextInputWrap>
+          <FIF.FindPwFormTextInput
             isWrite={name !== ""}
             value={name}
             placeholder="이름"
@@ -51,9 +44,9 @@ const FindPwCheck: React.FC = () => {
               }))
             }
           />
-        </FindPwFormTextInputWrap>
-        <FindPwFormTextInputWrap>
-          <FindPwFormTextInput
+        </FIF.FindPwFormTextInputWrap>
+        <FIF.FindPwFormTextInputWrap>
+          <FIF.FindPwFormTextInput
             isWrite={birth !== ""}
             value={birth}
             placeholder="생년월일 8자리 입력"
@@ -65,9 +58,9 @@ const FindPwCheck: React.FC = () => {
               }))
             }
           />
-        </FindPwFormTextInputWrap>
-        <FindPwFormTextInputWrap>
-          <FindPwFormTextInput
+        </FIF.FindPwFormTextInputWrap>
+        <FIF.FindPwFormTextInputWrap>
+          <FIF.FindPwFormTextInput
             isWrite={email !== ""}
             value={email}
             placeholder="회원가입 시 입력한 이메일 주소"
@@ -79,16 +72,16 @@ const FindPwCheck: React.FC = () => {
               }))
             }
           />
-          <FindPwFormCertificationButton
+          <FIF.FindPwFormCertificationButton
             isWrite={email !== ""}
             disabled={email === ""}
             onClick={onClickSendCertification}
           >
             인증메일 보내기
-          </FindPwFormCertificationButton>
-        </FindPwFormTextInputWrap>
-        <FindPwFormTextInputWrap>
-          <FindPwFormTextInput
+          </FIF.FindPwFormCertificationButton>
+        </FIF.FindPwFormTextInputWrap>
+        <FIF.FindPwFormTextInputWrap>
+          <FIF.FindPwFormTextInput
             isWrite={certificationNumber !== ""}
             value={certificationNumber}
             placeholder="인증번호"
@@ -101,8 +94,8 @@ const FindPwCheck: React.FC = () => {
             }
             disabled={notSendCertificationNumber}
           />
-        </FindPwFormTextInputWrap>
-      </FindPwFormInputWrap>
+        </FIF.FindPwFormTextInputWrap>
+      </FIF.FindPwFormInputWrap>
     </>
   );
 };

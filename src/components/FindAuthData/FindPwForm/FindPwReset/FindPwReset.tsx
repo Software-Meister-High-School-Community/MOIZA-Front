@@ -1,15 +1,7 @@
 import { useState } from "react";
 import { useRecoilState } from "recoil";
 import { findPwResetData } from "../../../../store/FindAuthData/findCheckDataAtom";
-import {
-  FindPwFormGuideText,
-  FindPwFormInputWrap,
-  FindPwFormPasswordInputEyeButton,
-  FindPwFormPasswordInputEyeImg,
-  FindPwFormTextInput,
-  FindPwFormTextInputWrap,
-  FindPwFormTitle,
-} from "../FindPwForm.style";
+import * as FIF from "../FindPwForm.style";
 import * as Imgs from "../../../../assets/img";
 
 const FindPwReset: React.FC = () => {
@@ -20,10 +12,10 @@ const FindPwReset: React.FC = () => {
   const { pw, checkPw } = resetData;
   return (
     <>
-      <FindPwFormTitle>비밀번호 재설정</FindPwFormTitle>
-      <FindPwFormInputWrap>
-        <FindPwFormTextInputWrap>
-          <FindPwFormTextInput
+      <FIF.FindPwFormTitle>비밀번호 재설정</FIF.FindPwFormTitle>
+      <FIF.FindPwFormInputWrap>
+        <FIF.FindPwFormTextInputWrap>
+          <FIF.FindPwFormTextInput
             isWrite={pw !== ""}
             name="pw"
             placeholder="새 비밀번호"
@@ -36,23 +28,23 @@ const FindPwReset: React.FC = () => {
             }
             type={isPwShow ? "text" : "password"}
           />
-          <FindPwFormPasswordInputEyeButton
+          <FIF.FindPwFormPasswordInputEyeButton
             onClick={() => setIsPwShow(!isPwShow)}
           >
-            <FindPwFormPasswordInputEyeImg
+            <FIF.FindPwFormPasswordInputEyeImg
               src={
                 isPwShow
                   ? Imgs.LoginPasswordNoShowImg
                   : Imgs.LoginPasswordShowImg
               }
             />
-          </FindPwFormPasswordInputEyeButton>
-        </FindPwFormTextInputWrap>
-        <FindPwFormGuideText>
+          </FIF.FindPwFormPasswordInputEyeButton>
+        </FIF.FindPwFormTextInputWrap>
+        <FIF.FindPwFormGuideText>
           8~16자 영문 대소문자, 숫자, 특수문자를 모두 조합하여 구성해주세요.
-        </FindPwFormGuideText>
-        <FindPwFormTextInputWrap>
-          <FindPwFormTextInput
+        </FIF.FindPwFormGuideText>
+        <FIF.FindPwFormTextInputWrap>
+          <FIF.FindPwFormTextInput
             isWrite={checkPw !== ""}
             name="checkPw"
             placeholder="새 비밀번호 확인"
@@ -65,19 +57,19 @@ const FindPwReset: React.FC = () => {
             }
             type={isCheckPwShow ? "text" : "password"}
           />
-          <FindPwFormPasswordInputEyeButton
+          <FIF.FindPwFormPasswordInputEyeButton
             onClick={() => setIsCheckPwShow(!isCheckPwShow)}
           >
-            <FindPwFormPasswordInputEyeImg
+            <FIF.FindPwFormPasswordInputEyeImg
               src={
                 isCheckPwShow
                   ? Imgs.LoginPasswordNoShowImg
                   : Imgs.LoginPasswordShowImg
               }
             />
-          </FindPwFormPasswordInputEyeButton>
-        </FindPwFormTextInputWrap>
-      </FindPwFormInputWrap>
+          </FIF.FindPwFormPasswordInputEyeButton>
+        </FIF.FindPwFormTextInputWrap>
+      </FIF.FindPwFormInputWrap>
     </>
   );
 };

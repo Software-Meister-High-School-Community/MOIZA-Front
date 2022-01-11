@@ -4,15 +4,7 @@ import { IFindIdDataProps } from "../../../interface/FindAuthData/FindAuthData.t
 import { findIdDataNullCheck } from "../../../util/findAuthDataNullCheck";
 import SubmitButton from "../../Common/Button/SubmitButton";
 import { FindAuthDataSubmitButtonWrap } from "../FindAuthData.style";
-import {
-  FindIdFormCertificationButton,
-  FindIdFormTextInput,
-  FindIdFormBox,
-  FindIdFormInputWrap,
-  FindIdFormTextInputWrap,
-  FindIdFormTitle,
-  FindIdFormWrap,
-} from "./FindIdForm.style";
+import * as FIF from "./FindIdForm.style";
 import FindIdResult from "./FindIdResult";
 
 const FindIdForm: React.FC = () => {
@@ -49,16 +41,16 @@ const FindIdForm: React.FC = () => {
 
   return (
     <>
-      <FindIdFormBox isFind={isFind}>
-        <FindIdFormWrap>
+      <FIF.FindIdFormBox isFind={isFind}>
+        <FIF.FindIdFormWrap>
           {isFind ? (
             <FindIdResult name={resultName} resultId={resultId} />
           ) : (
             <>
-              <FindIdFormTitle>이메일 인증</FindIdFormTitle>
-              <FindIdFormInputWrap>
-                <FindIdFormTextInputWrap>
-                  <FindIdFormTextInput
+              <FIF.FindIdFormTitle>이메일 인증</FIF.FindIdFormTitle>
+              <FIF.FindIdFormInputWrap>
+                <FIF.FindIdFormTextInputWrap>
+                  <FIF.FindIdFormTextInput
                     placeholder="이름"
                     isWrite={checkData.name !== ""}
                     value={name}
@@ -70,9 +62,9 @@ const FindIdForm: React.FC = () => {
                       }))
                     }
                   />
-                </FindIdFormTextInputWrap>
-                <FindIdFormTextInputWrap>
-                  <FindIdFormTextInput
+                </FIF.FindIdFormTextInputWrap>
+                <FIF.FindIdFormTextInputWrap>
+                  <FIF.FindIdFormTextInput
                     isWrite={checkData.birth !== ""}
                     placeholder="생년월일 8자리 입력"
                     value={birth}
@@ -84,9 +76,9 @@ const FindIdForm: React.FC = () => {
                       }))
                     }
                   />
-                </FindIdFormTextInputWrap>
-                <FindIdFormTextInputWrap>
-                  <FindIdFormTextInput
+                </FIF.FindIdFormTextInputWrap>
+                <FIF.FindIdFormTextInputWrap>
+                  <FIF.FindIdFormTextInput
                     isWrite={checkData.email !== ""}
                     placeholder="회원가입 시 입력한 이메일 주소"
                     value={email}
@@ -98,16 +90,16 @@ const FindIdForm: React.FC = () => {
                       }))
                     }
                   />
-                  <FindIdFormCertificationButton
+                  <FIF.FindIdFormCertificationButton
                     isWrite={checkData.email !== ""}
                     disabled={checkData.email === ""}
                     onClick={onClickSendCertification}
                   >
                     인증메일 보내기
-                  </FindIdFormCertificationButton>
-                </FindIdFormTextInputWrap>
-                <FindIdFormTextInputWrap>
-                  <FindIdFormTextInput
+                  </FIF.FindIdFormCertificationButton>
+                </FIF.FindIdFormTextInputWrap>
+                <FIF.FindIdFormTextInputWrap>
+                  <FIF.FindIdFormTextInput
                     isWrite={checkData.certificationNumber !== ""}
                     placeholder="인증번호"
                     value={certificationNumber}
@@ -120,12 +112,12 @@ const FindIdForm: React.FC = () => {
                     }
                     disabled={notSendCertificationNumber}
                   />
-                </FindIdFormTextInputWrap>
-              </FindIdFormInputWrap>
+                </FIF.FindIdFormTextInputWrap>
+              </FIF.FindIdFormInputWrap>
             </>
           )}
-        </FindIdFormWrap>
-      </FindIdFormBox>
+        </FIF.FindIdFormWrap>
+      </FIF.FindIdFormBox>
       <FindAuthDataSubmitButtonWrap>
         {isFind ? (
           <>

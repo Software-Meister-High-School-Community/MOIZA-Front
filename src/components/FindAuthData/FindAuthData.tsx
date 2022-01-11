@@ -1,11 +1,5 @@
 import React, { useEffect, useState } from "react";
-import {
-  FindAuthDataBox,
-  FindAuthDataFormWrap,
-  FindAuthDataTab,
-  FindAuthDataTabWrap,
-  FindAuthDataTitle,
-} from "./FindAuthData.style";
+import * as FDA from "./FindAuthData.style";
 import * as CONST from "./constant/index";
 import FindIdForm from "./FindIdForm";
 import { Route, Routes, useNavigate } from "react-router";
@@ -22,13 +16,13 @@ const FindAuthData: React.FC = () => {
   const [tab, setTab] = useState("아이디 찾기");
 
   return (
-    <FindAuthDataBox>
-      <FindAuthDataTitle>아이디 / 비밀번호 찾기</FindAuthDataTitle>
-      <FindAuthDataFormWrap>
-        <FindAuthDataTabWrap>
+    <FDA.FindAuthDataBox>
+      <FDA.FindAuthDataTitle>아이디 / 비밀번호 찾기</FDA.FindAuthDataTitle>
+      <FDA.FindAuthDataFormWrap>
+        <FDA.FindAuthDataTabWrap>
           {CONST.FindAuthDataKind.map((item) => {
             return (
-              <FindAuthDataTab
+              <FDA.FindAuthDataTab
                 seleted={item.title === tab}
                 onClick={() => {
                   navigate(item.queryName);
@@ -36,17 +30,17 @@ const FindAuthData: React.FC = () => {
                 }}
               >
                 {item.title}
-              </FindAuthDataTab>
+              </FDA.FindAuthDataTab>
             );
           })}
-        </FindAuthDataTabWrap>
+        </FDA.FindAuthDataTabWrap>
         <Routes>
           <Route path="" element={<FindIdForm />} />
           <Route path="findid" element={<FindIdForm />} />
           <Route path="findpw/*" element={<FindPwForm />} />
         </Routes>
-      </FindAuthDataFormWrap>
-    </FindAuthDataBox>
+      </FDA.FindAuthDataFormWrap>
+    </FDA.FindAuthDataBox>
   );
 };
 
