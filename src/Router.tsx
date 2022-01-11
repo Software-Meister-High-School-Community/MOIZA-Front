@@ -3,7 +3,6 @@ import Header from "./components/Header";
 import Admin from "./pages/admin";
 import LoginPage from "./pages/Login/LoginPage";
 import SignupPage from "./pages/Signup/SignupPage";
-import Category from "./components/category/Category";
 import CategoryPage from "./pages/category/CategoryPage";
 import FindAuthDataPage from "./pages/FindId/FindId.page";
 
@@ -19,7 +18,8 @@ const Router = () => {
           <Route path="Info" element={<SignupPage />} />
           <Route path="idpw" element={<SignupPage />} />
         </Route>
-        <Route path="/findauthdata/*" element={<FindAuthDataPage />} />
+        <Route path="/findauthdata/*" element={<FindAuthDataPage/>}></Route>
+        <Route path="/category" element={<CategoryPage></CategoryPage>}></Route>
       </Routes>
     </BrowserRouter>
   );
