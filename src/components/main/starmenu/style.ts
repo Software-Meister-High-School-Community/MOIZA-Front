@@ -76,6 +76,7 @@ export const PostHeart = styled.img`
   width: 16px;
   height: 15px;
   margin: 0 6px 31px 30px;
+  cursor: pointer;
 `;
 
 export const HeartCount = styled.p`
@@ -87,6 +88,7 @@ export const HeartCount = styled.p`
 export const PostLink = styled.p`
   width: 60px;
   height: 16px;
+  cursor: pointer;
   text-decoration: underline;
   color: ${({ theme }) => theme.color.gray_color4};
   font-size: ${({ theme }) => theme.fontSize.body_small};

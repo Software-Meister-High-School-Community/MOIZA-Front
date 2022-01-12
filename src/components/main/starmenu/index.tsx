@@ -1,11 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 import * as S from "./style";
+import BookRead from "../../../assets/img/main/bookRead.svg";
 import Question from "../../../assets/img/main/Question.svg";
 import onHeart from "../../../assets/img/main/onHeart.svg";
 import offHeart from "../../../assets/img/main/offHeart.svg";
 
 const StarMenu: React.FC = () => {
   const PostCount = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+  const [liked, setLiked] = useState(false);
+
+  const onClickHeart = (item: any) => {
+    if (!liked) {
+      setLiked(true);
+      console.log("like");
+    } else {
+      setLiked(false);
+      console.log("Not like");
+    }
+  };
 
   const menuList = PostCount.map((menu, index) => {
     return (
@@ -20,7 +33,11 @@ const StarMenu: React.FC = () => {
             넣자 두 줄말고 세줄을 넣자
           </S.PostText>
           <S.PostFooter>
-            <S.PostHeart src={onHeart} alt="" />
+            <S.PostHeart
+              src={liked ? onHeart : offHeart}
+              alt=""
+              onClick={onClickHeart}
+            />
             <S.HeartCount>123</S.HeartCount>
             <S.PostLink>바로가기</S.PostLink>
           </S.PostFooter>
