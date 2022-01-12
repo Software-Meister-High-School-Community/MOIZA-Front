@@ -1,6 +1,5 @@
 import React from 'react'
 import LOGO_IMG from '../../assets/img/footer/footerLogo.svg'
-
 import * as F from "./Footer.style"
 
 const Footer = () => {

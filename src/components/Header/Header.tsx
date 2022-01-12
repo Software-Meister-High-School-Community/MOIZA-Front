@@ -5,8 +5,8 @@ import categoryImg from '../../assets/img/header/categoryImg.svg'
 import serchImg from '../../assets/img/header/serchImg.svg'
 import profileImg from '../../assets/img/header/profileImg.svg'
 import noticeImg from '../../assets/img/header/noticeImg.svg'
-import Notice from './Notice'
-import { Link } from 'react-router-dom'
+import Notice from './notice'
+import CategoryDropdown from './category/CategoryDropdown'
 
 const Header:React.FC = () => {
 
@@ -28,10 +28,7 @@ const Header:React.FC = () => {
         
             
             <H.StyleLink to='/category'>
-                <H.CategoryContainer>
-                    <H.CategoryImg src={categoryImg}/>
-                    <H.CategoryText>카테고리</H.CategoryText>
-                </H.CategoryContainer>
+                <CategoryDropdown/>
             </H.StyleLink>
 
             <H.ItemContainer>
