@@ -1,18 +1,9 @@
 import React from "react";
 import * as S from "./style";
+import { NoticePostCount } from "./constants";
 
 const NoticeMenu: React.FC = () => {
-  const PostCount = [
-    "모이자에 오신 여러분 환영합니다!",
-    "모이자와 함께하기 위해서는",
-    "모이자에 오신 여러분 환영합니다!",
-    "모이자에 오신 여러분 환영합니다!",
-    "모이자와 함께하기 위해서는",
-    "모이자에 오신 여러분 환영합니다!",
-    "모이자에 오신 여러분 환영합니다!",
-  ];
-
-  const menuList = PostCount.map((menu, index) => {
+  const menuList = NoticePostCount.map((menu, index) => {
     return (
       <div>
         <S.NoticeText>{menu}</S.NoticeText>
@@ -20,7 +11,6 @@ const NoticeMenu: React.FC = () => {
       </div>
     );
   });
-
   return (
     <S.Wrapper>
       <div>
