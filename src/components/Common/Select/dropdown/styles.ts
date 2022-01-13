@@ -7,7 +7,7 @@ export const Wrapper = styled.section`
   border: 1px solid #E0E0E0;
   margin: 35px 0 0 auto;
   overflow: hidden;
-  > label {
+  > div >label {
     display: flex;
   }
 `
@@ -44,7 +44,10 @@ export const Option = styled.div<OptionProps>`
   font-size: 14px;
   line-height: 16px;
   color: ${(props)=> props.isSelected ? "#555555" : "#999999"};
-  background-color: ${(props)=>props.isSelected ? "#FFE199" : "#ffffff"};
+  background-color: #ffffff;
   box-sizing: border-box;
   padding: 8px 12px 6px 11px;
+  :hover{
+    background-color: #FFE199;
+  }
 `
