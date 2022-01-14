@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import LOGO_IMG from "../../assets/img/footerLogo.png"
 
 export const Container = styled.footer`
     width: 100%;
@@ -10,20 +9,20 @@ export const Container = styled.footer`
     background-color: ${(props)=> props.theme.color.gray_color5};
     position: absolute;
     bottom: 0;  
-    `;
+    `
 
-    export const ItemContainer  = styled.div`
+export const ItemContainer  = styled.div`
     display: flex;
     width: 500px;
     align-items: center;
     justify-content: space-evenly;
-    `
+`
     
-    export const LogoItem = styled.img`
+export const LogoItem = styled.img`
     width: 100px;
-    `
+`
     
-    export const TextItem = styled.div`
+export const TextItem = styled.div`
     font-size:${(props) => props.theme.fontSize.body_small};
     color:${(props) => props.theme.color.gray_color1};
-    `
+`

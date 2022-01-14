@@ -2,7 +2,7 @@ import * as N from "./Notice.style"
 import { NoticeProps } from "../../../interface/Header/Notice.type"
 import NoticeProfile from '../../../assets/img/header/noticeProfileImg.svg'
 import Modal from 'react-modal'
-import { useState } from "react"
+
 const Notice:React.FC<NoticeProps> = ({modalState,modalClose}) => {
 
     const date = new Date();
