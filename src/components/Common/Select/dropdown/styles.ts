@@ -1,14 +1,26 @@
 import styled from 'styled-components';
 
-export const Wrapper = styled.section`
+export const Wrapper = styled.section<{
+    isFold : boolean;
+}>`
   background-color: #ffffff;
   width: 173px;
-  border-radius: 5px;
+  border-radius: ${(props)=> props.isFold ? "5px 5px 0 0" : "5px"};
+  position: relative;
   border: 1px solid #E0E0E0;
   margin: 35px 0 0 auto;
-  overflow: hidden;
   > div >label {
     display: flex;
+  }
+  
+  .list {
+    position: absolute;
+    top: 34px;
+    left: -1px;
+    width: 100%;
+    border: 1px solid #E0E0E0;
+    border-radius: 0 0 5px 5px;
+    border-top: 0;
   }
 `
 export const Seleted = styled.div`
@@ -36,6 +48,7 @@ interface OptionProps {
     isSelected : boolean
 }
 export const Option = styled.div<OptionProps>`
+  top: 30px;
   width: 100%;
   height: 30px;
   font-family: Roboto;
@@ -47,6 +60,9 @@ export const Option = styled.div<OptionProps>`
   background-color: #ffffff;
   box-sizing: border-box;
   padding: 8px 12px 6px 11px;
+  :last-child{
+    border-radius: 0 0 4px 4px;
+  }
   :hover{
     background-color: #FFE199;
   }
