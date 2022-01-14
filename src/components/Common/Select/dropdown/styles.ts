@@ -18,7 +18,7 @@ export const Wrapper = styled.section<{
     top: 34px;
     left: -1px;
     width: 100%;
-    border: 1px solid #E0E0E0;
+    border:${(props)=>props.isFold ? "1px solid #E0E0E0" : ""};
     border-radius: 0 0 5px 5px;
     border-top: 0;
   }
