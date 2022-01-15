@@ -34,3 +34,8 @@ export interface IDropdownProps {
   value : string;
   onChangeValue : (value:string) => void
 }
+
+export interface PathType {
+  path : string;
+  link : string;
+}
