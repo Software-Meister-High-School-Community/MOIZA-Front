@@ -1,6 +1,6 @@
 import React, {useMemo} from "react";
 import * as S from './styles';
-import {PathType} from "../../admin/constants";
+import {PathType} from "../../../interface/Common/Common.type";
 import {Link} from "react-router-dom";
 import pathArrow from '../../../assets/img/Common/pathArrow.svg'
 
