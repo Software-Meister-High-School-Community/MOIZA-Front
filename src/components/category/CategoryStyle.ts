@@ -7,8 +7,7 @@ interface styleProps {
 
 export const Wrapper = styled.div`
     height:93vh;
-    display:flex;
-    align-items:center;
+    margin-top:100px;
 `
 
 export const Container = styled.div`
