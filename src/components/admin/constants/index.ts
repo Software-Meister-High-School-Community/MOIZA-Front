@@ -1,4 +1,4 @@
-import {OptionArrType} from '../../../interface/Common/Common.type';
+import {OptionArrType, PathType} from '../../../interface/Common/Common.type';
 
 interface TypeArrType {
     id : string
@@ -32,4 +32,18 @@ export const OptionArr:OptionArrType[] = [
     {
         option : "좋아요 순"
     },
+]
+export const PathArr:PathType[] = [
+    {
+        path : "어드민 페이지",
+        link : ""
+    },
+    {
+        path : "공지사항",
+        link : ""
+    },
+    {
+        path : "공지사항 작성",
+        link : ""
+    }
 ]
