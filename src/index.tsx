@@ -27,8 +27,10 @@ time, mark, audio, video {
 	padding: 0;
 	border: 0;
 	font-size: 100%;
-	font: inherit;
+	//font: inherit;
 	vertical-align: baseline;
+    font-family: "Roboto", sans-serif;
+    text-decoration: none;
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure,
@@ -49,7 +51,7 @@ body {
 }
 
 *{
-	font-family: 'Noto Sans KR', sans-serif;
+  
 }
 
 menu, ol, ul {
