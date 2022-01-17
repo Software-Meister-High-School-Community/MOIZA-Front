@@ -19,7 +19,7 @@ const Router = () => {
           <Route path="idpw" element={<SignupPage />} />
         </Route>
         <Route path="/findauthdata/*" element={<FindAuthDataPage/>}></Route>
-        <Route path="/category" element={<CategoryPage></CategoryPage>}></Route>
+        <Route path="/category" element={<CategoryPage/>}></Route>
       </Routes>
     </BrowserRouter>
   );
