@@ -10,6 +10,7 @@ interface PostType {
 }
 
 const StarPost: React.FC<PostType> = (menu) => {
+  const [icon, setIcon] = useState(false);
   const [liked, setLiked] = useState(false);
 
   const onClickHeart = () => {
@@ -22,11 +23,21 @@ const StarPost: React.FC<PostType> = (menu) => {
     }
   };
 
+  const onChangeIcon = () => {
+    if (!icon) {
+      setIcon(true);
+      console.log("book");
+    } else {
+      setIcon(false);
+      console.log("Question");
+    }
+  };
+
   return (
     <>
       <S.StarPost>
         <S.PostHead>
-          <S.PostIcon src={Question} alt="" />
+          <S.PostIcon src={icon ? BookRead : Question} alt="" />
           <S.PostField>Design</S.PostField>
         </S.PostHead>
         <S.PostText>{menu.menu}</S.PostText>
