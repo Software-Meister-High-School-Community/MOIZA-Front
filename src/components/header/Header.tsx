@@ -32,7 +32,9 @@ const Header:React.FC = () => {
             </H.StyleLink>
 
             <H.ItemContainer>
-                <H.ItemImg src={serchImg}/>
+                <H.StyleLink to='/serch'>
+                    <H.ItemImg src={serchImg}/>
+                </H.StyleLink>
                 <H.ItemImg src={profileImg}/>
 
                 <H.ImgContaner>
