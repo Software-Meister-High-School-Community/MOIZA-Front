@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useRecoilState } from "recoil";
 import { findPwResetData } from "../../../../store/FindAuthData/findCheckDataAtom";
 import * as FIF from "../FindPwForm.style";
-import * as Imgs from "../../../../assets/img";
+import EyeButton from "../../../Common/Button/EyeButton";
 
 const FindPwReset: React.FC = () => {
   const [resetData, setResetData] = useRecoilState(findPwResetData);
@@ -28,17 +28,7 @@ const FindPwReset: React.FC = () => {
             }
             type={isPwShow ? "text" : "password"}
           />
-          <FIF.FindPwFormPasswordInputEyeButton
-            onClick={() => setIsPwShow(!isPwShow)}
-          >
-            <FIF.FindPwFormPasswordInputEyeImg
-              src={
-                isPwShow
-                  ? Imgs.LoginPasswordNoShowImg
-                  : Imgs.LoginPasswordShowImg
-              }
-            />
-          </FIF.FindPwFormPasswordInputEyeButton>
+          <EyeButton isShow={isPwShow} onClick={setIsPwShow} />
         </FIF.FindPwFormTextInputWrap>
         <FIF.FindPwFormGuideText>
           8~16자 영문 대소문자, 숫자, 특수문자를 모두 조합하여 구성해주세요.
@@ -57,17 +47,7 @@ const FindPwReset: React.FC = () => {
             }
             type={isCheckPwShow ? "text" : "password"}
           />
-          <FIF.FindPwFormPasswordInputEyeButton
-            onClick={() => setIsCheckPwShow(!isCheckPwShow)}
-          >
-            <FIF.FindPwFormPasswordInputEyeImg
-              src={
-                isCheckPwShow
-                  ? Imgs.LoginPasswordNoShowImg
-                  : Imgs.LoginPasswordShowImg
-              }
-            />
-          </FIF.FindPwFormPasswordInputEyeButton>
+          <EyeButton isShow={isCheckPwShow} onClick={setIsCheckPwShow} />
         </FIF.FindPwFormTextInputWrap>
       </FIF.FindPwFormInputWrap>
     </>
