@@ -7,8 +7,7 @@ interface styleProps {
 
 export const Wrapper = styled.div`
     position:relative;
-    display:flex;
-    justify-content:center;
+    padding-top:200px;
 `
 export const Title  = styled.h1`
     font-size: ${(props)=>props.theme.fontSize.head_small};
@@ -19,10 +18,9 @@ export const Title  = styled.h1`
 `
 export const Container = styled.form`
     display:flex;
+    margin: 0 auto;
     width: 585px;
     height: 55px;
-    position: absolute;
-    padding-top:200px;
 `
 
 export const Input = styled.input`
@@ -50,6 +48,7 @@ export const Input = styled.input`
 export const SubmitButton = styled.button<styleProps>`
     width:55px;
     height:55px;
+    cursor:pointer;
     box-sizing:border-box;
     ${(props) =>
         props.disabled 
@@ -65,3 +64,62 @@ export const SubmitButton = styled.button<styleProps>`
     border-start-end-radius:5px;
 `
 export const Img = styled.img``
+
+export const ItemContainer = styled.div<styleProps>`
+    position: relative;
+    width: 585px;
+    background-color: ${(props) => props.theme.color.gray_color1};
+    margin: 0 auto;
+    padding-top: 47px;
+    padding-bottom:10px;
+
+    ${(props) =>
+        props.disabled
+        ? css`
+            display:block;
+        `
+        : css`
+            display:none;
+        `
+    }
+`
+
+export const ItemBox = styled.div`
+    height: 27px;
+    display:flex;
+    justify-content:space-between;
+    align-items: center;
+    padding-left:20px;
+    padding-right:20px;
+    &:hover{
+        background-color: ${(props) => props.theme.color.gray_color3}
+    }
+`
+
+export const Item = styled.h1`
+    font-size: ${(props) => props.theme.fontSize.body_small};
+    font-weight:400;
+`
+
+export const DeleteBtn = styled.img`
+    cursor:pointer;
+`
+
+export const Text = styled.p`
+    font-size: ${(props) => props.theme.fontSize.body_small};
+    color: ${(props) => props.theme.color.gray_color4};
+    font-weight:400;
+    position:absolute;
+    top:12px;
+    left:20px;
+`
+
+export const TotalDeleteBtn = styled.p`
+    font-size: ${(props) => props.theme.fontSize.body_small};
+    color: ${(props) => props.theme.color.gray_color4};
+    font-weight:400;
+    position:absolute;
+    top:12px;
+    right:20px;
+    cursor:pointer;
+`

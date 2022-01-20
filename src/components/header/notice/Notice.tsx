@@ -7,15 +7,16 @@ const Notice:React.FC<NoticeProps> = ({modalState,modalClose}) => {
 
     const date = new Date();
 
-    const notices= [
+    const notices = [
         {id:1 , name:'', message:'공지사항이 올라 왔습니다', date:date },
         {id:1 , name:'정우재', message:'공지사항이 올라 왔습니다', date:date },
         {id:1 , name:'', message:'공지사항이 올라 왔습니다', date:date },
         {id:1 , name:'정우재', message:'공지사항이 올라 왔습니다', date:date },
         {id:1 , name:'정우재', message:'공지사항이 올라 왔습니다', date:date },
-    ]
+    ];
 
-    return (<>
+    return (
+    <>
         <Modal isOpen={modalState} onRequestClose={modalClose} style={{
             overlay:{
                 backgroundColor: 'rgba(0, 0, 0, 0)',
@@ -55,7 +56,7 @@ const Notice:React.FC<NoticeProps> = ({modalState,modalClose}) => {
         </N.NoticeForm>
             </N.Container>
         </Modal>
-            </>
+    </>
     )
 }
 
