@@ -1,5 +1,3 @@
-import { Dispatch,SetStateAction } from "react";
-
-export interface SearchProps{
+export interface ISearchProps{
     visible: boolean;
 }
