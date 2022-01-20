@@ -1,8 +1,8 @@
 import React from 'react'
 import * as S from './Search.style'
-import { SerchProps } from '../../interface/serch/Serch.type'
+import { SearchProps } from '../../interface/search/Search.type'
 import * as IMGS from '../../assets/img/index'
-const SearchRecord:React.FC<SerchProps> = ({visible}) => {
+const SearchRecord:React.FC<SearchProps> = ({visible}) => {
 
     const items = [
         {id:1, name:'일러스트레이트'},

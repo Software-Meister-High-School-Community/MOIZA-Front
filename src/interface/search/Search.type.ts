@@ -1,5 +1,5 @@
 import { Dispatch,SetStateAction } from "react";
 
-export interface SerchProps{
+export interface SearchProps{
     visible: boolean;
 }
