@@ -7,6 +7,7 @@ interface styleProps {
 
 export const Wrapper = styled.div`
     position:relative;
+    height:100vh;
     padding-top:200px;
 `
 export const Title  = styled.h1`
@@ -122,4 +123,9 @@ export const TotalDeleteBtn = styled.p`
     top:12px;
     right:20px;
     cursor:pointer;
+`
+
+export const SearchWrapper = styled.div`
+    width:585px;
+    margin: 0 auto;
 `
