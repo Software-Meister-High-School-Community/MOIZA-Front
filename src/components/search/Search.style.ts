@@ -1,6 +1,6 @@
 import styled, {css} from "styled-components";
 
-interface styleProps {
+interface IStyleProps {
     disabled: boolean;
 }
 
@@ -46,7 +46,7 @@ export const Input = styled.input`
     }
 `
 
-export const SubmitButton = styled.button<styleProps>`
+export const SubmitButton = styled.button<IStyleProps>`
     width:55px;
     height:55px;
     cursor:pointer;
@@ -66,7 +66,7 @@ export const SubmitButton = styled.button<styleProps>`
 `
 export const Img = styled.img``
 
-export const ItemContainer = styled.div<styleProps>`
+export const ItemContainer = styled.div<IStyleProps>`
     position: relative;
     width: 585px;
     background-color: ${(props) => props.theme.color.gray_color1};
