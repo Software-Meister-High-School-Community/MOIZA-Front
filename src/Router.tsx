@@ -21,7 +21,7 @@ const Router = () => {
         </Route>
         <Route path="/findauthdata/*" element={<FindAuthDataPage/>}></Route>
         <Route path="/category" element={<CategoryPage></CategoryPage>}></Route>
-        <Route path="/serch" element={<SearchPage/>}/>
+        <Route path="/search" element={<SearchPage/>}/>
       </Routes>
     </BrowserRouter>
   );
