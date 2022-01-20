@@ -5,6 +5,7 @@ import LoginPage from "./pages/Login/LoginPage";
 import SignupPage from "./pages/Signup/SignupPage";
 import CategoryPage from "./pages/category/CategoryPage";
 import FindAuthDataPage from "./pages/FindId/FindId.page";
+import SearchPage from "./pages/search/SearchPage";
 
 const Router = () => {
   return (
@@ -20,6 +21,7 @@ const Router = () => {
         </Route>
         <Route path="/findauthdata/*" element={<FindAuthDataPage/>}></Route>
         <Route path="/category" element={<CategoryPage></CategoryPage>}></Route>
+        <Route path="/search" element={<SearchPage/>}/>
       </Routes>
     </BrowserRouter>
   );

@@ -1,8 +1,8 @@
 import Category from '../../components/category'
 
-const CategoryPage = () => {
+const CategoryPage:React.FC = () => {
     return (
-        <Category></Category>
+        <Category/>
     )
 }
 
