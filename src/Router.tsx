@@ -7,6 +7,7 @@ import CategoryPage from "./pages/category/CategoryPage";
 import FindAuthDataPage from "./pages/FindId/FindId.page";
 import SearchPage from "./pages/search/SearchPage";
 
+
 const Router = () => {
   return (
     <BrowserRouter>
@@ -19,7 +20,7 @@ const Router = () => {
           <Route path="Info" element={<SignupPage />} />
           <Route path="idpw" element={<SignupPage />} />
         </Route>
-        <Route path="/findauthdata/*" element={<FindAuthDataPage/>}></Route>
+        <Route path="/findauthdata/*" element={<FindAuthDataPage />}></Route>
         <Route path="/category" element={<CategoryPage></CategoryPage>}></Route>
         <Route path="/search" element={<SearchPage/>}/>
       </Routes>
