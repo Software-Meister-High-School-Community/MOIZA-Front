@@ -73,6 +73,10 @@ export const PostText = styled.p`
   width: 306px;
   height: 82px;
   margin: 0 30px 10px 30px;
+  font-size: ${({ theme }) => theme.fontSize.body_large};
+  font-weight: 400;
+  font-style: normal;
+  font-family: "Roboto", sans-serif;
 `;
 
 export const PostFooter = styled.div`
@@ -139,6 +143,10 @@ export const NoticeText = styled.p`
   height: 19px;
   margin: 17px 0 16px 0;
   cursor: pointer;
+  font-size: ${({ theme }) => theme.fontSize.body_medium};
+  font-weight: 400;
+  font-style: normal;
+  font-family: "Roboto", sans-serif;
   &:hover {
     color: ${({ theme }) => theme.color.main_yellow_color};
   }
