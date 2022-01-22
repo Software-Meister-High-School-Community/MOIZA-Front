@@ -45,6 +45,7 @@ export const PostList = styled.div`
 export const StarPost = styled.div`
   width: 366px;
   height: 212px;
+  background-color: white;
   margin-right: 28px;
   margin-bottom: 30px;
   border: 0.5px solid ${({ theme }) => theme.color.gray_color3};
@@ -131,6 +132,7 @@ export const MoreBtn = styled.p`
 export const NoticeList = styled.div`
   width: 380px;
   height: 371px;
+  background-color: white;
   border: 1px solid ${({ theme }) => theme.color.gray_color3};
   display: flex;
   flex-direction: column;

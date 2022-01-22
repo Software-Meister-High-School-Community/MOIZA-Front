@@ -20,7 +20,7 @@ const Daegu: React.FC = () => {
           임베디드소프트웨어과
         </S.SchoolClass2>
         <S.SchoolClass3 width="180px" height="20px" margin="0 619px 105px 79px">
-          인공지능 소프트웨어과
+          인공지능소프트웨어과
         </S.SchoolClass3>
         <S.SchoolHomePage
           onClick={() => WindowOpenUtil("http://www.dgsw.hs.kr/index.do")}
