@@ -14,8 +14,8 @@ const Router = () => {
     <BrowserRouter>
       <Header />
       <Routes>
-        <Route path="/" element={<MainPage/>}/>
-        <Route path="/notice" element={<NoticeForm/>}/>
+        <Route path="/" element={<MainPage />} />
+        <Route path="/notice" element={<NoticeForm />} />
         <Route path="/admin" element={<Admin />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/signup/*" element={<SignupPage />}>
@@ -23,8 +23,8 @@ const Router = () => {
           <Route path="idpw" element={<SignupPage />} />
         </Route>
         <Route path="/findauthdata/*" element={<FindAuthDataPage />}></Route>
-        <Route path="/category" element={<CategoryPage/>}></Route>
-        <Route path="/search" element={<SearchPage/>}/>
+        <Route path="/category" element={<CategoryPage />}></Route>
+        <Route path="/search" element={<SearchPage />} />
       </Routes>
     </BrowserRouter>
   );

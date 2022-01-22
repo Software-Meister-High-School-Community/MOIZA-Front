@@ -1,24 +1,33 @@
 import styled, { css } from "styled-components";
 
-export const FindIdFormBox = styled.div<{ isFind: boolean }>`
+export const FindIdFormBox = styled.div<{
+  isFind: boolean;
+  isCertification: boolean;
+}>`
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   border: 1px solid ${(props) => props.theme.color.gray_color3};
-  border-top: 0px;
   box-sizing: border-box;
   background-color: ${(props) => props.theme.color.gray_color1};
+  padding: 58px 84px;
+  padding-bottom: 90px;
+
   ${(props) =>
-    props.isFind
-      ? css`
-          padding: 0px 84px;
-          padding-top: 81px;
-          padding-bottom: 127px;
-        `
-      : css`
-          padding: 58px 84px;
-        `}
+    props.isCertification &&
+    css`
+      padding: 74px 103px;
+      padding-bottom: 85px;
+    `}
+
+  ${(props) =>
+    props.isFind &&
+    css`
+      padding: 0px 84px;
+      padding-top: 81px;
+      padding-bottom: 127px;
+    `}
 `;
 
 export const FindIdFormWrap = styled.div`
@@ -72,7 +81,7 @@ export const FindIdFormTextInput = styled.input<{ isWrite: boolean }>`
 export const FindIdFormCertificationButton = styled.button<{
   isWrite: boolean;
 }>`
-  min-width: 139px;
+  min-width: 186px;
   height: 100%;
   background-color: ${(props) => props.theme.color.gray_color1};
   border: 1px solid ${(props) => props.theme.color.gray_color3};

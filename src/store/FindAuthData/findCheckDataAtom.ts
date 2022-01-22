@@ -5,14 +5,16 @@ import {
   IFindPwResetDataProps,
 } from "../../interface/FindAuthData/FindAuthData.type";
 
-export const findIdData = atom<IFindIdDataProps>({
+export const findIdCheckData = atom<IFindIdDataProps>({
   key: "findIdData",
   default: {
-    name: "",
-    birth: "",
     email: "",
-    certificationNumber: "",
   },
+});
+
+export const FindIdCertificationNumber = atom<string>({
+  key: "FindIdCertificationNumber",
+  default: "",
 });
 
 export const findPwData = atom<IFindPwDataProps>({

@@ -4,17 +4,23 @@ export interface IFindIdResultProps {
 }
 
 export interface IFindIdDataProps {
+  email: string;
+}
+
+export interface IFindPwDataProps {
+  id: string;
   name: string;
   birth: string;
   email: string;
   certificationNumber: string;
 }
 
-export interface IFindPwDataProps extends IFindIdDataProps {
-  id: string;
-}
-
 export interface IFindPwResetDataProps {
   pw: string;
   checkPw: string;
+}
+
+export interface IFindSendCertificationNumber {
+  findIdSendNumber: boolean;
+  findPwSendNumber: boolean;
 }
