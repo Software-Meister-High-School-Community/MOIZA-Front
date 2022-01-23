@@ -1,15 +1,16 @@
-import React, {ChangeEvent, useCallback, useMemo, useRef} from 'react';
+import React, {ChangeEvent, useCallback, useMemo, useRef, useState} from 'react';
 import * as S from './styles';
 import addFile from '../../../../assets/img/Common/addFile.svg';
 import removeFileIcon from '../../../../assets/img/Common/removeFile.svg';
+import {UploadDataType} from "../../../../interface/Common/Common.type";
 
 interface PropsType{
-    state : any[]
-    setStateFunction : (e:any) => void;
+    state : UploadDataType
+    setStateFunction : (e:UploadDataType) => void;
 }
 
 const UploadFiles:React.FC<PropsType> = ({state,setStateFunction}) => {
-    const fileId = useRef<number>(0)
+    const [fileListArr,setFileListArr] = useState(state.files);
     const UploadImgs = useCallback(
         (e:ChangeEvent<HTMLInputElement>) => {
             e.stopPropagation();
@@ -19,21 +20,23 @@ const UploadFiles:React.FC<PropsType> = ({state,setStateFunction}) => {
             const file = fileList[0];
             const fileInArr = Array.from(fileList);
             reader.onloadend = () => {
-                setStateFunction(
-                    state.concat(fileInArr)
-                )
+                setFileListArr(fileListArr.concat(fileInArr))
+                setStateFunction({
+                    ...state,
+                    ["files"] : fileListArr.concat(fileInArr)
+                })
             }
-            if (file) reader.readAsDataURL(file)
-        },[state]
+            if (file) reader.readAsDataURL(file);
+        },[fileListArr]
     )
     const onClickRemoveFile = useCallback(
         (id : number) => {
-            setStateFunction(state.filter((item,index) => index !== id))
-        },[state]
+            setFileListArr(fileListArr.filter((item,index) => index !== id))
+        },[fileListArr]
     )
     const ImgList = useMemo(
         () => (
-            state.map((item,index)=>(
+            fileListArr.map((item,index)=>(
                 <S.PreView key={index}>
                     <img src={URL.createObjectURL(item)} />
                     <S.ImgInfo>
@@ -42,18 +45,18 @@ const UploadFiles:React.FC<PropsType> = ({state,setStateFunction}) => {
                     </S.ImgInfo>
                 </S.PreView>
             ))
-        ) ,[state]
+        ) ,[fileListArr]
     )
 
     return (
         <S.Wrapper>
             <S.Header>
                 <h1>첨부파일</h1>
-                <p>{state.length}/4</p>
+                <p>{fileListArr.length}/4</p>
             </S.Header>
             <S.Files>
                 {ImgList}
-                {state.length < 4 ?
+                {fileListArr.length < 4 ?
                     <S.AddFileButton>
                         <img src={addFile}/>
                         <input type="file" onChange={UploadImgs} multiple/>

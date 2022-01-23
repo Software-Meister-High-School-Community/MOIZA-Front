@@ -8,12 +8,12 @@ import {UploadDataType} from "../../../interface/Common/Common.type";
 
 const WriteNotice:React.FC = () => {
     const [isFix,setIsFix] = useState(false);
-    const [files,setFiles] = useState([]);
     const [noticeContent,setNoticeContent] = useState<UploadDataType>({
         title : '',
         content : '',
-        files : files
+        files : []
     })
+    console.log(noticeContent)
     const onChangeFixState = useCallback(
         () => {
             setIsFix((prev)=>!prev);
@@ -36,7 +36,7 @@ const WriteNotice:React.FC = () => {
                 </em>
                 <S.NoticeMainContent/>
             </S.InputContentBox>
-            <UploadFiles state={files} setStateFunction={setFiles}/>
+            <UploadFiles state={noticeContent} setStateFunction={setNoticeContent}/>
         </S.Wrapper>
     )
 }
