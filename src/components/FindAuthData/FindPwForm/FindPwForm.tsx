@@ -33,6 +33,7 @@ const FindPwForm: React.FC = () => {
   );
 
   const resetCheckData = useResetRecoilState(findPwData);
+  const resetCertification = useResetRecoilState(findPwCertificationNumber);
   const resetResetData = useResetRecoilState(findPwResetData);
 
   const certification = findCertificationNullCheck(checkNumber);
@@ -52,7 +53,8 @@ const FindPwForm: React.FC = () => {
   useEffect(() => {
     resetCheckData();
     resetResetData();
-  }, [resetCheckData, resetResetData]);
+    resetCertification();
+  }, [resetCheckData, resetResetData, resetCertification]);
 
   return (
     <>
