@@ -33,7 +33,7 @@ export const OptionArr:OptionArrType[] = [
         option : "좋아요 순"
     },
 ]
-export const PathArr:PathType[] = [
+export const WriteNoticePathArr:PathType[] = [
     {
         path : "어드민 페이지",
         link : ""
