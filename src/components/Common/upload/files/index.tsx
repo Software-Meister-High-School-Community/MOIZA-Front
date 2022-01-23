@@ -10,7 +10,7 @@ interface PropsType{
 }
 
 const UploadFiles:React.FC<PropsType> = ({state,setStateFunction}) => {
-    const [fileListArr,setFileListArr] = useState(state.files);
+    const fileListArr = state.files
     const UploadImgs = useCallback(
         (e:ChangeEvent<HTMLInputElement>) => {
             e.stopPropagation();
@@ -18,12 +18,12 @@ const UploadFiles:React.FC<PropsType> = ({state,setStateFunction}) => {
             const fileList = e.target.files;
             if(!fileList) return;
             const file = fileList[0];
-            const fileInArr = Array.from(fileList);
+            const fileInArr = Array.from(fileList); // 객체형태로 되어있는 파일 정보를 배열로 바꿈
+            if(state.files.length + fileInArr.length > 4) alert("파일은 최대 4개까지만 업로드 가능합니다.")
             reader.onloadend = () => {
-                setFileListArr(fileListArr.concat(fileInArr))
                 setStateFunction({
                     ...state,
-                    ["files"] : fileListArr.concat(fileInArr)
+                    ["files"] : fileListArr.concat(fileInArr.filter((item,index)=> (state.files.length + (index+1)) <= 4))
                 })
             }
             if (file) reader.readAsDataURL(file);
@@ -31,7 +31,10 @@ const UploadFiles:React.FC<PropsType> = ({state,setStateFunction}) => {
     )
     const onClickRemoveFile = useCallback(
         (id : number) => {
-            setFileListArr(fileListArr.filter((item,index) => index !== id))
+            setStateFunction({
+                ...state,
+                ["files"] : state.files.filter((item,index)=>index !== id)
+            });
         },[fileListArr]
     )
     const ImgList = useMemo(
