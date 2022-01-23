@@ -69,3 +69,8 @@ export const NoticeMainContent = styled.textarea`
 export const PostOptionalFunction = styled.section`
   display: flex;
 `
+export const SubmitBtn = styled.section`
+  > button {
+    margin: 148px auto 115px auto;
+  }
+`

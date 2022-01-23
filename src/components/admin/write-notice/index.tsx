@@ -5,6 +5,7 @@ import {WriteNoticePathArr} from "../constants";
 import Switch from "../../Common/toggle/switch";
 import UploadFiles from "../../Common/upload/files";
 import {UploadDataType} from "../../../interface/Common/Common.type";
+import SubmitButton from "../../Common/Button/SubmitButton";
 
 const WriteNotice:React.FC = () => {
     const [isFix,setIsFix] = useState(false);
@@ -37,6 +38,16 @@ const WriteNotice:React.FC = () => {
                 <S.NoticeMainContent/>
             </S.InputContentBox>
             <UploadFiles state={noticeContent} setStateFunction={setNoticeContent}/>
+            <S.SubmitBtn>
+                <SubmitButton
+                    big={false}
+                    text="작성완료"
+                    handleClick={()=>console.log("asd")}
+                    disable={true}
+                    yellow={false}
+                    blue={true}
+                />
+            </S.SubmitBtn>
         </S.Wrapper>
     )
 }
