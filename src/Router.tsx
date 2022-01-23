@@ -5,6 +5,7 @@ import LoginPage from "./pages/Login/LoginPage";
 import SignupPage from "./pages/Signup/SignupPage";
 import CategoryPage from "./pages/category/CategoryPage";
 import FindAuthDataPage from "./pages/FindId/FindId.page";
+import WriteNotice from "./components/admin/write-notice";
 
 const Router = () => {
   return (
@@ -13,6 +14,7 @@ const Router = () => {
       <Routes>
         <Route path="/" />
         <Route path="/admin" element={<Admin />} />
+        <Route path="/write-notice" element={<WriteNotice/>}/>
         <Route path="/login" element={<LoginPage />} />
         <Route path="/signup/*" element={<SignupPage />}>
           <Route path="Info" element={<SignupPage />} />
