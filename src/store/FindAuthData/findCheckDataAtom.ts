@@ -21,11 +21,12 @@ export const findPwData = atom<IFindPwDataProps>({
   key: "findPwData",
   default: {
     id: "",
-    name: "",
-    birth: "",
-    email: "",
-    certificationNumber: "",
   },
+});
+
+export const findPwCertificationNumber = atom<string>({
+  key: "findPwCertificationNumber",
+  default: "",
 });
 
 export const findPwResetData = atom<IFindPwResetDataProps>({

@@ -23,10 +23,6 @@ export const findCertificationNullCheck = (data: string) => {
 export const findPwDataNullCheck = (data: IFindPwDataProps) => {
   let isNull: boolean = false;
   if (data?.id === "") return true;
-  if (data?.name === "") return true;
-  if (data?.birth === "") return true;
-  if (data?.email === "") return true;
-  if (data?.certificationNumber === "") return true;
 
   isNull = false;
   return isNull;

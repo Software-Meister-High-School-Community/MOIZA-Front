@@ -7,7 +7,7 @@ import {
 import {
   FindIdCertificationBox,
   FindIdCertificationInputWrap,
-  FindIdCertifiationTitle,
+  FindIdCertificationTitle,
 } from "./FindIdCertification.style";
 
 const FindIdCertification: React.FC = () => {
@@ -18,7 +18,7 @@ const FindIdCertification: React.FC = () => {
   return (
     <>
       <FindIdCertificationBox>
-        <FindIdCertifiationTitle>인증번호 입력</FindIdCertifiationTitle>
+        <FindIdCertificationTitle>인증번호 입력</FindIdCertificationTitle>
         <FindIdCertificationInputWrap>
           <FindIdFormTextInput
             isWrite={checkNumber !== ""}

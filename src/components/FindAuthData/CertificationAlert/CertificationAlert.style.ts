@@ -1,10 +1,18 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
-export const CertificationAlertBox = styled.div`
+export const CertificationAlertBox = styled.div<{ isPwSend: boolean }>`
   margin: 0px auto;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 100px;
+
+  ${(props) =>
+    props.isPwSend &&
+    css`
+      margin-bottom: 139px;
+      position: relative;
+    `}
 `;
 
 export const CertificationAlertImg = styled.img`
@@ -22,4 +30,19 @@ export const CertificationAlertText = styled.p`
     font-weight: normal;
     color: black;
   }
+`;
+
+export const CertificationPwGuideText = styled.p`
+  color: ${(props) => props.theme.color.gray_color5};
+  font-size: ${(props) => props.theme.fontSize.body_large};
+
+  strong {
+    color: ${(props) => props.theme.color.main_blue_color};
+  }
+  position: absolute;
+  top: 100px;
+  text-align: center;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 25px;
 `;

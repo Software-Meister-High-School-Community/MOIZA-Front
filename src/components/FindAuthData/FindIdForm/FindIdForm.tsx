@@ -1,9 +1,12 @@
 import { useEffect, useState } from "react";
 import { Route, Routes, useNavigate } from "react-router";
-import { useRecoilState } from "recoil";
+import { useRecoilState, useResetRecoilState } from "recoil";
 import { IFindIdDataProps } from "../../../interface/FindAuthData/FindAuthData.type";
 import { sendCertificationNumberStatus } from "../../../store/FindAuthData/certificationStatus";
-import { FindIdCertificationNumber } from "../../../store/FindAuthData/findCheckDataAtom";
+import {
+  FindIdCertificationNumber,
+  findIdCheckData,
+} from "../../../store/FindAuthData/findCheckDataAtom";
 import {
   findCertificationNullCheck,
   findIdDataNullCheck,
@@ -17,29 +20,24 @@ import FindIdResult from "./FindIdResult";
 const FindIdForm: React.FC = () => {
   const navigate = useNavigate();
 
-  const [checkData, setCheckData] = useState<IFindIdDataProps>({
-    email: "",
-  });
-
+  const [checkData, setCheckData] = useRecoilState(findIdCheckData);
   const [isSendNumber, setIsSendNumber] = useRecoilState(
     sendCertificationNumberStatus
   );
-
   const [certificationNumber, setCertificationNumber] = useRecoilState(
     FindIdCertificationNumber
   );
-
   const [resultName, setResultName] = useState("");
   const [resultId, setResultId] = useState("");
 
-  const [isFind, setIsFind] = useState(false);
+  const resetCheckData = useResetRecoilState(findIdCheckData);
+  const resetCertification = useResetRecoilState(FindIdCertificationNumber);
 
   const checkDataIsNull = findIdDataNullCheck(checkData);
   const certificationIsNull = findCertificationNullCheck(certificationNumber);
 
   const goToResult = () => {
     setIsSendNumber((prev) => ({ ...prev, findIdSendNumber: false }));
-    setIsFind(true);
     navigate("result");
     setResultName("장정원");
     setResultId("jangjang");
@@ -50,14 +48,16 @@ const FindIdForm: React.FC = () => {
     navigate("certification");
   };
 
+  useEffect(() => {
+    resetCheckData();
+    resetCertification();
+  }, []);
+
   const { email } = checkData;
 
   return (
     <>
-      <FIF.FindIdFormBox
-        isFind={isFind}
-        isCertification={isSendNumber.findIdSendNumber}
-      >
+      <FIF.FindIdFormBox>
         <FIF.FindIdFormWrap>
           <Routes>
             <Route

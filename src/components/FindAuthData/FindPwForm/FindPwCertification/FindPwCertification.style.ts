@@ -1,11 +1,10 @@
 import styled from "styled-components";
 
-export const FindIdCertificationBox = styled.div`
+export const FindPwCertificationBox = styled.div`
   display: flex;
   flex-direction: column;
 `;
-
-export const FindIdCertificationTitle = styled.h1`
+export const FindPwCertificationTitle = styled.h1`
   font-size: ${(props) => props.theme.fontSize.body_large};
   color: black;
   font-style: normal;
@@ -13,7 +12,7 @@ export const FindIdCertificationTitle = styled.h1`
   margin-bottom: 68px;
 `;
 
-export const FindIdCertificationInputWrap = styled.div`
+export const FindPwCertificationInputWrap = styled.div`
   width: 100%;
   display: flex;
   align-items: center;

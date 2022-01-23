@@ -9,10 +9,6 @@ export interface IFindIdDataProps {
 
 export interface IFindPwDataProps {
   id: string;
-  name: string;
-  birth: string;
-  email: string;
-  certificationNumber: string;
 }
 
 export interface IFindPwResetDataProps {

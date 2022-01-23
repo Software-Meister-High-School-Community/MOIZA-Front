@@ -12,14 +12,14 @@ export const FindAuthDataTitle = styled.h1`
   font-size: ${(props) => props.theme.fontSize.head_small};
   color: black;
   margin-right: auto;
+  margin-bottom: 66px;
 `;
 
 export const FindAuthDataFormWrap = styled.div`
   width: 718px;
   display: flex;
   flex-direction: column;
-  margin: 66px auto;
-  margin-bottom: 0px;
+  margin: 0px auto;
 `;
 
 export const FindAuthDataTabWrap = styled.div`
