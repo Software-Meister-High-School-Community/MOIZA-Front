@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { Route, Routes, useNavigate } from "react-router";
 import { useRecoilState, useResetRecoilState } from "recoil";
-import { IFindIdDataProps } from "../../../interface/FindAuthData/FindAuthData.type";
 import { sendCertificationNumberStatus } from "../../../store/FindAuthData/certificationStatus";
 import {
   FindIdCertificationNumber,
@@ -51,7 +50,7 @@ const FindIdForm: React.FC = () => {
   useEffect(() => {
     resetCheckData();
     resetCertification();
-  }, []);
+  }, [resetCheckData, resetCertification]);
 
   const { email } = checkData;
 
