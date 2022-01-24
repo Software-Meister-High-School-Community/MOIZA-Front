@@ -33,10 +33,9 @@ export const HR = styled.hr<{
   background-color: ${(props) => props.background};
 `;
 
-/* starmenu */
 export const PostList = styled.div`
   width: 760px;
-  height: 1250px;
+  height: 750px;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -59,11 +58,21 @@ export const PostHead = styled.div`
 export const PostIcon = styled.img`
   width: 25px;
   height: 25px;
-  margin: 30px 0 16px 30px;
+  margin: 27px 13px 17px 30px;
+`;
+
+export const PostUser = styled.p`
+  width: 150px;
+  height: 16px;
+  margin: 32px 75px 21px 0;
+  font-size: ${({ theme }) => theme.fontSize.body_small};
+  font-weight: 400;
+  font-style: normal;
+  font-family: "Roboto", sans-serif;
 `;
 
 export const PostField = styled.p`
-  margin: 35px 30px 0 0;
+  margin: 33px 30px 0 0;
   font-size: ${({ theme }) => theme.fontSize.body_small};
   font-weight: 400;
   font-style: normal;
@@ -72,8 +81,9 @@ export const PostField = styled.p`
 
 export const PostText = styled.p`
   width: 306px;
-  height: 82px;
-  margin: 0 30px 10px 30px;
+  height: 73px;
+  margin: 0 30px 30px 30px;
+  line-height: 25px;
   font-size: ${({ theme }) => theme.fontSize.body_large};
   font-weight: 400;
   font-style: normal;
@@ -88,76 +98,24 @@ export const PostFooter = styled.div`
 export const PostHeart = styled.img`
   width: 16px;
   height: 15px;
-  margin: 0 6px 31px 30px;
+  margin: 0 6px 0px 30px;
   cursor: pointer;
 `;
 
 export const HeartCount = styled.p`
-  width: 31px;
-  height: 21px;
-  margin: 0 200px 0 0;
+  width: 27px;
+  height: 19px;
+  margin: 0 181px 0 0;
 `;
 
 export const PostLink = styled.p`
-  width: 60px;
+  width: 72px;
   height: 16px;
+  margin-right: 30px;
   cursor: pointer;
-  text-decoration: underline;
   color: ${({ theme }) => theme.color.gray_color4};
   font-size: ${({ theme }) => theme.fontSize.body_small};
   font-weight: 400;
   font-style: normal;
   font-family: "Roboto", sans-serif;
-`;
-
-/* noticemenu */
-export const NoticeHead = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
-
-export const MoreBtn = styled.p`
-  width: 50px;
-  height: 16px;
-  font-size: ${({ theme }) => theme.fontSize.body_small};
-  font-weight: 400;
-  font-style: normal;
-  font-family: "Roboto", sans-serif;
-  color: ${({ theme }) => theme.color.gray_color4};
-  text-decoration: underline;
-  cursor: pointer;
-`;
-
-export const NoticeList = styled.div`
-  width: 380px;
-  height: 371px;
-  background-color: white;
-  border: 1px solid ${({ theme }) => theme.color.gray_color3};
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-`;
-
-export const NoticeText = styled.p`
-  width: 311px;
-  height: 19px;
-  margin: 17px 0 16px 0;
-  cursor: pointer;
-  font-size: ${({ theme }) => theme.fontSize.body_medium};
-  font-weight: 400;
-  font-style: normal;
-  font-family: "Roboto", sans-serif;
-  &:hover {
-    color: ${({ theme }) => theme.color.main_yellow_color};
-  }
-`;
-
-export const NoticeHr = styled.hr`
-  width: 364px;
-  height: 1px;
-  margin: 0;
-  border: none;
-  background-color: ${({ theme }) => theme.color.gray_color3};
 `;

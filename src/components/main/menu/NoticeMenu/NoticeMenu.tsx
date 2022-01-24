@@ -1,14 +1,17 @@
 import React from "react";
 import * as S from "./style";
-import { NoticePostCount } from "./constants";
+import { NoticePostCount } from "../constants";
 
 const NoticeMenu: React.FC = () => {
   const menuList = NoticePostCount.map((menu, index) => {
     return (
-      <div>
-        <S.NoticeText>{menu}</S.NoticeText>
+      <S.NoticeForm>
+        <S.TextDiv>
+          <S.NoticeText>{menu}</S.NoticeText>
+          <S.NoticeTime>22/01/21 8:30</S.NoticeTime>
+        </S.TextDiv>
         <S.NoticeHr />
-      </div>
+      </S.NoticeForm>
     );
   });
   return (

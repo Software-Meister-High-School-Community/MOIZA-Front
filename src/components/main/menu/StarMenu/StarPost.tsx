@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import * as S from "./style";
-import BookRead from "../../../assets/img/main/bookRead.svg";
-import Question from "../../../assets/img/main/Question.svg";
-import onHeart from "../../../assets/img/main/onHeart.svg";
-import offHeart from "../../../assets/img/main/offHeart.svg";
+import BookRead from "../../../../assets/img/main/bookRead.svg";
+import Question from "../../../../assets/img/main/Question.svg";
+import onHeart from "../../../../assets/img/main/onHeart.svg";
+import offHeart from "../../../../assets/img/main/offHeart.svg";
 
 interface PostType {
   menu: string;
@@ -11,6 +11,7 @@ interface PostType {
 
 const StarPost: React.FC<PostType> = (menu) => {
   const [liked, setLiked] = useState(false);
+  const [close, setClose] = useState(false);
 
   const onClickHeart = () => {
     if (!liked) {
@@ -27,6 +28,7 @@ const StarPost: React.FC<PostType> = (menu) => {
       <S.StarPost>
         <S.PostHead>
           <S.PostIcon src={Question} alt="" />
+          <S.PostUser>장정원님의 게시물</S.PostUser>
           <S.PostField>Design</S.PostField>
         </S.PostHead>
         <S.PostText>{menu.menu}</S.PostText>
@@ -37,7 +39,7 @@ const StarPost: React.FC<PostType> = (menu) => {
             onClick={onClickHeart}
           />
           <S.HeartCount>123</S.HeartCount>
-          <S.PostLink>바로가기</S.PostLink>
+          <S.PostLink>01/21 8:30</S.PostLink>
         </S.PostFooter>
       </S.StarPost>
     </>
