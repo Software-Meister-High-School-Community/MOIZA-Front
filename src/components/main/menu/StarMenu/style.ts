@@ -35,7 +35,7 @@ export const HR = styled.hr<{
 
 export const PostList = styled.div`
   width: 760px;
-  height: 750px;
+  height: 1250px;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
