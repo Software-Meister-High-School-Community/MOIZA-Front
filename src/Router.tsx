@@ -9,6 +9,7 @@ import SearchPage from "./pages/search/SearchPage";
 import MainPage from "./pages/mainpage/mainpage";
 import NoticeList from "./components/notice/noticelist/NoticeList";
 import ShowNotice from "./components/notice/shownotice/ShowNotice";
+import { NoticeForm } from "./components/header/notice/Notice.style";
 
 const Router = () => {
   return (
@@ -25,7 +26,7 @@ const Router = () => {
           <Route path="Info" element={<SignupPage />} />
           <Route path="idpw" element={<SignupPage />} />
         </Route>
-        <Route path="/findauthdata" element={<FindAuthDataPage />}/>
+        <Route path="/findauthdata" element={<FindAuthDataPage />} />
         <Route path="/category" element={<CategoryPage />}></Route>
         <Route path="/search" element={<SearchPage />} />
       </Routes>
