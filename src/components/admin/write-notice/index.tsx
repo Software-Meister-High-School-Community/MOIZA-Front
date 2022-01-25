@@ -1,4 +1,4 @@
-import React, {ChangeEvent, useCallback, useState} from "react";
+import React, {ChangeEvent, useCallback, useMemo, useState} from "react";
 import * as S from './styles'
 import Path from "../../Common/path";
 import {WriteNoticePathArr} from "../constants";
@@ -11,6 +11,7 @@ const TITLE = 'title';
 const CONTENT = 'content';
 
 const WriteNotice:React.FC = () => {
+    const FD = new FormData()
     const [isFix,setIsFix] = useState(false);
     const [noticeContent,setNoticeContent] = useState<UploadDataType>({
         title : '',
@@ -30,7 +31,14 @@ const WriteNotice:React.FC = () => {
                 [e.target.name] : e.target.value
             })
         }
-    },[noticeContent])
+    },[noticeContent, setNoticeContent]);
+
+    const onSubmitNotification =  useCallback(
+        ()  => {
+            FD.append('title',noticeContent.title);
+            FD.append('content',noticeContent.content);
+            noticeContent.files.map((eachFile) => FD.append('files',eachFile));
+    },[noticeContent]);
     return(
         <S.Wrapper>
             <Path pathArray={WriteNoticePathArr}/>
@@ -57,7 +65,7 @@ const WriteNotice:React.FC = () => {
                 <SubmitButton
                     big={false}
                     text="작성완료"
-                    handleClick={()=>console.log("asd")}
+                    handleClick={onSubmitNotification}
                     disable={!(noticeContent.title.length > 0 && noticeContent.content.length > 0)}
                     yellow={false}
                     blue={true}

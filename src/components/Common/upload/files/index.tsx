@@ -27,7 +27,7 @@ const UploadFiles:React.FC<PropsType> = ({state,setStateFunction}) => {
                 })
             }
             if (file) reader.readAsDataURL(file);
-        },[fileListArr]
+        },[fileListArr, state]
     )
     const onClickRemoveFile = useCallback(
         (id : number) => {
@@ -35,7 +35,7 @@ const UploadFiles:React.FC<PropsType> = ({state,setStateFunction}) => {
                 ...state,
                 ["files"] : state.files.filter((item,index)=>index !== id)
             });
-        },[fileListArr]
+        },[fileListArr, state, setStateFunction]
     )
     const ImgList = useMemo(
         () => (
