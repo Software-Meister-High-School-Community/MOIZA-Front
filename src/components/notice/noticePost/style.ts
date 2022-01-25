@@ -29,8 +29,24 @@ export const List = styled.li<{
   }
 `;
 
-export const Views = styled.em`
+export const Date = styled.div`
   margin-left: auto;
+  display: flex;
+  align-items: center;
+  > span {
+    font-family: Roboto;
+    font-style: nomal;
+    font-weight: normal;
+    margin-right: 30px;
+    font-size: 14px;
+    line-height: 16px;
+    color: ${({ theme }) => theme.color.gray_color4};
+    margin-left: 6px;
+  }
+`;
+
+export const Views = styled.em`
+  margin-left: 30px;
   display: flex;
   align-items: center;
   > span {
