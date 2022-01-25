@@ -1,10 +1,6 @@
 import React from 'react';
+import {useLocation} from "react-router";
 
-interface PropsType {
-    queryName : string
+export const useQuery = () => {
+    return new URLSearchParams(useLocation().search);
 }
-
-const useQuery:React.FC<PropsType>  = ({queryName}) => {
-    return "asd"
-}
-export default useQuery
