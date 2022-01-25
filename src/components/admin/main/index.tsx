@@ -1,12 +1,17 @@
 import * as S from './styles'
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import ManageReport from "../manage-report";
 import Notification from "../notification";
+import {useQuery} from "../../../util/hooks/useQuery";
+import {MANAGE_REPORT,NOTIFICATION} from "../constants";
 
 const AdminMain = () => {
-    const MANAGE_REPORT = "MANAGE-REPORT";
-    const NOTIFICATION = "NOTIFICATION"
+    const pageType = useQuery().get('page-type')
+    useEffect(()=>{
+        pageType === 'notification' ? setType(NOTIFICATION) : setType(MANAGE_REPORT)
+    },[pageType])
     const [type,setType] = useState(MANAGE_REPORT);
+    console.log(useQuery().get('page-type'))
     const changeType = (id:string) => {
         setType(id)
     }
