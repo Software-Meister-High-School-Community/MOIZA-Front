@@ -1,4 +1,5 @@
 import { Dispatch, SetStateAction } from "react";
+import {link} from "fs";
 
 export interface ISubmitButtonProps {
   big?: boolean | undefined;
@@ -37,8 +38,14 @@ export interface IDropdownProps {
 }
 
 export interface PathType {
-  path: string;
-  link: string;
+  path : string;
+  link : string;
+}
+
+export interface UploadDataType {
+  title : string;
+  content : string;
+  files : File[];
 }
 
 export interface IEyeButtonProps {

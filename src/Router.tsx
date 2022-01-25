@@ -5,6 +5,7 @@ import LoginPage from "./pages/Login/LoginPage";
 import SignupPage from "./pages/Signup/SignupPage";
 import CategoryPage from "./pages/category/CategoryPage";
 import FindAuthDataPage from "./pages/FindId/FindId.page";
+import WriteNotice from "./components/admin/write-notice";
 import SearchPage from "./pages/search/SearchPage";
 import MainPage from "./pages/mainpage/mainpage";
 import NoticeList from "./components/notice/noticelist/NoticeList";
@@ -21,6 +22,7 @@ const Router = () => {
         <Route path="/notice" element={<NoticeList />} />
         <Route path="/shownotice" element={<ShowNotice />} />
         <Route path="/admin" element={<Admin />} />
+        <Route path="/write-notice" element={<WriteNotice/>}/>
         <Route path="/login" element={<LoginPage />} />
         <Route path="/signup/*" element={<SignupPage />}>
           <Route path="Info" element={<SignupPage />} />

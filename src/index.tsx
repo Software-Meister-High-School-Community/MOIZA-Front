@@ -41,6 +41,11 @@ footer, header, hgroup, main, menu, nav, section {
 *[hidden] {
     display: none;
 }
+button {
+  border: none;
+  background-color: transparent;
+  padding: 0;
+}
 body {
 	font-weight: 300;
 	line-height: 1;
