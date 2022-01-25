@@ -15,17 +15,6 @@ export const NoticeHeadDiv = styled.div`
   justify-content: center;
 `;
 
-export const NowRoute = styled.p`
-  width: 90px;
-  height: 16px;
-  font-size: ${({ theme }) => theme.fontSize.body_small};
-  font-weight: 400;
-  font-style: normal;
-  font-family: Roboto;
-  color: ${({ theme }) => theme.color.main_yellow_color};
-  margin-left: 30px;
-`;
-
 export const NoticeNameDiv = styled.div`
   margin-top: 60px;
   display: flex;
