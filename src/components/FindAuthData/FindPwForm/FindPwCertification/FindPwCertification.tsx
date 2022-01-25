@@ -1,26 +1,29 @@
-import { useRecoilState } from "recoil";
-import { findPwCertificationNumber } from "../../../../store/FindAuthData/findCheckDataAtom";
+import { Dispatch, SetStateAction } from "react";
 import * as FPF from "../FindPwForm.style";
 import * as FPC from "./FindPwCertification.style";
 
-const FindPwCertification: React.FC = () => {
-  const [checkNumber, setCheckNumber] = useRecoilState(
-    findPwCertificationNumber
-  );
+interface IFindPwCertificationProps {
+  certificationNumber: string;
+  setCertificationNumber: Dispatch<SetStateAction<string>>;
+}
 
+const FindPwCertification: React.FC<IFindPwCertificationProps> = ({
+  certificationNumber,
+  setCertificationNumber,
+}) => {
   return (
     <FPC.FindPwCertificationBox>
       <FPC.FindPwCertificationTitle>인증번호 입력</FPC.FindPwCertificationTitle>
       <FPC.FindPwCertificationInputWrap>
         <FPF.FindPwFormTextInput
-          isWrite={checkNumber !== ""}
+          isWrite={certificationNumber !== ""}
           placeholder="인증번호를 입력해주세요."
-          onChange={(e) => setCheckNumber(e.target.value)}
-          value={checkNumber}
+          onChange={(e) => setCertificationNumber(e.target.value)}
+          value={certificationNumber}
         />
         <FPF.FindPwFormCertificationButton
-          isWrite={checkNumber !== ""}
-          disabled={checkNumber === ""}
+          isWrite={certificationNumber !== ""}
+          disabled={certificationNumber === ""}
         >
           인증메일 재발송
         </FPF.FindPwFormCertificationButton>

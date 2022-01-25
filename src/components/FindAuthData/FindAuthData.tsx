@@ -21,7 +21,7 @@ const FindAuthData: React.FC = () => {
       findIdSendNumber: false,
       findPwSendNumber: false,
     }));
-  }, []);
+  }, [setIsSendNumber]);
 
   const SendNumberStatus =
     isSendNumber.findIdSendNumber || isSendNumber.findPwSendNumber;

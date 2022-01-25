@@ -5,7 +5,7 @@ import * as FIF from "./FindIdForm.style";
 import FindIdResult from "./FindIdResult";
 import FindIdCertification from "./FindIdCertification";
 import SubmitButton from "../../Common/Button/SubmitButton";
-import { Dispatch, SetStateAction } from "react";
+import React, { Dispatch, SetStateAction } from "react";
 
 interface IFindIdForm {
   setTab: Dispatch<SetStateAction<string>>;
@@ -32,7 +32,7 @@ const FindIdForm: React.FC<IFindIdForm> = ({ setTab }) => {
           <>
             {idPart === "이메일 입력" && (
               <>
-                <FIF.FindIdFormTitle>이메일 인증</FIF.FindIdFormTitle>
+                <FIF.FindIdFormTitle>이메일 입력</FIF.FindIdFormTitle>
                 <FIF.FindIdFormInputWrap>
                   <FIF.FindIdFormTextInputWrap>
                     <FIF.FindIdFormTextInput
@@ -110,4 +110,4 @@ const FindIdForm: React.FC<IFindIdForm> = ({ setTab }) => {
   );
 };
 
-export default FindIdForm;
+export default React.memo(FindIdForm);

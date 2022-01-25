@@ -3,10 +3,6 @@ export interface IFindIdResultProps {
   resultId: string;
 }
 
-export interface IFindPwDataProps {
-  id: string;
-}
-
 export interface IFindPwResetDataProps {
   pw: string;
   checkPw: string;

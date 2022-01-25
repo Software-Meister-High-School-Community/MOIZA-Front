@@ -1,18 +1,12 @@
-import React, { useState } from "react";
-import { useRecoilState } from "recoil";
-import { findPwData } from "../../../../store/FindAuthData/findCheckDataAtom";
+import React, { Dispatch, SetStateAction } from "react";
 import * as FIF from "../FindPwForm.style";
 
-const FindPwCheck: React.FC = () => {
-  const [checkData, setCheckData] = useRecoilState(findPwData);
-  const { id } = checkData;
-  const [notSendCertificationNumber, setNotSendCertificationNumber] =
-    useState(true);
+interface IFindPwCheckProps {
+  id: string;
+  setId: Dispatch<SetStateAction<string>>;
+}
 
-  const onClickSendCertification = () => {
-    setNotSendCertificationNumber(false);
-  };
-
+const FindPwCheck: React.FC<IFindPwCheckProps> = ({ id, setId }) => {
   return (
     <>
       <FIF.FindPwFormTitle>아이디를 입력해주세요.</FIF.FindPwFormTitle>
@@ -23,12 +17,7 @@ const FindPwCheck: React.FC = () => {
             value={id}
             placeholder="아이디"
             name="id"
-            onChange={(e) =>
-              setCheckData((prev) => ({
-                ...prev,
-                [e.target.name]: e.target.value,
-              }))
-            }
+            onChange={(e) => setId(e.target.value)}
           />
         </FIF.FindPwFormTextInputWrap>
       </FIF.FindPwFormInputWrap>

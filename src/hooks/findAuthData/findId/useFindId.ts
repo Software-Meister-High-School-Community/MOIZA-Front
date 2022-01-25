@@ -12,24 +12,30 @@ const useFindId = () => {
   );
   const [result, setResult] = useState<IFindIdResultProps>();
 
-  const goToCertification = (e: React.ChangeEvent<HTMLButtonElement>) => {
-    //certification api 통신
-    setEmail("");
-    setIdPart(e.target.name);
-    setIsSendNumber((prev) => ({ ...prev, findIdSendNumber: true }));
-  };
+  const goToCertification = useCallback(
+    (e: React.ChangeEvent<HTMLButtonElement>) => {
+      //certification api 통신
+      setEmail("");
+      setIdPart(e.target.name);
+      setIsSendNumber((prev) => ({ ...prev, findIdSendNumber: true }));
+    },
+    [setIsSendNumber]
+  );
 
-  const goToResult = (e: React.ChangeEvent<HTMLButtonElement>) => {
-    //certification 인증 통신
-    const { name, id } = {
-      name: "장정원",
-      id: "jangjang",
-    };
-    setResult({ name: name, resultId: id });
-    setIsSendNumber((prev) => ({ ...prev, findIdSendNumber: false }));
-    setIdPart(e.target.name);
-    setCertificationNumber("");
-  };
+  const goToResult = useCallback(
+    (e: React.ChangeEvent<HTMLButtonElement>) => {
+      //certification 인증 통신
+      const { name, id } = {
+        name: "장정원",
+        id: "jangjang",
+      };
+      setResult({ name: name, resultId: id });
+      setIsSendNumber((prev) => ({ ...prev, findIdSendNumber: false }));
+      setIdPart(e.target.name);
+      setCertificationNumber("");
+    },
+    [setIsSendNumber]
+  );
 
   return {
     idPart,
