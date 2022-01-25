@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const Wrapper = styled.div`
   display: flex;
   justify-content: center;
+  margin-top: 68px;
 `;
 
 export const Banner = styled.div`
@@ -61,6 +62,7 @@ export const SchoolClass1 = styled.p<{
   height: ${(props) => props.height};
   margin: ${(props) => props.margin};
   font-style: normal;
+  font-weight: 400;
   font-family: "Roboto", sans-serif;
   font-size: ${({ theme }) => theme.fontSize.body_medium};
 `;

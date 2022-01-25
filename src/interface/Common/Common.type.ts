@@ -17,23 +17,23 @@ export interface IOptionButtonProps {
 }
 
 export interface IRadioButtonProps {
-  name : string;
-  radioArray : Array<{
-    summary : string;
-    id : string;
-  }>
-  selected : string;
-  setSelected : (selectId:string) => void;
+  name: string;
+  radioArray: Array<{
+    summary: string;
+    id: string;
+  }>;
+  selected: string;
+  setSelected: (selectId: string) => void;
 }
 
 export interface OptionArrType {
-  option : string
+  option: string;
 }
 
 export interface IDropdownProps {
-  options : Array<OptionArrType>
-  value : string;
-  onChangeValue : (value:string) => void
+  options: Array<OptionArrType>;
+  value: string;
+  onChangeValue: (value: string) => void;
 }
 
 export interface PathType {
@@ -45,4 +45,10 @@ export interface UploadDataType {
   title : string;
   content : string;
   files : File[];
+}
+
+export interface IEyeButtonProps {
+  isShow: boolean;
+  onClick: Dispatch<SetStateAction<boolean>>;
+  left?: number;
 }

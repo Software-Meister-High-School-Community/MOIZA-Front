@@ -6,13 +6,14 @@ interface styleProps {
 }
 
 export const Wrapper = styled.div`
-    height:93vh;
-    margin-top:100px;
+    height:90vh;
+    width:100vw;
+    display:flex;
 `
 
 export const Container = styled.div`
     position: relative;
-    margin: 0 auto;
+    margin:  auto;
     display: flex;
     justify-content:space-around;
     flex-wrap:wrap;

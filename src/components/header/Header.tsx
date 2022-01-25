@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import * as H from './Header.styled'
 import headerLogo from '../../assets/img/header/headerLogo.svg'
 import categoryImg from '../../assets/img/header/categoryImg.svg'
-import serchImg from '../../assets/img/header/serchImg.svg'
+import searchImg from '../../assets/img/header/searchImg.svg'
 import profileImg from '../../assets/img/header/profileImg.svg'
 import noticeImg from '../../assets/img/header/noticeImg.svg'
 import Notice from './notice'
@@ -32,7 +32,9 @@ const Header:React.FC = () => {
             </H.StyleLink>
 
             <H.ItemContainer>
-                <H.ItemImg src={serchImg}/>
+                <H.StyleLink to='/search'>
+                    <H.ItemImg src={searchImg}/>
+                </H.StyleLink>
                 <H.ItemImg src={profileImg}/>
 
                 <H.ImgContaner>
