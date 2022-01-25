@@ -97,27 +97,6 @@ export const FindPwFormCertificationButton = styled.button<{
         `}
 `;
 
-export const FindPwFormPasswordInputEyeButton = styled.div`
-  position: absolute;
-  width: 20px;
-  height: 16px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 0px;
-  background: none;
-  outline: none;
-  cursor: pointer;
-  right: 14px;
-  top: 50%;
-  transform: translate(0%, -50%);
-`;
-
-export const FindPwFormPasswordInputEyeImg = styled.img`
-  width: 100%;
-  object-fit: scale-down;
-`;
-
 export const FindPwFormGuideText = styled.p`
   font-size: ${(props) => props.theme.fontSize.body_small};
   font-style: normal;

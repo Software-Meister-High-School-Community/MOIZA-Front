@@ -6,13 +6,17 @@ import SignupPage from "./pages/Signup/SignupPage";
 import CategoryPage from "./pages/category/CategoryPage";
 import FindAuthDataPage from "./pages/FindId/FindId.page";
 import WriteNotice from "./components/admin/write-notice";
+import SearchPage from "./pages/search/SearchPage";
+import MainPage from "./pages/mainpage/mainpage";
+import NoticeForm from "./components/notice/NoticeForm";
 
 const Router = () => {
   return (
     <BrowserRouter>
       <Header />
       <Routes>
-        <Route path="/" />
+        <Route path="/" element={<MainPage/>}/>
+        <Route path="/notice" element={<NoticeForm/>}/>
         <Route path="/admin" element={<Admin />} />
         <Route path="/write-notice" element={<WriteNotice/>}/>
         <Route path="/login" element={<LoginPage />} />
@@ -20,8 +24,9 @@ const Router = () => {
           <Route path="Info" element={<SignupPage />} />
           <Route path="idpw" element={<SignupPage />} />
         </Route>
-        <Route path="/findauthdata/*" element={<FindAuthDataPage/>}></Route>
-        <Route path="/category" element={<CategoryPage></CategoryPage>}></Route>
+        <Route path="/findauthdata/*" element={<FindAuthDataPage />}></Route>
+        <Route path="/category" element={<CategoryPage/>}></Route>
+        <Route path="/search" element={<SearchPage/>}/>
       </Routes>
     </BrowserRouter>
   );
