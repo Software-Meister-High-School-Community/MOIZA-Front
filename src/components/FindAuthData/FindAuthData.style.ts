@@ -4,6 +4,8 @@ export const FindAuthDataBox = styled.div`
   width: 1024px;
   display: flex;
   flex-direction: column;
+  margin: 0px auto;
+  margin-top: 120px;
 `;
 
 export const FindAuthDataTitle = styled.h1`
