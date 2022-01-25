@@ -53,6 +53,7 @@ export const ImgInfo = styled.div`
   }
 `
 export const AddFileButton = styled.label`
+  cursor: pointer;
   > img {
     padding: 38px 77px;
     background-color: #ffffff;
