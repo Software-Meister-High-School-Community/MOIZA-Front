@@ -1,15 +1,18 @@
-import { useState } from "react";
-import { useRecoilState } from "recoil";
-import { findPwResetData } from "../../../../store/FindAuthData/findCheckDataAtom";
+import { Dispatch, SetStateAction, useState } from "react";
 import * as FIF from "../FindPwForm.style";
 import EyeButton from "../../../Common/Button/EyeButton";
+import { IFindPwResetDataProps } from "../../../../interface/FindAuthData/FindAuthData.type";
 
-const FindPwReset: React.FC = () => {
-  const [resetData, setResetData] = useRecoilState(findPwResetData);
+interface IFindPwResetRrops {
+  resetPw: IFindPwResetDataProps;
+  setResetPw: Dispatch<SetStateAction<IFindPwResetDataProps>>;
+}
+
+const FindPwReset: React.FC<IFindPwResetRrops> = ({ resetPw, setResetPw }) => {
   const [isPwShow, setIsPwShow] = useState(false);
   const [isCheckPwShow, setIsCheckPwShow] = useState(false);
 
-  const { pw, checkPw } = resetData;
+  const { pw, checkPw } = resetPw;
   return (
     <>
       <FIF.FindPwFormTitle>비밀번호 재설정</FIF.FindPwFormTitle>
@@ -21,7 +24,7 @@ const FindPwReset: React.FC = () => {
             placeholder="새 비밀번호"
             value={pw}
             onChange={(e) =>
-              setResetData((prev) => ({
+              setResetPw((prev) => ({
                 ...prev,
                 [e.target.name]: e.target.value,
               }))
@@ -40,7 +43,7 @@ const FindPwReset: React.FC = () => {
             placeholder="새 비밀번호 확인"
             value={checkPw}
             onChange={(e) =>
-              setResetData((prev) => ({
+              setResetPw((prev) => ({
                 ...prev,
                 [e.target.name]: e.target.value,
               }))

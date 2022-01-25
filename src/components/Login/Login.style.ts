@@ -6,6 +6,8 @@ export const LoginBox = styled.div`
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
+  margin: 0px auto;
+  margin-top: 120px;
 `;
 
 export const LoginTitle = styled.h1`

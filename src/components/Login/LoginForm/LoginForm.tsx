@@ -37,9 +37,13 @@ const LoginForm: React.FC = () => {
             <Link to="/signup">회원가입</Link>
           </LF.LoginFormCategoryInput>
           <LF.LoginFormCategoryInputLine />
-          <LF.LoginFormCategoryInput>아이디 찾기</LF.LoginFormCategoryInput>
+          <LF.LoginFormCategoryInput>
+            <Link to="/findauthdata">아이디 찾기</Link>
+          </LF.LoginFormCategoryInput>
           <LF.LoginFormCategoryInputLine />
-          <LF.LoginFormCategoryInput>비밀번호 찾기</LF.LoginFormCategoryInput>
+          <LF.LoginFormCategoryInput>
+            <Link to="/findauthdata">비밀번호 찾기</Link>
+          </LF.LoginFormCategoryInput>
         </LF.LoginFormCategoryInputWrap>
       </LF.LoginFormInputWrap>
     </LF.LoginFormBox>

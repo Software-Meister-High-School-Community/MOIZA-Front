@@ -1,24 +1,14 @@
 import styled, { css } from "styled-components";
 
-export const FindPwFormBox = styled.div<{ isReset: boolean }>`
+export const FindPwFormBox = styled.div<{ isCertification: boolean }>`
   width: 100%;
+  height: 322px;
   display: flex;
   justify-content: center;
   align-items: center;
   border: 1px solid ${(props) => props.theme.color.gray_color3};
-  border-top: 0px;
   box-sizing: border-box;
   background-color: ${(props) => props.theme.color.gray_color1};
-
-  ${(props) =>
-    props.isReset
-      ? css`
-          padding-top: 134px;
-          padding-bottom: 167px;
-        `
-      : css`
-          padding: 58px 84px;
-        `}
 `;
 
 export const FindPwFormWrap = styled.div`

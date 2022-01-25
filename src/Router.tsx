@@ -16,6 +16,7 @@ const Router = () => {
       <Header />
       <Routes>
         <Route path="/" element={<MainPage />} />
+        <Route path="/notice" element={<NoticeForm />} />
         <Route path="/notice" element={<NoticeList />} />
         <Route path="/shownotice" element={<ShowNotice />} />
         <Route path="/admin" element={<Admin />} />
@@ -24,7 +25,7 @@ const Router = () => {
           <Route path="Info" element={<SignupPage />} />
           <Route path="idpw" element={<SignupPage />} />
         </Route>
-        <Route path="/findauthdata/*" element={<FindAuthDataPage />}></Route>
+        <Route path="/findauthdata" element={<FindAuthDataPage />}/>
         <Route path="/category" element={<CategoryPage />}></Route>
         <Route path="/search" element={<SearchPage />} />
       </Routes>
