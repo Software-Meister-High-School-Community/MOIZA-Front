@@ -3,6 +3,7 @@ import * as S from './styles';
 import addFile from '../../../../assets/img/Common/addFile.svg';
 import removeFileIcon from '../../../../assets/img/Common/removeFile.svg';
 import {UploadDataType} from "../../../../interface/Common/Common.type";
+import {stat} from "fs";
 
 interface PropsType{
     state : UploadDataType
@@ -27,7 +28,7 @@ const UploadFiles:React.FC<PropsType> = ({state,setStateFunction}) => {
                 })
             }
             if (file) reader.readAsDataURL(file);
-        },[fileListArr]
+        },[fileListArr, state]
     )
     const onClickRemoveFile = useCallback(
         (id : number) => {
@@ -35,7 +36,7 @@ const UploadFiles:React.FC<PropsType> = ({state,setStateFunction}) => {
                 ...state,
                 ["files"] : state.files.filter((item,index)=>index !== id)
             });
-        },[fileListArr]
+        },[fileListArr, state, setStateFunction]
     )
     const ImgList = useMemo(
         () => (
