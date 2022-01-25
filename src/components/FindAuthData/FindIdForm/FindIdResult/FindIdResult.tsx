@@ -1,3 +1,4 @@
+import React from "react";
 import { IFindIdResultProps } from "../../../../interface/FindAuthData/FindAuthData.type";
 import * as FIR from "./FindIdResult.style";
 
@@ -14,4 +15,4 @@ const FindIdResult: React.FC<IFindIdResultProps> = ({ name, resultId }) => {
   );
 };
 
-export default FindIdResult;
+export default React.memo(FindIdResult);

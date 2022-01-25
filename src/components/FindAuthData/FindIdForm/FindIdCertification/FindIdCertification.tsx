@@ -1,13 +1,16 @@
-import { useRecoilState } from "recoil";
-import { FindIdCertificationNumber } from "../../../../store/FindAuthData/findCheckDataAtom";
+import { Dispatch, SetStateAction } from "react";
 import * as FIF from "../FindIdForm.style";
 import * as FIC from "./FindIdCertification.style";
 
-const FindIdCertification: React.FC = () => {
-  const [checkNumber, setCheckNumber] = useRecoilState(
-    FindIdCertificationNumber
-  );
+interface IFindIdCertificationProps {
+  certificationNumber: string;
+  setCertificationNumber: Dispatch<SetStateAction<string>>;
+}
 
+const FindIdCertification: React.FC<IFindIdCertificationProps> = ({
+  certificationNumber,
+  setCertificationNumber,
+}) => {
   return (
     <>
       <FIC.FindIdCertificationBox>
@@ -16,13 +19,13 @@ const FindIdCertification: React.FC = () => {
         </FIC.FindIdCertificationTitle>
         <FIC.FindIdCertificationInputWrap>
           <FIF.FindIdFormTextInput
-            isWrite={checkNumber !== ""}
-            onChange={(e) => setCheckNumber(e.target.value)}
+            isWrite={certificationNumber !== ""}
+            onChange={(e) => setCertificationNumber(e.target.value)}
             placeholder="인증번호를 입력해주세요."
           />
           <FIF.FindIdFormCertificationButton
-            isWrite={checkNumber !== ""}
-            disabled={checkNumber === ""}
+            isWrite={certificationNumber !== ""}
+            disabled={certificationNumber === ""}
           >
             인증메일 재발송
           </FIF.FindIdFormCertificationButton>

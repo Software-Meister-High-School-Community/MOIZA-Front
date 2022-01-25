@@ -3,10 +3,6 @@ export interface IFindIdResultProps {
   resultId: string;
 }
 
-export interface IFindIdDataProps {
-  email: string;
-}
-
 export interface IFindPwDataProps {
   id: string;
 }

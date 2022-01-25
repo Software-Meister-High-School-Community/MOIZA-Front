@@ -6,7 +6,8 @@ export interface ISubmitButtonProps {
   disable?: boolean;
   blue?: boolean;
   yellow?: boolean;
-  handleClick?: () => void | Promise<void>;
+  name?: string;
+  handleClick?: (e?: any) => void | Promise<void>;
 }
 
 export interface IOptionButtonProps {
