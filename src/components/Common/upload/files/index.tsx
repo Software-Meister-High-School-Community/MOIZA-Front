@@ -3,7 +3,6 @@ import * as S from './styles';
 import addFile from '../../../../assets/img/Common/addFile.svg';
 import removeFileIcon from '../../../../assets/img/Common/removeFile.svg';
 import {UploadDataType} from "../../../../interface/Common/Common.type";
-import {stat} from "fs";
 
 interface PropsType{
     state : UploadDataType
