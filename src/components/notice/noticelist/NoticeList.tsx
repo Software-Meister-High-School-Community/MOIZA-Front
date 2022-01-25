@@ -1,17 +1,17 @@
 import React, { useState } from "react";
 import * as S from "./style";
-import Path from "../Common/path";
-import { PathArr } from "./constants/index";
-import Dropdown from "../Common/Select/dropdown";
-import { OptionArr } from "../admin/constants";
-import NoticePost from "./noticePost/NoticePost";
+import Path from "../../Common/path";
+import { NoticeListPathArr } from "../constants/index";
+import Dropdown from "../../Common/Select/dropdown";
+import { OptionArr } from "../../admin/constants";
+import NoticePost from "../noticePost/NoticePost";
 
-const NoticeForm: React.FC = () => {
+const NoticeList: React.FC = () => {
   const [value, setValue] = useState(OptionArr[0].option);
   return (
     <S.Wrapper>
       <S.NoticeHeadDiv>
-        <Path pathArray={PathArr} />
+        <Path pathArray={NoticeListPathArr} />
         <S.NoticeNameDiv>
           <S.NoticeName>공지사항</S.NoticeName>
         </S.NoticeNameDiv>
@@ -32,4 +32,4 @@ const NoticeForm: React.FC = () => {
   );
 };
 
-export default NoticeForm;
+export default NoticeList;

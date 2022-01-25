@@ -7,15 +7,17 @@ import CategoryPage from "./pages/category/CategoryPage";
 import FindAuthDataPage from "./pages/FindId/FindId.page";
 import SearchPage from "./pages/search/SearchPage";
 import MainPage from "./pages/mainpage/mainpage";
-import NoticeForm from "./components/notice/NoticeForm";
+import NoticeList from "./components/notice/noticelist/NoticeList";
+import ShowNotice from "./components/notice/shownotice/ShowNotice";
 
 const Router = () => {
   return (
     <BrowserRouter>
       <Header />
       <Routes>
-        <Route path="/" element={<MainPage/>}/>
-        <Route path="/notice" element={<NoticeForm/>}/>
+        <Route path="/" element={<MainPage />} />
+        <Route path="/notice" element={<NoticeList />} />
+        <Route path="/shownotice" element={<ShowNotice />} />
         <Route path="/admin" element={<Admin />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/signup/*" element={<SignupPage />}>
@@ -23,8 +25,8 @@ const Router = () => {
           <Route path="idpw" element={<SignupPage />} />
         </Route>
         <Route path="/findauthdata/*" element={<FindAuthDataPage />}></Route>
-        <Route path="/category" element={<CategoryPage/>}></Route>
-        <Route path="/search" element={<SearchPage/>}/>
+        <Route path="/category" element={<CategoryPage />}></Route>
+        <Route path="/search" element={<SearchPage />} />
       </Routes>
     </BrowserRouter>
   );
