@@ -22,12 +22,9 @@ const Router = () => {
         <Route path="/notice" element={<NoticeList />} />
         <Route path="/shownotice" element={<ShowNotice />} />
         <Route path="/admin" element={<Admin />} />
-        <Route path="/write-notice" element={<WriteNotice/>}/>
+        <Route path="/write-notice" element={<WriteNotice />} />
         <Route path="/login" element={<LoginPage />} />
-        <Route path="/signup/*" element={<SignupPage />}>
-          <Route path="Info" element={<SignupPage />} />
-          <Route path="idpw" element={<SignupPage />} />
-        </Route>
+        <Route path="/signup" element={<SignupPage />} />
         <Route path="/findauthdata" element={<FindAuthDataPage />} />
         <Route path="/category" element={<CategoryPage />}></Route>
         <Route path="/search" element={<SearchPage />} />

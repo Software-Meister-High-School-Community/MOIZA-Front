@@ -29,6 +29,7 @@
     "react-router-dom": "^6.2.1",
     "react-scripts": "^5.0.0",
     "react-slick": "^0.28.1",
+    "react-step-progress": "^1.0.3",
     "recoil": "^0.5.2",
     "slick-carousel": "^1.8.1",
     "styled-components": "^5.3.3",
