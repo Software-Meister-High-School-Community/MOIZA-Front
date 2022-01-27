@@ -1,4 +1,7 @@
-import {OptionArrType} from '../../../interface/Common/Common.type';
+import {OptionArrType, PathType} from '../../../interface/Common/Common.type';
+
+export const MANAGE_REPORT = "MANAGE-REPORT";
+export const NOTIFICATION = "NOTIFICATION"
 
 interface TypeArrType {
     id : string
@@ -32,4 +35,18 @@ export const OptionArr:OptionArrType[] = [
     {
         option : "좋아요 순"
     },
+]
+export const WriteNoticePathArr:PathType[] = [
+    {
+        path : "어드민 페이지",
+        link : "/admin"
+    },
+    {
+        path : "공지사항",
+        link : "/admin?page-type=notification"
+    },
+    {
+        path : "공지사항 작성",
+        link : "/write-notification"
+    }
 ]

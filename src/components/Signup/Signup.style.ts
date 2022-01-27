@@ -5,6 +5,8 @@ export const SignupBox = styled.div`
   height: auto;
   display: flex;
   flex-direction: column;
+  margin: 0px auto;
+  margin-top: 120px;
 `;
 
 export const SignupTitle = styled.h1`

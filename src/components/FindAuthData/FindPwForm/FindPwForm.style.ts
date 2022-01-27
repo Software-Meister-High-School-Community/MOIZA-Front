@@ -1,24 +1,14 @@
 import styled, { css } from "styled-components";
 
-export const FindPwFormBox = styled.div<{ isReset: boolean }>`
+export const FindPwFormBox = styled.div<{ isCertification: boolean }>`
   width: 100%;
+  height: 322px;
   display: flex;
   justify-content: center;
   align-items: center;
   border: 1px solid ${(props) => props.theme.color.gray_color3};
-  border-top: 0px;
   box-sizing: border-box;
   background-color: ${(props) => props.theme.color.gray_color1};
-
-  ${(props) =>
-    props.isReset
-      ? css`
-          padding-top: 134px;
-          padding-bottom: 167px;
-        `
-      : css`
-          padding: 58px 84px;
-        `}
 `;
 
 export const FindPwFormWrap = styled.div`
@@ -95,27 +85,6 @@ export const FindPwFormCertificationButton = styled.button<{
           color: ${(props) => props.theme.color.gray_color3};
           cursor: default;
         `}
-`;
-
-export const FindPwFormPasswordInputEyeButton = styled.div`
-  position: absolute;
-  width: 20px;
-  height: 16px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 0px;
-  background: none;
-  outline: none;
-  cursor: pointer;
-  right: 14px;
-  top: 50%;
-  transform: translate(0%, -50%);
-`;
-
-export const FindPwFormPasswordInputEyeImg = styled.img`
-  width: 100%;
-  object-fit: scale-down;
 `;
 
 export const FindPwFormGuideText = styled.p`

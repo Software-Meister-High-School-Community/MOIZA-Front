@@ -9,6 +9,7 @@ const SubmitButton: React.FC<ISubmitButtonProps> = ({
   disable,
   yellow,
   blue,
+  name,
 }) => {
   return (
     <SubmitButtonBox
@@ -17,6 +18,7 @@ const SubmitButton: React.FC<ISubmitButtonProps> = ({
       onClick={handleClick}
       yellow={yellow}
       blue={blue}
+      name={name}
     >
       {text}
     </SubmitButtonBox>

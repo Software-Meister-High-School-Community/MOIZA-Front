@@ -27,8 +27,10 @@ time, mark, audio, video {
 	padding: 0;
 	border: 0;
 	font-size: 100%;
-	font: inherit;
+	//font: inherit;
 	vertical-align: baseline;
+    font-family: "Roboto", sans-serif;
+    text-decoration: none;
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure,
@@ -38,6 +40,11 @@ footer, header, hgroup, main, menu, nav, section {
 /* HTML5 hidden-attribute fix for newer browsers */
 *[hidden] {
     display: none;
+}
+button {
+  border: none;
+  background-color: transparent;
+  padding: 0;
 }
 body {
 	font-weight: 300;
@@ -49,7 +56,7 @@ body {
 }
 
 *{
-	font-family: 'Noto Sans KR', sans-serif;
+  
 }
 
 menu, ol, ul {

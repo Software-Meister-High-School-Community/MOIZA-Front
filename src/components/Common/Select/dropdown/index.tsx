@@ -14,15 +14,17 @@ const Dropdown:React.FC<IDropdownProps> = ({options,value,onChangeValue}) => {
         isFold && setIsFold(false)
     }
     return (
-        <S.Wrapper>
+        <S.Wrapper isFold={isFold}>
             <OutsideClickHandler onOutsideClick={onClickCloseDropdown}>
                 <label onClick={()=>setIsFold(!isFold)}>
                     <S.Seleted>{value}</S.Seleted>
                     <S.Arrow isFold={isFold} src={Arrow}/>
                 </label>
+                <div className="list">
                 {isFold ? options.map((item,index)=>(
                     <S.Option onClick={() => onClickRadio(item.option)} isSelected={value === item.option}>{item.option}</S.Option>
                 )) : ""}
+                </div>
             </OutsideClickHandler>
         </S.Wrapper>
     )

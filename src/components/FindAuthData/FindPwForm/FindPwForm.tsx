@@ -1,87 +1,108 @@
-import { useEffect } from "react";
-import { Route, Routes, useLocation, useNavigate } from "react-router";
-import { useRecoilState, useResetRecoilState } from "recoil";
-import {
-  findPwData,
-  findPwResetData,
-} from "../../../store/FindAuthData/findCheckDataAtom";
-import {
-  findPwDataNullCheck,
-  findPwResetDataNullCheck,
-} from "../../../util/findAuthDataNullCheck";
+import React, { ReactElement } from "react";
+import { useNavigate } from "react-router";
+import { useRecoilState } from "recoil";
+import useFindPw from "../../../hooks/findAuthData/findPw/useFindPw";
+import { sendCertificationNumberStatus } from "../../../store/FindAuthData/certificationStatus";
 import SubmitButton from "../../Common/Button/SubmitButton";
 import { FindAuthDataSubmitButtonWrap } from "../FindAuthData.style";
+import FindPwCertification from "./FindPwCertification";
 import FindPwCheck from "./FindPwCheck";
 import { FindPwFormBox, FindPwFormWrap } from "./FindPwForm.style";
 import FindPwReset from "./FindPwReset";
 import FindPwResult from "./FindPwResult";
+import * as CONST from "../constant/index";
 
 const FindPwForm: React.FC = () => {
   const navigate = useNavigate();
 
-  const [checkData, setCheckData] = useRecoilState(findPwData);
-  const [resetData, setResetData] = useRecoilState(findPwResetData);
-  const resetCheckData = useResetRecoilState(findPwData);
-  const resetResetData = useResetRecoilState(findPwResetData);
+  const {
+    pwPart,
+    id,
+    setId,
+    goToCertification,
+    certificationNumber,
+    setCertificationNumber,
+    goToResetPw,
+    resetPw,
+    setResetPw,
+    resetPartIsNull,
+    goToResult,
+  } = useFindPw();
 
-  useEffect(() => {
-    resetCheckData();
-    resetResetData();
-  }, [resetCheckData, resetResetData]);
+  const [isSendNumber, setIsSendNumber] = useRecoilState(
+    sendCertificationNumberStatus
+  );
 
-  const checkPartIsNull = findPwDataNullCheck(checkData);
-  const resetPartIsNull = findPwResetDataNullCheck(resetData);
-
-  const { pathname } = useLocation();
-  const querys = pathname.slice(1, pathname.length).split("/");
-  const query = querys[querys.length - 1];
-
-  const onClickCertification = () => {
-    navigate("findpwreset");
-  };
-
-  const onClickResetPw = () => {
-    navigate("findpwresult");
-  };
+  const compList: ReactElement[] = [
+    <FindPwCheck id={id} setId={setId} />,
+    <FindPwCertification
+      certificationNumber={certificationNumber}
+      setCertificationNumber={setCertificationNumber}
+    />,
+    <FindPwReset resetPw={resetPw} setResetPw={setResetPw} />,
+    <FindPwResult />,
+  ];
 
   return (
     <>
-      <FindPwFormBox isReset={query === "findpwresult"}>
+      <FindPwFormBox isCertification={isSendNumber.findPwSendNumber}>
         <FindPwFormWrap>
-          <Routes>
-            <Route path="" element={<FindPwCheck />} />
-            <Route path="findpwreset" element={<FindPwReset />} />
-            <Route path="findpwresult" element={<FindPwResult />} />
-          </Routes>
+          {compList.map((comp, index) => {
+            return (
+              <React.Fragment key={index}>
+                {pwPart === CONST.IFindPwKind[index].title && comp}
+              </React.Fragment>
+            );
+          })}
         </FindPwFormWrap>
       </FindPwFormBox>
       <FindAuthDataSubmitButtonWrap>
-        {query === "findpw" && (
-          <SubmitButton
-            big
-            text={"다음"}
-            blue
-            disable={checkPartIsNull}
-            handleClick={onClickCertification}
-          />
-        )}
-        {query === "findpwreset" && (
-          <SubmitButton
-            big
-            text={"다음"}
-            blue
-            handleClick={onClickResetPw}
-            disable={resetPartIsNull}
-          />
-        )}
-        {query === "findpwresult" && (
-          <SubmitButton
-            big
-            text={"로그인 하기"}
-            blue
-            handleClick={() => navigate("/login")}
-          />
-        )}
+        <>
+          {pwPart === "아이디 입력" && (
+            <SubmitButton
+              big
+              text={"다음"}
+              blue
+              disable={id === ""}
+              name="인증번호 입력" //다음 파트
+              handleClick={(e) => goToCertification(e)}
+            />
+          )}
+        </>
+        <>
+          {pwPart === "인증번호 입력" && (
+            <SubmitButton
+              big
+              text={"다음"}
+              blue
+              disable={certificationNumber === ""}
+              name="비밀번호 재등록"
+              handleClick={(e) => goToResetPw(e)}
+            />
+          )}
+        </>
+        <>
+          {pwPart === "비밀번호 재등록" && (
+            <SubmitButton
+              big
+              text={"다음"}
+              blue
+              name="비밀번호 결과"
+              handleClick={(e) => goToResult(e)}
+              disable={resetPartIsNull}
+            />
+          )}
+        </>
+        <>
+          {pwPart === "비밀번호 결과" && (
+            <SubmitButton
+              big
+              text={"로그인 하기"}
+              blue
+              handleClick={() => navigate("/login")}
+            />
+          )}
+        </>
       </FindAuthDataSubmitButtonWrap>
     </>
   );

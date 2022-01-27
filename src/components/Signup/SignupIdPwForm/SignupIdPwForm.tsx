@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import * as SIPF from "./SignupIdPwForm.style";
-import * as Imgs from "../../../assets/img";
 import { SignupFormsWrap } from "../Signup.style";
 import { Link } from "react-router-dom";
 import SubmitButton from "../../Common/Button/SubmitButton";
@@ -10,6 +9,7 @@ import {
   SignupIdPwFormData,
 } from "../../../store/Signup/registerInfoAtom";
 import { signupIdPwFormDataNullCheck } from "../../../util/signupDataNullCheck";
+import EyeButton from "../../Common/Button/EyeButton";
 
 const SignupIdPwForm: React.FC = () => {
   const [authData, setAuthData] = useRecoilState(SignupIdPwFormData);
@@ -64,17 +64,7 @@ const SignupIdPwForm: React.FC = () => {
                 }))
               }
             />
-            <SIPF.SignupIdPwPasswordInputEyeButton
-              onClick={() => setIsPwShow((prev) => !prev)}
-            >
-              <SIPF.SignupIdPwPasswordInputEyeImg
-                src={
-                  isPwShow
-                    ? Imgs.LoginPasswordNoShowImg
-                    : Imgs.LoginPasswordShowImg
-                }
-              />
-            </SIPF.SignupIdPwPasswordInputEyeButton>
+            <EyeButton isShow={isPwShow} onClick={setIsPwShow} left={310} />
           </div>
           <SIPF.SignupIdPwGuideText>
             8~16자 영문 대소문자, 숫자, 특수문자를 모두 조합하여 구성해주세요.
@@ -95,17 +85,11 @@ const SignupIdPwForm: React.FC = () => {
               }
             />
             {authData.checkPw !== "" && (
-              <SIPF.SignupIdPwPasswordInputEyeButton
-                onClick={() => setIsCheckPwShow((prev) => !prev)}
-              >
-                <SIPF.SignupIdPwPasswordInputEyeImg
-                  src={
-                    isCheckPwShow
-                      ? Imgs.LoginPasswordNoShowImg
-                      : Imgs.LoginPasswordShowImg
-                  }
-                />
-              </SIPF.SignupIdPwPasswordInputEyeButton>
+              <EyeButton
+                isShow={isCheckPwShow}
+                onClick={setIsCheckPwShow}
+                left={310}
+              />
             )}
           </div>
         </SIPF.SignupIdPwInputWrap>

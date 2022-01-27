@@ -3,7 +3,7 @@ import Category from '../../components/category'
 import Pagination from '../../components/Common/pagination/Pagination'
 
 
-const CategoryPage = () => {
+const CategoryPage:React.FC = () => {
     return (
         <Category/>
     )

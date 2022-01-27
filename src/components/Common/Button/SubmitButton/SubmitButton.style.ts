@@ -18,7 +18,7 @@ export const SubmitButtonBox = styled.button<ISubmitButtonBoxProps>`
         `
       : css`
           height: 34px;
-          font-size: ${props.theme.fontSize.head_small};
+          font-size: ${props.theme.fontSize.button_small};
         `};
 
   ${(props) =>
