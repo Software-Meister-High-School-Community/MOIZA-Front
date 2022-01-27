@@ -29,6 +29,7 @@ export const Types = styled.div`
   display: flex;
 `
 export const Type = styled.div`
+  cursor: pointer;
   width: 600px;
   height: 45px;
   border-radius: ${(props:StyleProps) => props.isLeft ? "5px 0 0 0" : "0 5px 0 0"};
