@@ -1,31 +1,42 @@
+import React from 'react';
 import * as S from './styles'
 import Arrow from '../../../../../assets/img/admin/arrow.svg'
 import {useState} from "react";
-const ReportOfUser:React.FC = () => {
+import {UserReportPropsType} from '../../../constants'
+import UseReplaceKeyword from '../../../../../util/hooks/useReplaceKeyword/index'
+
+interface PropsType {
+    userReport :UserReportPropsType;
+    searchKeyword : string;
+}
+
+const ReportOfUser:React.FC<PropsType> = ({userReport,searchKeyword}) => {
     const [showDetail,setShowDetail] = useState(false)
     return (
-        <S.Wrapper isOpen={showDetail}>
-            <S.Summary>
-                <S.UserInfo>
-                    <S.Name>
-                        장정원
-                    </S.Name>
-                    <S.Name>
-                        미림마이스터고
-                    </S.Name>
-                    <S.Type>
-                        재학생
-                    </S.Type>
-                </S.UserInfo>
-                <S.History>
-                    <S.Count>누적 <p>7</p>회</S.Count>
-                    <S.Arrow isFold={showDetail} src={Arrow} onClick={()=>setShowDetail(!showDetail)}/>
-                </S.History>
-            </S.Summary>
-            {
-                showDetail ? <Detail/> : ""
-            }
-        </S.Wrapper>
+
+                <S.Wrapper isOpen={showDetail}>
+                    <S.Summary>
+                        <S.UserInfo>
+                            <S.Name>
+                                <UseReplaceKeyword string={userReport.name} keyword={searchKeyword} fontColor="#0048FF"/>
+                            </S.Name>
+                            <S.Name>
+                                {userReport.school}
+                            </S.Name>
+                            <S.Type>
+                                {userReport.userType}
+                            </S.Type>
+                        </S.UserInfo>
+                        <S.History>
+                            <S.Progress>정지 <p>{userReport.wjdwl}</p>일 / <p>{userReport.now}</p>일 경과</S.Progress>
+                            <S.Count>누적 <p>{userReport.histroy}</p>회</S.Count>
+                            <S.Arrow isFold={showDetail} src={Arrow} onClick={()=>setShowDetail(!showDetail)}/>
+                        </S.History>
+                    </S.Summary>
+                    {
+                        showDetail ? <Detail/> : ""
+                    }
+                </S.Wrapper>
     )
 }
 
@@ -49,7 +60,7 @@ const Detail = () => {
                 <S.HeigthLine/>
                 <S.UserFreeze>
                     <p>정지</p>
-                    <input/>
+                    <input type="number"/>
                     <p>일</p>
                     <button>확인</button>
                 </S.UserFreeze>
