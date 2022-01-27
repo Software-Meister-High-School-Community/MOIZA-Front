@@ -29,10 +29,10 @@ const useSignupIdPw = () => {
   const goToLogin = () => {
     console.log(userInfo);
     console.log(authData);
+    setPart("약관동의");
     resetInfo();
     resetAuth();
     navigate("/signupsuccess");
-    setPart("약관동의");
   };
 
   return {
