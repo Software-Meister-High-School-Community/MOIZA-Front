@@ -7,9 +7,9 @@ export const Wrapper = styled.section`
   border-radius: 5px;
   padding: 13px 26px 13px 26px;
   display: flex;
+  margin-top: 10px;
 `
-export const Summary = styled.div`
-`
+
 export const Title = styled.div`
   display: flex;
   align-items: center;
