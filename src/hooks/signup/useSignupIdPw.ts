@@ -18,17 +18,20 @@ const useSignupIdPw = () => {
 
   const navigate = useNavigate();
 
-  const handleIdPw = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
-    const { value, name } = e.target;
-    setAuthData((prev) => ({ ...prev, [name]: value }));
-  }, []);
+  const handleIdPw = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement>) => {
+      const { value, name } = e.target;
+      setAuthData((prev) => ({ ...prev, [name]: value }));
+    },
+    [setAuthData]
+  );
 
   const goToLogin = () => {
     console.log(userInfo);
     console.log(authData);
     resetInfo();
     resetAuth();
-    navigate("/login");
+    navigate("/signupsuccess");
     setPart("약관동의");
   };
 

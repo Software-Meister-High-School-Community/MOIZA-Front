@@ -13,8 +13,6 @@ const useSignup = () => {
   //아이디 / 비밀번호 부분
 
   return {
-    signupPart,
-
     goToInfo,
   };
 };

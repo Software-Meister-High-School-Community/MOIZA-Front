@@ -80,9 +80,9 @@ const SignupForm: React.FC = () => {
         </SF.SignupFormFlexWrap>
         <SF.SignupFormTitle marginBottom={13}>학교선택</SF.SignupFormTitle>
         <SF.SignupFormSchoolWrap>
-          {CONST.SchoolList.map((item, index) => {
+          {CONST.SchoolList.map((item) => {
             return (
-              <SF.SignupFormSchoolButton name={item} key={index}>
+              <SF.SignupFormSchoolButton name={item} key={item}>
                 <OptionButton
                   isSelected={schoolSelect === item}
                   text={item}

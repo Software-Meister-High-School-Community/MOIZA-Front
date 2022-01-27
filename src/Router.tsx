@@ -11,6 +11,7 @@ import MainPage from "./pages/mainpage/mainpage";
 import NoticeList from "./components/notice/noticelist/NoticeList";
 import ShowNotice from "./components/notice/shownotice/ShowNotice";
 import { NoticeForm } from "./components/header/notice/Notice.style";
+import SignupSuccess from "./components/Signup/SignupSuccess";
 
 const Router = () => {
   return (
@@ -25,6 +26,7 @@ const Router = () => {
         <Route path="/write-notice" element={<WriteNotice />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/signup" element={<SignupPage />} />
+        <Route path="/signupsuccess" element={<SignupSuccess />} />
         <Route path="/findauthdata" element={<FindAuthDataPage />} />
         <Route path="/category" element={<CategoryPage />}></Route>
         <Route path="/search" element={<SearchPage />} />
