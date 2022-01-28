@@ -11,6 +11,7 @@ import * as CONST from "./Constant/index";
 import useSignup from "../../hooks/signup/useSignup";
 import { useRecoilState } from "recoil";
 import { signupPart } from "../../store/Signup/signupPartAtom";
+import "react-step-progress/dist/index.css";
 
 const Signup: React.FC = () => {
   const [part, setPart] = useRecoilState(signupPart);
@@ -57,7 +58,7 @@ const Signup: React.FC = () => {
                 subtitle: "정보 입력",
                 name: "정보 입력",
                 content: step2Content,
-                validator: step2Validator,
+                validator: () => false,
               },
               {
                 label: "",
@@ -67,13 +68,12 @@ const Signup: React.FC = () => {
                 validator: step3Validator,
               },
             ]}
-            labelClass="primary"
-            contentClass="content"
-            subtitleClass="subTitle"
-            buttonWrapperClass="wrapper"
-            stepClass="steps"
-            progressClass="progress"
-            previousBtnName="prev"
+            wrapperClass="stepWrap"
+            progressClass="stepProgress"
+            contentClass="stepContent"
+            labelClass="stepPrimary"
+            subtitleClass="stepSubTitle"
+            stepClass="stepSteps"
           />
         </S.SignupProcedureBox>
         {compList.map((comp, idx) => {
