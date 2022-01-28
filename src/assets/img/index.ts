@@ -7,3 +7,5 @@ export { default as SignupProcedure3 } from "../img/Signup/SignupProcedure3.svg"
 export { default as SearchLogo } from "./search/searchLogo.svg";
 export { default as SearchDelete } from "./search/deleteImg.svg";
 export { default as FindAuthDataSendIcon } from "./FindAuthData/sendIcon.svg";
+export { default as PaginationLeft} from "./Common/paginationLeft.svg";
+export { default as PaginationRight} from "./Common/paginationRight.svg";
