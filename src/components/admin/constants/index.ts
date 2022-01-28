@@ -73,7 +73,8 @@ export const WriteNoticePathArr:PathType[] = [
     }
 ]
 
-type userType = "재학생" | "졸업생"
+type userType = "재학생" | "졸업생";
+type postType = "question" | "common";
 
 export interface UserReportPropsType {
     name : string;
@@ -86,7 +87,17 @@ export interface UserReportPropsType {
     postReport : number;
     commentReport : number;
 }
-
+export interface UserReportResponseType{
+    name : string;
+    school : string;
+    userType : userType;
+    freeze : number;
+    now : number;
+    history : number;
+    userReport : number;
+    postReport : number;
+    commentReport : number;
+}
 export const UserReportTestArray:UserReportPropsType[] = [
     {
         name : '장정원',
@@ -123,8 +134,6 @@ export const UserReportTestArray:UserReportPropsType[] = [
     },
 ]
 
-type postType = "question" | "common"
-
 export interface PostReportPropsType {
     postType : postType;
     title : string;
@@ -133,6 +142,16 @@ export interface PostReportPropsType {
     userType : userType;
     reportDate : string
     history  :number;
+}
+
+export interface PostReportResponseType {
+    postType : postType;
+    title :string;
+    writer : string;
+    school : string;
+    userType : userType;
+    reportDate : string;
+    history : number
 }
 
 export const PostReportTestArray:PostReportPropsType[] = [
@@ -173,6 +192,14 @@ export interface CommentReportPropsType {
     reportDate : string;
     comment : string;
 }
+export interface CommentReportResponseType {
+    name:string;
+    school : string;
+    type : userType;
+    history : number;
+    reportDate : string;
+    commnet : string;
+}
 
 export const CommentReportTestArray:CommentReportPropsType[] = [
     {
@@ -192,3 +219,44 @@ export const CommentReportTestArray:CommentReportPropsType[] = [
         comment : "정원니 바보새기 이것도 몰라? 우리 할머니가 더 잘 아시겠다......   " + "ㅇ" + "3줄 끝.."
     },
 ]
+
+type NoticeType = "FIX" | "UNFIX";
+
+export interface NoticePropsType {
+    fix : NoticeType;
+    title : string;
+    view : number;
+    heart : number
+    postDate : string
+}
+export const NoticeListTestArray:NoticePropsType[] = [
+    {
+        fix : "FIX",
+        title : "모이자에 오신 여러분 환영합니다!",
+        view : 1200,
+        heart : 599,
+        postDate : "202201210829"
+    },
+    {
+        fix : "FIX",
+        title : "모이자와 함께하기 위해서는",
+        view : 1210,
+        heart : 599,
+        postDate : "202201210829"
+    },
+    {
+        fix : "UNFIX",
+        title : "모이자에 오신 여러분 환영합니다!",
+        view : 1350,
+        heart : 599,
+        postDate : "202201210829"
+    }
+]
+
+export interface NoticeListResponseType {
+    fix : NoticeType;
+    title : string;
+    date : string;
+    view : number;
+    heart : number
+}
