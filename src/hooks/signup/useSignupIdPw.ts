@@ -32,6 +32,10 @@ const useSignupIdPw = () => {
     setPart("약관동의");
     resetInfo();
     resetAuth();
+    if (userInfo.studentStatus === "졸업생") {
+      navigate("/graduatecheck");
+      return;
+    }
     navigate("/signupsuccess");
   };
 

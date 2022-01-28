@@ -13,6 +13,7 @@ import ShowNotice from "./components/notice/shownotice/ShowNotice";
 import { NoticeForm } from "./components/header/notice/Notice.style";
 import SignupSuccess from "./components/Signup/SignupSuccess";
 import GraduateCheckPage from "./pages/GraduateCheck/GraduateCheckPage";
+import GraduateCheckSuccess from "./components/GraduateCheck/GraduateCheckSuccess";
 
 const Router = () => {
   return (
@@ -29,6 +30,10 @@ const Router = () => {
         <Route path="/signup" element={<SignupPage />} />
         <Route path="/signupsuccess" element={<SignupSuccess />} />
         <Route path="/graduatecheck" element={<GraduateCheckPage />} />
+        <Route
+          path="/graduatechecksuccess"
+          element={<GraduateCheckSuccess />}
+        />
         <Route path="/findauthdata" element={<FindAuthDataPage />} />
         <Route path="/category" element={<CategoryPage />}></Route>
         <Route path="/search" element={<SearchPage />} />

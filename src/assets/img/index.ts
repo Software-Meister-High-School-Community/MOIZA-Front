@@ -10,3 +10,4 @@ export { default as FindAuthDataSendIcon } from "./FindAuthData/sendIcon.svg";
 export { default as GraduateCheckbachelorCap } from "./GraduateCheck/bachelorCap.svg";
 export { default as GraduateCheckFileAdd } from "./GraduateCheck/graduateCheckFileAdd.svg";
 export { default as GraduateCheckFileDelete } from "./GraduateCheck/graduateCheckFileDelete.svg";
+export { default as GraduateCheckSuccessIcon } from "./GraduateCheck/graduateCheckSuccessIcon.svg";
