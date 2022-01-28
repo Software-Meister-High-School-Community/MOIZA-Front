@@ -11,7 +11,7 @@ import PostForm from "./postform/PostForm";
 
 const PostList: React.FC = () => {
   const [value, setValue] = useState(OptionArr[0].option);
-  const [seleted, setSeleted] = useState("users");
+  const [seleted, setSeleted] = useState("all");
 
   return (
     <S.Wrapper>
