@@ -14,6 +14,7 @@ import { NoticeForm } from "./components/header/notice/Notice.style";
 import SignupSuccess from "./components/Signup/SignupSuccess";
 import GraduateCheckPage from "./pages/GraduateCheck/GraduateCheckPage";
 import GraduateCheckSuccess from "./components/GraduateCheck/GraduateCheckSuccess";
+import PostList from "./components/post/postlist/PostList";
 
 const Router = () => {
   return (
@@ -21,7 +22,6 @@ const Router = () => {
       <Header />
       <Routes>
         <Route path="/" element={<MainPage />} />
-        <Route path="/notice" element={<NoticeForm />} />
         <Route path="/notice" element={<NoticeList />} />
         <Route path="/shownotice" element={<ShowNotice />} />
         <Route path="/admin" element={<Admin />} />
@@ -37,6 +37,7 @@ const Router = () => {
         <Route path="/findauthdata" element={<FindAuthDataPage />} />
         <Route path="/category" element={<CategoryPage />}></Route>
         <Route path="/search" element={<SearchPage />} />
+        <Route path="/list/:listname" element={<PostList />} />
       </Routes>
     </BrowserRouter>
   );

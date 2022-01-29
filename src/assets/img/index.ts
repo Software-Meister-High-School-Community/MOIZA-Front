@@ -13,3 +13,5 @@ export { default as GraduateCheckFileDelete } from "./GraduateCheck/graduateChec
 export { default as GraduateCheckSuccessIcon } from "./GraduateCheck/graduateCheckSuccessIcon.svg";
 export { default as GraduateCheckProcedure1 } from "./GraduateCheck/graduateCheckProcedure1.svg";
 export { default as GraduateCheckProcedure2 } from "./GraduateCheck/graduateCheckProcedure2.svg";
+export { default as PaginationLeft} from "./Common/paginationLeft.svg";
+export { default as PaginationRight} from "./Common/paginationRight.svg";
