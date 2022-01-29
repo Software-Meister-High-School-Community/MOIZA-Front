@@ -10,7 +10,7 @@ import SearchPage from "./pages/search/SearchPage";
 import MainPage from "./pages/mainpage/mainpage";
 import NoticeList from "./components/notice/noticelist/NoticeList";
 import ShowNotice from "./components/notice/shownotice/ShowNotice";
-import { NoticeForm } from "./components/header/notice/Notice.style";
+import PostList from "./components/post/postlist/PostList";
 
 const Router = () => {
   return (
@@ -18,11 +18,10 @@ const Router = () => {
       <Header />
       <Routes>
         <Route path="/" element={<MainPage />} />
-        <Route path="/notice" element={<NoticeForm />} />
         <Route path="/notice" element={<NoticeList />} />
         <Route path="/shownotice" element={<ShowNotice />} />
         <Route path="/admin" element={<Admin />} />
-        <Route path="/write-notice" element={<WriteNotice/>}/>
+        <Route path="/write-notice" element={<WriteNotice />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/signup/*" element={<SignupPage />}>
           <Route path="Info" element={<SignupPage />} />
@@ -31,6 +30,7 @@ const Router = () => {
         <Route path="/findauthdata" element={<FindAuthDataPage />} />
         <Route path="/category" element={<CategoryPage />}></Route>
         <Route path="/search" element={<SearchPage />} />
+        <Route path="/list/:listname" element={<PostList />} />
       </Routes>
     </BrowserRouter>
   );
