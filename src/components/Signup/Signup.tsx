@@ -1,38 +1,47 @@
-import React from "react";
+import React, { ReactElement } from "react";
 import * as S from "./Signup.style";
-import { useLocation } from "react-router-dom";
 import SignupForm from "./SignupForm";
 import SignupProcedure from "./SignupProcedure";
 import SignupTermsForm from "./SignupTermsForm";
 import SignupIdPwForm from "./SignupIdPwForm";
 import * as Imgs from "../../assets/img";
+import StepProgressBar from "react-step-progress";
+import * as CONST from "./Constant/index";
+import useSignup from "../../hooks/signup/useSignup";
+import { useRecoilState } from "recoil";
+import { signupPart } from "../../store/Signup/signupPartAtom";
+import "react-step-progress/dist/index.css";
 
 const Signup: React.FC = () => {
-  const { pathname } = useLocation();
-  const location = pathname.slice(7);
+  const [part, setPart] = useRecoilState(signupPart);
+  const { goToInfo } = useSignup();
+
+  const compList: ReactElement[] = [
+    <SignupTermsForm goToInfo={goToInfo} />,
+    <SignupForm />,
+    <SignupIdPwForm />,
+  ];
+
+  const procedureImgs: string[] = [
+    Imgs.SignupProcedure1,
+    Imgs.SignupProcedure2,
+    Imgs.SignupProcedure3,
+  ];
 
   return (
     <S.SignupBox>
       <S.SignupTitle>회원가입</S.SignupTitle>
       <S.SignupMiddleWrap>
-        {location === "" && (
-          <>
-            <SignupProcedure img={Imgs.SignupProcedure1} />
-            <SignupTermsForm />
-          </>
-        )}
-        {location === "/info" && (
-          <>
-            <SignupProcedure img={Imgs.SignupProcedure2} />
-            <SignupForm />
-          </>
-        )}
-        {location === "/idpw" && (
-          <>
-            <SignupProcedure img={Imgs.SignupProcedure3} />
-            <SignupIdPwForm />
-          </>
-        )}
+        {compList.map((comp, idx) => {
+          return (
+            <React.Fragment key={idx}>
+              {part === CONST.SignupPartList[idx] && (
+                <SignupProcedure img={procedureImgs[idx]} />
+              )}
+              {part === CONST.SignupPartList[idx] && comp}
+            </React.Fragment>
+          );
+        })}
       </S.SignupMiddleWrap>
     </S.SignupBox>
   );

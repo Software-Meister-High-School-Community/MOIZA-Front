@@ -47,7 +47,7 @@ export const SignupProcedureWrap = styled.div`
   }
 `;
 
-export const SignupProcedurePointOutside = styled.div<{ isArrival: boolean }>`
+export const SignupProcedurePointOutside = styled.div<{ isArrival?: boolean }>`
   ${(props) =>
     props.isArrival
       ? css`
@@ -69,7 +69,7 @@ export const SignupProcedurePointOutside = styled.div<{ isArrival: boolean }>`
         `}
 `;
 
-export const SignupProcedurePoint = styled.div<{ isArrival: boolean }>`
+export const SignupProcedurePoint = styled.div<{ isArrival?: boolean }>`
   width: 10px;
   height: 10px;
   background-color: ${(props) =>

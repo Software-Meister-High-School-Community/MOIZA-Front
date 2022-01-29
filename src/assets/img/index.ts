@@ -7,5 +7,11 @@ export { default as SignupProcedure3 } from "../img/Signup/SignupProcedure3.svg"
 export { default as SearchLogo } from "./search/searchLogo.svg";
 export { default as SearchDelete } from "./search/deleteImg.svg";
 export { default as FindAuthDataSendIcon } from "./FindAuthData/sendIcon.svg";
+export { default as GraduateCheckbachelorCap } from "./GraduateCheck/bachelorCap.svg";
+export { default as GraduateCheckFileAdd } from "./GraduateCheck/graduateCheckFileAdd.svg";
+export { default as GraduateCheckFileDelete } from "./GraduateCheck/graduateCheckFileDelete.svg";
+export { default as GraduateCheckSuccessIcon } from "./GraduateCheck/graduateCheckSuccessIcon.svg";
+export { default as GraduateCheckProcedure1 } from "./GraduateCheck/graduateCheckProcedure1.svg";
+export { default as GraduateCheckProcedure2 } from "./GraduateCheck/graduateCheckProcedure2.svg";
 export { default as PaginationLeft} from "./Common/paginationLeft.svg";
 export { default as PaginationRight} from "./Common/paginationRight.svg";
