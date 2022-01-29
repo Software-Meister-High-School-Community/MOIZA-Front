@@ -25,8 +25,23 @@ export const List = styled.li<{
     color: ${(props)=>props.fixed ? "#FFB500" : "#555555"};
   }
 `
-export const Views = styled.em`
+export const Date = styled.em`
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  text-align: right;
+  color: #999999;
   margin-left: auto;
+  :after{
+    width: 1px;
+    height: 100%;
+    content: "";
+    border-right: 1px solid #E0E0E0;
+    margin: 0 30px;
+  }
+`
+export const Views = styled.em`
   display: flex;
   align-items: center;
   > span {
@@ -41,10 +56,14 @@ export const Views = styled.em`
 `
 export const Hearts = styled(Views)`
   margin-left: 34px;
+  cursor: pointer;
   > span {
     margin-left: 7px;
   }
 `
-export const SeeMore = styled.img`
+export const SeeMore = styled.label`
+  display: flex;
   margin-left: 37px;
+  position: relative;
+  cursor: pointer;
 `

@@ -1,7 +1,7 @@
 import * as S from './styles'
 import {useEffect, useState} from "react";
 import ManageReport from "../manage-report";
-import Notification from "../notification";
+import Notification from "../notice";
 import {useQuery} from "../../../util/hooks/useQuery";
 import {MANAGE_REPORT,NOTIFICATION} from "../constants";
 
