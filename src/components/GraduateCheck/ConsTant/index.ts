@@ -1,3 +1,5 @@
+export const GraduatePartList: string[] = ["졸업생 인증 안내", "졸업 인증"];
+
 interface IGraduateCheckLimitListProps {
   id: string;
   content: string;

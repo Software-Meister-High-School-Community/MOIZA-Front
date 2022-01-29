@@ -1,10 +1,10 @@
 import React from "react";
+import { GraduateCheckProcedureBox } from "./GraduateCheckProcedure.style";
 
-//import {  } from "./GraduateCheckProcedure.style.ts";
-const GraduateCheckProcedure: React.FC = () => {
+const GraduateCheckProcedure: React.FC<{ img: string }> = ({ img }) => {
   return (
     <>
-      <div />
+      <GraduateCheckProcedureBox src={img} />
     </>
   );
 };

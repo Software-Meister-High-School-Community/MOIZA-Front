@@ -11,3 +11,5 @@ export { default as GraduateCheckbachelorCap } from "./GraduateCheck/bachelorCap
 export { default as GraduateCheckFileAdd } from "./GraduateCheck/graduateCheckFileAdd.svg";
 export { default as GraduateCheckFileDelete } from "./GraduateCheck/graduateCheckFileDelete.svg";
 export { default as GraduateCheckSuccessIcon } from "./GraduateCheck/graduateCheckSuccessIcon.svg";
+export { default as GraduateCheckProcedure1 } from "./GraduateCheck/graduateCheckProcedure1.svg";
+export { default as GraduateCheckProcedure2 } from "./GraduateCheck/graduateCheckProcedure2.svg";
