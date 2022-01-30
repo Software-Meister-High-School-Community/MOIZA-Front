@@ -7,7 +7,6 @@ interface IStyleProps {
 
 export const Wrapper = styled.div`
     position:relative;
-    height:100vh;
     padding-top:200px;
 `
 export const Title  = styled.h1`
