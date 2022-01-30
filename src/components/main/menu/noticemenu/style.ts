@@ -63,15 +63,35 @@ export const NoticeList = styled.div`
   align-items: center;
 `;
 
+export const NoticeDiv = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+export const NoticeTextDiv = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
 export const NoticeText = styled.p<{
   fixed: boolean;
 }>`
-  width: 311px;
+  width: 240px;
   height: 19px;
-  margin: 17px 0 16px 0;
+  margin: 17px 26px 16px 14px;
   cursor: pointer;
   color: ${(props) => (props.fixed ? "#FFB500" : "#555555")};
   font-size: ${({ theme }) => theme.fontSize.body_medium};
+  font-weight: 400;
+  font-style: normal;
+  font-family: "Roboto", sans-serif;
+`;
+
+export const NoticeDate = styled.p`
+  width: 80px;
+  height: 14px;
+  color: ${({ theme }) => theme.color.gray_color4};
+  font-size: 12px;
   font-weight: 400;
   font-style: normal;
   font-family: "Roboto", sans-serif;
