@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const Wrapper = styled.ul`
   display: flex;
+  margin-top: 102px;
   > li {
     display:flex;
     > img {

@@ -74,27 +74,6 @@ export const LoginFormPasswordInputWrap = styled.div`
   margin-top: 13px;
 `;
 
-export const LoginFormPasswordInputEyeButton = styled.div`
-  position: absolute;
-  width: 20px;
-  height: 16px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 0px;
-  background: none;
-  outline: none;
-  cursor: pointer;
-  right: 14px;
-  top: 50%;
-  transform: translate(0%, -50%);
-`;
-
-export const LoginFormPasswordInputEyeImg = styled.img`
-  width: 100%;
-  object-fit: scale-down;
-`;
-
 export const LoginFormSaveInputWrap = styled.div`
   width: 100%;
   margin-top: 14px;

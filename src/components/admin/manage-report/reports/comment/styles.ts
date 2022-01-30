@@ -6,6 +6,7 @@ export const Wrapper = styled.section`
   box-sizing: border-box;
   border-radius: 10px;
   padding: 25px 32px 25px 24px;
+  margin-top: 20px;
 `
 export const UserInfo = styled.div`
   display: flex;
@@ -82,7 +83,7 @@ export const ReportMainContent = styled.div`
   display: flex;
   margin-top: 17px;
 `
-export const ReportContent = styled.div`
+export const ReportContent = styled.strong`
   width: 1020px;
   background-color: #F9F9F9;
   box-sizing: border-box;
@@ -109,6 +110,7 @@ export const Buttons = styled.div`
     line-height: 19px;
     display: flex;
     align-items: center;
+    justify-content: center;
     color: #000000;
     background-color: #ffffff;
     border: 1px solid #E0E0E0;

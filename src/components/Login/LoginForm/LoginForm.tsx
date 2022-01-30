@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import * as LF from "./LoginForm.style";
-import * as Imgs from "../../../assets/img";
 import { Link } from "react-router-dom";
+import EyeButton from "../../Common/Button/EyeButton";
 
 const LoginForm: React.FC = () => {
   const [isCheck, setIsCheck] = useState<boolean>(false);
@@ -19,17 +19,8 @@ const LoginForm: React.FC = () => {
               placeholder="비밀번호"
               type={isShow ? "text" : "password"}
             />
-            <LF.LoginFormPasswordInputEyeButton
-              onClick={() => setIsShow((prev) => !prev)}
-            >
-              <LF.LoginFormPasswordInputEyeImg
-                src={
-                  isShow
-                    ? Imgs.LoginPasswordNoShowImg
-                    : Imgs.LoginPasswordShowImg
-                }
-              />
-            </LF.LoginFormPasswordInputEyeButton>
+
+            <EyeButton isShow={isShow} onClick={setIsShow} />
           </LF.LoginFormPasswordInputWrap>
         </LF.LoginFormTextInputWrap>
         <LF.LoginFormSaveInputWrap>
@@ -46,9 +37,13 @@ const LoginForm: React.FC = () => {
             <Link to="/signup">회원가입</Link>
           </LF.LoginFormCategoryInput>
           <LF.LoginFormCategoryInputLine />
-          <LF.LoginFormCategoryInput>아이디 찾기</LF.LoginFormCategoryInput>
+          <LF.LoginFormCategoryInput>
+            <Link to="/findauthdata">아이디 찾기</Link>
+          </LF.LoginFormCategoryInput>
           <LF.LoginFormCategoryInputLine />
-          <LF.LoginFormCategoryInput>비밀번호 찾기</LF.LoginFormCategoryInput>
+          <LF.LoginFormCategoryInput>
+            <Link to="/findauthdata">비밀번호 찾기</Link>
+          </LF.LoginFormCategoryInput>
         </LF.LoginFormCategoryInputWrap>
       </LF.LoginFormInputWrap>
     </LF.LoginFormBox>

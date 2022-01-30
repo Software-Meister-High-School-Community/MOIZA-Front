@@ -26,3 +26,9 @@ export const StudentStatusList: ISexListProps[] = [
   { id: "재학생", summary: "재학생" },
   { id: "졸업생", summary: "졸업생" },
 ];
+
+export const SignupPartList: string[] = [
+  "약관동의",
+  "정보입력",
+  "아이디 / 비밀번호",
+];

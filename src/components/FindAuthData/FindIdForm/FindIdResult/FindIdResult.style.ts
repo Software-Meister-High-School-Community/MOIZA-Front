@@ -22,7 +22,7 @@ export const FindIdResultIdText = styled.p`
   font-size: ${(props) => props.theme.fontSize.head_small};
   font-style: normal;
   font-weight: normal;
-  color: ${(props) => props.theme.color.main_yellow_color};
+  color: ${(props) => props.theme.color.main_blue_color};
   text-align: center;
   margin-top: 32px;
 `;

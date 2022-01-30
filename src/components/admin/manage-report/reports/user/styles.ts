@@ -9,6 +9,7 @@ export const Wrapper = styled.section<StyleProps>`
   height:${(props) => props.isOpen ? "130":"60"}px;
   border: 1px solid #E0E0E0;
   background-color: #FFFFFF;
+  margin-top: 10px;
 `
 export const  Summary = styled.div`
   display: flex;
@@ -54,7 +55,19 @@ export const History = styled.div`
   margin-left: auto;
   margin-right: 29px;
 `
-
+export const Progress = styled.em`
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  display: flex;
+  align-items: center;
+  color: #EB4D3D;
+  margin-right : 40px;
+  > p {
+    font-size: 18px;
+  }
+`
 export const Count = styled.p`
   font-family: Roboto;
   font-size: 18px;
@@ -76,6 +89,7 @@ export const Arrow = styled.img<ArrowType>`
   margin-left: 54px;
   transition: all ease 300ms;
   transform: rotate(${(props)=>props.isFold ? "180":"0"}deg);
+  cursor: pointer;
 `
 
 export const DetailWrapper = styled.section`
@@ -130,14 +144,20 @@ export const UserFreeze = styled.div`
   text-align: left;
   display: flex;
   align-items: center;
-  > input {
+  > input[type="number"] {
     width: 60px;
     height: 30px;
     background-color: #E0E0E0;
     border: none;
     margin: 0 6px 0 17px;
     outline: none;
-    text-align: center;
+    box-sizing: border-box;
+    padding: 4px 13px 5px 15px;
+    text-align: right;
+    ::-webkit-outer-spin-button,::-webkit-inner-spin-button{
+      margin: 0;
+      appearance: none;
+    }
   }
   > button {
     width: 62px;
@@ -154,6 +174,7 @@ export const UserFreeze = styled.div`
     margin-left: 49px;
     box-sizing: border-box;
     padding: 10.5px 14px;
+    cursor: pointer;
   }
 `
 
@@ -169,4 +190,5 @@ export const RemoveUser = styled.button`
   font-weight: normal;
   font-size: 16px;
   line-height: 19px;
+  cursor: pointer;
 `

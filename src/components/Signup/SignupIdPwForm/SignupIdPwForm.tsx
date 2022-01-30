@@ -1,29 +1,26 @@
-import React, { useState } from "react";
+import React from "react";
 import * as SIPF from "./SignupIdPwForm.style";
-import * as Imgs from "../../../assets/img";
-import { SignupFormsWrap } from "../Signup.style";
-import { Link } from "react-router-dom";
+import { SignupFooterWrap, SignupFormsWrap } from "../Signup.style";
 import SubmitButton from "../../Common/Button/SubmitButton";
 import { useRecoilState } from "recoil";
-import {
-  SignupFormData,
-  SignupIdPwFormData,
-} from "../../../store/Signup/registerInfoAtom";
+import { SignupIdPwFormData } from "../../../store/Signup/registerInfoAtom";
 import { signupIdPwFormDataNullCheck } from "../../../util/signupDataNullCheck";
+import EyeButton from "../../Common/Button/EyeButton";
+import useSignupIdPw from "../../../hooks/signup/useSignupIdPw";
 
 const SignupIdPwForm: React.FC = () => {
-  const [authData, setAuthData] = useRecoilState(SignupIdPwFormData);
-  const [userInfo, setUserInfo] = useRecoilState(SignupFormData);
+  const {
+    isPwShow,
+    setIsPwShow,
+    isCheckPwShow,
+    setIsCheckPwShow,
+    handleIdPw,
+    goToLogin,
+  } = useSignupIdPw();
 
-  const [isPwShow, setIsPwShow] = useState(false);
-  const [isCheckPwShow, setIsCheckPwShow] = useState(false);
+  const [authData, setAuthData] = useRecoilState(SignupIdPwFormData);
 
   const isNull = signupIdPwFormDataNullCheck(authData);
-
-  const onClick = () => {
-    console.log(userInfo);
-    console.log(authData);
-  };
 
   return (
     <SignupFormsWrap>
@@ -35,12 +32,7 @@ const SignupIdPwForm: React.FC = () => {
               type="text"
               name="id"
               value={authData.id}
-              onChange={(e) =>
-                setAuthData((prev) => ({
-                  ...prev,
-                  [e.target.name]: e.target.value,
-                }))
-              }
+              onChange={(e) => handleIdPw(e)}
             />
             <SIPF.SignupIdPwDoubleCheckButton
               enabled={authData.id !== ""}
@@ -57,24 +49,9 @@ const SignupIdPwForm: React.FC = () => {
               type={isPwShow ? "text" : "password"}
               name="pw"
               value={authData.pw}
-              onChange={(e) =>
-                setAuthData((prev) => ({
-                  ...prev,
-                  [e.target.name]: e.target.value,
-                }))
-              }
+              onChange={(e) => handleIdPw(e)}
             />
-            <SIPF.SignupIdPwPasswordInputEyeButton
-              onClick={() => setIsPwShow((prev) => !prev)}
-            >
-              <SIPF.SignupIdPwPasswordInputEyeImg
-                src={
-                  isPwShow
-                    ? Imgs.LoginPasswordNoShowImg
-                    : Imgs.LoginPasswordShowImg
-                }
-              />
-            </SIPF.SignupIdPwPasswordInputEyeButton>
+            <EyeButton isShow={isPwShow} onClick={setIsPwShow} left={310} />
           </div>
           <SIPF.SignupIdPwGuideText>
             8~16자 영문 대소문자, 숫자, 특수문자를 모두 조합하여 구성해주세요.
@@ -87,38 +64,27 @@ const SignupIdPwForm: React.FC = () => {
               value={authData.checkPw}
               name="checkPw"
               type={isCheckPwShow ? "text" : "password"}
-              onChange={(e) =>
-                setAuthData((prev) => ({
-                  ...prev,
-                  [e.target.name]: e.target.value,
-                }))
-              }
+              onChange={(e) => handleIdPw(e)}
             />
             {authData.checkPw !== "" && (
-              <SIPF.SignupIdPwPasswordInputEyeButton
-                onClick={() => setIsCheckPwShow((prev) => !prev)}
-              >
-                <SIPF.SignupIdPwPasswordInputEyeImg
-                  src={
-                    isCheckPwShow
-                      ? Imgs.LoginPasswordNoShowImg
-                      : Imgs.LoginPasswordShowImg
-                  }
-                />
-              </SIPF.SignupIdPwPasswordInputEyeButton>
+              <EyeButton
+                isShow={isCheckPwShow}
+                onClick={setIsCheckPwShow}
+                left={310}
+              />
             )}
           </div>
         </SIPF.SignupIdPwInputWrap>
       </SIPF.SignupIdPwFormBox>
-      <Link to="idpw">
+      <SignupFooterWrap>
         <SubmitButton
           text={"다음 단계"}
           blue
           big
           disable={isNull}
-          handleClick={onClick}
+          handleClick={goToLogin}
         />
-      </Link>
+      </SignupFooterWrap>
     </SignupFormsWrap>
   );
 };

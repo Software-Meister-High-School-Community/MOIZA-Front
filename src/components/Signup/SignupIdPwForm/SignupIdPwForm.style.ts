@@ -75,24 +75,3 @@ export const SignupIdPwGuideText = styled.p`
   font-weight: normal;
   margin-top: 10px;
 `;
-export const SignupIdPwPasswordInputEyeButton = styled.button`
-  position: absolute;
-  width: 18px;
-  height: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 0px;
-  background: none;
-  outline: none;
-  padding: 0px;
-  cursor: pointer;
-  top: 50%;
-  transform: translate(0%, -50%);
-  left: 310px;
-`;
-
-export const SignupIdPwPasswordInputEyeImg = styled.img`
-  width: 100%;
-  object-fit: scale-down;
-`;
