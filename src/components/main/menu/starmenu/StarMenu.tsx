@@ -1,6 +1,6 @@
 import * as S from "./style";
 import StarPost from "./StarPost";
-import { StarPostCount } from "./constants";
+import { StarPostCount } from "../constants";
 
 const StarMenu: React.FC = () => {
   const StarMenuList = StarPostCount.map((menu, index) => {
