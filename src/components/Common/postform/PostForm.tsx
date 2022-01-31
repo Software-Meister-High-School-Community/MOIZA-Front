@@ -1,11 +1,11 @@
 import React from "react";
 import * as S from "./style";
-import BookRead from "../../../../assets/img/main/bookRead.svg";
-import Question from "../../../../assets/img/main/Question.svg";
-import view from "../../../../assets/img/admin/icons/view.svg";
-import heart from "../../../../assets/img/admin/icons/heart.svg";
-import Line from "../../../../assets/img/notice/Line.svg";
-import Comment from "../../../../assets/img/post/Comment.svg";
+import BookRead from "../../../assets/img/main/bookRead.svg";
+import Question from "../../../assets/img/main/Question.svg";
+import view from "../../../assets/img/admin/icons/view.svg";
+import heart from "../../../assets/img/admin/icons/heart.svg";
+import Line from "../../../assets/img/notice/Line.svg";
+import Comment from "../../../assets/img/post/Comment.svg";
 
 const PostForm: React.FC = () => {
   return (
