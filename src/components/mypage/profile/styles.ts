@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const Wrapper = styled.section`
   display: flex;
   > .userProfile {
+    margin-left: 36px;
     width: 200px;
     height: 200px;
     margin-top: -44px;
