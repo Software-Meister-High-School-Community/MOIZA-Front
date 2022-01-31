@@ -7,7 +7,7 @@ import Dropdown from "../../Common/Select/dropdown";
 import { OptionArr } from "../constants";
 import RadioButton from "../../Common/Select/RadioButton";
 import { TypeArr } from "../constants";
-import PostForm from "./postform/PostForm";
+import PostForm from "../../Common/postform/PostForm";
 
 const PostList: React.FC = () => {
   const [value, setValue] = useState(OptionArr[0].option);
