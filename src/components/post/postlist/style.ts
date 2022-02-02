@@ -2,6 +2,8 @@ import styled from "styled-components";
 
 export const Wrapper = styled.div`
   display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 export const PostWrapper = styled.div`
@@ -40,6 +42,7 @@ export const PostVector = styled.img`
   width: 26px;
   height: 26px;
   margin-top: 2px;
+  cursor: pointer;
 `;
 
 export const PostDiv = styled.div`
@@ -64,7 +67,9 @@ export const PosFormtDiv = styled.div`
 `;
 
 export const WriteDiv = styled.div`
-  margin-left: 222px;
+  position: relative;
+  top: 300px;
+  left: 222px;
 `;
 
 export const WriteBtn = styled.div`
