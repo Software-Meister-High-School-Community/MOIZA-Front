@@ -15,33 +15,38 @@ const PostList: React.FC = () => {
 
   return (
     <S.Wrapper>
-      <S.PostHeadDiv>
-        <Path pathArray={PostListPathArr} />
-        <S.PostNameDiv>
-          <S.PostName>OOO 커뮤니티</S.PostName>
-          <S.PostVector src={Vector} alt="" />
-        </S.PostNameDiv>
-      </S.PostHeadDiv>
-      <S.PostDiv>
-        <S.SelectDiv>
-          <S.RadioBtnDiv>
-            <RadioButton
-              selected={seleted}
-              setSelected={setSeleted}
-              radioArray={TypeArr}
-              name="typecheckbox"
+      <S.PostWrapper>
+        <S.PostHeadDiv>
+          <Path pathArray={PostListPathArr} />
+          <S.PostNameDiv>
+            <S.PostName>OOO 커뮤니티</S.PostName>
+            <S.PostVector src={Vector} alt="" />
+          </S.PostNameDiv>
+        </S.PostHeadDiv>
+        <S.PostDiv>
+          <S.SelectDiv>
+            <S.RadioBtnDiv>
+              <RadioButton
+                selected={seleted}
+                setSelected={setSeleted}
+                radioArray={TypeArr}
+                name="typecheckbox"
+              />
+            </S.RadioBtnDiv>
+            <Dropdown
+              value={value}
+              onChangeValue={setValue}
+              options={OptionArr}
             />
-          </S.RadioBtnDiv>
-          <Dropdown
-            value={value}
-            onChangeValue={setValue}
-            options={OptionArr}
-          />
-        </S.SelectDiv>
-        <S.PosFormtDiv>
-          <PostForm />
-        </S.PosFormtDiv>
-      </S.PostDiv>
+          </S.SelectDiv>
+          <S.PosFormtDiv>
+            <PostForm />
+          </S.PosFormtDiv>
+        </S.PostDiv>
+      </S.PostWrapper>
+      <S.WriteDiv>
+        <S.WriteBtn />
+      </S.WriteDiv>
     </S.Wrapper>
   );
 };
