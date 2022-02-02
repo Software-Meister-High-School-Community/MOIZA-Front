@@ -5,9 +5,12 @@ import { NoticeListPathArr } from "../constants/index";
 import Dropdown from "../../Common/Select/dropdown";
 import { OptionArr } from "../../admin/constants";
 import NoticePost from "../noticePost/NoticePost";
+import PagiNation from "../../Common/pagination/Pagination";
 
 const NoticeList: React.FC = () => {
   const [value, setValue] = useState(OptionArr[0].option);
+  const [pagenation, setPagenation] = useState(1);
+
   return (
     <S.Wrapper>
       <S.NoticeHeadDiv>
@@ -27,6 +30,14 @@ const NoticeList: React.FC = () => {
         <S.Post>
           <NoticePost />
         </S.Post>
+        <nav className="pagenation">
+          <PagiNation
+            total={5}
+            limit={1}
+            page={pagenation}
+            setPage={setPagenation}
+          />
+        </nav>
       </S.PostDiv>
     </S.Wrapper>
   );
