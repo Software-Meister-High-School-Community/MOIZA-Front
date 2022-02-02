@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { IRadioButtonProps } from "../../../../interface/Common/Common.type";
-import { RadioButtonBox, RadioButtonRect, Wrapper } from "./RadioButton.style";
+import { RadioButtonBox, RadioButtonRect, Wrapper,Radios } from "./RadioButton.style";
 
 const RadioButton: React.FC<IRadioButtonProps> = ({
   name,
@@ -9,7 +9,7 @@ const RadioButton: React.FC<IRadioButtonProps> = ({
   selected,
 }) => {
   return (
-    <>
+    <Radios className="radios">
       {radioArray.map((item) => (
         <Wrapper>
           <RadioButtonRect onClick={() => setSelected(item.id)}>
@@ -23,7 +23,7 @@ const RadioButton: React.FC<IRadioButtonProps> = ({
           <p>{item.summary}</p>
         </Wrapper>
       ))}
-    </>
+    </Radios>
   );
 };
 

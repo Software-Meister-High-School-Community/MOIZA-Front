@@ -1,4 +1,3 @@
-import * as S from './styles';
 import React,{useState,useEffect} from 'react';
 import DropDown from '../../Common/Select/dropdown/index'
 import {OptionArr} from '../constants/index'
@@ -14,12 +13,12 @@ const Notification = () => {
         },[]
     )
     return (
-        <S.Wrapper>
+        <section className="noticeListWrapper">
             <DropDown value={value} onChangeValue={setValue} options={OptionArr}/>
             {noticeList.map((item,index)=>(
                 <NotificationList item={item}/>
             ))}
-        </S.Wrapper>
+        </section>
     )
 }
 export default  Notification

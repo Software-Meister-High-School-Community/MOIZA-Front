@@ -6,11 +6,11 @@ import nomal from '../../../../assets/img/admin/icons/notification.svg'
 import view from '../../../../assets/img/admin/icons/view.svg'
 import heart from '../../../../assets/img/admin/icons/heart.svg'
 import seeMore from '../../../../assets/img/admin/icons/seeMore.svg'
-import SeeMoreModal from '../modal/index';
-import {NoticePropsType} from '../../constants/index';
+import SeeMoreModal from '../../../Common/seeMoreModal/index';
+import {NoticePropsType,seeMoreOptionList} from '../../constants/index';
+
 const NotificationList:React.FC<{item:NoticePropsType}> = ({item}) => {
     const [seeMoreModal,setSeeMoreModal] = useState(false);
-    console.log(seeMoreModal)
     const viewDivideby1000 = Math.floor((item.view / 100))/10;
     const postDate = item.postDate
     const year = postDate.substr(1,2);
@@ -36,7 +36,7 @@ const NotificationList:React.FC<{item:NoticePropsType}> = ({item}) => {
                 </S.Hearts>
                 <S.SeeMore  onClick={() => setSeeMoreModal(true)}>
                     <img src={seeMore}/>
-                {seeMoreModal ? <SeeMoreModal setModalStatus={setSeeMoreModal}/> : ""}
+                {seeMoreModal ? <SeeMoreModal optionList={seeMoreOptionList} setModalStatus={setSeeMoreModal}/> : ""}
                 </S.SeeMore>
             </S.List>
         </S.Wrapper>
