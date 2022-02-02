@@ -4,6 +4,7 @@ export const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-left: 65px;
 `;
 
 export const PostWrapper = styled.div`
@@ -67,9 +68,11 @@ export const PosFormtDiv = styled.div`
 `;
 
 export const WriteDiv = styled.div`
+  margin-top: 180px;
   position: relative;
-  top: 300px;
   left: 222px;
+  display: flex;
+  align-items: center;
 `;
 
 export const WriteBtn = styled.div`
