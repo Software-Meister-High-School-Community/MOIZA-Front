@@ -9,6 +9,9 @@ export const PostWrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  .pagenation {
+    margin-top: 130px;
+  }
 `;
 
 export const PostHeadDiv = styled.div`
@@ -65,6 +68,9 @@ export const WriteDiv = styled.div`
 `;
 
 export const WriteBtn = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 65px;
   height: 65px;
   border-radius: 35px;
