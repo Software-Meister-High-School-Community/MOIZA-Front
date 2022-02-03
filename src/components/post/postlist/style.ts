@@ -2,6 +2,13 @@ import styled from "styled-components";
 
 export const Wrapper = styled.div`
   display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 65px;
+`;
+
+export const PostWrapper = styled.div`
+  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -36,6 +43,7 @@ export const PostVector = styled.img`
   width: 26px;
   height: 26px;
   margin-top: 2px;
+  cursor: pointer;
 `;
 
 export const PostDiv = styled.div`

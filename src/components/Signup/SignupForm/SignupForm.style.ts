@@ -23,6 +23,10 @@ export const SignupFormFlexWrap = styled.div`
   display: flex;
   margin-bottom: 75px;
   align-items: center;
+
+  &:last-child {
+    margin-bottom: 0px;
+  }
 `;
 
 export const SignupFormTextInput = styled.input<{ width: string }>`

@@ -8,7 +8,9 @@ interface ISubmitButtonBoxProps {
 
 export const SubmitButtonBox = styled.button<ISubmitButtonBoxProps>`
   cursor: pointer;
-  color: ${(props) => props.theme.color.gray_color1};
+  border: 1px solid ${(props) => props.theme.color.gray_color3};
+  background-color: ${(props) => props.theme.color.gray_color1};
+  color: ${(props) => props.theme.color.gray_color4};
 
   ${(props) =>
     props.big
@@ -24,13 +26,17 @@ export const SubmitButtonBox = styled.button<ISubmitButtonBoxProps>`
   ${(props) =>
     props.yellow &&
     css`
+      color: ${(props) => props.theme.color.gray_color1};
       background-color: ${(props) => props.theme.color.main_yellow_color};
+      border: 0px;
     `}
 
   ${(props) =>
     props.blue &&
     css`
+      color: ${(props) => props.theme.color.gray_color1};
       background-color: ${(props) => props.theme.color.main_blue_color};
+      border: 0px;
     `};
 
   ${(props) =>
@@ -56,7 +62,6 @@ export const SubmitButtonBox = styled.button<ISubmitButtonBoxProps>`
   align-items: center;
   justify-content: center;
   border-radius: 25px;
-  border: 0px;
   padding: 13px 16px;
   font-weight: bold;
 
