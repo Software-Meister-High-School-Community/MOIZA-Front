@@ -18,6 +18,7 @@ export const List = styled.li<{
   margin-top: 13px;
   display: flex;
   align-items: center;
+  cursor: pointer;
   > img {
     width: 30px;
     height: 30px;
