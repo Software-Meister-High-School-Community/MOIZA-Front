@@ -14,10 +14,8 @@ const Search: React.FC = () => {
     const [items, setItems ] = useState([]);
     
     return (
-        <>
-
-            <S.Title>검색</S.Title>
         <S.Wrapper>
+            <S.Title>검색</S.Title>
         <S.SearchWrapper>
 
         <OutsideClickHandler onOutsideClick={() => 
@@ -42,7 +40,6 @@ const Search: React.FC = () => {
         </OutsideClickHandler> 
         </S.SearchWrapper>
         </S.Wrapper>
-        </>
     )
 }
 
