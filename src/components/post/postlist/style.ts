@@ -5,6 +5,9 @@ export const Wrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  .pagenation {
+    margin-top: 130px;
+  }
 `;
 
 export const PostHeadDiv = styled.div`
@@ -54,4 +57,17 @@ export const SelectDiv = styled.div`
 
 export const PosFormtDiv = styled.div`
   margin-top: 55px;
+`;
+
+export const WriteBtn = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  width: 65px;
+  height: 65px;
+  border-radius: 35px;
+  background-color: ${({ theme }) => theme.color.main_yellow_color};
+  right: 10px;
+  top: 50%;
 `;
