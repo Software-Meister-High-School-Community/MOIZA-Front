@@ -1,6 +1,6 @@
 import React from "react";
-import StarMenu from "../StarMenu";
-import NoticeMenu from "../NoticeMenu";
+import StarMenu from "../starmenu/StarMenu";
+import NoticeMenu from "../noticemenu/NoticeMenu";
 import * as S from "./style";
 import Footer from "../../../footer/Footer";
 

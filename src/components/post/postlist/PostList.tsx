@@ -17,8 +17,12 @@ const PostList: React.FC = () => {
   const [pagenation, setPagenation] = useState(1);
 
   return (
+    <>
+      <S.WriteBtn>
+        <img src={Write} alt="" />
+      </S.WriteBtn>
+      <S.Wrapper>
     <S.Wrapper>
-      <S.PostWrapper>
         <S.PostHeadDiv>
           <Path pathArray={PostListPathArr} />
           <S.PostNameDiv>
@@ -54,13 +58,9 @@ const PostList: React.FC = () => {
             setPage={setPagenation}
           />
         </nav>
-      </S.PostWrapper>
-      <S.WriteDiv>
-        <S.WriteBtn>
-          <img src={Write} alt="" />
-        </S.WriteBtn>
-      </S.WriteDiv>
-    </S.Wrapper>
+      </S.Wrapper>
+    </>
+
   );
 };
 

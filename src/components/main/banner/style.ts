@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Wrapper = styled.div`
   display: flex;
   justify-content: center;
-  margin-top: 68px;
+  margin: 68px 36px 0 36px;
 `;
 
 export const Banner = styled.div`

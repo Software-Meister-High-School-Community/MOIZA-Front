@@ -67,20 +67,15 @@ export const PosFormtDiv = styled.div`
   margin-top: 55px;
 `;
 
-export const WriteDiv = styled.div`
-  margin-top: 180px;
-  position: relative;
-  left: 222px;
-  display: flex;
-  align-items: center;
-`;
-
 export const WriteBtn = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  position: fixed;
   width: 65px;
   height: 65px;
   border-radius: 35px;
   background-color: ${({ theme }) => theme.color.main_yellow_color};
+  right: 10px;
+  top: 50%;
 `;
