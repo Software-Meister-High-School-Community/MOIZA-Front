@@ -15,29 +15,20 @@ const Slide = () => {
     speed: 1000,
     autoplay: true,
     autoplaySpeed: 3000,
-    slidesToShow: 1,
     slidesToScroll: 1,
     cssEase: "linear",
+    centerMode: true,
+    variableWidth: true,
   };
 
   return (
     <div>
       <Slider {...settings}>
-        <div>
-          <Daeduck />
-        </div>
-        <div>
-          <Daegu />
-        </div>
-        <div>
-          <Gwangju />
-        </div>
-        <div>
-          <Mirim />
-        </div>
-        <div>
-          <Busan />
-        </div>
+        <Daeduck />
+        <Daegu />
+        <Gwangju />
+        <Mirim />
+        <Busan />
       </Slider>
     </div>
   );
