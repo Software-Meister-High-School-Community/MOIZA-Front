@@ -22,7 +22,6 @@ const PostList: React.FC = () => {
         <img src={Write} alt="" />
       </S.WriteBtn>
       <S.Wrapper>
-    <S.Wrapper>
         <S.PostHeadDiv>
           <Path pathArray={PostListPathArr} />
           <S.PostNameDiv>
@@ -60,7 +59,6 @@ const PostList: React.FC = () => {
         </nav>
       </S.Wrapper>
     </>
-
   );
 };
 
