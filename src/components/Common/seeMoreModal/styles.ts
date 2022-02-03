@@ -2,7 +2,6 @@ import styled from 'styled-components';
 
 export const Wrapper = styled.section`
   width: 140px;
-  height: 90px;
   box-sizing: border-box;
   position: absolute;
   top: 10.5px;
@@ -29,13 +28,17 @@ export const Option = styled.button`
   display: flex;
   flex-direction: column;
   cursor: pointer;
-  :nth-child(1){
     :after{
       content: "";
       width: 131.6px;
       border-bottom: 1px solid #E0E0E0;
       position: absolute;
-      top: 50%;
+      margin-top: 31px;
+    }
+  :last-child{
+    :after {
+      width: 0;
+      height: 0;
     }
   }
 `

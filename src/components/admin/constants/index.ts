@@ -1,4 +1,4 @@
-import {OptionArrType, PathType} from '../../../interface/Common/Common.type';
+import {OptionArrType, PathType,SeeMoreOptionInterface} from '../../../interface/Common/Common.type';
 
 export const MANAGE_REPORT = "MANAGE-REPORT";
 export const NOTIFICATION = "NOTIFICATION"
@@ -260,3 +260,13 @@ export interface NoticeListResponseType {
     view : number;
     heart : number
 }
+export const seeMoreOptionList:SeeMoreOptionInterface[] = [
+    {
+        option : "수정",
+        onClickFunction : (()=>console.log("ASd"))
+    },
+    {
+        option : "삭제",
+        onClickFunction : (()=>console.log("ASd"))
+    }
+]

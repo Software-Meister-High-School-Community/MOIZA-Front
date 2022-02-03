@@ -60,3 +60,7 @@ export interface IPaginationProps {
   page: number,
   setPage: Dispatch<SetStateAction<number>>;
 }
+export interface SeeMoreOptionInterface {
+  option : string;
+  onClickFunction : () => void
+}

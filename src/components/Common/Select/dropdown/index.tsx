@@ -14,7 +14,7 @@ const Dropdown:React.FC<IDropdownProps> = ({options,value,onChangeValue}) => {
         isFold && setIsFold(false)
     }
     return (
-        <S.Wrapper isFold={isFold}>
+        <S.Wrapper className="dropdownWrapper" isFold={isFold}>
             <OutsideClickHandler onOutsideClick={onClickCloseDropdown}>
                 <label onClick={()=>setIsFold(!isFold)}>
                     <S.Seleted>{value}</S.Seleted>

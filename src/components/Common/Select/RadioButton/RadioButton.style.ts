@@ -1,5 +1,9 @@
 import styled from "styled-components";
 
+export const Radios = styled.section`
+  display: flex;
+`
+
 export const Wrapper = styled.label`
   display: flex;
   align-items: center;
