@@ -20,7 +20,7 @@ const Path:React.FC<PropsType> = ({pathArray}) => {
         ))
     },[pathArray])
     return (
-        <S.Wrapper>
+        <S.Wrapper className="path">
             {PathList}
         </S.Wrapper>
     )

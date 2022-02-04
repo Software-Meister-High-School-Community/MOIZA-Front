@@ -64,3 +64,12 @@ export interface SeeMoreOptionInterface {
   option : string;
   onClickFunction : () => void
 }
+export interface searchInPagePropsType {
+  onSubmit : (e:any) => void;
+  width : string;
+  heigth : string;
+  onChange : (e:any) => void;
+  placeholder : string;
+  value : string;
+  fontsize : string;
+}
