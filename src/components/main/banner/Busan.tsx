@@ -22,7 +22,7 @@ const Busan: React.FC = () => {
         </S.SchoolClass2>
         <S.SchoolHomePage
           onClick={() =>
-            WindowOpenUtil("https://school.busanedu.net/bssm-h/main.do")
+            WindowOpenUtil("http://bssm.hs.kr/")
           }
           width="140px"
           margin="0 623px 0 82px"
