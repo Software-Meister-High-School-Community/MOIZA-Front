@@ -30,6 +30,21 @@ export const PostListPathArr: PathType[] = [
   },
 ];
 
+export const PostWritePathArr: PathType[] = [
+  {
+    path: "카테고리",
+    link: "/category",
+  },
+  {
+    path: "Design",
+    link: "/list/Design",
+  },
+  {
+    path: "게시물작성",
+    link: "'/postwrite/Design",
+  },
+];
+
 export const OptionArr: OptionArrType[] = [
   {
     option: "최신 순",
