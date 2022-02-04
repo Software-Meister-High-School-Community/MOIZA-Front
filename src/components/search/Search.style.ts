@@ -7,21 +7,21 @@ interface IStyleProps {
 
 export const Wrapper = styled.div`
     position:relative;
-    height:100vh;
-    padding-top:200px;
+    margin: 0 auto;
+    height:288px;
+    width: 1200px;
+    padding-top:100px;
+    border-bottom: 1px solid ${(props)=> props.theme.color.gray_color4};
 `
 export const Title  = styled.h1`
     font-size: ${(props)=>props.theme.fontSize.head_small};
     font-weight: 400;
-    position: absolute;
-    top: 100px;
-    left: 200px;
 `
 export const Container = styled.form`
     display:flex;
-    margin: 0 auto;
     width: 585px;
     height: 55px;
+    margin: 45px auto 0 auto;
 `
 
 export const Input = styled.input`
