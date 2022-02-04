@@ -11,11 +11,11 @@ import CategoryDropdown from './category/CategoryDropdown'
 const Header:React.FC = () => {
 
     const loginCheck = localStorage.getItem('Token');    
-    const [modalState, setModalState] = useState<boolean>(false);
+    const [noticeState, setNoticeState] = useState<boolean>(false);
 
     const handleDisplay:any = () =>{
         let isDisplay = 'none';
-        modalState  ? isDisplay ='block': isDisplay='none';
+        noticeState  ? isDisplay ='block': isDisplay='none';
         return isDisplay
     }
 
@@ -38,7 +38,7 @@ const Header:React.FC = () => {
                 <H.ItemImg src={profileImg}/>
 
                 <H.ImgContaner>
-                    <H.ItemImg src={noticeImg} onClick={() => setModalState(!modalState)}/>
+                    <H.ItemImg src={noticeImg} onClick={() => setNoticeState(!noticeState)}/>
                     <H.Vertex isDisplay={handleDisplay}/>
                 </H.ImgContaner>
 
@@ -62,7 +62,7 @@ const Header:React.FC = () => {
         }
             </H.AuthContainer>
         </H.Container>
-        <Notice modalState={modalState} modalClose={()=> setModalState(!modalState)}/>
+        <Notice noticeState={noticeState} noticeClose={()=> setNoticeState(false)}/>
         </>
     )
 }
