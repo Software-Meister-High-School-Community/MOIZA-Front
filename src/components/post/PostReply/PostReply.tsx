@@ -21,24 +21,15 @@ import {
   PostReplyBottomWrap,
   PostReplyBottomLikeWrap,
   PostReplyBottomViewWrap,
+  PostReplyLine,
+  PostReplyCommentHeaderWrap,
 } from "./PostReply.style";
 import menuCircle from "../../../assets/img/post/menuCircle.svg";
 import heart from "../../../assets/img/admin/icons/heart.svg";
 import view from "../../../assets/img/admin/icons/view.svg";
-
-interface IPostReplyDataProps {
-  id: number;
-  title: string;
-  writer: string;
-  school: string;
-  studentState: string;
-  createDate: string;
-  lastModifyDate: string;
-  text: string;
-  picture: any[];
-  likes: number;
-  views: string;
-}
+import SubmitButton from "../../Common/Button/SubmitButton";
+import { IPostReplyDataProps } from "../../../interface/Post/Post.type";
+import PostReplyComment from "./PostReplyComment";
 
 const PostReply: React.FC = () => {
   const exampleData = {
@@ -54,6 +45,50 @@ const PostReply: React.FC = () => {
     picture: [1, 2, 3, 4],
     likes: 599,
     views: "1.2천",
+    comment: [
+      {
+        id: 1111,
+        text: "사진 1장",
+        name: "멩쓴쥬",
+        school: "미림마이스터고",
+        studentState: "재학생",
+        createDate: "22/01/21  8:29",
+        profileImg: "ㄴㅁㅇㄴㅁㅇ",
+        picture: [1],
+        commentOfComment: [
+          {
+            id: 1111,
+            text: "사진 1장",
+            name: "멩쓴쥬",
+            school: "미림마이스터고",
+            studentState: "재학생",
+            createDate: "22/01/21  8:29",
+            profileImg: "ㄴㅁㅇㄴㅁㅇ",
+            picture: [1],
+          },
+        ],
+      },
+      {
+        id: 1112,
+        text: "사진 2장",
+        name: "짱정원",
+        school: "미림마이스터고",
+        studentState: "재학생",
+        createDate: "22/01/21  8:29",
+        profileImg: "ㄴㅁㅇㄴㅁㅇ",
+        picture: [1, 2],
+      },
+      {
+        id: 1113,
+        text: "사진 3장",
+        name: "짱정원",
+        school: "미림마이스터고",
+        studentState: "재학생",
+        createDate: "22/01/21  8:29",
+        profileImg: "ㄴㅁㅇㄴㅁㅇ",
+        picture: [1],
+      },
+    ],
   };
 
   const [postData, setPostData] = useState<IPostReplyDataProps>();
@@ -123,6 +158,22 @@ const PostReply: React.FC = () => {
                     <p>{postData.views}</p>
                   </PostReplyBottomViewWrap>
                 </PostReplyBottomWrap>
+                {postData?.comment?.length ? (
+                  <>
+                    <PostReplyLine />
+                    <PostReplyCommentHeaderWrap>
+                      <p>
+                        답글 <strong>{postData.comment.length}</strong>
+                      </p>
+                      <SubmitButton text="답글 추가" big blue />
+                    </PostReplyCommentHeaderWrap>
+                    {postData?.comment.map((item) => {
+                      return (
+                        <PostReplyComment commentData={item} key={item.id} />
+                      );
+                    })}
+                  </>
+                ) : null}
               </PostReplyWrap>
             </>
           )}

@@ -190,3 +190,32 @@ export const PostReplyBottomViewWrap = styled.div`
     font-weight: 400;
   }
 `;
+
+export const PostReplyLine = styled.hr`
+  width: 100%;
+  border: 0px;
+  border-top: 1px solid ${(props) => props.theme.color.gray_color3};
+  margin-top: 80px;
+  margin-bottom: 50px;
+`;
+
+export const PostReplyCommentHeaderWrap = styled.div`
+  width: 100%;
+  margin-bottom: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  p {
+    font-size: ${(props) => props.theme.fontSize.head_small};
+    color: black;
+    font-style: normal;
+    font-weight: normal;
+
+    strong {
+      color: ${(props) => props.theme.color.main_blue_color};
+      font-style: normal;
+      font-weight: normal;
+    }
+  }
+`;
