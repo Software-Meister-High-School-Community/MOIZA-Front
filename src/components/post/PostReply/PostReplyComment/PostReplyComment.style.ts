@@ -89,3 +89,27 @@ export const PostReplyCommentContentText = styled.p<{ withPicture: boolean }>`
 
   ${(props) => props.withPicture && "margin-bottom : 46px"}
 `;
+
+export const PostReplyCommentButtomWrap = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+`;
+
+export const PostReplyCommentCommentWrap = styled.div`
+  display: flex;
+  font-size: ${(props) => props.theme.fontSize.body_medium};
+  color: ${(props) => props.theme.color.gray_color5};
+  font-weight: 400;
+  column-gap: 8px;
+  align-items: center;
+  cursor: pointer;
+
+  img {
+    width: 24px;
+    height: 24px;
+    object-fit: scale-down;
+  }
+`;

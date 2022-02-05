@@ -9,8 +9,11 @@ import {
   PostReplyCommentMenuButton,
   PostReplyCommentMiddleWrap,
   PostReplyCommentContentText,
+  PostReplyCommentButtomWrap,
+  PostReplyCommentCommentWrap,
 } from "./PostReplyComment.style";
 import menuCircle from "../../../../assets/img/post/menuCircle.svg";
+import commentIcon from "../../../../assets/img/post/Comment.svg";
 
 interface IPostReplyCommentProps {
   commentData: ICommnet;
@@ -44,6 +47,14 @@ const PostReplyComment: React.FC<IPostReplyCommentProps> = ({
           {commentData.text}
         </PostReplyCommentContentText>
       </PostReplyCommentMiddleWrap>
+      <PostReplyCommentButtomWrap>
+        <PostReplyCommentCommentWrap>
+          <PostReplyCommentCommentWrap>
+            <img src={commentIcon} alt="comment" />
+            {commentData.commentOfComment?.length || "0"}
+          </PostReplyCommentCommentWrap>
+        </PostReplyCommentCommentWrap>
+      </PostReplyCommentButtomWrap>
     </PostReplyCommentBox>
   );
 };
