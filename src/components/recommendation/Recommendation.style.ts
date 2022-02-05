@@ -36,17 +36,14 @@ export const ItemImg = styled.img`
     position:absolute;
     top:30px;
 `
-export const Date = styled.pre`
+export const Date = styled.p`
     position:absolute;
     top:334px;
     color:${(props)=>props.theme.color.gray_color1};
-    font-size: ${(props) => props.theme.fontSize.body_small};
-    font-weight:400;
 `
 export const User = styled.p`
     position:absolute;
     color: ${(props) => props.theme.color.gray_color1};
-    font-size: ${(props) => props.theme.fontSize.body_small};
     top: 304px;
     font-weight:400;
 `
@@ -61,7 +58,6 @@ export const ItemTitle = styled.h1`
 export const AddBtn = styled.button`
     background: ${(props)=>props.theme.color.gray_color1};
     border: 1px solid ${(props)=>props.theme.color.gray_color4};
-    font-size:18px;
     width: 96px;
     height: 47px;
     display:block;
