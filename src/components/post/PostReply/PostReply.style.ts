@@ -199,7 +199,7 @@ export const PostReplyLine = styled.hr`
   margin-bottom: 50px;
 `;
 
-export const PostReplyCommentHeaderWrap = styled.div`
+export const PostReplyCommentTitleWrap = styled.div`
   width: 100%;
   margin-bottom: 42px;
   display: flex;

@@ -16,6 +16,7 @@ export const PostReplyCommentHeaderWrap = styled.div`
   display: flex;
   align-items: center;
   height: 40px;
+  margin-bottom: 20px;
 `;
 
 export const PostReplyCommentProfileImg = styled.img`
@@ -28,4 +29,63 @@ export const PostReplyCommentProfileImg = styled.img`
 export const PostReplyCommentWriterWrap = styled.p`
   display: flex;
   align-items: center;
+  margin-left: 15px;
+
+  span {
+    font-size: ${(props) => props.theme.fontSize.body_medium};
+
+    strong {
+      color: black;
+    }
+  }
+`;
+
+export const PostReplyCommentBreakPoint = styled.div`
+  width: 4px;
+  height: 4px;
+  background-color: ${(props) => props.theme.color.gray_color5};
+  border-radius: 100px;
+  margin: 0px 20px;
+`;
+
+export const PostReplyCommentDate = styled.p`
+  font-size: ${(props) => props.theme.fontSize.body_small};
+  margin-left: auto;
+  color: ${(props) => props.theme.color.gray_color4};
+`;
+
+export const PostReplyCommentMenuButton = styled.button`
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: 0px;
+  outline: none;
+  cursor: pointer;
+  margin-left: 25px;
+
+  img {
+    width: 100%;
+    object-fit: cover;
+  }
+`;
+
+export const PostReplyCommentMiddleWrap = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+`;
+
+export const PostReplyCommentContentText = styled.p<{ withPicture: boolean }>`
+  width: 100%;
+  color: black;
+  font-size: ${(props) => props.theme.fontSize.body_large};
+  word-break: break-all;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 30px;
+
+  ${(props) => props.withPicture && "margin-bottom : 46px"}
 `;

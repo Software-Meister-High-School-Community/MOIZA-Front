@@ -22,7 +22,7 @@ import {
   PostReplyBottomLikeWrap,
   PostReplyBottomViewWrap,
   PostReplyLine,
-  PostReplyCommentHeaderWrap,
+  PostReplyCommentTitleWrap,
 } from "./PostReply.style";
 import menuCircle from "../../../assets/img/post/menuCircle.svg";
 import heart from "../../../assets/img/admin/icons/heart.svg";
@@ -161,12 +161,12 @@ const PostReply: React.FC = () => {
                 {postData?.comment?.length ? (
                   <>
                     <PostReplyLine />
-                    <PostReplyCommentHeaderWrap>
+                    <PostReplyCommentTitleWrap>
                       <p>
                         답글 <strong>{postData.comment.length}</strong>
                       </p>
                       <SubmitButton text="답글 추가" big blue />
-                    </PostReplyCommentHeaderWrap>
+                    </PostReplyCommentTitleWrap>
                     {postData?.comment.map((item) => {
                       return (
                         <PostReplyComment commentData={item} key={item.id} />
