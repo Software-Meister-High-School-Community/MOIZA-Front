@@ -14,6 +14,7 @@ import {
 } from "./PostReplyComment.style";
 import menuCircle from "../../../../assets/img/post/menuCircle.svg";
 import commentIcon from "../../../../assets/img/post/Comment.svg";
+import ImgSplit from "../../ImgSplit";
 
 interface IPostReplyCommentProps {
   commentData: ICommnet;
@@ -46,6 +47,7 @@ const PostReplyComment: React.FC<IPostReplyCommentProps> = ({
         >
           {commentData.text}
         </PostReplyCommentContentText>
+        <ImgSplit width={380} imgs={commentData.picture} />
       </PostReplyCommentMiddleWrap>
       <PostReplyCommentButtomWrap>
         <PostReplyCommentCommentWrap>
