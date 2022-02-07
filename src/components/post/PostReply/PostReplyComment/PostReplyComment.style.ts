@@ -90,7 +90,7 @@ export const PostReplyCommentContentText = styled.p<{ withPicture: boolean }>`
   ${(props) => props.withPicture && "margin-bottom : 46px"}
 `;
 
-export const PostReplyCommentButtomWrap = styled.div`
+export const PostReplyCommentBottomWrap = styled.div`
   width: 100%;
   display: flex;
   justify-content: space-between;

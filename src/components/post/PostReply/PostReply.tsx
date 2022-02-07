@@ -30,6 +30,7 @@ import view from "../../../assets/img/admin/icons/view.svg";
 import SubmitButton from "../../Common/Button/SubmitButton";
 import { IPostReplyDataProps } from "../../../interface/Post/Post.type";
 import PostReplyComment from "./PostReplyComment";
+import ImgSplit from "../ImgSplit";
 
 const PostReply: React.FC = () => {
   const exampleData = {
@@ -64,7 +65,7 @@ const PostReply: React.FC = () => {
             studentState: "재학생",
             createDate: "22/01/21  8:29",
             profileImg: "ㄴㅁㅇㄴㅁㅇ",
-            picture: [1],
+            picture: [heart],
           },
         ],
       },
@@ -76,7 +77,7 @@ const PostReply: React.FC = () => {
         studentState: "재학생",
         createDate: "22/01/21  8:29",
         profileImg: "ㄴㅁㅇㄴㅁㅇ",
-        picture: [1, 2],
+        picture: [heart, view],
       },
       {
         id: 1113,
@@ -86,7 +87,17 @@ const PostReply: React.FC = () => {
         studentState: "재학생",
         createDate: "22/01/21  8:29",
         profileImg: "ㄴㅁㅇㄴㅁㅇ",
-        picture: [1],
+        picture: [heart, view, heart],
+      },
+      {
+        id: 1114,
+        text: "사진 4장",
+        name: "짱정원",
+        school: "미림마이스터고",
+        studentState: "재학생",
+        createDate: "22/01/21  8:29",
+        profileImg: "ㄴㅁㅇㄴㅁㅇ",
+        picture: [heart, view, heart, view],
       },
     ],
   };
@@ -147,6 +158,7 @@ const PostReply: React.FC = () => {
                   >
                     {postData.text}
                   </PostReplyContentText>
+                  <ImgSplit width={780} imgs={postData.picture} gap={20} />
                 </PostReplyMiddleWrap>
                 <PostReplyBottomWrap>
                   <PostReplyBottomLikeWrap>
