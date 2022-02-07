@@ -1,14 +1,23 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
-export const PostReplyCommentBox = styled.div`
+export const PostReplyCommentBox = styled.div<{ fold: boolean }>`
   width: 100%;
   display: flex;
   flex-direction: column;
   border: 1px solid ${(props) => props.theme.color.gray_color3};
   background-color: ${(props) => props.theme.color.gray_color1};
-  margin-bottom: 30px;
   padding: 30px;
   box-sizing: border-box;
+  border-radius: 5px;
+
+  ${(props) =>
+    props.fold
+      ? css`
+          margin-bottom: 30px;
+        `
+      : css`
+          margin-bottom: 20px;
+        `}
 `;
 
 export const PostReplyCommentHeaderWrap = styled.div`

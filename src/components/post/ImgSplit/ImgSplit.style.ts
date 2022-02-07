@@ -8,7 +8,7 @@ export const ImgSplitBox = styled.div<{ width: number; gap: number }>`
   flex-wrap: wrap;
 
   img {
-    object-fit: scale-down;
+    object-fit: cover;
     background-color: gray;
   }
 `;

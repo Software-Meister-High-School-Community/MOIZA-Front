@@ -25,3 +25,8 @@ export interface ICommnet {
   picture: any[];
   commentOfComment?: ICommnet[];
 }
+
+export interface IMakeComment {
+  text: string;
+  picture: any[];
+}

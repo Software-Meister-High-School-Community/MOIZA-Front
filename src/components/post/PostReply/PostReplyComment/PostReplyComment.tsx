@@ -15,6 +15,8 @@ import {
 import menuCircle from "../../../../assets/img/post/menuCircle.svg";
 import commentIcon from "../../../../assets/img/post/Comment.svg";
 import ImgSplit from "../../ImgSplit";
+import { useState } from "react";
+import PostReplyCommentOfComment from "../PostReplyCommentOfComment";
 
 interface IPostReplyCommentProps {
   commentData: ICommnet;
@@ -23,41 +25,48 @@ interface IPostReplyCommentProps {
 const PostReplyComment: React.FC<IPostReplyCommentProps> = ({
   commentData,
 }) => {
+  const [fold, setFold] = useState(true);
+
   return (
-    <PostReplyCommentBox>
-      <PostReplyCommentHeaderWrap>
-        <PostReplyCommentProfileImg />
-        <PostReplyCommentWriterWrap>
-          <span>
-            <strong>{commentData.name}</strong>
-          </span>
-          <PostReplyCommentBreakPoint />
-          <span>{commentData.school}</span>
-          <PostReplyCommentBreakPoint />
-          <span>{commentData.studentState}</span>
-        </PostReplyCommentWriterWrap>
-        <PostReplyCommentDate>{commentData.createDate}</PostReplyCommentDate>
-        <PostReplyCommentMenuButton>
-          <img src={menuCircle} />
-        </PostReplyCommentMenuButton>
-      </PostReplyCommentHeaderWrap>
-      <PostReplyCommentMiddleWrap>
-        <PostReplyCommentContentText
-          withPicture={commentData.picture.length ? true : false}
-        >
-          {commentData.text}
-        </PostReplyCommentContentText>
-        <ImgSplit width={380} imgs={commentData.picture} gap={10} />
-      </PostReplyCommentMiddleWrap>
-      <PostReplyCommentBottomWrap>
-        <PostReplyCommentCommentWrap>
-          <PostReplyCommentCommentWrap>
+    <>
+      <PostReplyCommentBox fold={fold}>
+        <PostReplyCommentHeaderWrap>
+          <PostReplyCommentProfileImg />
+          <PostReplyCommentWriterWrap>
+            <span>
+              <strong>{commentData.name}</strong>
+            </span>
+            <PostReplyCommentBreakPoint />
+            <span>{commentData.school}</span>
+            <PostReplyCommentBreakPoint />
+            <span>{commentData.studentState}</span>
+          </PostReplyCommentWriterWrap>
+          <PostReplyCommentDate>{commentData.createDate}</PostReplyCommentDate>
+          <PostReplyCommentMenuButton>
+            <img src={menuCircle} />
+          </PostReplyCommentMenuButton>
+        </PostReplyCommentHeaderWrap>
+        <PostReplyCommentMiddleWrap>
+          <PostReplyCommentContentText
+            withPicture={commentData.picture.length ? true : false}
+          >
+            {commentData.text}
+          </PostReplyCommentContentText>
+          <ImgSplit width={380} imgs={commentData.picture} gap={10} />
+        </PostReplyCommentMiddleWrap>
+        <PostReplyCommentBottomWrap>
+          <PostReplyCommentCommentWrap onClick={() => setFold(!fold)}>
             <img src={commentIcon} alt="comment" />
             {commentData.commentOfComment?.length || "0"}
           </PostReplyCommentCommentWrap>
-        </PostReplyCommentCommentWrap>
-      </PostReplyCommentBottomWrap>
-    </PostReplyCommentBox>
+        </PostReplyCommentBottomWrap>
+      </PostReplyCommentBox>
+      {!fold && (
+        <PostReplyCommentOfComment
+          commentOfComment={commentData.commentOfComment}
+        />
+      )}
+    </>
   );
 };
 
