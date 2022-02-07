@@ -19,6 +19,17 @@ export const TypeArr: TypeArrType[] = [
   },
 ];
 
+export const RadioTypeArr: TypeArrType[] = [
+  {
+    id: "question",
+    summary: "질문",
+  },
+  {
+    id: "nomal",
+    summary: "일반",
+  },
+];
+
 export const PostListPathArr: PathType[] = [
   {
     path: "카테고리",
