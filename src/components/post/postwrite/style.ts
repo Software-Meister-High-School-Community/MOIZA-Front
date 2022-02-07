@@ -80,6 +80,7 @@ export const PostMainContent = styled.textarea`
   font-size: 18px;
   line-height: 21px;
   color: #555555;
+  outline: none;
 `;
 
 export const TempList = styled.p`
