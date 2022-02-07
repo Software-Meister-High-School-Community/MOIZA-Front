@@ -17,6 +17,9 @@ import GraduateCheckSuccess from "./components/GraduateCheck/GraduateCheckSucces
 import PostList from "./components/post/postlist/PostList";
 import MyPage from "./components/mypage/index";
 import PostWrite from "./components/post/postwrite/PostWrite";
+import MyPage from './components/mypage/index';
+import Follow from './pages/follow';
+
 
 const Router = () => {
   return (
@@ -41,7 +44,7 @@ const Router = () => {
         <Route path="/search" element={<SearchPage />} />
         <Route path="/list/:listname" element={<PostList />} />
         <Route path="/postwrite/:writefield" element={<PostWrite />} />
-        <Route path="/mypage/:userid" element={<MyPage />} />
+        <Route path="follow/:userid" element={<Follow/>}/>
       </Routes>
     </BrowserRouter>
   );
