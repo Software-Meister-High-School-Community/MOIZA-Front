@@ -28,5 +28,10 @@ export interface ICommnet {
 
 export interface IMakeComment {
   text: string;
-  picture: any[];
+  picture: IMakeCommentPicture[];
+}
+
+export interface IMakeCommentPicture {
+  id: number;
+  name: string;
 }
