@@ -21,7 +21,7 @@ export const List = styled.li<{
   align-items: center;
   > h1 {
     margin-left: 20px;
-    font-family: Roboto;
+    font-family: "Roboto", sans-serif;
     font-style: normal;
     font-weight: normal;
     font-size: 18px;
@@ -35,7 +35,7 @@ export const Date = styled.div`
   display: flex;
   align-items: center;
   > span {
-    font-family: Roboto;
+    font-family: "Roboto", sans-serif;
     font-style: nomal;
     font-weight: normal;
     margin-right: 30px;
@@ -51,7 +51,7 @@ export const Views = styled.em`
   display: flex;
   align-items: center;
   > span {
-    font-family: Roboto;
+    font-family: "Roboto", sans-serif;
     font-style: normal;
     font-weight: normal;
     font-size: 14px;
