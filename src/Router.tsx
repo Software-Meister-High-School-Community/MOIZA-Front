@@ -15,11 +15,9 @@ import SignupSuccess from "./components/Signup/SignupSuccess";
 import GraduateCheckPage from "./pages/GraduateCheck/GraduateCheckPage";
 import GraduateCheckSuccess from "./components/GraduateCheck/GraduateCheckSuccess";
 import PostList from "./components/post/postlist/PostList";
-import MyPage from "./components/mypage/index";
 import PostWrite from "./components/post/postwrite/PostWrite";
-import MyPage from './components/mypage/index';
-import Follow from './pages/follow';
-
+import MyPage from "./components/mypage/index";
+import Follow from "./pages/follow";
 
 const Router = () => {
   return (
@@ -44,7 +42,7 @@ const Router = () => {
         <Route path="/search" element={<SearchPage />} />
         <Route path="/list/:listname" element={<PostList />} />
         <Route path="/postwrite/:writefield" element={<PostWrite />} />
-        <Route path="follow/:userid" element={<Follow/>}/>
+        <Route path="follow/:userid" element={<Follow />} />
       </Routes>
     </BrowserRouter>
   );
