@@ -65,7 +65,7 @@ const PostReply: React.FC = () => {
             studentState: "재학생",
             createDate: "22/01/21  8:29",
             profileImg: "ㄴㅁㅇㄴㅁㅇ",
-            picture: [1],
+            picture: [],
           },
           {
             id: 1111,

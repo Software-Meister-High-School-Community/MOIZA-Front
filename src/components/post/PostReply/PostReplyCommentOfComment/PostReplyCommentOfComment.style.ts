@@ -141,12 +141,13 @@ export const PostReplyCOCImgBottomButton = styled.button`
   }
 `;
 
-export const PostReplyCOCLine = styled.hr`
+export const PostReplyCOCLine = styled.hr<{ isInputHr: boolean }>`
   width: 100%;
   border: 0px;
   border-top: 1px solid ${(props) => props.theme.color.gray_color3};
   margin: 0px;
   margin-bottom: 28px;
+  ${(props) => !props.isInputHr && "margin-top : 30px"}
 `;
 
 export const PostReplyCommentWrap = styled.div`

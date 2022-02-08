@@ -27,8 +27,14 @@ interface IPostReplyCommentOfCommentProps {
 const PostReplyCommentOfComment: React.FC<IPostReplyCommentOfCommentProps> = ({
   commentOfComment,
 }) => {
-  const { makeCommentData, onChangeValue, onChangeFile, onRemoveFile } =
-    useComment();
+  const {
+    makeCommentData,
+    currentShowCOC,
+    setCurrentShowCOC,
+    onChangeValue,
+    onChangeFile,
+    onRemoveFile,
+  } = useComment();
 
   return (
     <>
@@ -72,16 +78,18 @@ const PostReplyCommentOfComment: React.FC<IPostReplyCommentOfCommentProps> = ({
             })}
           </PostReplyCOCImgBox>
         </PostReplyCOCInputWrap>
-        <PostReplyCOCLine />
+        <PostReplyCOCLine isInputHr={true} />
         <PostReplyCommentWrap>
-          {commentOfComment?.map((comment) => {
-            return (
-              <React.Fragment>
-                <PostReplyCOCForm commentOfComment={comment} />
-                <PostReplyCOCLine />
-              </React.Fragment>
-            );
-          })}
+          <>
+            {commentOfComment?.map((comment) => {
+              return (
+                <React.Fragment>
+                  <PostReplyCOCForm commentOfComment={comment} />
+                  <PostReplyCOCLine isInputHr={false} />
+                </React.Fragment>
+              );
+            })}
+          </>
         </PostReplyCommentWrap>
       </PostReplyCOCBox>
     </>

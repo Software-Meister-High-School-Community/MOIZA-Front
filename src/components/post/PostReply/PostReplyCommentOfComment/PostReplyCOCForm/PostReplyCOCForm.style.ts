@@ -43,13 +43,14 @@ export const PostReplyCOCFormBreakPoint = styled.div`
   margin: 0px 6px;
 `;
 
-export const PostReplyCOCFormText = styled.pre`
+export const PostReplyCOCFormText = styled.pre<{ withPicture: boolean }>`
   width: 100%;
   height: auto;
   font-size: ${(props) => props.theme.fontSize.body_medium};
-  margin-bottom: 18px;
   line-height: 24px;
   color: ${(props) => props.theme.color.gray_color5};
   font-style: normal;
   font-weight: normal;
+
+  ${(props) => props.withPicture && "margin-bottom: 18px;"}
 `;

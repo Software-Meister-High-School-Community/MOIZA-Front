@@ -32,8 +32,12 @@ const PostReplyCOCForm: React.FC<IPostReplyCOCFormProps> = ({
           {commentOfComment.createDate}
         </PostReplyCOCFormHeaderDate>
       </PostReplyCOCFormHeaderWrap>
-      <PostReplyCOCFormText>{commentOfComment?.text}</PostReplyCOCFormText>
-      {commentOfComment?.picture && (
+      <PostReplyCOCFormText
+        withPicture={commentOfComment?.picture?.length !== 0}
+      >
+        {commentOfComment?.text}
+      </PostReplyCOCFormText>
+      {commentOfComment?.picture.length !== 0 && (
         <ImgSplit imgs={commentOfComment.picture} width={188} gap={5} />
       )}
     </PostReplyCOCFormWrap>

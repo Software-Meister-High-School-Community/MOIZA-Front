@@ -1,12 +1,14 @@
 import React, { useCallback, useState } from "react";
 import { Item } from "../../../components/header/category/CategoryDropdown.style";
-import { IMakeComment } from "../../../interface/Post/Post.type";
+import { ICommnet, IMakeComment } from "../../../interface/Post/Post.type";
 
 const useComment = () => {
   const [makeCommentData, setMakeCommentData] = useState<IMakeComment>({
     text: "",
     picture: [],
   });
+  const [currentShowCOC, setCurrentShowCOC] = useState<ICommnet[]>([]);
+  // COC : comment of comment
 
   const onChangeValue = useCallback(
     (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -50,7 +52,16 @@ const useComment = () => {
     }));
   }, []);
 
-  return { makeCommentData, onChangeValue, onChangeFile, onRemoveFile };
+  const addCurrentShowCOC = () => {};
+
+  return {
+    makeCommentData,
+    currentShowCOC,
+    setCurrentShowCOC,
+    onChangeValue,
+    onChangeFile,
+    onRemoveFile,
+  };
 };
 
 export default useComment;
