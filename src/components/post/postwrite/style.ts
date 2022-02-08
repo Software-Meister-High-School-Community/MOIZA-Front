@@ -9,7 +9,7 @@ export const WriteForm = styled.form`
   background-color: #ffffff;
   margin-top: 59px;
   width: 100%;
-  height: 800px;
+  height: 850px;
   box-sizing: border-box;
   padding: 76px 100px 56px 110px;
 `;
@@ -84,7 +84,7 @@ export const PostMainContent = styled.textarea`
 `;
 
 export const TempList = styled.p`
-  margin-top: 40px;
+  margin-top: 50px;
   font-family: "Roboto", sans-serif;
   font-style: normal;
   font-weight: 400;
