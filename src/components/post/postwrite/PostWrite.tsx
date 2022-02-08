@@ -65,6 +65,7 @@ const PostWrite: React.FC = () => {
             name="typecheckbox"
           />
         </S.RadioDiv>
+        <S.TempList>임시저장 게시물&gt;</S.TempList>
         <S.PostMainContent
           name={CONTENT}
           onChange={onChangePostContent}
@@ -73,7 +74,6 @@ const PostWrite: React.FC = () => {
         <S.TextCount marginTop="15px">
           {postContent.content.length}/500
         </S.TextCount>
-        <S.TempList>임시저장 게시물&gt;</S.TempList>
       </S.WriteForm>
       <UploadFiles state={postContent} setStateFunction={setPostContent} />
       <S.SubmitBtn>
