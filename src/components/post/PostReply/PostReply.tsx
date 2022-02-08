@@ -131,7 +131,7 @@ const PostReply: React.FC = () => {
     console.log(postid);
     setPostData(exampleData);
     setIsLoading(false);
-  }, [setPostData, setIsLoading]);
+  }, [setPostData, setIsLoading, postid]);
 
   return (
     <PostReplyBox>

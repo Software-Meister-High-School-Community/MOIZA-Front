@@ -43,7 +43,7 @@ const PostReplyComment: React.FC<IPostReplyCommentProps> = ({
           </PostReplyCommentWriterWrap>
           <PostReplyCommentDate>{commentData.createDate}</PostReplyCommentDate>
           <PostReplyCommentMenuButton>
-            <img src={menuCircle} />
+            <img src={menuCircle} alt="menu" />
           </PostReplyCommentMenuButton>
         </PostReplyCommentHeaderWrap>
         <PostReplyCommentMiddleWrap>

@@ -14,7 +14,7 @@ const ImgSplit: React.FC<IImgSplit> = ({ width, imgs, gap }) => {
   const imgHandleFunc = (imgLength: number) => {
     switch (imgLength) {
       case 1:
-        return <img width={width} height="100%" src={imgs[0]} />;
+        return <img width={width} height="100%" src={imgs[0]} alt="img" />;
 
       case 2:
         return (
@@ -95,7 +95,7 @@ const ImgSplit: React.FC<IImgSplit> = ({ width, imgs, gap }) => {
         );
 
       default:
-        return <img width={width} height="100%" />;
+        return <img width={width} height="100%" alt="img" />;
     }
   };
 
