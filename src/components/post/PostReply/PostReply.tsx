@@ -23,6 +23,7 @@ import {
   PostReplyBottomViewWrap,
   PostReplyLine,
   PostReplyCommentTitleWrap,
+  PostReplyNoCommentWrap,
 } from "./PostReply.style";
 import menuCircle from "../../../assets/img/post/menuCircle.svg";
 import heart from "../../../assets/img/admin/icons/heart.svg";
@@ -47,78 +48,78 @@ const PostReply: React.FC = () => {
     likes: 599,
     views: "1.2천",
     comment: [
-      {
-        id: 1111,
-        text: "사진 1장",
-        name: "멩쓴쥬",
-        school: "미림마이스터고",
-        studentState: "재학생",
-        createDate: "22/01/21  8:29",
-        profileImg: "ㄴㅁㅇㄴㅁㅇ",
-        picture: [1],
-        commentOfComment: [
-          {
-            id: 1111,
-            text: "사진 1장",
-            name: "멩쓴쥬",
-            school: "미림마이스터고",
-            studentState: "재학생",
-            createDate: "22/01/21  8:29",
-            profileImg: "ㄴㅁㅇㄴㅁㅇ",
-            picture: [],
-          },
-          {
-            id: 1111,
-            text: "사진 2장",
-            name: "멩쓴쥬",
-            school: "미림마이스터고",
-            studentState: "재학생",
-            createDate: "22/01/21  8:29",
-            profileImg: "ㄴㅁㅇㄴㅁㅇ",
-            picture: [1, 2],
-          },
-          {
-            id: 1111,
-            text: "사진 3장",
-            name: "멩쓴쥬",
-            school: "미림마이스터고",
-            studentState: "재학생",
-            createDate: "22/01/21  8:29",
-            profileImg: "ㄴㅁㅇㄴㅁㅇ",
-            picture: [1, 2, 3],
-          },
-        ],
-      },
-      {
-        id: 1112,
-        text: "사진 2장",
-        name: "짱정원",
-        school: "미림마이스터고",
-        studentState: "재학생",
-        createDate: "22/01/21  8:29",
-        profileImg: "ㄴㅁㅇㄴㅁㅇ",
-        picture: [1, 2],
-      },
-      {
-        id: 1113,
-        text: "사진 3장",
-        name: "짱정원",
-        school: "미림마이스터고",
-        studentState: "재학생",
-        createDate: "22/01/21  8:29",
-        profileImg: "ㄴㅁㅇㄴㅁㅇ",
-        picture: [1, 2, 3],
-      },
-      {
-        id: 1114,
-        text: "사진 4장",
-        name: "짱정원",
-        school: "미림마이스터고",
-        studentState: "재학생",
-        createDate: "22/01/21  8:29",
-        profileImg: "ㄴㅁㅇㄴㅁㅇ",
-        picture: [1, 2, 3, 4],
-      },
+      // {
+      //   id: 1111,
+      //   text: "사진 1장",
+      //   name: "멩쓴쥬",
+      //   school: "미림마이스터고",
+      //   studentState: "재학생",
+      //   createDate: "22/01/21  8:29",
+      //   profileImg: "ㄴㅁㅇㄴㅁㅇ",
+      //   picture: [1],
+      //   commentOfComment: [
+      //     {
+      //       id: 1111,
+      //       text: "사진 1장",
+      //       name: "멩쓴쥬",
+      //       school: "미림마이스터고",
+      //       studentState: "재학생",
+      //       createDate: "22/01/21  8:29",
+      //       profileImg: "ㄴㅁㅇㄴㅁㅇ",
+      //       picture: [],
+      //     },
+      //     {
+      //       id: 1111,
+      //       text: "사진 2장",
+      //       name: "멩쓴쥬",
+      //       school: "미림마이스터고",
+      //       studentState: "재학생",
+      //       createDate: "22/01/21  8:29",
+      //       profileImg: "ㄴㅁㅇㄴㅁㅇ",
+      //       picture: [1, 2],
+      //     },
+      //     {
+      //       id: 1111,
+      //       text: "사진 3장",
+      //       name: "멩쓴쥬",
+      //       school: "미림마이스터고",
+      //       studentState: "재학생",
+      //       createDate: "22/01/21  8:29",
+      //       profileImg: "ㄴㅁㅇㄴㅁㅇ",
+      //       picture: [1, 2, 3],
+      //     },
+      //   ],
+      // },
+      // {
+      //   id: 1112,
+      //   text: "사진 2장",
+      //   name: "짱정원",
+      //   school: "미림마이스터고",
+      //   studentState: "재학생",
+      //   createDate: "22/01/21  8:29",
+      //   profileImg: "ㄴㅁㅇㄴㅁㅇ",
+      //   picture: [1, 2],
+      // },
+      // {
+      //   id: 1113,
+      //   text: "사진 3장",
+      //   name: "짱정원",
+      //   school: "미림마이스터고",
+      //   studentState: "재학생",
+      //   createDate: "22/01/21  8:29",
+      //   profileImg: "ㄴㅁㅇㄴㅁㅇ",
+      //   picture: [1, 2, 3],
+      // },
+      // {
+      //   id: 1114,
+      //   text: "사진 4장",
+      //   name: "짱정원",
+      //   school: "미림마이스터고",
+      //   studentState: "재학생",
+      //   createDate: "22/01/21  8:29",
+      //   profileImg: "ㄴㅁㅇㄴㅁㅇ",
+      //   picture: [1, 2, 3, 4],
+      // },
     ],
   };
 
@@ -190,22 +191,29 @@ const PostReply: React.FC = () => {
                     <p>{postData.views}</p>
                   </PostReplyBottomViewWrap>
                 </PostReplyBottomWrap>
+                <PostReplyLine />
+                <PostReplyCommentTitleWrap>
+                  <p>
+                    답글 <strong>{postData.comment.length}</strong>
+                  </p>
+                  {postData?.comment?.length !== 0 && (
+                    <SubmitButton text="답글 추가" big blue />
+                  )}
+                </PostReplyCommentTitleWrap>
                 {postData?.comment?.length ? (
                   <>
-                    <PostReplyLine />
-                    <PostReplyCommentTitleWrap>
-                      <p>
-                        답글 <strong>{postData.comment.length}</strong>
-                      </p>
-                      <SubmitButton text="답글 추가" big blue />
-                    </PostReplyCommentTitleWrap>
                     {postData?.comment.map((item) => {
                       return (
                         <PostReplyComment commentData={item} key={item.id} />
                       );
                     })}
                   </>
-                ) : null}
+                ) : (
+                  <PostReplyNoCommentWrap>
+                    <p>아직 답글이 없네요!</p>
+                    <SubmitButton text="답글 추가" blue big />
+                  </PostReplyNoCommentWrap>
+                )}
               </PostReplyWrap>
             </>
           )}

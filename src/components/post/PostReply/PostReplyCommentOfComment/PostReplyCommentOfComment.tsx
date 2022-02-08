@@ -1,5 +1,4 @@
-import React, { useEffect } from "react";
-import useComment from "../../../../hooks/post/comment/useComment";
+import React, { Dispatch, SetStateAction, useEffect } from "react";
 import { ICommnet } from "../../../../interface/Post/Post.type";
 import {
   PostReplyCOCBox,
@@ -19,6 +18,7 @@ import {
 import camera from "../../../../assets/img/Common/camera.svg";
 import x from "../../../../assets/img/Common/x.svg";
 import PostReplyCOCForm from "./PostReplyCOCForm";
+import useNestedComment from "../../../../hooks/post/comment/useNestedComment";
 
 interface IPostReplyCommentOfCommentProps {
   commentOfComment?: ICommnet[];
@@ -35,7 +35,7 @@ const PostReplyCommentOfComment: React.FC<IPostReplyCommentOfCommentProps> = ({
     onChangeFile,
     onRemoveFile,
     onSubmitNestedReply,
-  } = useComment();
+  } = useNestedComment();
 
   useEffect(() => {
     if (commentOfComment) {

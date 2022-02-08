@@ -219,3 +219,20 @@ export const PostReplyCommentTitleWrap = styled.div`
     }
   }
 `;
+
+export const PostReplyNoCommentWrap = styled.div`
+  margin-top: 70px;
+  width: 100%;
+  height: 280px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  p {
+    color: ${(props) => props.theme.color.gray_color4};
+    font-style: normal;
+    font-weight: normal;
+    font-size: 30px;
+    margin-bottom: 61px;
+  }
+`;
