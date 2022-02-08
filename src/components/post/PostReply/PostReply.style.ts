@@ -93,7 +93,7 @@ export const PostReplyDateInfoWrap = styled.div`
   justify-content: center;
   row-gap: 5px;
 
-  p {
+  pre {
     color: ${(props) => props.theme.color.gray_color4};
     font-weight: 400;
     font-size: 12px;

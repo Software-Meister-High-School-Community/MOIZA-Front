@@ -65,7 +65,27 @@ const PostReply: React.FC = () => {
             studentState: "재학생",
             createDate: "22/01/21  8:29",
             profileImg: "ㄴㅁㅇㄴㅁㅇ",
-            picture: [heart],
+            picture: [1],
+          },
+          {
+            id: 1111,
+            text: "사진 2장",
+            name: "멩쓴쥬",
+            school: "미림마이스터고",
+            studentState: "재학생",
+            createDate: "22/01/21  8:29",
+            profileImg: "ㄴㅁㅇㄴㅁㅇ",
+            picture: [1, 2],
+          },
+          {
+            id: 1111,
+            text: "사진 3장",
+            name: "멩쓴쥬",
+            school: "미림마이스터고",
+            studentState: "재학생",
+            createDate: "22/01/21  8:29",
+            profileImg: "ㄴㅁㅇㄴㅁㅇ",
+            picture: [1, 2, 3],
           },
         ],
       },
@@ -77,7 +97,7 @@ const PostReply: React.FC = () => {
         studentState: "재학생",
         createDate: "22/01/21  8:29",
         profileImg: "ㄴㅁㅇㄴㅁㅇ",
-        picture: [heart, view],
+        picture: [1, 2],
       },
       {
         id: 1113,
@@ -87,7 +107,7 @@ const PostReply: React.FC = () => {
         studentState: "재학생",
         createDate: "22/01/21  8:29",
         profileImg: "ㄴㅁㅇㄴㅁㅇ",
-        picture: [heart, view, heart],
+        picture: [1, 2, 3],
       },
       {
         id: 1114,
@@ -97,7 +117,7 @@ const PostReply: React.FC = () => {
         studentState: "재학생",
         createDate: "22/01/21  8:29",
         profileImg: "ㄴㅁㅇㄴㅁㅇ",
-        picture: [heart, view, heart, view],
+        picture: [1, 2, 3, 4],
       },
     ],
   };
@@ -143,8 +163,8 @@ const PostReply: React.FC = () => {
                         </PostReplyWriterInfoText>
                       </PostReplyWriterInfoTextWrap>
                       <PostReplyDateInfoWrap>
-                        <p>작성일 {postData.createDate}</p>
-                        <p>마지막 수정일 {postData.createDate}</p>
+                        <pre>작성일 {postData.createDate}</pre>
+                        <pre>마지막 수정일 {postData.createDate}</pre>
                       </PostReplyDateInfoWrap>
                       <PostReplyMenuButton>
                         <img src={menuCircle} alt="menu" />

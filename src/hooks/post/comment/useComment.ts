@@ -1,4 +1,5 @@
 import React, { useCallback, useState } from "react";
+import { Item } from "../../../components/header/category/CategoryDropdown.style";
 import { IMakeComment } from "../../../interface/Post/Post.type";
 
 const useComment = () => {
@@ -20,7 +21,8 @@ const useComment = () => {
 
   const onChangeFile = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files && e.target.files.length) {
-      if (e.target.files.length >= 4) {
+      setMakeCommentData((prev) => ({ ...prev, picture: [] }));
+      if (e.target.files.length > 4) {
         window.alert("사진은 최대 4장 가능합니다.");
         return;
       }
@@ -41,7 +43,14 @@ const useComment = () => {
     }
   }, []);
 
-  return { makeCommentData, onChangeValue, onChangeFile };
+  const onRemoveFile = useCallback((id: number) => {
+    setMakeCommentData((prev) => ({
+      ...prev,
+      picture: [...prev.picture.filter((item) => item.id !== id)],
+    }));
+  }, []);
+
+  return { makeCommentData, onChangeValue, onChangeFile, onRemoveFile };
 };
 
 export default useComment;

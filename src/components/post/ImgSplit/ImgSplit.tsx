@@ -19,18 +19,43 @@ const ImgSplit: React.FC<IImgSplit> = ({ width, imgs, gap }) => {
       case 2:
         return (
           <ImgSplitRowBox gap={gap}>
-            <img width={width / 2 - gap / 2} height="100%" src={imgs[0]} />
-            <img width={width / 2 - gap / 2} height="100%" src={imgs[1]} />
+            <img
+              width={width / 2 - gap / 2}
+              height="100%"
+              src={imgs[0]}
+              alt="img"
+            />
+            <img
+              width={width / 2 - gap / 2}
+              height="100%"
+              src={imgs[1]}
+              alt="img"
+            />
           </ImgSplitRowBox>
         );
 
       case 3:
         return (
           <ImgSplitRowBox gap={gap}>
-            <img width={width / 2 - gap / 2} height="100%" src={imgs[0]} />
+            <img
+              width={width / 2 - gap / 2}
+              height="100%"
+              src={imgs[0]}
+              alt="img"
+            />
             <ImgSplitColumnBox gap={gap}>
-              <img width={width / 2 - gap / 2} height="50%" src={imgs[1]} />
-              <img width={width / 2 - gap / 2} height="50%" src={imgs[2]} />
+              <img
+                width={width / 2 - gap / 2}
+                height="50%"
+                src={imgs[1]}
+                alt="img"
+              />
+              <img
+                width={width / 2 - gap / 2}
+                height="50%"
+                src={imgs[2]}
+                alt="img"
+              />
             </ImgSplitColumnBox>
           </ImgSplitRowBox>
         );
@@ -39,12 +64,32 @@ const ImgSplit: React.FC<IImgSplit> = ({ width, imgs, gap }) => {
         return (
           <ImgSplitColumnBox gap={gap}>
             <ImgSplitRowBox gap={gap}>
-              <img width={width / 2 - gap / 2} height="100%" src={imgs[0]} />
-              <img width={width / 2 - gap / 2} height="100%" src={imgs[1]} />
+              <img
+                width={width / 2 - gap / 2}
+                height="100%"
+                src={imgs[0]}
+                alt="img"
+              />
+              <img
+                width={width / 2 - gap / 2}
+                height="100%"
+                src={imgs[1]}
+                alt="img"
+              />
             </ImgSplitRowBox>
             <ImgSplitRowBox gap={gap}>
-              <img width={width / 2 - gap / 2} height="100%" src={imgs[2]} />
-              <img width={width / 2 - gap / 2} height="100%" src={imgs[3]} />
+              <img
+                width={width / 2 - gap / 2}
+                height="100%"
+                src={imgs[2]}
+                alt="img"
+              />
+              <img
+                width={width / 2 - gap / 2}
+                height="100%"
+                src={imgs[3]}
+                alt="img"
+              />
             </ImgSplitRowBox>
           </ImgSplitColumnBox>
         );

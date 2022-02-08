@@ -93,18 +93,64 @@ export const PostReplyCOCFileInputLabel = styled.label`
 
 export const PostReplyCOCImgBox = styled.div`
   display: flex;
-  margin-top: 16px;
+  column-gap: 30px;
+  margin: 16px 0px;
 `;
 
 export const PostReplyCOCImgWrap = styled.div`
   display: flex;
   flex-direction: column;
+`;
 
-  img {
-    width: 180px;
-    height: 104px;
-    object-fit: cover;
+export const PostReplyCOCImg = styled.img`
+  width: 180px;
+  height: 104px;
+  object-fit: cover;
+  background-color: gray;
+`;
+
+export const PostReplyCOCImgBottomWrap = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 16px;
+  margin-top: 10px;
+
+  p {
+    max-width: 155px;
+    line-height: 16px;
+    overflow-x: hidden;
+    text-overflow: ellipsis;
+    font-size: ${(props) => props.theme.fontSize.body_small};
   }
 `;
 
-export const PostReplyCommentWrap = styled.div``;
+export const PostReplyCOCImgBottomButton = styled.button`
+  width: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 0px;
+  background: none;
+  cursor: pointer;
+  outline: none;
+
+  img {
+    width: 100%;
+    object-fit: scale-down;
+  }
+`;
+
+export const PostReplyCOCLine = styled.hr`
+  width: 100%;
+  border: 0px;
+  border-top: 1px solid ${(props) => props.theme.color.gray_color3};
+  margin: 0px;
+  margin-bottom: 28px;
+`;
+
+export const PostReplyCommentWrap = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+`;

@@ -4,14 +4,21 @@ import { ICommnet } from "../../../../interface/Post/Post.type";
 import {
   PostReplyCOCBox,
   PostReplyCOCFileInputLabel,
+  PostReplyCOCImg,
+  PostReplyCOCImgBottomButton,
+  PostReplyCOCImgBottomWrap,
   PostReplyCOCImgBox,
   PostReplyCOCImgWrap,
   PostReplyCOCInputWrap,
+  PostReplyCOCLine,
   PostReplyCOCSubmitButton,
   PostReplyCOCTextarea,
   PostReplyCOCtextInputWrap,
+  PostReplyCommentWrap,
 } from "./PostReplyCommentOfComment.style";
 import camera from "../../../../assets/img/Common/camera.svg";
+import x from "../../../../assets/img/Common/x.svg";
+import PostReplyCOCForm from "./PostReplyCOCForm";
 
 interface IPostReplyCommentOfCommentProps {
   commentOfComment?: ICommnet[];
@@ -20,7 +27,8 @@ interface IPostReplyCommentOfCommentProps {
 const PostReplyCommentOfComment: React.FC<IPostReplyCommentOfCommentProps> = ({
   commentOfComment,
 }) => {
-  const { makeCommentData, onChangeValue, onChangeFile } = useComment();
+  const { makeCommentData, onChangeValue, onChangeFile, onRemoveFile } =
+    useComment();
 
   return (
     <>
@@ -47,9 +55,34 @@ const PostReplyCommentOfComment: React.FC<IPostReplyCommentOfCommentProps> = ({
             {makeCommentData.picture.length}/4
           </PostReplyCOCFileInputLabel>
           <PostReplyCOCImgBox>
-            <PostReplyCOCImgWrap></PostReplyCOCImgWrap>
+            {makeCommentData.picture.map((img) => {
+              return (
+                <PostReplyCOCImgWrap>
+                  <PostReplyCOCImg />
+                  <PostReplyCOCImgBottomWrap>
+                    <p>{img.name}</p>
+                    <PostReplyCOCImgBottomButton
+                      onClick={() => onRemoveFile(img.id)}
+                    >
+                      <img src={x} alt="cancle" />
+                    </PostReplyCOCImgBottomButton>
+                  </PostReplyCOCImgBottomWrap>
+                </PostReplyCOCImgWrap>
+              );
+            })}
           </PostReplyCOCImgBox>
         </PostReplyCOCInputWrap>
+        <PostReplyCOCLine />
+        <PostReplyCommentWrap>
+          {commentOfComment?.map((comment) => {
+            return (
+              <React.Fragment>
+                <PostReplyCOCForm commentOfComment={comment} />
+                <PostReplyCOCLine />
+              </React.Fragment>
+            );
+          })}
+        </PostReplyCommentWrap>
       </PostReplyCOCBox>
     </>
   );
