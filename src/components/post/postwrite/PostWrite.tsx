@@ -64,8 +64,8 @@ const PostWrite: React.FC = () => {
             radioArray={RadioTypeArr}
             name="typecheckbox"
           />
+          <S.TempList>임시저장 게시물&gt;</S.TempList>
         </S.RadioDiv>
-        <S.TempList>임시저장 게시물&gt;</S.TempList>
         <S.PostMainContent
           name={CONTENT}
           onChange={onChangePostContent}
