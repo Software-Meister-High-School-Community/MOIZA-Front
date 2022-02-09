@@ -4,7 +4,7 @@ import styled from "styled-components";
 export const BigImageOverlay = styled.div`
   width: 100%;
   height: 100%;
-  position: absolute;
+  position: fixed;
   background-color: ${(props) => props.theme.color.gray_color5};
   opacity: 40%;
   top: 0px;
@@ -29,7 +29,7 @@ export const BigImageWrap = styled(motion.div)`
   position: relative;
   width: 100%;
   height: 100%;
-  /* overflow: hidden; */
+  overflow: hidden;
 `;
 
 export const BigImageRow = styled(motion.div)`
@@ -72,8 +72,12 @@ export const BigImageButton = styled.button<{ direction: "left" | "right" }>`
   border: 0px;
   cursor: pointer;
   top: 50%;
-  z-index: 2;
-  background-color: black;
+  z-index: 3;
+
+  img {
+    width: 23px;
+    object-fit: scale-down;
+  }
 
   ${(props) => props.direction === "left" && "left : -100px"}
   ${(props) => props.direction === "right" && "right -100px"}

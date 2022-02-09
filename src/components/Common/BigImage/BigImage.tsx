@@ -9,6 +9,8 @@ import {
   BigImageButton,
   BigImageImg,
 } from "./BigImage.style";
+import leftArrow from "../../../assets/img/Common/leftArrow.svg";
+import rightArrow from "../../../assets/img/Common/rightArrow.svg";
 
 interface IBigImageProps {
   imgs: string[];
@@ -17,20 +19,13 @@ interface IBigImageProps {
 
 const BigImage: React.FC<IBigImageProps> = ({ imgs, handleDisplay }) => {
   const [index, setIndex] = useState<number>(0);
-  const [leaving, setLeaving] = useState<boolean>(false);
-
-  const toggleLeaving = () => setLeaving((prev) => !prev);
 
   const increaseIndex = () => {
-    if (leaving) return;
-    toggleLeaving();
     const maxIndex = imgs.length - 1;
     setIndex((prev) => (prev === maxIndex ? prev : prev + 1));
   };
 
   const decreaseIndex = () => {
-    if (leaving) return;
-    toggleLeaving();
     setIndex((prev) => (prev === 0 ? prev : prev - 1));
   };
 
@@ -39,7 +34,7 @@ const BigImage: React.FC<IBigImageProps> = ({ imgs, handleDisplay }) => {
       <BigImageOverlay onClick={() => handleDisplay(false)} />
       <BigImageBox>
         <BigImageWrap>
-          <AnimatePresence initial={false} onExitComplete={toggleLeaving}>
+          <AnimatePresence initial={false}>
             <BigImageRow
               variants={rowVariants}
               initial="hidden"
@@ -51,13 +46,13 @@ const BigImage: React.FC<IBigImageProps> = ({ imgs, handleDisplay }) => {
               <BigImageImg src={imgs[index]} alt={imgs[index]} />
             </BigImageRow>
           </AnimatePresence>
-          <BigImageButton direction="left" onClick={decreaseIndex}>
-            -1
-          </BigImageButton>
-          <BigImageButton direction="right" onClick={increaseIndex}>
-            +1
-          </BigImageButton>
         </BigImageWrap>
+        <BigImageButton direction="left" onClick={decreaseIndex}>
+          <img src={leftArrow} />
+        </BigImageButton>
+        <BigImageButton direction="right" onClick={increaseIndex}>
+          <img src={rightArrow} />
+        </BigImageButton>
       </BigImageBox>
     </React.Fragment>
   );
