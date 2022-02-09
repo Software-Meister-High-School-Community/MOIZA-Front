@@ -1,3 +1,5 @@
+import { useState } from "react";
+import BigImage from "../BigImage";
 import {
   ImgSplitBox,
   ImgSplitColumnBox,
@@ -11,6 +13,8 @@ interface IImgSplit {
 }
 
 const ImgSplit: React.FC<IImgSplit> = ({ width, imgs, gap }) => {
+  const [isBigImage, setIsBigImage] = useState<boolean>(false);
+
   const imgHandleFunc = (imgLength: number) => {
     switch (imgLength) {
       case 1:
@@ -100,9 +104,12 @@ const ImgSplit: React.FC<IImgSplit> = ({ width, imgs, gap }) => {
   };
 
   return (
-    <ImgSplitBox width={width} gap={gap}>
-      {imgHandleFunc(imgs.length)}
-    </ImgSplitBox>
+    <>
+      <ImgSplitBox width={width} gap={gap} onClick={() => setIsBigImage(true)}>
+        {imgHandleFunc(imgs.length)}
+      </ImgSplitBox>
+      {isBigImage && <BigImage imgs={imgs} handleDisplay={setIsBigImage} />}
+    </>
   );
 };
 

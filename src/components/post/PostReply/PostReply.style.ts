@@ -23,11 +23,9 @@ export const PostReplyHeaderWrap = styled.div`
   margin-bottom: 28px;
 `;
 
-export const PostReplyIconCircle = styled.div`
+export const PostReplyIconCircle = styled.img`
   min-width: 100px;
-  height: 100px;
-  border-radius: 100px;
-  background-color: ${(props) => props.theme.color.main_yellow_color};
+  object-fit: scale-down;
 `;
 
 export const PostReplyInfoWrap = styled.div`

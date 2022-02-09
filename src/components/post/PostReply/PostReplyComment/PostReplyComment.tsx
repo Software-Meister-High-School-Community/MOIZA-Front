@@ -14,7 +14,7 @@ import {
 } from "./PostReplyComment.style";
 import menuCircle from "../../../../assets/img/post/menuCircle.svg";
 import commentIcon from "../../../../assets/img/post/Comment.svg";
-import ImgSplit from "../../ImgSplit";
+import ImgSplit from "../../../Common/ImgSplit";
 import { useState } from "react";
 import PostReplyCommentOfComment from "../PostReplyCommentOfComment";
 

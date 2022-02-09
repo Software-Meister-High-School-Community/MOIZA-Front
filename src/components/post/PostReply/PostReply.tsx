@@ -28,10 +28,11 @@ import {
 import menuCircle from "../../../assets/img/post/menuCircle.svg";
 import heart from "../../../assets/img/admin/icons/heart.svg";
 import view from "../../../assets/img/admin/icons/view.svg";
+import questionCircle from "../../../assets/img/post/questionCircle.svg";
 import SubmitButton from "../../Common/Button/SubmitButton";
 import { IPostReplyDataProps } from "../../../interface/Post/Post.type";
 import PostReplyComment from "./PostReplyComment";
-import ImgSplit from "../ImgSplit";
+import ImgSplit from "../../Common/ImgSplit";
 
 const PostReply: React.FC = () => {
   const exampleData = {
@@ -145,7 +146,7 @@ const PostReply: React.FC = () => {
               <Path pathArray={PostListPathArr} />
               <PostReplyWrap>
                 <PostReplyHeaderWrap>
-                  <PostReplyIconCircle />
+                  <PostReplyIconCircle src={questionCircle} />
                   <PostReplyInfoWrap>
                     <PostReplyTitle>{postData.title}</PostReplyTitle>
                     <PostReplyWriterWrap>

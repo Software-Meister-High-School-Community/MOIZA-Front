@@ -6,6 +6,7 @@ export const ImgSplitBox = styled.div<{ width: number; gap: number }>`
   aspect-ratio: 16 / 9;
   display: flex;
   flex-wrap: wrap;
+  cursor: pointer;
 
   img {
     object-fit: cover;

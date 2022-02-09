@@ -1,5 +1,5 @@
 import { ICommnet } from "../../../../../interface/Post/Post.type";
-import ImgSplit from "../../../ImgSplit";
+import ImgSplit from "../../../../Common/ImgSplit";
 import {
   PostReplyCOCFormBreakPoint,
   PostReplyCOCFormHeaderDate,

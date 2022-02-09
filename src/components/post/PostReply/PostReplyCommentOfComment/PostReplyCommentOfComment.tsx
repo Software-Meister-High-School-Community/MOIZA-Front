@@ -1,4 +1,4 @@
-import React, { Dispatch, SetStateAction, useEffect } from "react";
+import React, { useEffect } from "react";
 import { ICommnet } from "../../../../interface/Post/Post.type";
 import {
   PostReplyCOCBox,
