@@ -52,7 +52,7 @@ export const ItemImg = styled.img`
     margin-right:10px;
 `
 
-export const ItemText = styled.p`
+export const ItemMessage = styled.p`
     font-size: ${(props) => props.theme.fontSize.body_small};
 `
 
