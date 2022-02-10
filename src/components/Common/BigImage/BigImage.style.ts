@@ -43,12 +43,12 @@ export const BigImageRow = styled(motion.div)`
 `;
 
 export const rowVariants = {
-  hidden: {
-    x: 995,
-  },
   visible: {
     x: 0,
   },
+  hidden: {
+    x: 995,
+  }, //x 가 작을 수록 왼쪽으로 붙고 클수록 오른쪽으로 붙음
   exit: {
     x: -995,
   },
@@ -63,8 +63,8 @@ export const BigImageImg = styled(motion.img)`
 
 export const BigImageButton = styled.button<{ direction: "left" | "right" }>`
   position: absolute;
-  width: 72px;
-  height: 72px;
+  width: 128px;
+  height: 128px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -79,6 +79,6 @@ export const BigImageButton = styled.button<{ direction: "left" | "right" }>`
     object-fit: scale-down;
   }
 
-  ${(props) => props.direction === "left" && "left : -100px"}
-  ${(props) => props.direction === "right" && "right -100px"}
+  ${(props) => props.direction === "left" && "left : -128px"}
+  ${(props) => props.direction === "right" && "right -128px"}
 `;
