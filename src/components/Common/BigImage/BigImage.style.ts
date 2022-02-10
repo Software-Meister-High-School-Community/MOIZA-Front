@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import styled from "styled-components";
 
 export const BigImageOverlay = styled.div`
@@ -42,15 +42,19 @@ export const BigImageRow = styled(motion.div)`
   left: 0px;
 `;
 
-export const rowVariants = {
+export const rowVariants: Variants = {
   visible: {
     x: 0,
   },
-  hidden: {
-    x: 995,
+  hidden: (direction: string) => {
+    return {
+      x: direction === "right" ? 955 : -955,
+    };
   }, //x 가 작을 수록 왼쪽으로 붙고 클수록 오른쪽으로 붙음
-  exit: {
-    x: -995,
+  exit: (direction: string) => {
+    return {
+      x: direction === "right" ? -955 : 955,
+    };
   },
 };
 
