@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import fixed from "../../../assets/img/admin/icons/fixedNotification.svg";
 import nomal from "../../../assets/img/admin/icons/notification.svg";
 import onHeart from "../../../assets/img/main/onHeart.svg";
@@ -6,10 +6,20 @@ import offHeart from "../../../assets/img/main/offHeart.svg";
 import eye from "../../../assets/img/notice/eye.svg";
 import Path from "../../Common/path";
 import { NoticePostPathArr } from "../constants";
-import HeartButton from "../../Common/Button/HeartButton/HeartButton";
 import * as S from "./style";
 
 const ShowNotice: React.FC = () => {
+  const [liked, setLiked] = useState(false);
+
+  const onClickHeart = () => {
+    if (!liked) {
+      setLiked(true);
+      console.log("like");
+    } else {
+      setLiked(false);
+      console.log("Not like");
+    }
+  };
   return (
     <S.Wrapper>
       <S.NoticeHeadDiv>
@@ -26,7 +36,11 @@ const ShowNotice: React.FC = () => {
         </S.PostBody>
         <S.BodyFooter>
           <S.HeartDiv>
-            <HeartButton />
+            <S.PostHeart
+              src={liked ? onHeart : offHeart}
+              alt=""
+              onClick={onClickHeart}
+            />
             <S.HeartCount>123</S.HeartCount>
           </S.HeartDiv>
           <S.EyeDiv>
