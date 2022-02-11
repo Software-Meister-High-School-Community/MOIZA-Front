@@ -18,7 +18,7 @@ import {
 import camera from "../../../../assets/img/Common/camera.svg";
 import x from "../../../../assets/img/Common/x.svg";
 import PostReplyCOCForm from "./PostReplyCOCForm";
-import useNestedComment from "../../../../hooks/post/comment/useNestedComment";
+import useNestedComment from "../../../../hooks/post/comment/useComment";
 
 interface IPostReplyCommentOfCommentProps {
   commentOfComment?: ICommnet[];
@@ -64,7 +64,7 @@ const PostReplyCommentOfComment: React.FC<IPostReplyCommentOfCommentProps> = ({
             type="file"
             accept="image/*"
             multiple
-            onChange={(e) => onChangeFile(e)}
+            onChange={(e) => onChangeFile(e, makeCommentData.picture.length)}
             id="commentFile"
           />
           <PostReplyCOCFileInputLabel htmlFor="commentFile">
@@ -75,7 +75,7 @@ const PostReplyCommentOfComment: React.FC<IPostReplyCommentOfCommentProps> = ({
           <PostReplyCOCImgBox>
             {makeCommentData.picture.map((img) => {
               return (
-                <PostReplyCOCImgWrap>
+                <PostReplyCOCImgWrap id={img.id}>
                   <PostReplyCOCImg />
                   <PostReplyCOCImgBottomWrap>
                     <p>{img.name}</p>
