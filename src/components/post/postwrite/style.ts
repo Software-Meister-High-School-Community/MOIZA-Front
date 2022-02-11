@@ -17,7 +17,10 @@ export const WriteForm = styled.form`
 export const RadioDiv = styled.div`
   width: 955px;
   margin-top: 30px;
+  margin-left: 32px;
   display: flex;
+  justify-content: space-between;
+  align-items: center;
 `;
 
 export const Title = styled.div`
@@ -36,11 +39,10 @@ export const Title = styled.div`
     align-items: center;
     border: 1px solid ${({ theme }) => theme.color.gray_color3};
     border-radius: 5px;
-    margin-left: 12px;
+    margin-left: 28px;
     > input {
       border: none;
       outline: none;
-      background-color: transparent;
       width: 874px;
       height: 40px;
       box-sizing: border-box;
@@ -84,8 +86,8 @@ export const PostMainContent = styled.textarea`
 `;
 
 export const TempList = styled.p`
-  margin-top: 50px;
   font-family: "Roboto", sans-serif;
+  color: ${({ theme }) => theme.color.gray_color5};
   font-style: normal;
   font-weight: 400;
   font-size: ${({ theme }) => theme.fontSize.button_small};

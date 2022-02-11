@@ -64,6 +64,7 @@ const PostWrite: React.FC = () => {
             radioArray={RadioTypeArr}
             name="typecheckbox"
           />
+          <S.TempList>임시저장 게시물&gt;</S.TempList>
         </S.RadioDiv>
         <S.PostMainContent
           name={CONTENT}
@@ -73,7 +74,6 @@ const PostWrite: React.FC = () => {
         <S.TextCount marginTop="15px">
           {postContent.content.length}/500
         </S.TextCount>
-        <S.TempList>임시저장 게시물&gt;</S.TempList>
       </S.WriteForm>
       <UploadFiles state={postContent} setStateFunction={setPostContent} />
       <S.SubmitBtn>
