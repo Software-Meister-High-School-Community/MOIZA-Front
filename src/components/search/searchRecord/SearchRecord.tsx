@@ -2,25 +2,36 @@ import React, { useState } from "react";
 import * as SR from "./SearchRecord.style";
 import { ISearchProps } from "../../../interface/search/Search.type";
 import * as IMGS from "../../../assets/img/index";
-const SearchRecord: React.FC<ISearchProps> = ({ visible, currentSearch }) => {
-  const items = [
-    { id: 1, name: "일러스트레이트" },
-    { id: 1, name: "정우재" },
-    { id: 1, name: "팝아트" },
-  ];
-
+const SearchRecord: React.FC<ISearchProps> = ({
+  visible,
+  currentSearch,
+  searchRecords,
+  onDelete,
+  onReset,
+}) => {
   return (
     <SR.ItemContainer disabled={visible}>
       <SR.Text>최근검색어</SR.Text>
-      <SR.TotalDeleteBtn>전체 삭제</SR.TotalDeleteBtn>
-      {items.map((item) => (
+      <SR.TotalDeleteBtn
+        onClick={() => {
+          onReset();
+        }}
+      >
+        전체 삭제
+      </SR.TotalDeleteBtn>
+      {searchRecords.map(({ id, title }) => (
         <SR.ItemBox
           onClick={() => {
-            currentSearch(item.name);
+            currentSearch(title);
           }}
         >
-          <SR.Item>{item.name}</SR.Item>
-          <SR.DeleteBtn src={IMGS.SearchDelete} />
+          <SR.Item>{title}</SR.Item>
+          <SR.DeleteBtn
+            src={IMGS.SearchDelete}
+            onClick={() => {
+              onDelete(id);
+            }}
+          />
         </SR.ItemBox>
       ))}
     </SR.ItemContainer>

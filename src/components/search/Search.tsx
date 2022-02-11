@@ -1,17 +1,25 @@
 import React, { useEffect, useRef, useState } from "react";
-import SearchResult from "./searchRecord/SearchRecord";
 import * as S from "./Search.style";
 import OutsideClickHandler from "react-outside-click-handler";
 import * as IMGS from "../../assets/img/index";
 import SearchRecord from "./searchRecord/SearchRecord";
+import useSearch from "../../hooks/search/useSearch";
+import search from ".";
 
 const Search: React.FC = () => {
-  const searchEl = useRef(null);
-  const [disabled, setDisabled] = useState(false);
-  const [visible, setVisble] = useState(false);
-  const [currentSearch, setCurrentSearch] = useState("");
-  const [items, setItems] = useState([]);
-
+  const {
+    handleDelteSearchRecord,
+    handleAddSearchRecord,
+    handleResetSearchRecords,
+    searchEl,
+    disabled,
+    visible,
+    setVisble,
+    currentSearch,
+    setCurrentSearch,
+    setDisabled,
+    searchRecords,
+  } = useSearch();
   return (
     <S.Wrapper>
       <S.Title>검색</S.Title>
@@ -19,6 +27,11 @@ const Search: React.FC = () => {
         <OutsideClickHandler onOutsideClick={() => setVisble(false)}>
           <S.Container>
             <S.Input
+              onKeyDown={(e) => {
+                const searchRecord = searchEl.current?.value;
+                if (e.key === "Enter" && searchRecord)
+                  handleAddSearchRecord(searchRecord);
+              }}
               ref={searchEl}
               autoFocus
               onFocus={() => {
@@ -35,13 +48,21 @@ const Search: React.FC = () => {
             <S.SubmitButton
               disabled={disabled}
               onClick={(e) => {
-                return e.preventDefault();
+                e.preventDefault();
+                const searchRecord = searchEl.current?.value;
+                searchRecord && handleAddSearchRecord(searchRecord);
               }}
             >
               <S.Img src={IMGS.SearchLogo} />
             </S.SubmitButton>
           </S.Container>
-          <SearchRecord visible={visible} currentSearch={setCurrentSearch} />
+          <SearchRecord
+            onReset={handleResetSearchRecords}
+            visible={visible}
+            currentSearch={setCurrentSearch}
+            searchRecords={searchRecords}
+            onDelete={handleDelteSearchRecord}
+          />
         </OutsideClickHandler>
       </S.SearchWrapper>
     </S.Wrapper>
