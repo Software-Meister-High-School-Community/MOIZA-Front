@@ -218,9 +218,13 @@ const PostReply: React.FC = () => {
                 )}
                 {postData?.comment?.length ? (
                   <>
-                    {postData?.comment.map((item) => {
+                    {postData?.comment.map((item, idx) => {
                       return (
-                        <PostReplyComment commentData={item} key={item.id} />
+                        <PostReplyComment
+                          commentData={item}
+                          key={idx}
+                          id={idx}
+                        />
                       );
                     })}
                   </>

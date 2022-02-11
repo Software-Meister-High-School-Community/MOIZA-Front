@@ -34,7 +34,7 @@ const GraduateCheckForm: React.FC = () => {
               <GCF.GraduateCheckFormFileDeleteButton
                 onClick={() => setFile(null)}
               >
-                <img src={Imgs.GraduateCheckFileDelete} />
+                <img src={Imgs.GraduateCheckFileDelete} alt="delete" />
               </GCF.GraduateCheckFormFileDeleteButton>
             </>
           ) : (

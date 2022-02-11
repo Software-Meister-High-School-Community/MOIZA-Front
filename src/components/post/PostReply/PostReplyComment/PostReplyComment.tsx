@@ -11,6 +11,7 @@ import {
   PostReplyCommentContentText,
   PostReplyCommentBottomWrap,
   PostReplyCommentCommentWrap,
+  PostReplyCommentLine,
 } from "./PostReplyComment.style";
 import menuCircle from "../../../../assets/img/post/menuCircle.svg";
 import commentIcon from "../../../../assets/img/post/Comment.svg";
@@ -20,10 +21,12 @@ import PostReplyCommentOfComment from "../PostReplyCommentOfComment";
 
 interface IPostReplyCommentProps {
   commentData: ICommnet;
+  id: number;
 }
 
 const PostReplyComment: React.FC<IPostReplyCommentProps> = ({
   commentData,
+  id,
 }) => {
   const [fold, setFold] = useState(true);
 
@@ -62,9 +65,13 @@ const PostReplyComment: React.FC<IPostReplyCommentProps> = ({
         </PostReplyCommentBottomWrap>
       </PostReplyCommentBox>
       {!fold && (
-        <PostReplyCommentOfComment
-          commentOfComment={commentData.commentOfComment}
-        />
+        <>
+          <PostReplyCommentOfComment
+            commentOfComment={commentData.commentOfComment}
+            id={id}
+          />
+          <PostReplyCommentLine />
+        </>
       )}
     </>
   );

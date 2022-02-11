@@ -68,10 +68,10 @@ const BigImage: React.FC<IBigImageProps> = ({ imgs, handleDisplay }) => {
           </AnimatePresence>
         </BigImageWrap>
         <BigImageButton direction="left" onClick={decreaseIndex}>
-          <img src={leftArrow} />
+          <img src={leftArrow} alt="next" />
         </BigImageButton>
         <BigImageButton direction="right" onClick={increaseIndex}>
-          <img src={rightArrow} />
+          <img src={rightArrow} alt="prev" />
         </BigImageButton>
       </BigImageBox>
     </React.Fragment>

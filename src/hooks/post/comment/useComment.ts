@@ -1,8 +1,8 @@
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useCallback, useState } from "react";
 
 import { ICommnet } from "../../../interface/Post/Post.type";
 
-const useNestedComment = () => {
+const useComment = () => {
   const [makeCommentData, setMakeCommentData] = useState<ICommnet>({
     id: 0,
     name: "멩쓴쥬",
@@ -94,4 +94,4 @@ const useNestedComment = () => {
   };
 };
 
-export default useNestedComment;
+export default useComment;

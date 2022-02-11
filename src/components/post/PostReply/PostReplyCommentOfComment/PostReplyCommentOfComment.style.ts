@@ -11,7 +11,6 @@ export const PostReplyCOCBox = styled.div`
   border: 1px solid ${(props) => props.theme.color.gray_color3};
   background-color: ${(props) => props.theme.color.gray_color1};
   border-radius: 5px;
-  margin-bottom: 20px;
 `;
 export const PostReplyCOCInputWrap = styled.div`
   width: 100%;

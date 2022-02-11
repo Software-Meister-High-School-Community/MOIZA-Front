@@ -38,6 +38,8 @@ export const PostReplyMakeFormTextarea = styled.textarea`
   margin-top: 40px;
   margin-bottom: 16px;
   outline: none;
+  font-style: normal;
+  font-weight: normal;
 `;
 
 export const PostReplyMakeFormCountText = styled.p`
@@ -84,6 +86,28 @@ export const PostReplyMakeFormFileHeaderWrap = styled.div`
 export const PostReplyMakeFormFileMiddleWrap = styled.div`
   width: 100%;
   display: flex;
+  column-gap: 33px;
+
+  input[type="file"] {
+    display: none;
+  }
+`;
+
+export const PostReplyMakeFormFileAddLabel = styled.label`
+  width: 180px;
+  height: 104px;
+  border: 1px solid ${(props) => props.theme.color.gray_color3};
+  background-color: ${(props) => props.theme.color.gray_color1};
+  cursor: pointer;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    width: 27px;
+    object-fit: scale-down;
+  }
 `;
 
 export const PostReplyMakeFormFileItemWrap = styled.div`
@@ -93,23 +117,28 @@ export const PostReplyMakeFormFileItemWrap = styled.div`
 
 export const PostReplyMakeFormFileImg = styled.img`
   width: 180px;
-  height: 100px;
+  height: 104px;
   object-fit: cover;
   margin-bottom: 10px;
+  background-color: gray;
 `;
 
 export const PostReplyMakeFormFileItemBottomWrap = styled.div`
   display: flex;
   align-items: center;
+  justify-content: space-between;
 
   pre {
     font-size: ${(props) => props.theme.fontSize.body_small};
     color: ${(props) => props.theme.color.gray_color5};
+    max-width: 155px;
+    line-height: 16px;
+    overflow-x: hidden;
+    text-overflow: ellipsis;
   }
 
   button {
     width: 10px;
-    height: 10px;
     background: none;
     border: 0px;
     outline: none;

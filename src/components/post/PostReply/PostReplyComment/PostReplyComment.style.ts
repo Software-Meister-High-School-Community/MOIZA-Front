@@ -122,3 +122,10 @@ export const PostReplyCommentCommentWrap = styled.div`
     object-fit: scale-down;
   }
 `;
+
+export const PostReplyCommentLine = styled.hr`
+  width: 100%;
+  margin: 50px 0px;
+  border: 0px;
+  border-top: 1px solid ${(props) => props.theme.color.gray_color3};
+`;
