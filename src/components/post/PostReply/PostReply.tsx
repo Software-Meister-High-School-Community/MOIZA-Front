@@ -33,6 +33,7 @@ import SubmitButton from "../../Common/Button/SubmitButton";
 import { IPostReplyDataProps } from "../../../interface/Post/Post.type";
 import PostReplyComment from "./PostReplyComment";
 import ImgSplit from "../../Common/ImgSplit";
+import PostReplyMakeForm from "./PostReplyMakeForm";
 
 const PostReply: React.FC = () => {
   const exampleData = {
@@ -130,6 +131,7 @@ const PostReply: React.FC = () => {
 
   const [postData, setPostData] = useState<IPostReplyDataProps>();
   const [isLoading, setIsLoading] = useState(true);
+  const [isMake, setMake] = useState(false);
 
   const { postid } = useParams();
 
@@ -197,14 +199,23 @@ const PostReply: React.FC = () => {
                   </PostReplyBottomViewWrap>
                 </PostReplyBottomWrap>
                 <PostReplyLine />
-                <PostReplyCommentTitleWrap>
-                  <p>
-                    답글 <strong>{postData.comment.length}</strong>
-                  </p>
-                  {postData?.comment?.length !== 0 && (
-                    <SubmitButton text="답글 추가" big blue />
-                  )}
-                </PostReplyCommentTitleWrap>
+                {isMake ? (
+                  <PostReplyMakeForm />
+                ) : (
+                  <PostReplyCommentTitleWrap>
+                    <p>
+                      답글 <strong>{postData.comment.length}</strong>
+                    </p>
+                    {postData?.comment?.length !== 0 && (
+                      <SubmitButton
+                        text="답글 추가"
+                        big
+                        blue
+                        handleClick={() => setMake(true)}
+                      />
+                    )}
+                  </PostReplyCommentTitleWrap>
+                )}
                 {postData?.comment?.length ? (
                   <>
                     {postData?.comment.map((item) => {
