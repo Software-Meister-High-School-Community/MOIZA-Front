@@ -8,7 +8,7 @@ const useSearch = () => {
   const [currentSearch, setCurrentSearch] = useState<string>("");
   const [searchRecords, setSearchRecords] = useState<SearchRecord[]>([]);
     
-        const handleDelteSearchRecord = (searchRecordId:number) =>{
+        const handleDelteSearchRecord = (searchRecordId:number):void =>{
           const seacrhRecords = searchRecords.filter(item =>{
               if (item.id !== searchRecordId) 
               return item
@@ -16,12 +16,13 @@ const useSearch = () => {
           setSearchRecords(seacrhRecords)
         }
 
-        const handleAddSearchRecord = (title:string) =>{
+        const handleAddSearchRecord = (title:string):void =>{
           const newSearchRecords = [{id:Date.now(),title:title},...searchRecords];
           setSearchRecords(newSearchRecords);
+          console.log(searchRecords)
         }
 
-        const handleResetSearchRecords = ()=>{
+        const handleResetSearchRecords = () :void =>{
           setSearchRecords([])
         }
     

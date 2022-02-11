@@ -27,7 +27,7 @@ const Search: React.FC = () => {
         <OutsideClickHandler onOutsideClick={() => setVisble(false)}>
           <S.Container>
             <S.Input
-              onKeyDown={(e) => {
+              onKeyPress={(e) => {
                 const searchRecord = searchEl.current?.value;
                 if (e.key === "Enter" && searchRecord)
                   handleAddSearchRecord(searchRecord);

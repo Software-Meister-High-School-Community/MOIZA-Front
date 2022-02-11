@@ -4,8 +4,8 @@ export interface ISearchProps{
     visible: boolean;
     currentSearch:Dispatch<SetStateAction<string>>;
     searchRecords: SearchRecord[];
-    onDelete:any,
-    onReset:any,
+    onDelete:(SearchRecordId:number)=>void,
+    onReset:()=>void,
 }
 
 export interface SearchRecord{
