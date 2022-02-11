@@ -40,6 +40,17 @@ export const BigImageRow = styled(motion.div)`
   position: absolute;
   top: 0px;
   left: 0px;
+
+  img {
+    /* width: 955px !important;
+    height: 571px !important; */
+    object-fit: cover !important;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
 `;
 
 export const rowVariants: Variants = {
@@ -63,6 +74,11 @@ export const BigImageImg = styled(motion.img)`
   height: 100%;
   object-fit: cover;
   background-color: gray;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 `;
 
 export const BigImageButton = styled.button<{ direction: "left" | "right" }>`
