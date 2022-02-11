@@ -7,6 +7,8 @@ interface IStyleProps {
 export const ItemContainer = styled.div<IStyleProps>`
     position: relative;
     width: 585px;
+    max-height:139px;
+    overflow:scroll;
     background-color: ${(props) => props.theme.color.gray_color1};
     margin: 0 auto;
     padding-top: 47px;
