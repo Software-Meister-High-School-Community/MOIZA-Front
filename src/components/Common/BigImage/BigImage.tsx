@@ -8,10 +8,13 @@ import {
   rowVariants,
   BigImageButton,
   BigImageImg,
+  BigImageMagnifyButton,
 } from "./BigImage.style";
 import leftArrow from "../../../assets/img/Common/leftArrow.svg";
 import rightArrow from "../../../assets/img/Common/rightArrow.svg";
 import useBigImage from "../../../hooks/Common/useBigImage";
+import plusMG from "../../../assets/img/Common/plusMagnifyingGlass.svg";
+import minusMG from "../../../assets/img/Common/minusMagnifyingGlass.svg";
 
 interface IBigImageProps {
   imgs: string[];
@@ -26,6 +29,8 @@ const BigImage: React.FC<IBigImageProps> = ({ imgs, handleDisplay }) => {
     swipePower,
     increaseIndex,
     decreaseIndex,
+    imageSize,
+    imageZoomHandle,
   } = useBigImage(imgs.length);
 
   const { scrollY } = useViewportScroll();
@@ -39,7 +44,13 @@ const BigImage: React.FC<IBigImageProps> = ({ imgs, handleDisplay }) => {
   return (
     <React.Fragment>
       <BigImageOverlay onClick={() => handleDisplay(false)} />
-      <BigImageBox style={{ top: scrollY.get() + 120 }}>
+      <BigImageBox
+        style={{
+          top: imageSize.width === 995 ? scrollY.get() + 120 : scrollY.get(),
+          width: imageSize.width,
+          height: imageSize.height,
+        }}
+      >
         <BigImageWrap>
           <AnimatePresence initial={false} custom={direction}>
             <BigImageRow
@@ -74,6 +85,20 @@ const BigImage: React.FC<IBigImageProps> = ({ imgs, handleDisplay }) => {
           <img src={rightArrow} alt="prev" />
         </BigImageButton>
       </BigImageBox>
+      <BigImageMagnifyButton
+        style={{ top: scrollY.get() + 807 }}
+        direction="left"
+        onClick={() => imageZoomHandle("enlargement")}
+      >
+        <img src={plusMG} alt="enlargement" />
+      </BigImageMagnifyButton>
+      <BigImageMagnifyButton
+        style={{ top: scrollY.get() + 807 }}
+        direction="right"
+        onClick={() => imageZoomHandle("reduction")}
+      >
+        <img src={minusMG} alt="reduction" />
+      </BigImageMagnifyButton>
     </React.Fragment>
   );
 };
