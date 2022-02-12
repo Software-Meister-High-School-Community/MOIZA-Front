@@ -1,15 +1,6 @@
 import { AnimatePresence, useViewportScroll } from "framer-motion";
 import React, { Dispatch, SetStateAction } from "react";
-import {
-  BigImageBox,
-  BigImageOverlay,
-  BigImageRow,
-  BigImageWrap,
-  rowVariants,
-  BigImageButton,
-  BigImageImg,
-  BigImageMagnifyButton,
-} from "./BigImage.style";
+import * as BI from "./BigImage.style";
 import leftArrow from "../../../assets/img/Common/leftArrowBlack.svg";
 import rightArrow from "../../../assets/img/Common/rightArrowBlack.svg";
 import useBigImage from "../../../hooks/Common/useBigImage";
@@ -37,8 +28,8 @@ const BigImage: React.FC<IBigImageProps> = ({ imgs, handleDisplay }) => {
 
   return (
     <React.Fragment>
-      <BigImageOverlay onClick={() => handleDisplay(false)} />
-      <BigImageBox
+      <BI.BigImageOverlay onClick={() => handleDisplay(false)} />
+      <BI.BigImageBox
         isFull={imageSize.width >= 1920}
         currentY={scrollY.get()}
         style={{
@@ -46,10 +37,10 @@ const BigImage: React.FC<IBigImageProps> = ({ imgs, handleDisplay }) => {
           height: imageSize.height,
         }}
       >
-        <BigImageWrap>
+        <BI.BigImageWrap>
           <AnimatePresence initial={false} custom={direction}>
-            <BigImageRow
-              variants={rowVariants}
+            <BI.BigImageRow
+              variants={BI.rowVariants}
               initial="hidden"
               animate="visible"
               exit="exit"
@@ -69,39 +60,39 @@ const BigImage: React.FC<IBigImageProps> = ({ imgs, handleDisplay }) => {
                 }
               }}
             >
-              <BigImageImg src={imgs[index]} alt={imgs[index]} />
-            </BigImageRow>
+              <BI.BigImageImg src={imgs[index]} alt={imgs[index]} />
+            </BI.BigImageRow>
           </AnimatePresence>
-        </BigImageWrap>
-      </BigImageBox>
-      <BigImageButton
+        </BI.BigImageWrap>
+      </BI.BigImageBox>
+      <BI.BigImageButton
         direction="left"
         onClick={decreaseIndex}
         currentY={scrollY.get()}
       >
         <img src={leftArrow} alt="next" />
-      </BigImageButton>
-      <BigImageButton
+      </BI.BigImageButton>
+      <BI.BigImageButton
         direction="right"
         onClick={increaseIndex}
         currentY={scrollY.get()}
       >
         <img src={rightArrow} alt="prev" />
-      </BigImageButton>
-      <BigImageMagnifyButton
+      </BI.BigImageButton>
+      <BI.BigImageMagnifyButton
         style={{ top: scrollY.get() + 807 }}
         direction="left"
         onClick={() => imageZoomHandle("enlargement", imageSize)}
       >
         <img src={plusMG} alt="enlargement" />
-      </BigImageMagnifyButton>
-      <BigImageMagnifyButton
+      </BI.BigImageMagnifyButton>
+      <BI.BigImageMagnifyButton
         style={{ top: scrollY.get() + 807 }}
         direction="right"
         onClick={() => imageZoomHandle("reduction", imageSize)}
       >
         <img src={minusMG} alt="reduction" />
-      </BigImageMagnifyButton>
+      </BI.BigImageMagnifyButton>
     </React.Fragment>
   );
 };

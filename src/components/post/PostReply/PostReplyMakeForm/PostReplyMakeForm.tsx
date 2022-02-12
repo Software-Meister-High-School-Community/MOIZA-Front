@@ -1,18 +1,6 @@
 import useNestedComment from "../../../../hooks/post/comment/useComment";
 import SubmitButton from "../../../Common/Button/SubmitButton";
-import {
-  PostReplyMakeFormBox,
-  PostReplyMakeFormCountText,
-  PostReplyMakeFormFileAddLabel,
-  PostReplyMakeFormFileForm,
-  PostReplyMakeFormFileHeaderWrap,
-  PostReplyMakeFormFileImg,
-  PostReplyMakeFormFileItemBottomWrap,
-  PostReplyMakeFormFileItemWrap,
-  PostReplyMakeFormFileMiddleWrap,
-  PostReplyMakeFormHeaderWrap,
-  PostReplyMakeFormTextarea,
-} from "./PostReplyMakeForm.style";
+import * as PRMF from "./PostReplyMakeForm.style";
 import x from "../../../../assets/img/Common/x.svg";
 import plus from "../../../../assets/img/Common/addFile.svg";
 
@@ -21,8 +9,8 @@ const PostReplyMakeForm = () => {
     useNestedComment();
 
   return (
-    <PostReplyMakeFormBox>
-      <PostReplyMakeFormHeaderWrap>
+    <PRMF.PostReplyMakeFormBox>
+      <PRMF.PostReplyMakeFormHeaderWrap>
         <h1>답글</h1>
         <SubmitButton
           text="답글 등록"
@@ -32,22 +20,22 @@ const PostReplyMakeForm = () => {
             makeCommentData.text === "" && makeCommentData.picture.length === 0
           }
         />
-      </PostReplyMakeFormHeaderWrap>
-      <PostReplyMakeFormTextarea
+      </PRMF.PostReplyMakeFormHeaderWrap>
+      <PRMF.PostReplyMakeFormTextarea
         name="text"
         onChange={(e) => onChangeValue(e)}
         value={makeCommentData.text}
       />
-      <PostReplyMakeFormCountText>
+      <PRMF.PostReplyMakeFormCountText>
         {makeCommentData.text.length}/500
-      </PostReplyMakeFormCountText>
-      <PostReplyMakeFormFileForm>
-        <PostReplyMakeFormFileHeaderWrap>
+      </PRMF.PostReplyMakeFormCountText>
+      <PRMF.PostReplyMakeFormFileForm>
+        <PRMF.PostReplyMakeFormFileHeaderWrap>
           <h1>첨부파일</h1>
           <p>{makeCommentData.picture.length}/4</p>
-        </PostReplyMakeFormFileHeaderWrap>
+        </PRMF.PostReplyMakeFormFileHeaderWrap>
         <hr />
-        <PostReplyMakeFormFileMiddleWrap>
+        <PRMF.PostReplyMakeFormFileMiddleWrap>
           <input
             type="file"
             accept="image/*"
@@ -57,25 +45,25 @@ const PostReplyMakeForm = () => {
           />
           {makeCommentData.picture.map((img) => {
             return (
-              <PostReplyMakeFormFileItemWrap>
-                <PostReplyMakeFormFileImg alt={img.id} />
-                <PostReplyMakeFormFileItemBottomWrap>
+              <PRMF.PostReplyMakeFormFileItemWrap>
+                <PRMF.PostReplyMakeFormFileImg alt={img.id} />
+                <PRMF.PostReplyMakeFormFileItemBottomWrap>
                   <pre>{img.name}</pre>
                   <button onClick={() => onRemoveFile(img.id)}>
                     <img src={x} alt="cancle" />
                   </button>
-                </PostReplyMakeFormFileItemBottomWrap>
-              </PostReplyMakeFormFileItemWrap>
+                </PRMF.PostReplyMakeFormFileItemBottomWrap>
+              </PRMF.PostReplyMakeFormFileItemWrap>
             );
           })}
           {makeCommentData.picture.length !== 4 && (
-            <PostReplyMakeFormFileAddLabel htmlFor="commentFile">
+            <PRMF.PostReplyMakeFormFileAddLabel htmlFor="commentFile">
               <img src={plus} alt="addFile" />
-            </PostReplyMakeFormFileAddLabel>
+            </PRMF.PostReplyMakeFormFileAddLabel>
           )}
-        </PostReplyMakeFormFileMiddleWrap>
-      </PostReplyMakeFormFileForm>
-    </PostReplyMakeFormBox>
+        </PRMF.PostReplyMakeFormFileMiddleWrap>
+      </PRMF.PostReplyMakeFormFileForm>
+    </PRMF.PostReplyMakeFormBox>
   );
 };
 

@@ -1,20 +1,6 @@
 import React, { useEffect } from "react";
 import { ICommnet } from "../../../../interface/Post/Post.type";
-import {
-  PostReplyCOCBox,
-  PostReplyCOCFileInputLabel,
-  PostReplyCOCImg,
-  PostReplyCOCImgBottomButton,
-  PostReplyCOCImgBottomWrap,
-  PostReplyCOCImgBox,
-  PostReplyCOCImgWrap,
-  PostReplyCOCInputWrap,
-  PostReplyCOCLine,
-  PostReplyCOCSubmitButton,
-  PostReplyCOCTextarea,
-  PostReplyCOCtextInputWrap,
-  PostReplyCommentWrap,
-} from "./PostReplyCommentOfComment.style";
+import * as PRCOC from "./PostReplyCommentOfComment.style";
 import camera from "../../../../assets/img/Common/camera.svg";
 import x from "../../../../assets/img/Common/x.svg";
 import PostReplyCOCForm from "./PostReplyCOCForm";
@@ -47,21 +33,21 @@ const PostReplyCommentOfComment: React.FC<IPostReplyCommentOfCommentProps> = ({
 
   return (
     <>
-      <PostReplyCOCBox>
-        <PostReplyCOCInputWrap>
+      <PRCOC.PostReplyCOCBox>
+        <PRCOC.PostReplyCOCInputWrap>
           <p>{makeCommentData.text.length}/500?</p>
-          <PostReplyCOCtextInputWrap>
-            <PostReplyCOCTextarea
+          <PRCOC.PostReplyCOCtextInputWrap>
+            <PRCOC.PostReplyCOCTextarea
               name="text"
               onChange={(e) => onChangeValue(e)}
               value={makeCommentData.text}
             />
-            <PostReplyCOCSubmitButton
+            <PRCOC.PostReplyCOCSubmitButton
               onClick={() => onSubmitNestedReply(makeCommentData)}
             >
               등록
-            </PostReplyCOCSubmitButton>
-          </PostReplyCOCtextInputWrap>
+            </PRCOC.PostReplyCOCSubmitButton>
+          </PRCOC.PostReplyCOCtextInputWrap>
           <input
             type="file"
             accept="image/*"
@@ -69,45 +55,47 @@ const PostReplyCommentOfComment: React.FC<IPostReplyCommentOfCommentProps> = ({
             onChange={(e) => onChangeFile(e, makeCommentData.picture.length)}
             id={`commentOfCommentFile${id}`}
           />
-          <PostReplyCOCFileInputLabel htmlFor={`commentOfCommentFile${id}`}>
+          <PRCOC.PostReplyCOCFileInputLabel
+            htmlFor={`commentOfCommentFile${id}`}
+          >
             <img src={camera} alt="addPicture" />
             <strong>사진</strong>
             {makeCommentData.picture.length}/4
-          </PostReplyCOCFileInputLabel>
-          <PostReplyCOCImgBox>
+          </PRCOC.PostReplyCOCFileInputLabel>
+          <PRCOC.PostReplyCOCImgBox>
             {makeCommentData.picture.map((img) => {
               return (
-                <PostReplyCOCImgWrap id={img.id}>
-                  <PostReplyCOCImg />
-                  <PostReplyCOCImgBottomWrap>
+                <PRCOC.PostReplyCOCImgWrap id={img.id}>
+                  <PRCOC.PostReplyCOCImg />
+                  <PRCOC.PostReplyCOCImgBottomWrap>
                     <p>{img.name}</p>
-                    <PostReplyCOCImgBottomButton
+                    <PRCOC.PostReplyCOCImgBottomButton
                       onClick={() => onRemoveFile(img.id)}
                     >
                       <img src={x} alt="cancle" />
-                    </PostReplyCOCImgBottomButton>
-                  </PostReplyCOCImgBottomWrap>
-                </PostReplyCOCImgWrap>
+                    </PRCOC.PostReplyCOCImgBottomButton>
+                  </PRCOC.PostReplyCOCImgBottomWrap>
+                </PRCOC.PostReplyCOCImgWrap>
               );
             })}
-          </PostReplyCOCImgBox>
-        </PostReplyCOCInputWrap>
-        <PostReplyCOCLine isInputHr={true} />
-        <PostReplyCommentWrap>
+          </PRCOC.PostReplyCOCImgBox>
+        </PRCOC.PostReplyCOCInputWrap>
+        <PRCOC.PostReplyCOCLine isInputHr={true} />
+        <PRCOC.PostReplyCommentWrap>
           {currentShowCOC?.length !== 0 && (
             <>
               {currentShowCOC?.map((comment) => {
                 return (
                   <React.Fragment>
                     <PostReplyCOCForm commentOfComment={comment} />
-                    <PostReplyCOCLine isInputHr={false} />
+                    <PRCOC.PostReplyCOCLine isInputHr={false} />
                   </React.Fragment>
                 );
               })}
             </>
           )}
-        </PostReplyCommentWrap>
-      </PostReplyCOCBox>
+        </PRCOC.PostReplyCommentWrap>
+      </PRCOC.PostReplyCOCBox>
     </>
   );
 };

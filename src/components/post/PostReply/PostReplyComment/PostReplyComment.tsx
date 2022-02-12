@@ -1,18 +1,5 @@
 import { ICommnet } from "../../../../interface/Post/Post.type";
-import {
-  PostReplyCommentBox,
-  PostReplyCommentHeaderWrap,
-  PostReplyCommentProfileImg,
-  PostReplyCommentWriterWrap,
-  PostReplyCommentBreakPoint,
-  PostReplyCommentDate,
-  PostReplyCommentMenuButton,
-  PostReplyCommentMiddleWrap,
-  PostReplyCommentContentText,
-  PostReplyCommentBottomWrap,
-  PostReplyCommentCommentWrap,
-  PostReplyCommentLine,
-} from "./PostReplyComment.style";
+import * as PRC from "./PostReplyComment.style";
 import menuCircle from "../../../../assets/img/post/menuCircle.svg";
 import commentIcon from "../../../../assets/img/post/Comment.svg";
 import ImgSplit from "../../../Common/ImgSplit";
@@ -32,45 +19,47 @@ const PostReplyComment: React.FC<IPostReplyCommentProps> = ({
 
   return (
     <>
-      <PostReplyCommentBox fold={fold}>
-        <PostReplyCommentHeaderWrap>
-          <PostReplyCommentProfileImg />
-          <PostReplyCommentWriterWrap>
+      <PRC.PostReplyCommentBox fold={fold}>
+        <PRC.PostReplyCommentHeaderWrap>
+          <PRC.PostReplyCommentProfileImg />
+          <PRC.PostReplyCommentWriterWrap>
             <span>
               <strong>{commentData.name}</strong>
             </span>
-            <PostReplyCommentBreakPoint />
+            <PRC.PostReplyCommentBreakPoint />
             <span>{commentData.school}</span>
-            <PostReplyCommentBreakPoint />
+            <PRC.PostReplyCommentBreakPoint />
             <span>{commentData.studentState}</span>
-          </PostReplyCommentWriterWrap>
-          <PostReplyCommentDate>{commentData.createDate}</PostReplyCommentDate>
-          <PostReplyCommentMenuButton>
+          </PRC.PostReplyCommentWriterWrap>
+          <PRC.PostReplyCommentDate>
+            {commentData.createDate}
+          </PRC.PostReplyCommentDate>
+          <PRC.PostReplyCommentMenuButton>
             <img src={menuCircle} alt="menu" />
-          </PostReplyCommentMenuButton>
-        </PostReplyCommentHeaderWrap>
-        <PostReplyCommentMiddleWrap>
-          <PostReplyCommentContentText
+          </PRC.PostReplyCommentMenuButton>
+        </PRC.PostReplyCommentHeaderWrap>
+        <PRC.PostReplyCommentMiddleWrap>
+          <PRC.PostReplyCommentContentText
             withPicture={commentData.picture.length ? true : false}
           >
             {commentData.text}
-          </PostReplyCommentContentText>
+          </PRC.PostReplyCommentContentText>
           <ImgSplit width={380} imgs={commentData.picture} gap={10} />
-        </PostReplyCommentMiddleWrap>
-        <PostReplyCommentBottomWrap>
-          <PostReplyCommentCommentWrap onClick={() => setFold(!fold)}>
+        </PRC.PostReplyCommentMiddleWrap>
+        <PRC.PostReplyCommentBottomWrap>
+          <PRC.PostReplyCommentCommentWrap onClick={() => setFold(!fold)}>
             <img src={commentIcon} alt="comment" />
             {commentData.commentOfComment?.length || "0"}
-          </PostReplyCommentCommentWrap>
-        </PostReplyCommentBottomWrap>
-      </PostReplyCommentBox>
+          </PRC.PostReplyCommentCommentWrap>
+        </PRC.PostReplyCommentBottomWrap>
+      </PRC.PostReplyCommentBox>
       {!fold && (
         <>
           <PostReplyCommentOfComment
             commentOfComment={commentData.commentOfComment}
             id={id}
           />
-          <PostReplyCommentLine />
+          <PRC.PostReplyCommentLine />
         </>
       )}
     </>

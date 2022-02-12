@@ -2,29 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import Path from "../../Common/path";
 import { PostListPathArr } from "../constants";
-import {
-  PostReplyHeaderWrap,
-  PostReplyBox,
-  PostReplyWrap,
-  PostReplyIconCircle,
-  PostReplyInfoWrap,
-  PostReplyTitle,
-  PostReplyWriterWrap,
-  PostReplyProfileCircle,
-  PostReplyWriterInfoText,
-  PostReplyWriterInfoTextWrap,
-  PostReplyWriterBreakPoint,
-  PostReplyDateInfoWrap,
-  PostReplyMenuButton,
-  PostReplyMiddleWrap,
-  PostReplyContentText,
-  PostReplyBottomWrap,
-  PostReplyBottomLikeWrap,
-  PostReplyBottomViewWrap,
-  PostReplyLine,
-  PostReplyCommentTitleWrap,
-  PostReplyNoCommentWrap,
-} from "./PostReply.style";
+import * as PR from "./PostReply.style";
 import menuCircle from "../../../assets/img/post/menuCircle.svg";
 import heart from "../../../assets/img/admin/icons/heart.svg";
 import view from "../../../assets/img/admin/icons/view.svg";
@@ -142,7 +120,7 @@ const PostReply: React.FC = () => {
   }, [setPostData, setIsLoading, postid]);
 
   return (
-    <PostReplyBox>
+    <PR.PostReplyBox>
       {isLoading ? (
         "로딩중..."
       ) : (
@@ -150,59 +128,59 @@ const PostReply: React.FC = () => {
           {postData && (
             <>
               <Path pathArray={PostListPathArr} />
-              <PostReplyWrap>
-                <PostReplyHeaderWrap>
-                  <PostReplyIconCircle src={questionCircle} />
-                  <PostReplyInfoWrap>
-                    <PostReplyTitle>{postData.title}</PostReplyTitle>
-                    <PostReplyWriterWrap>
-                      <PostReplyProfileCircle />
-                      <PostReplyWriterInfoTextWrap>
-                        <PostReplyWriterInfoText>
+              <PR.PostReplyWrap>
+                <PR.PostReplyHeaderWrap>
+                  <PR.PostReplyIconCircle src={questionCircle} />
+                  <PR.PostReplyInfoWrap>
+                    <PR.PostReplyTitle>{postData.title}</PR.PostReplyTitle>
+                    <PR.PostReplyWriterWrap>
+                      <PR.PostReplyProfileCircle />
+                      <PR.PostReplyWriterInfoTextWrap>
+                        <PR.PostReplyWriterInfoText>
                           <strong>{postData.writer}</strong>
-                        </PostReplyWriterInfoText>
-                        <PostReplyWriterBreakPoint />
-                        <PostReplyWriterInfoText>
+                        </PR.PostReplyWriterInfoText>
+                        <PR.PostReplyWriterBreakPoint />
+                        <PR.PostReplyWriterInfoText>
                           {postData.school}
-                        </PostReplyWriterInfoText>
-                        <PostReplyWriterBreakPoint />
-                        <PostReplyWriterInfoText>
+                        </PR.PostReplyWriterInfoText>
+                        <PR.PostReplyWriterBreakPoint />
+                        <PR.PostReplyWriterInfoText>
                           {postData.studentState}
-                        </PostReplyWriterInfoText>
-                      </PostReplyWriterInfoTextWrap>
-                      <PostReplyDateInfoWrap>
+                        </PR.PostReplyWriterInfoText>
+                      </PR.PostReplyWriterInfoTextWrap>
+                      <PR.PostReplyDateInfoWrap>
                         <pre>작성일 {postData.createDate}</pre>
                         <pre>마지막 수정일 {postData.createDate}</pre>
-                      </PostReplyDateInfoWrap>
-                      <PostReplyMenuButton>
+                      </PR.PostReplyDateInfoWrap>
+                      <PR.PostReplyMenuButton>
                         <img src={menuCircle} alt="menu" />
-                      </PostReplyMenuButton>
-                    </PostReplyWriterWrap>
-                  </PostReplyInfoWrap>
-                </PostReplyHeaderWrap>
-                <PostReplyMiddleWrap>
-                  <PostReplyContentText
+                      </PR.PostReplyMenuButton>
+                    </PR.PostReplyWriterWrap>
+                  </PR.PostReplyInfoWrap>
+                </PR.PostReplyHeaderWrap>
+                <PR.PostReplyMiddleWrap>
+                  <PR.PostReplyContentText
                     withPicture={postData.picture.length ? true : false}
                   >
                     {postData.text}
-                  </PostReplyContentText>
+                  </PR.PostReplyContentText>
                   <ImgSplit width={780} imgs={postData.picture} gap={20} />
-                </PostReplyMiddleWrap>
-                <PostReplyBottomWrap>
-                  <PostReplyBottomLikeWrap>
+                </PR.PostReplyMiddleWrap>
+                <PR.PostReplyBottomWrap>
+                  <PR.PostReplyBottomLikeWrap>
                     <img src={heart} alt="heart" />
                     <p>{postData.likes}</p>
-                  </PostReplyBottomLikeWrap>
-                  <PostReplyBottomViewWrap>
+                  </PR.PostReplyBottomLikeWrap>
+                  <PR.PostReplyBottomViewWrap>
                     <img src={view} alt="view" />
                     <p>{postData.views}</p>
-                  </PostReplyBottomViewWrap>
-                </PostReplyBottomWrap>
-                <PostReplyLine />
+                  </PR.PostReplyBottomViewWrap>
+                </PR.PostReplyBottomWrap>
+                <PR.PostReplyLine />
                 {isMake ? (
                   <PostReplyMakeForm />
                 ) : (
-                  <PostReplyCommentTitleWrap>
+                  <PR.PostReplyCommentTitleWrap>
                     <p>
                       답글 <strong>{postData.comment.length}</strong>
                     </p>
@@ -214,7 +192,7 @@ const PostReply: React.FC = () => {
                         handleClick={() => setMake(true)}
                       />
                     )}
-                  </PostReplyCommentTitleWrap>
+                  </PR.PostReplyCommentTitleWrap>
                 )}
                 {postData?.comment?.length ? (
                   <>
@@ -229,17 +207,17 @@ const PostReply: React.FC = () => {
                     })}
                   </>
                 ) : (
-                  <PostReplyNoCommentWrap>
+                  <PR.PostReplyNoCommentWrap>
                     <p>아직 답글이 없네요!</p>
                     <SubmitButton text="답글 추가" blue big />
-                  </PostReplyNoCommentWrap>
+                  </PR.PostReplyNoCommentWrap>
                 )}
-              </PostReplyWrap>
+              </PR.PostReplyWrap>
             </>
           )}
         </>
       )}
-    </PostReplyBox>
+    </PR.PostReplyBox>
   );
 };
 
