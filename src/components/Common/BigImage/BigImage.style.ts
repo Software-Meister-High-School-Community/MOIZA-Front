@@ -12,15 +12,21 @@ export const BigImageOverlay = styled.div`
   z-index: 1;
 `;
 
-export const BigImageBox = styled(motion.div)`
+export const BigImageBox = styled(motion.div)<{
+  isFull: boolean;
+  currentY: number;
+}>`
+  max-width: 100%;
+  max-height: 979px;
   position: absolute;
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 2;
   left: 50%;
-  transform: translate(-50%, 0%);
-  top: 0px;
+  ${(props) => `top: calc(${props.currentY}px + 50%)`};
+  transform: translate(-50%, -50%);
+  ${(props) => props.isFull && `top : ${props.currentY}`}
 `;
 
 export const BigImageWrap = styled(motion.div)`
@@ -68,27 +74,32 @@ export const BigImageImg = styled(motion.img)`
   user-select: none;
 `;
 
-export const BigImageButton = styled.button<{ direction: "left" | "right" }>`
+export const BigImageButton = styled.button<{
+  direction: "left" | "right";
+  currentY: number;
+}>`
   position: absolute;
-  width: 128px;
-  height: 128px;
+  width: 44px;
+  height: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
   outline: none;
-  border: 0px;
+  border: 1px solid ${(props) => props.theme.color.gray_color3};
+  background-color: ${(props) => props.theme.color.gray_color1};
+  border-radius: 100px;
   cursor: pointer;
-  top: 50%;
+  ${(props) => `top: calc(${props.currentY}px + 50%)`};
   transform: translate(-0%, -50%);
   z-index: 3;
 
   img {
-    width: 23px;
+    width: 12px;
     object-fit: scale-down;
   }
 
-  ${(props) => props.direction === "left" && "left : -128px"}
-  ${(props) => props.direction === "right" && "right -128px"}
+  ${(props) => props.direction === "left" && "left : 31px"}
+  ${(props) => props.direction === "right" && "right 31px"}
 `;
 
 export const BigImageMagnifyButton = styled.button<{
