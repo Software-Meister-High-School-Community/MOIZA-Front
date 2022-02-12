@@ -5,7 +5,6 @@ export const Wrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 103px;
 `;
 
 export const NoticeHeadDiv = styled.div`
@@ -27,7 +26,7 @@ export const NoticeName = styled.p`
   font-size: ${({ theme }) => theme.fontSize.head_small};
   font-style: normal;
   font-weight: 400;
-  font-family: Roboto;
+  font-family: "Roboto", sans-serif;
 `;
 
 export const PostDiv = styled.div`

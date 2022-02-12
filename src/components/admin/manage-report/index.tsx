@@ -5,7 +5,7 @@ import ReportOfUser from "./reports/user";
 import ReportOfPost from "./reports/post";
 import ReportsofComment from "./reports/comment";
 import RadioButton from '../../Common/Select/RadioButton'
-import searchIcon from '../../../assets/img/admin/icons/search.svg';
+import SearchInPage from '../../Common/search/searchInPage';
 
 const ManageReport:React.FC = () => {
     const [selectedType,setselectedType] = useState('users');
@@ -59,12 +59,7 @@ const ManageReport:React.FC = () => {
         <S.Wrapper>
             <S.Types>
                 <RadioButton selected={selectedType} setSelected={setselectedType} radioArray={TypeArr} name="typecheckbox"/>
-                <form onSubmit={onKeyPressSearch}>
-                    <S.SearchInput width={InputStyleObject.width}>
-                        <input type="text" onChange={onChangeSearchKeyword} value={searchKeyword} placeholder={InputStyleObject.placeholder}/>
-                        <img src={searchIcon}/>
-                    </S.SearchInput>
-                </form>
+                <SearchInPage heigth="40" fontsize="16" onSubmit={onKeyPressSearch} onChange={onChangeSearchKeyword} value={searchKeyword} placeholder={InputStyleObject.placeholder} width={InputStyleObject.width}/>
             </S.Types>
             { selectedType === "users" ?
                 reportList.users.map((item,index)=>(

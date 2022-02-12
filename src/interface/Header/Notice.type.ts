@@ -1,4 +1,4 @@
 export interface NoticeProps {
-    modalState: boolean,
-    modalClose: any,
+    noticeState: boolean,
+    noticeClose: any,
 }

@@ -89,7 +89,7 @@ export const PostText = styled.p`
   width: 306px;
   height: 82px;
   margin: 0 30px 10px 30px;
-  line-height: 20px;
+  line-height: 25px;
   font-size: ${({ theme }) => theme.fontSize.body_large};
   font-weight: 400;
   font-style: normal;

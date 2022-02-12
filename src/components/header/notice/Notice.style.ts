@@ -1,8 +1,24 @@
-import styled from "styled-components";
+import styled,{css} from "styled-components";
+interface IStyleProps {
+    disabled: boolean;
+}
 
-export const Container = styled.div`
-    position:relative;
+export const Container = styled.div<IStyleProps>`
+    position:absolute;
+    right: 300px;
     width: 506.3px; 
+    z-index:1;
+
+    ${(props) =>
+        props.disabled
+        ? css`
+            display:block;
+        `
+        : css`
+            display:none;
+        `
+    }
+
 `
 
 export const NoticeForm = styled.div`
@@ -36,7 +52,7 @@ export const ItemImg = styled.img`
     margin-right:10px;
 `
 
-export const ItemText = styled.p`
+export const ItemMessage = styled.p`
     font-size: ${(props) => props.theme.fontSize.body_small};
 `
 

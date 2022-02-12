@@ -15,3 +15,6 @@ export { default as GraduateCheckProcedure1 } from "./GraduateCheck/graduateChec
 export { default as GraduateCheckProcedure2 } from "./GraduateCheck/graduateCheckProcedure2.svg";
 export { default as PaginationLeft} from "./Common/paginationLeft.svg";
 export { default as PaginationRight} from "./Common/paginationRight.svg";
+export {default as Question} from "./recommedation/question.svg"
+export {default as Normal} from "./recommedation/normal.svg"
+ 
