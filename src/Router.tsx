@@ -18,6 +18,7 @@ import PostList from "./components/post/postlist/PostList";
 import PostWrite from "./components/post/postwrite/PostWrite";
 import MyPage from "./components/mypage/index";
 import Follow from "./pages/follow";
+import EditProfile from './components/edit-profile'
 
 const Router = () => {
   return (
@@ -42,7 +43,9 @@ const Router = () => {
         <Route path="/search" element={<SearchPage />} />
         <Route path="/list/:listname" element={<PostList />} />
         <Route path="/postwrite/:writefield" element={<PostWrite />} />
-        <Route path="follow/:userid" element={<Follow />} />
+        <Route path="/follow/:userid" element={<Follow />} />
+        <Route path="/mypage/:userid" element={<MyPage/>}/>
+        <Route path="/editprofile/:userid" element={<EditProfile/>}/>
       </Routes>
     </BrowserRouter>
   );
