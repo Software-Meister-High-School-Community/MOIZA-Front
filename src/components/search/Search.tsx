@@ -4,7 +4,6 @@ import OutsideClickHandler from "react-outside-click-handler";
 import * as IMGS from "../../assets/img/index";
 import SearchRecord from "./searchRecord/SearchRecord";
 import useSearch from "../../hooks/search/useSearch";
-import search from ".";
 
 const Search: React.FC = () => {
   const {

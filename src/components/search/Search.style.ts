@@ -11,7 +11,6 @@ export const Wrapper = styled.div`
     height:288px;
     width: 1200px;
     padding-top:100px;
-    border-bottom: 1px solid ${(props)=> props.theme.color.gray_color4};
 `
 export const Title  = styled.h1`
     font-size: ${(props)=>props.theme.fontSize.head_small};
