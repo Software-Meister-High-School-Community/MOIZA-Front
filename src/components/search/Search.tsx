@@ -8,7 +8,7 @@ import useSearch from "../../hooks/search/useSearch";
 const Search: React.FC = () => {
   const {
     handleDelteSearchRecord,
-    handleAddSearchRecord,
+    onSearch,
     handleResetSearchRecords,
     searchEl,
     disabled,
@@ -28,8 +28,7 @@ const Search: React.FC = () => {
             <S.Input
               onKeyPress={(e) => {
                 const searchRecord = searchEl.current?.value;
-                if (e.key === "Enter" && searchRecord)
-                  handleAddSearchRecord(searchRecord);
+                if (e.key === "Enter" && searchRecord) onSearch(searchRecord);
               }}
               ref={searchEl}
               autoFocus
@@ -49,7 +48,7 @@ const Search: React.FC = () => {
               onClick={(e) => {
                 e.preventDefault();
                 const searchRecord = searchEl.current?.value;
-                searchRecord && handleAddSearchRecord(searchRecord);
+                searchRecord && onSearch(searchRecord);
               }}
             >
               <S.Img src={IMGS.SearchLogo} />

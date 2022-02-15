@@ -1,5 +1,5 @@
-import { title } from 'process';
-import React,{useState,createRef} from 'react'
+import { useNavigate } from 'react-router-dom';
+import React,{useState,createRef} from 'react';
 import { SearchRecord } from '../../interface/search/Search.type';
 const useSearch = () => {
   const searchEl = createRef<HTMLInputElement>();
@@ -7,7 +7,8 @@ const useSearch = () => {
   const [visible, setVisble] = useState<boolean>(false);
   const [currentSearch, setCurrentSearch] = useState<string>("");
   const [searchRecords, setSearchRecords] = useState<SearchRecord[]>([]);
-    
+  const navigate = useNavigate();
+
         const handleDelteSearchRecord = (searchRecordId:number):void =>{
           const seacrhRecords = searchRecords.filter(item =>{
               if (item.id !== searchRecordId) 
@@ -19,15 +20,19 @@ const useSearch = () => {
         const handleAddSearchRecord = (title:string):void =>{
           const newSearchRecords = [{id:Date.now(),title:title},...searchRecords];
           setSearchRecords(newSearchRecords);
-          console.log(searchRecords)
         }
 
         const handleResetSearchRecords = () :void =>{
           setSearchRecords([])
         }
+
+        const onSearch = (title:string) =>{
+          navigate(`/result/${title}`)
+          handleAddSearchRecord(title)
+        }
     
       return{
-        handleAddSearchRecord,
+        onSearch,
         handleDelteSearchRecord,
         handleResetSearchRecords,
         setSearchRecords,

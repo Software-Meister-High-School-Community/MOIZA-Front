@@ -42,7 +42,7 @@ const Router = () => {
         <Route path="/findauthdata" element={<FindAuthDataPage />} />
         <Route path="/category" element={<CategoryPage />}></Route>
         <Route path="/search" element={<SearchPage />} />
-        <Route path="/result" element={<ResultPage />} />
+        <Route path="/result/:title" element={<ResultPage />} />
         <Route path="/list/:listname" element={<PostList />} />
         <Route path="/list/reply/:postid" element={<PostReplyPage />} />
         <Route path="/mypage/:userid" element={<MyPage />} />
