@@ -27,7 +27,7 @@ const useSearch = () => {
   }
 
   const onSearch = (title: string) => {
-    navigate(`/result?title=${title}`)
+    navigate(`/result/${title}`)
     handleAddSearchRecord(title)
   }
 
