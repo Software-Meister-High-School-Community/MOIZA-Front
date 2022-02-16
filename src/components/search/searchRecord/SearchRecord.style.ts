@@ -1,4 +1,4 @@
-import styled,{css} from "styled-components";
+import styled, { css } from "styled-components";
 
 interface IStyleProps {
     disabled: boolean;
@@ -7,7 +7,8 @@ interface IStyleProps {
 export const ItemContainer = styled.div<IStyleProps>`
     position: relative;
     width: 585px;
-    max-height:139px;
+    max-height:130px;
+    z-index:2;
     overflow:scroll;
     background-color: ${(props) => props.theme.color.gray_color1};
     margin: 0 auto;
@@ -16,10 +17,10 @@ export const ItemContainer = styled.div<IStyleProps>`
 
     ${(props) =>
         props.disabled
-        ? css`
+            ? css`
             display:block;
         `
-        : css`
+            : css`
             display:none;
         `
     }

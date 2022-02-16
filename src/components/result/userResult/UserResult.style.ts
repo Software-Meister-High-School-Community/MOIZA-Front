@@ -17,7 +17,6 @@ export const Title = styled.h1`
 export const Container = styled(Slider)`
     display:flex;
     width:1200px;
-    gap: 30px;
     margin-top:20px;
 `
 export const ItemBox = styled.div`
@@ -25,6 +24,7 @@ export const ItemBox = styled.div`
     display:flex;
     flex-direction:column;
     align-items:center;
+    margin-right:30px;
     justify-content:space-evenly;
     width:175px;
     height: 249px;
