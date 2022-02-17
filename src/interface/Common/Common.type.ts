@@ -1,5 +1,5 @@
 import { Dispatch, SetStateAction } from "react";
-import {link} from "fs";
+import { link } from "fs";
 
 export interface ISubmitButtonProps {
   big?: boolean | undefined;
@@ -38,14 +38,14 @@ export interface IDropdownProps {
 }
 
 export interface PathType {
-  path : string;
-  link : string;
+  path: string;
+  link: string;
 }
 
 export interface UploadDataType {
-  title : string;
-  content : string;
-  files : File[];
+  title: string;
+  content: string;
+  files: File[];
 }
 
 export interface IEyeButtonProps {
@@ -55,15 +55,21 @@ export interface IEyeButtonProps {
 }
 
 export interface IPaginationProps {
-  total: number,
-  limit: number,
-  page: number,
+  total: number;
+  limit: number;
+  page: number;
   setPage: Dispatch<SetStateAction<number>>;
 }
 export interface SeeMoreOptionInterface {
-  option : string;
-  onClickFunction : () => void
+  option: string;
+  onClickFunction: () => void;
 }
+
+export interface IImageSizeProps {
+  width: number;
+  height: number;
+}
+
 export interface searchInPagePropsType {
   onSubmit : (e:any) => void;
   width : string;

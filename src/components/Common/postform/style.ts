@@ -39,9 +39,9 @@ export const Date = styled.div`
   display: flex;
   align-items: center;
   > span {
-    font-family: Roboto;
+    font-family: "Roboto", sans-serif;
     font-style: nomal;
-    font-weight: normal;
+    font-weight: 400;
     margin-right: 30px;
     font-size: 14px;
     line-height: 16px;

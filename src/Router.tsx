@@ -15,10 +15,12 @@ import SignupSuccess from "./components/Signup/SignupSuccess";
 import GraduateCheckPage from "./pages/GraduateCheck/GraduateCheckPage";
 import GraduateCheckSuccess from "./components/GraduateCheck/GraduateCheckSuccess";
 import PostList from "./components/post/postlist/PostList";
-import PostWrite from "./components/post/postwrite/PostWrite";
 import MyPage from "./components/mypage/index";
+import PostReplyPage from "./pages/PostReply/PostReplyPage";
+import PostWrite from "./components/post/postwrite/PostWrite";
 import Follow from "./pages/follow";
 import EditProfile from './components/edit-profile'
+import TempList from "./components/post/temporary/TempList";
 
 const Router = () => {
   return (
@@ -42,10 +44,13 @@ const Router = () => {
         <Route path="/category" element={<CategoryPage />}></Route>
         <Route path="/search" element={<SearchPage />} />
         <Route path="/list/:listname" element={<PostList />} />
+        <Route path="/list/reply/:postid" element={<PostReplyPage />} />
+        <Route path="/mypage/:userid" element={<MyPage />} />
         <Route path="/postwrite/:writefield" element={<PostWrite />} />
         <Route path="/follow/:userid" element={<Follow />} />
         <Route path="/mypage/:userid" element={<MyPage/>}/>
         <Route path="/editprofile/:userid" element={<EditProfile/>}/>
+        <Route path="/templist/:tempfield" element={<TempList />} />
       </Routes>
     </BrowserRouter>
   );

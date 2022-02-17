@@ -10,7 +10,7 @@ export const MenuWrapper = styled.div`
 export const MenuDiv = styled.div`
   display: flex;
   justify-content: center;
-  margin-bottom: 393px;
+  margin-bottom: 200px;
 `;
 
 export const StarMenuDiv = styled.div`
