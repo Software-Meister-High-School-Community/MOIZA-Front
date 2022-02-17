@@ -5,7 +5,7 @@ import PostResult from "./postResult";
 import UserResult from "./userResult";
 import useResult from "../../hooks/result/useResult";
 import RadioButton from "../Common/Select/RadioButton";
-const Result = () => {
+const Result: React.FC = () => {
   const {
     selectedRadio,
     setSelectedRadio,

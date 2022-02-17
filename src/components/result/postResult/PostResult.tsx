@@ -1,7 +1,7 @@
 import React from "react";
 import PostForm from "../../Common/postform/PostForm";
 import * as PR from "./PostResult.style";
-const PostResult = () => {
+const PostResult: React.FC = () => {
   return (
     <PR.Wapper>
       <PR.Title>게시물</PR.Title>

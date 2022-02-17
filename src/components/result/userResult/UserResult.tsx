@@ -10,8 +10,16 @@ const UserResult = () => {
     <UR.Wrapper>
       {users.length > 6 && (
         <UR.ButtonBox>
-          <UR.prevButton src={IMG.onPrevImg} onClick={handlePrevious} />
-          <UR.NextButton src={IMG.onNextImg} onClick={handleNext} />
+          <UR.prevButton
+            src={IMG.onPrevImg}
+            onClick={handlePrevious}
+            alt="prevBtn 이미지"
+          />
+          <UR.NextButton
+            src={IMG.onNextImg}
+            onClick={handleNext}
+            alt="nextBtn 이미지"
+          />
         </UR.ButtonBox>
       )}
       <UR.Title>유저</UR.Title>
