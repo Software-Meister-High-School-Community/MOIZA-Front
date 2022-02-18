@@ -18,6 +18,7 @@ import MyPage from "./components/mypage/index";
 import PostReplyPage from "./pages/PostReply/PostReplyPage";
 import PostWrite from "./components/post/postwrite/PostWrite";
 import Follow from "./pages/follow";
+import EditProfile from './components/edit-profile'
 import TempList from "./components/post/temporary/TempList";
 import ResultPage from "./pages/result/ResultPage";
 
@@ -47,8 +48,10 @@ const Router = () => {
         <Route path="/list/reply/:postid" element={<PostReplyPage />} />
         <Route path="/mypage/:userid" element={<MyPage />} />
         <Route path="/postwrite/:writefield" element={<PostWrite />} />
+        <Route path="/follow/:userid" element={<Follow />} />
+        <Route path="/mypage/:userid" element={<MyPage/>}/>
+        <Route path="/editprofile/:userid" element={<EditProfile/>}/>
         <Route path="/templist/:tempfield" element={<TempList />} />
-        <Route path="follow/:userid" element={<Follow />} />
       </Routes>
     </BrowserRouter>
   );
