@@ -1,4 +1,4 @@
-import React, { Dispatch, SetStateAction } from "react";
+import React from "react";
 import { IEyeButtonProps } from "../Common.type";
 
 export interface ITextInputProps extends IEyeButtonProps {
@@ -8,5 +8,8 @@ export interface ITextInputProps extends IEyeButtonProps {
   value: string;
   name?: string;
   placeholder?: string;
-  setValue: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  disabled?: boolean;
+  setValue: (e: React.ChangeEvent<HTMLInputElement>) => void | Promise<void>;
+
+  //그냥 setState 할때는 타입을 아직 지정 못함
 }
