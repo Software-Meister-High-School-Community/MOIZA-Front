@@ -1,9 +1,9 @@
-import { useRecoilState } from "recoil";
+import { useSetRecoilState } from "recoil";
 
 import { signupPart } from "../../store/Signup/signupPartAtom";
 
 const useSignup = () => {
-  const [Part, setPart] = useRecoilState(signupPart);
+  const setPart = useSetRecoilState(signupPart);
 
   //약관 동의 부분
   const goToInfo = () => {

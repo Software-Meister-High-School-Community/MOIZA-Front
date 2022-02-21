@@ -1,5 +1,4 @@
 import { Dispatch, SetStateAction } from "react";
-import { link } from "fs";
 
 export interface ISubmitButtonProps {
   big?: boolean | undefined;
@@ -49,8 +48,8 @@ export interface UploadDataType {
 }
 
 export interface IEyeButtonProps {
-  isShow: boolean;
-  onClick: Dispatch<SetStateAction<boolean>>;
+  isShow?: boolean;
+  onClick?: Dispatch<SetStateAction<boolean>>;
   left?: number;
 }
 
@@ -71,11 +70,11 @@ export interface IImageSizeProps {
 }
 
 export interface searchInPagePropsType {
-  onSubmit : (e:any) => void;
-  width : string;
-  heigth : string;
-  onChange : (e:any) => void;
-  placeholder : string;
-  value : string;
-  fontsize : string;
+  onSubmit: (e: any) => void;
+  width: string;
+  heigth: string;
+  onChange: (e: any) => void;
+  placeholder: string;
+  value: string;
+  fontsize: string;
 }
