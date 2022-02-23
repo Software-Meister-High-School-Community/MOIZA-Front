@@ -2,7 +2,7 @@ import React, { useMemo } from "react";
 import * as SIPF from "./SignupIdPwForm.style";
 import { SignupFooterWrap, SignupFormsWrap } from "../Signup.style";
 import SubmitButton from "../../Common/Button/SubmitButton";
-import { useRecoilState } from "recoil";
+import { useRecoilValue } from "recoil";
 import { SignupIdPwFormData } from "../../../store/Signup/registerInfoAtom";
 import { signupIdPwFormDataNullCheck } from "../../../util/signupDataNullCheck";
 
@@ -19,7 +19,7 @@ const SignupIdPwForm: React.FC = () => {
     goToLogin,
   } = useSignupIdPw();
 
-  const [authData, setAuthData] = useRecoilState(SignupIdPwFormData);
+  const authData = useRecoilValue(SignupIdPwFormData);
 
   const isNull = useMemo(
     () => signupIdPwFormDataNullCheck(authData),

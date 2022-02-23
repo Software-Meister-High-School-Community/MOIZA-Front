@@ -1,6 +1,11 @@
 import React, { useCallback, useState } from "react";
 import { useNavigate } from "react-router";
-import { useRecoilState, useResetRecoilState, useSetRecoilState } from "recoil";
+import {
+  useRecoilState,
+  useRecoilValue,
+  useResetRecoilState,
+  useSetRecoilState,
+} from "recoil";
 import {
   SignupFormData,
   SignupIdPwFormData,
@@ -11,7 +16,7 @@ const useSignupIdPw = () => {
   const setPart = useSetRecoilState(signupPart);
   const [authData, setAuthData] = useRecoilState(SignupIdPwFormData);
   const resetAuth = useResetRecoilState(SignupIdPwFormData);
-  const [userInfo, setUserInfo] = useRecoilState(SignupFormData);
+  const userInfo = useRecoilValue(SignupFormData);
   const resetInfo = useResetRecoilState(SignupFormData);
   const [isPwShow, setIsPwShow] = useState(false);
   const [isCheckPwShow, setIsCheckPwShow] = useState(false);

@@ -8,12 +8,13 @@ import * as Imgs from "../../assets/img";
 import StepProgressBar from "react-step-progress";
 import * as CONST from "./Constant/index";
 import useSignup from "../../hooks/signup/useSignup";
-import { useRecoilState } from "recoil";
+import { useRecoilValue } from "recoil";
 import { signupPart } from "../../store/Signup/signupPartAtom";
 import "react-step-progress/dist/index.css";
 
 const Signup: React.FC = () => {
-  const [part, setPart] = useRecoilState(signupPart);
+  const part = useRecoilValue(signupPart);
+
   const { goToInfo } = useSignup();
 
   const compList: ReactElement[] = [
