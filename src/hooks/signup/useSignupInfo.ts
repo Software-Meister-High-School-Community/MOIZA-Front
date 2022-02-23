@@ -1,5 +1,5 @@
 import { useCallback, useMemo, useState } from "react";
-import { useRecoilState } from "recoil";
+import { useRecoilState, useRecoilValue, useSetRecoilState } from "recoil";
 import {
   registerSchoolSelect,
   SignupFormData,
@@ -9,8 +9,8 @@ import { schoolEmailTransform } from "../../util/schoolEmailTransform";
 import { signupFormDataNullcheck } from "../../util/signupDataNullCheck";
 
 const useSignupInfo = () => {
-  const [part, setPart] = useRecoilState(signupPart);
-  const [schoolSelect, setSchoolSelect] = useRecoilState(registerSchoolSelect);
+  const setPart = useSetRecoilState(signupPart);
+  const schoolSelect = useRecoilValue(registerSchoolSelect);
   const [sexSelect, setSexSelect] = useState("남성");
   const [studentStatus, setStudentStatus] = useState("재학생");
   const [userInfo, setUserInfo] = useRecoilState(SignupFormData);

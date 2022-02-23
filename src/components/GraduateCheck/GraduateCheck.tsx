@@ -34,7 +34,11 @@ const Graduate: React.FC = () => {
         })}
         <GC.GraduateCheckFormsWrap>
           {compList.map((comp, idx) => {
-            return <>{part === CONST.GraduatePartList[idx] && comp}</>;
+            return (
+              <React.Fragment key={idx}>
+                {part === CONST.GraduatePartList[idx] && comp}
+              </React.Fragment>
+            );
           })}
         </GC.GraduateCheckFormsWrap>
       </GC.GraduateCheckMiddleWrap>

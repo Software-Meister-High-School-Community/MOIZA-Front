@@ -4,7 +4,10 @@ import * as Imgs from "../../../../assets/img/index";
 
 const EyeButton: React.FC<IEyeButtonProps> = ({ isShow, onClick, left }) => {
   return (
-    <EyeButtonBox onClick={() => onClick(!isShow)} left={left}>
+    <EyeButtonBox
+      onClick={() => (onClick ? onClick(!isShow) : null)}
+      left={left}
+    >
       <EyeButtonImg
         src={isShow ? Imgs.LoginPasswordNoShowImg : Imgs.LoginPasswordShowImg}
       />

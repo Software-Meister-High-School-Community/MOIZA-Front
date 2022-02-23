@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Radios = styled.section`
   display: flex;
-`
+`;
 
 export const Wrapper = styled.label`
   display: flex;
@@ -14,12 +14,12 @@ export const Wrapper = styled.label`
     font-weight: normal;
     font-size: 16px;
     line-height: 19px;
-    color:#555555;
+    color: #555555;
     margin-left: 10px;
     display: flex;
     align-items: center;
   }
-`
+`;
 
 export const RadioButtonRect = styled.div`
   width: 20px;
@@ -29,6 +29,7 @@ export const RadioButtonRect = styled.div`
   align-items: center;
   justify-content: center;
   border: 1px solid ${(props) => props.theme.color.gray_color3};
+  cursor: pointer;
 `;
 
 export const RadioButtonBox = styled.input<{ checked: boolean }>`
@@ -42,7 +43,7 @@ export const RadioButtonBox = styled.input<{ checked: boolean }>`
   -webkit-appearance: none;
   outline: none;
   cursor: pointer;
-  :checked{
-    background-color: ${props => props.theme.color.main_yellow_color};
+  :checked {
+    background-color: ${(props) => props.theme.color.main_yellow_color};
   }
 `;

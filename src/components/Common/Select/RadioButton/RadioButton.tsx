@@ -1,6 +1,11 @@
 import React, { useState } from "react";
 import { IRadioButtonProps } from "../../../../interface/Common/Common.type";
-import { RadioButtonBox, RadioButtonRect, Wrapper,Radios } from "./RadioButton.style";
+import {
+  RadioButtonBox,
+  RadioButtonRect,
+  Wrapper,
+  Radios,
+} from "./RadioButton.style";
 
 const RadioButton: React.FC<IRadioButtonProps> = ({
   name,
@@ -12,8 +17,9 @@ const RadioButton: React.FC<IRadioButtonProps> = ({
     <Radios className="radios">
       {radioArray.map((item) => (
         <Wrapper>
-          <RadioButtonRect onClick={() => setSelected(item.id)}>
+          <RadioButtonRect>
             <RadioButtonBox
+              onChange={() => setSelected(item.id)}
               type="radio"
               name={name}
               checked={selected === item.id}
