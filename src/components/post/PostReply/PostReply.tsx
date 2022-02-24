@@ -152,7 +152,6 @@ const PostReply: React.FC = () => {
                       </PR.PostReplyWriterInfoTextWrap>
                       <PR.PostReplyDateInfoWrap>
                         <pre>작성일 {postData.createDate}</pre>
-                        <pre>마지막 수정일 {postData.createDate}</pre>
                       </PR.PostReplyDateInfoWrap>
                       <PR.PostReplyMenuButton
                         onClick={() => setSeeMoreModalStatus(true)}
