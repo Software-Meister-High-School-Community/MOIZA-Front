@@ -12,6 +12,7 @@ import { SignupFooterWrap, SignupFormsWrap } from "../Signup.style";
 import * as SF from "./SignupForm.style";
 import * as CONST from "../Constant/index";
 import useSignupInfo from "../../../hooks/signup/useSignupInfo";
+import TextInput from "../../Common/Input/TextInput";
 
 const SignupForm: React.FC = () => {
   const [schoolSelect, setSchoolSelect] = useRecoilState(registerSchoolSelect);
@@ -52,11 +53,14 @@ const SignupForm: React.FC = () => {
           />
         </SF.SignupFormFlexWrap>
         <SF.SignupFormTitle marginBottom={13}>이름</SF.SignupFormTitle>
-        <SF.SignupFormTextInput
-          width={"250px"}
-          name="name"
+
+        <TextInput
+          width="250"
           value={userInfo.name}
-          onChange={(e) => handleInfo(e)}
+          setValue={handleInfo}
+          type="text"
+          name="name"
+          margin={"0px 0px 70px 0px"}
         />
         <SF.SignupFormBirthTitleWrap>
           <SF.SignupFormBirthTitle>생년월일</SF.SignupFormBirthTitle>
@@ -64,10 +68,13 @@ const SignupForm: React.FC = () => {
             ex) 20050624
           </SF.SignupFormGuideBirthRule>
         </SF.SignupFormBirthTitleWrap>
-        <SF.SignupFormTextInput
-          width={"250px"}
+        <TextInput
+          width="250"
+          value={userInfo.birth}
+          setValue={handleInfo}
+          type="text"
           name="birth"
-          onChange={(e) => handleInfo(e)}
+          margin={"0px 0px 70px 0px"}
         />
         <SF.SignupFormTitle marginBottom={36}>성별</SF.SignupFormTitle>
         <SF.SignupFormFlexWrap>
@@ -94,12 +101,11 @@ const SignupForm: React.FC = () => {
         </SF.SignupFormSchoolWrap>
         <SF.SignupFormTitle marginBottom={13}>학교 이메일</SF.SignupFormTitle>
         <SF.SignupFormFlexWrap>
-          <SF.SignupFormTextInput
-            width={"100%"}
-            style={{ marginBottom: 0 }}
-            name="email"
+          <TextInput
             value={userInfo.email}
-            onChange={(e) => handleInfo(e)}
+            name="email"
+            setValue={handleInfo}
+            type="text"
           />
           {studentStatus === "재학생" && (
             <SF.SignupFormSchoolMailText>
@@ -115,12 +121,11 @@ const SignupForm: React.FC = () => {
         </SF.SignupFormFlexWrap>
         <SF.SignupFormTitle marginBottom={13}>인증번호</SF.SignupFormTitle>
         <SF.SignupFormFlexWrap>
-          <SF.SignupFormTextInput
-            width={"100%"}
-            style={{ marginBottom: 0 }}
-            name="certificationNumber"
+          <TextInput
+            type="text"
             value={userInfo.certificationNumber}
-            onChange={(e) => handleInfo(e)}
+            setValue={handleInfo}
+            name="certificationNumber"
             disabled={!sendCertificationNumber}
           />
           <SF.SignupFormSubmitButton isGraduate onClick={checkCertification}>

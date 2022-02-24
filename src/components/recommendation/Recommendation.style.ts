@@ -6,6 +6,7 @@ export const Wrapper = styled.div`
     position: relative;
     width:1200px;
     margin: 0 auto;
+    border-top: 1px solid ${(props)=>props.theme.color.gray_color4};
 `
 export const Phrases = styled.p`
     font-weight:400;

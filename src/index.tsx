@@ -31,6 +31,7 @@ time, mark, audio, video {
 	vertical-align: baseline;
     font-family: "Roboto", sans-serif;
     text-decoration: none;
+	font-weight:400
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure,
@@ -45,6 +46,7 @@ button {
   border: none;
   background-color: transparent;
   padding: 0;
+  cursor: pointer;
 }
 body {
 	font-weight: 300;

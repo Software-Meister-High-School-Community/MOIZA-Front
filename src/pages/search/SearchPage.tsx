@@ -8,5 +8,4 @@ const SearchPage:React.FC = () =>  {
         </>
     )
 }
-
-export default SearchPage
+export default SearchPage;

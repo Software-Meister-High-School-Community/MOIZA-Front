@@ -11,7 +11,7 @@ export interface ISignupFormDataProps {
 export interface ISignupTermsFormDataProps {}
 
 export interface ISignupIdPwFormDataProps {
-  id: "";
-  pw: "";
-  checkPw: "";
+  id: string;
+  pw: string;
+  checkPw: string;
 }
