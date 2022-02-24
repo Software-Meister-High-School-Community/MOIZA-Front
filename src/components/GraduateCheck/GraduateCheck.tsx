@@ -1,7 +1,9 @@
 import React, { ReactElement, useState } from "react";
 import * as GC from "./GraduateCheck.style";
 import * as CONST from "./ConsTant/index";
-import * as Imgs from "../../assets/img/index";
+import Procedure1 from "../../assets/img/graduateCheck/graduateCheckProcedure1.svg";
+import Procedure2 from "../../assets/img/graduateCheck/graduateCheckProcedure2.svg";
+
 import GraduateCheckForm from "./GraduateCheckForm";
 import GraduateCheckGuide from "./GraduateCheckGuide";
 import GraduateCheckProcedure from "./GraduateCheckProcedure";
@@ -14,10 +16,7 @@ const Graduate: React.FC = () => {
     <GraduateCheckForm />,
   ];
 
-  const procedureImgs: string[] = [
-    Imgs.GraduateCheckProcedure1,
-    Imgs.GraduateCheckProcedure2,
-  ];
+  const procedureImgs: string[] = [Procedure1, Procedure2];
 
   return (
     <GC.GraduateCheckBox>
