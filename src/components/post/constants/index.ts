@@ -1,4 +1,8 @@
-import { OptionArrType, PathType } from "../../../interface/Common/Common.type";
+import {
+  OptionArrType,
+  PathType,
+  SeeMoreOptionInterface,
+} from "../../../interface/Common/Common.type";
 
 interface TypeArrType {
   id: string;
@@ -41,6 +45,21 @@ export const PostListPathArr: PathType[] = [
   },
 ];
 
+export const PostListReplyPathArr: PathType[] = [
+  {
+    path: "카테고리",
+    link: "/category",
+  },
+  {
+    path: "Design",
+    link: "/list/Design",
+  },
+  {
+    path: "질문 게시물",
+    link: "/list/reply/:postid",
+  },
+];
+
 export const PostWritePathArr: PathType[] = [
   {
     path: "카테고리",
@@ -68,5 +87,12 @@ export const OptionArr: OptionArrType[] = [
   },
   {
     option: "좋아요 순",
+  },
+];
+
+export const seeMoreOption: SeeMoreOptionInterface[] = [
+  {
+    option: "수정",
+    onClickFunction: () => console.log("asd"),
   },
 ];

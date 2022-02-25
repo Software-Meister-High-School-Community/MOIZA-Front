@@ -5,6 +5,8 @@ import commentIcon from "../../../../assets/img/post/Comment.svg";
 import ImgSplit from "../../../Common/ImgSplit";
 import { useState } from "react";
 import PostReplyCommentOfComment from "../PostReplyCommentOfComment";
+import { seeMoreOption } from "../../constants/index";
+import SeeMoreModal from "../../../Common/seeMoreModal";
 
 interface IPostReplyCommentProps {
   commentData: ICommnet;
@@ -16,9 +18,20 @@ const PostReplyComment: React.FC<IPostReplyCommentProps> = ({
   id,
 }) => {
   const [fold, setFold] = useState(true);
+  const [seeMoreModalStatus, setSeeMoreModalStatus] = useState(false);
+  const [fixState, setFixState] = useState(true);
+  const [writerState, setWriterState] = useState(true);
 
   return (
     <>
+      {fixState ? (
+        <PRC.Fix>
+          <div />
+          <p>작성자님이 고정한 댓글</p>
+        </PRC.Fix>
+      ) : (
+        ""
+      )}
       <PRC.PostReplyCommentBox fold={fold}>
         <PRC.PostReplyCommentHeaderWrap>
           <PRC.PostReplyCommentProfileImg />
@@ -30,12 +43,29 @@ const PostReplyComment: React.FC<IPostReplyCommentProps> = ({
             <span>{commentData.school}</span>
             <PRC.PostReplyCommentBreakPoint />
             <span>{commentData.studentState}</span>
+            {writerState ? (
+              <PRC.WriterProof>
+                <p>작성자</p>
+              </PRC.WriterProof>
+            ) : (
+              ""
+            )}
           </PRC.PostReplyCommentWriterWrap>
           <PRC.PostReplyCommentDate>
             {commentData.createDate}
           </PRC.PostReplyCommentDate>
-          <PRC.PostReplyCommentMenuButton>
+          <PRC.PostReplyCommentMenuButton
+            onClick={() => setSeeMoreModalStatus(true)}
+          >
             <img src={menuCircle} alt="menu" />
+            {seeMoreModalStatus ? (
+              <SeeMoreModal
+                optionList={seeMoreOption}
+                setModalStatus={setSeeMoreModalStatus}
+              />
+            ) : (
+              ""
+            )}
           </PRC.PostReplyCommentMenuButton>
         </PRC.PostReplyCommentHeaderWrap>
         <PRC.PostReplyCommentMiddleWrap>

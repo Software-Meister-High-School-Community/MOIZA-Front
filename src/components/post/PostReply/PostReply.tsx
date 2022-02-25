@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import Path from "../../Common/path";
-import { PostListPathArr } from "../constants";
+import { PostListReplyPathArr, seeMoreOption } from "../constants";
 import * as PR from "./PostReply.style";
 import menuCircle from "../../../assets/img/post/menuCircle.svg";
 import heart from "../../../assets/img/admin/icons/heart.svg";
@@ -12,6 +12,7 @@ import { IPostReplyDataProps } from "../../../interface/Post/Post.type";
 import PostReplyComment from "./PostReplyComment";
 import ImgSplit from "../../Common/ImgSplit";
 import PostReplyMakeForm from "./PostReplyMakeForm";
+import SeeMoreModal from "../../Common/seeMoreModal";
 
 const PostReply: React.FC = () => {
   const exampleData = {
@@ -110,6 +111,7 @@ const PostReply: React.FC = () => {
   const [postData, setPostData] = useState<IPostReplyDataProps>();
   const [isLoading, setIsLoading] = useState(true);
   const [isMake, setMake] = useState(false);
+  const [seeMoreModalStatus, setSeeMoreModalStatus] = useState<boolean>(false);
 
   const { postid } = useParams();
 
@@ -127,7 +129,7 @@ const PostReply: React.FC = () => {
         <>
           {postData && (
             <>
-              <Path pathArray={PostListPathArr} />
+              <Path pathArray={PostListReplyPathArr} />
               <PR.PostReplyWrap>
                 <PR.PostReplyHeaderWrap>
                   <PR.PostReplyIconCircle src={questionCircle} />
@@ -150,10 +152,17 @@ const PostReply: React.FC = () => {
                       </PR.PostReplyWriterInfoTextWrap>
                       <PR.PostReplyDateInfoWrap>
                         <pre>작성일 {postData.createDate}</pre>
-                        <pre>마지막 수정일 {postData.createDate}</pre>
                       </PR.PostReplyDateInfoWrap>
-                      <PR.PostReplyMenuButton>
+                      <PR.PostReplyMenuButton
+                        onClick={() => setSeeMoreModalStatus(true)}
+                      >
                         <img src={menuCircle} alt="menu" />
+                        {seeMoreModalStatus && (
+                          <SeeMoreModal
+                            optionList={seeMoreOption}
+                            setModalStatus={setSeeMoreModalStatus}
+                          />
+                        )}
                       </PR.PostReplyMenuButton>
                     </PR.PostReplyWriterWrap>
                   </PR.PostReplyInfoWrap>
