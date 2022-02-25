@@ -1,5 +1,22 @@
 import styled, { css } from "styled-components";
 
+export const Fix = styled.div`
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  > p {
+    font-weight: 400;
+    font-size: ${({ theme }) => theme.fontSize.body_large};
+    color: ${({ theme }) => theme.color.gray_color4};
+  }
+  > div {
+    width: 20px;
+    height: 20px;
+    background: black;
+    margin-right: 8px;
+  }
+`;
+
 export const PostReplyCommentBox = styled.div<{ fold: boolean }>`
   width: 100%;
   display: flex;
@@ -55,6 +72,18 @@ export const PostReplyCommentBreakPoint = styled.div`
   background-color: ${(props) => props.theme.color.gray_color5};
   border-radius: 100px;
   margin: 0px 20px;
+`;
+
+export const WriterProof = styled.div`
+  margin-left: 16px;
+  padding: 6px;
+  border: 1px solid ${({ theme }) => theme.color.gray_color3};
+  border-radius: 5px;
+  > p {
+    color: ${({ theme }) => theme.color.main_blue_color};
+    font-weight: 400;
+    font-size: ${({ theme }) => theme.fontSize.body_medium};
+  }
 `;
 
 export const PostReplyCommentDate = styled.p`
