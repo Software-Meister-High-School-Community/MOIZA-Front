@@ -1,6 +1,7 @@
 import { IEyeButtonProps } from "../../../../interface/Common/Common.type";
 import { EyeButtonBox, EyeButtonImg } from "./EyeButton.style";
-import * as Imgs from "../../../../assets/img/index";
+import closeEye from "../../../../assets/img/common/closeEye.svg";
+import openEye from "../../../../assets/img/common/openEye.svg";
 
 const EyeButton: React.FC<IEyeButtonProps> = ({ isShow, onClick, left }) => {
   return (
@@ -8,9 +9,7 @@ const EyeButton: React.FC<IEyeButtonProps> = ({ isShow, onClick, left }) => {
       onClick={() => (onClick ? onClick(!isShow) : null)}
       left={left}
     >
-      <EyeButtonImg
-        src={isShow ? Imgs.LoginPasswordNoShowImg : Imgs.LoginPasswordShowImg}
-      />
+      <EyeButtonImg src={isShow ? closeEye : openEye} />
     </EyeButtonBox>
   );
 };
