@@ -1,12 +1,11 @@
 import React, { useState } from "react";
 import * as H from "./Header.styled";
-import headerLogo from "../../assets/img/header/headerLogo.svg";
-import categoryImg from "../../assets/img/header/categoryImg.svg";
-import searchImg from "../../assets/img/header/searchImg.svg";
-import profileImg from "../../assets/img/header/profileImg.svg";
-import noticeImg from "../../assets/img/header/noticeImg.svg";
 import Notice from "./notice";
 import CategoryDropdown from "./category/CategoryDropdown";
+import headerLogo from "../../assets/img/MOIZALogo/englishHorizontalType.svg";
+import searchIcon from "../../assets/img/common/searchIcon.svg";
+import profileIcon from "../../assets/img/header/profileIcon.svg";
+import noticeIcon from "../../assets/img/header/noticeIcon.svg";
 
 const Header: React.FC = () => {
   const loginCheck = localStorage.getItem("Token");
@@ -31,12 +30,12 @@ const Header: React.FC = () => {
 
         <H.ItemContainer>
           <H.StyleLink to="/search">
-            <H.ItemImg src={searchImg} />
+            <H.ItemImg src={searchIcon} />
           </H.StyleLink>
-          <H.ItemImg src={profileImg} />
+          <H.ItemImg src={profileIcon} />
 
           <H.ItemImg
-            src={noticeImg}
+            src={noticeIcon}
             onClick={() => setNoticeState(!noticeState)}
           />
         </H.ItemContainer>
