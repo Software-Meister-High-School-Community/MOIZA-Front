@@ -111,7 +111,7 @@ const PostReply: React.FC = () => {
   const [postData, setPostData] = useState<IPostReplyDataProps>();
   const [isLoading, setIsLoading] = useState(true);
   const [isMake, setMake] = useState(false);
-  const [seeMoreModalStatus, setSeeMoreModalStatus] = useState(false);
+  const [seeMoreModalStatus, setSeeMoreModalStatus] = useState<boolean>(false);
 
   const { postid } = useParams();
 
@@ -157,13 +157,11 @@ const PostReply: React.FC = () => {
                         onClick={() => setSeeMoreModalStatus(true)}
                       >
                         <img src={menuCircle} alt="menu" />
-                        {seeMoreModalStatus ? (
+                        {seeMoreModalStatus && (
                           <SeeMoreModal
                             optionList={seeMoreOption}
                             setModalStatus={setSeeMoreModalStatus}
                           />
-                        ) : (
-                          ""
                         )}
                       </PR.PostReplyMenuButton>
                     </PR.PostReplyWriterWrap>
