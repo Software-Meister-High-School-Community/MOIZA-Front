@@ -1,10 +1,9 @@
 import React, { useEffect, useRef, useState } from "react";
 import * as S from "./Search.style";
 import OutsideClickHandler from "react-outside-click-handler";
-import * as IMGS from "../../assets/img/index";
 import SearchRecord from "./searchRecord/SearchRecord";
 import useSearch from "../../hooks/search/useSearch";
-
+import searchIcon from "../../assets/img/common/searchIcon.svg";
 const Search: React.FC = () => {
   const {
     handleDelteSearchRecord,
@@ -51,7 +50,7 @@ const Search: React.FC = () => {
                 searchRecord && onSearch(searchRecord);
               }}
             >
-              <S.Img src={IMGS.SearchLogo} />
+              <S.Img src={searchIcon} />
             </S.SubmitButton>
           </S.Container>
           <SearchRecord

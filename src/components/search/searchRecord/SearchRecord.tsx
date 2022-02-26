@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import * as SR from "./SearchRecord.style";
 import { ISearchProps } from "../../../interface/search/Search.type";
-import * as IMGS from "../../../assets/img/index";
+import X from "../../../assets/img/common/x.svg";
 const SearchRecord: React.FC<ISearchProps> = ({
   visible,
   currentSearch,
@@ -27,7 +27,7 @@ const SearchRecord: React.FC<ISearchProps> = ({
         >
           <SR.Item>{title}</SR.Item>
           <SR.DeleteBtn
-            src={IMGS.SearchDelete}
+            src={X}
             onClick={() => {
               onDelete(id);
             }}
