@@ -1,8 +1,8 @@
 import React from "react";
 import * as S from "./style";
 import HeartButton from "../../../Common/Button/HeartButton/HeartButton";
-import BookRead from "../../../../assets/img/main/bookRead.svg";
-import Question from "../../../../assets/img/main/Question.svg";
+import BookRead from "../../../../assets/img/common/normalPostIcon.svg";
+import Question from "../../../../assets/img/common/questionPostIcon.svg";
 
 interface PostType {
   menu: string;

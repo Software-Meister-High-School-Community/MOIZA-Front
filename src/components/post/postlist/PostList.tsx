@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import * as S from "./style";
-import Vector from "../../../assets/img/post/Vector.svg";
-import Write from "../../../assets/img/post/write.svg";
+import Vector from "../../../assets/img/post/vector.svg";
+import Write from "../../../assets/img/common/writePen.svg";
 import Path from "../../Common/path";
 import { PostListPathArr } from "../constants";
 import Dropdown from "../../Common/Select/dropdown";
