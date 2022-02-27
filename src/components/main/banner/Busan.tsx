@@ -21,9 +21,7 @@ const Busan: React.FC = () => {
           임베디드소프트웨어과
         </S.SchoolClass2>
         <S.SchoolHomePage
-          onClick={() =>
-            WindowOpenUtil("http://bssm.hs.kr/")
-          }
+          onClick={() => WindowOpenUtil("http://bssm.hs.kr/")}
           width="140px"
           margin="0 623px 0 82px"
         >

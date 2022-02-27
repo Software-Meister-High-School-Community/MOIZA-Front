@@ -1,7 +1,7 @@
 import { ICommnet } from "../../../../interface/Post/Post.type";
 import * as PRC from "./PostReplyComment.style";
-import menuCircle from "../../../../assets/img/post/menuCircle.svg";
-import commentIcon from "../../../../assets/img/post/Comment.svg";
+import menuCircle from "../../../../assets/img/common/seeMoreBtnIcon.svg";
+import commentIcon from "../../../../assets/img/common/comment.svg";
 import ImgSplit from "../../../Common/ImgSplit";
 import { useState } from "react";
 import PostReplyCommentOfComment from "../PostReplyCommentOfComment";
