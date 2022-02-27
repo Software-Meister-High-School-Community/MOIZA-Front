@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
 import { ICommnet } from "../../../../interface/Post/Post.type";
 import * as PRCOC from "./PostReplyCommentOfComment.style";
-import camera from "../../../../assets/img/Common/camera.svg";
-import x from "../../../../assets/img/Common/x.svg";
+import camera from "../../../../assets/img/post/Camera.svg";
+import x from "../../../../assets/img/common/X.svg";
 import PostReplyCOCForm from "./PostReplyCOCForm";
 import useComment from "../../../../hooks/post/comment/useComment";
 
