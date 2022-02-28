@@ -4,7 +4,7 @@ import { GraduateCheckFooterWrap } from "../GraduateCheck.style";
 import SubmitButton from "../../Common/Button/SubmitButton";
 import React, { Dispatch, SetStateAction } from "react";
 import { useNavigate } from "react-router";
-import bechelorCap from "../../../assets/img/graduateCheck/bechelorCap.svg";
+import bechelorCap from "../../../assets/img/graduateCheck/bachelorCap.svg";
 
 interface IGraduateCheckGuideProps {
   setPart: Dispatch<SetStateAction<string>>;

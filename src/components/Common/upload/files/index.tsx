@@ -3,6 +3,7 @@ import * as S from "./styles";
 import addFile from "../../../../assets/img/common/plus.svg";
 import removeFileIcon from "../../../../assets/img/Common/removeFile.svg";
 import { UploadDataType } from "../../../../interface/Common/Common.type";
+import x from "../../../../assets/img/common/X.svg";
 
 interface PropsType {
   state: UploadDataType;
@@ -52,7 +53,7 @@ const UploadFiles: React.FC<PropsType> = ({ state, setStateFunction }) => {
           <S.ImgInfo>
             <p>{item.name}</p>
             <button onClick={() => onClickRemoveFile(index)}>
-              <img src={removeFileIcon} />
+              <img src={x} />
             </button>
           </S.ImgInfo>
         </S.PreView>
