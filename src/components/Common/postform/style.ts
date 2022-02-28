@@ -6,9 +6,7 @@ export const Wrapper = styled.div`
   align-items: center;
 `;
 
-export const List = styled.li<{
-  fixed: boolean;
-}>`
+export const List = styled.li<{ fixed: boolean }>`
   width: 1200px;
   height: 65px;
   box-sizing: border-box;
@@ -32,6 +30,13 @@ export const List = styled.li<{
     line-height: 21px;
     color: ${(props) => (props.fixed ? "#FFB500" : "#555555")};
   }
+`;
+
+export const Line = styled.div`
+  max-width: 1px;
+  height: 24px;
+  border: 0px;
+  border-right: 1px solid ${(props) => props.theme.color.gray_color3};
 `;
 
 export const Date = styled.div`

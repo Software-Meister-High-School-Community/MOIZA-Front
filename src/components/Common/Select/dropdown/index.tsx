@@ -1,6 +1,6 @@
 import * as S from "./styles";
-import React, { useState, useEffect } from "react";
-import Arrow from "../../../../assets/img/Common/dropdown-arrow.svg";
+import React, { useState } from "react";
+import Arrow from "../../../../assets/img/common/arrow.svg";
 import { IDropdownProps } from "../../../../interface/Common/Common.type";
 import OutsideClickHandler from "react-outside-click-handler";
 const Dropdown: React.FC<IDropdownProps> = ({

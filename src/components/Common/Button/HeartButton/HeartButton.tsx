@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import onHeart from "../../../../assets/img/Common/onHeart.svg";
-import offHeart from "../../../../assets/img/Common/offHeart.svg";
+import onHeart from "../../../../assets/img/common/onHeart.svg";
+import offHeart from "../../../../assets/img/common/offHeart.svg";
 import * as S from "./style";
 
 export const HeartButton: React.FC = () => {

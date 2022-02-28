@@ -1,11 +1,10 @@
 import React from "react";
 import * as S from "./style";
-import BookRead from "../../../assets/img/main/bookRead.svg";
-import Question from "../../../assets/img/main/Question.svg";
-import view from "../../../assets/img/admin/icons/view.svg";
-import heart from "../../../assets/img/admin/icons/heart.svg";
-import Line from "../../../assets/img/notice/Line.svg";
-import Comment from "../../../assets/img/post/Comment.svg";
+import BookRead from "../../../assets/img/common/normalPostIcon.svg";
+import Question from "../../../assets/img/common/questionPostIcon.svg";
+import view from "../../../assets/img/common/openEye.svg";
+import heart from "../../../assets/img/common/onHeart.svg";
+import Comment from "../../../assets/img/common/comment.svg";
 
 const PostForm: React.FC = () => {
   return (
@@ -15,7 +14,7 @@ const PostForm: React.FC = () => {
         <h1>모이자에 오신 여러분 환영합니다!</h1>
         <S.Date>
           <span>22/01/21 8:29</span>
-          <img src={Line} alt="" />
+          <S.Line />
         </S.Date>
         <S.Views>
           <img src={view} />
