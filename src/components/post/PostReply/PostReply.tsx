@@ -6,7 +6,7 @@ import * as PR from "./PostReply.style";
 import menuCircle from "../../../assets/img/common/seeMoreBtnIcon.svg";
 import heart from "../../../assets/img/common/onHeart.svg";
 import view from "../../../assets/img/common/openEye.svg";
-import questionCircle from "../../../assets/img/post/questionCircle.svg";
+import questionCircle from "../../../assets/img/common/questionPostIcon.svg";
 import SubmitButton from "../../Common/Button/SubmitButton";
 import { IPostReplyDataProps } from "../../../interface/Post/Post.type";
 import PostReplyComment from "./PostReplyComment";
