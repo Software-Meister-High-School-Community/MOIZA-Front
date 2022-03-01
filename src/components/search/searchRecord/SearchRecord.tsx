@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import * as SR from "./SearchRecord.style";
 import { ISearchProps } from "../../../interface/search/Search.type";
-import X from "../../../assets/img/common/x.svg";
+import X from "../../../assets/img/common/X.svg";
 const SearchRecord: React.FC<ISearchProps> = ({
   visible,
   currentSearch,

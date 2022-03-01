@@ -3,8 +3,8 @@ import * as S from "./styles";
 import fixed from "../../../../assets/img/notice/fixedNotification.svg";
 import unFixed from "../../../../assets/img/notice/notification.svg";
 import view from "../../../../assets/img/common/openEye.svg";
-import heart from "../../../../assets/img/common/SonHeart.svg";
-import seeMore from "../../../../assets/img/admin/icons/seeMore.svg";
+import heart from "../../../../assets/img/common/onHeart.svg";
+import seeMore from "../../../../assets/img/common/seeMoreBtnIcon.svg";
 import SeeMoreModal from "../../../Common/seeMoreModal/index";
 import { NoticePropsType, seeMoreOptionList } from "../../constants/index";
 
