@@ -61,7 +61,7 @@ export const ItemContainer = styled.div`
 export const ItemImg = styled(SVG) <SVGStyleProps>`
   cursor: pointer;
   & path{
-    fill: ${(props) => props.color}
+    fill: ${(props) => props.color};
   }
   `;
 export const AuthContainer = styled.div`
