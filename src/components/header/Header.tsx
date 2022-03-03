@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import * as H from "./Header.styled";
+import * as H from "./Header.style";
 import Notice from "./notice";
 import CategoryDropdown from "./category/CategoryDropdown";
 import headerLogo from "../../assets/img/MOIZALogo/englishHorizontalType.svg";
@@ -30,7 +30,7 @@ const Header: React.FC = () => {
 
         <H.ItemContainer>
           <H.StyleLink to="/search">
-            <H.ItemImg src={searchIcon} />
+            <H.ItemImg src={searchIcon} color="#000" />
           </H.StyleLink>
           <H.ItemImg src={profileIcon} />
 

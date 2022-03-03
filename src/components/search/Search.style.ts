@@ -1,4 +1,5 @@
-import styled, {css} from "styled-components";
+import styled, { css } from "styled-components";
+import SVG from "react-inlinesvg";
 
 interface IStyleProps {
     disabled: boolean;
@@ -12,8 +13,8 @@ export const Wrapper = styled.div`
     width: 1200px;
     padding-top:100px;
 `
-export const Title  = styled.h1`
-    font-size: ${(props)=>props.theme.fontSize.head_small};
+export const Title = styled.h1`
+    font-size: ${(props) => props.theme.fontSize.head_small};
     font-weight: 400;
 `
 export const Container = styled.form`
@@ -50,11 +51,11 @@ export const SubmitButton = styled.button<IStyleProps>`
     cursor:pointer;
     box-sizing:border-box;
     ${(props) =>
-        props.disabled 
-        ? css`
+        props.disabled
+            ? css`
             opacity:100%;
         `
-        : css`
+            : css`
             opacity:55%;
         `}
     background-color: ${(props) => props.theme.color.main_blue_color};
@@ -63,7 +64,14 @@ export const SubmitButton = styled.button<IStyleProps>`
     border-start-end-radius:5px;
 `
 
-export const Img = styled.img``
+export const Img = styled(SVG)`
+    width:35.88px;
+    height:35.88px;
+    & path{
+        fill: ${(props) => props.theme.color.gray_color1};
+    }
+    
+`
 
 
 export const SearchWrapper = styled.div`
