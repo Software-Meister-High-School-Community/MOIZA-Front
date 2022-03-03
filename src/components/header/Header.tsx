@@ -30,7 +30,7 @@ const Header: React.FC = () => {
 
         <H.ItemContainer>
           <H.StyleLink to="/search">
-            <H.ItemImg src={searchIcon} />
+            <H.ItemImg src={searchIcon} color="#000" />
           </H.StyleLink>
           <H.ItemImg src={profileIcon} />
 
