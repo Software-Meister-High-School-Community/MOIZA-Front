@@ -1,5 +1,5 @@
 import React from "react";
-import footerLogo from "../../assets/img/MOIZALogo/koreanHorizontalType.svg";
+import footerLogo from "../../assets/img/MOIZALogo/koreanHorizontalTypeWhite.svg";
 import * as F from "./Footer.style";
 
 const Footer = () => {
