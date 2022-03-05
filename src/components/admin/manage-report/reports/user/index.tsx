@@ -3,7 +3,7 @@ import * as S from "./styles";
 import Arrow from "../../../../../assets/img/common/arrow.svg";
 import { useState } from "react";
 import { UserReportPropsType } from "../../../constants";
-import UseReplaceKeyword from "../../../../../util/hooks/useReplaceKeyword/index";
+import UseReplaceKeyword from '../../../../Common/search/replaceKeyword/index'
 
 interface PropsType {
   userReport: UserReportPropsType;
