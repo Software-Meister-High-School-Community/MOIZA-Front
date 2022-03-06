@@ -16,7 +16,7 @@ const Notification = () => {
         <section className="noticeListWrapper">
             <DropDown value={value} onChangeValue={setValue} options={OptionArr} />
             {noticeList.map((item, index) => (
-                <NotificationList item={item} />
+                <NotificationList item={item} key={index} />
             ))}
         </section>
     )

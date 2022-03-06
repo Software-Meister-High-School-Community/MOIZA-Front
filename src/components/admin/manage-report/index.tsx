@@ -63,15 +63,15 @@ const ManageReport: React.FC = () => {
             </S.Types>
             {selectedType === "users" ?
                 reportList.users.map((item, index) => (
-                    <ReportOfUser searchKeyword={searchKeyword} userReport={item} />
+                    <ReportOfUser key={index} searchKeyword={searchKeyword} userReport={item} />
                 ))
                 : selectedType === "posts" ?
                     reportList.posts.map((item, index) => (
-                        <ReportOfPost searchKeyword={searchKeyword} PostReport={item} />
+                        <ReportOfPost key={index} searchKeyword={searchKeyword} PostReport={item} />
                     ))
                     : selectedType === "comments" ?
                         reportList.comments.map((item, index) => (
-                            <ReportsofComment searchKeyword={searchKeyword} commentProps={item} />
+                            <ReportsofComment key={index} searchKeyword={searchKeyword} commentProps={item} />
                         ))
                         : "<strong>코드 수정 필요</strong>"
             }
