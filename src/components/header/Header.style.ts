@@ -1,8 +1,13 @@
+import SVG from 'react-inlinesvg';
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 interface StyleProps {
   isDisplay: string;
+}
+
+interface SVGStyleProps {
+  color?: string;
 }
 
 export const Container = styled.header`
@@ -53,9 +58,12 @@ export const ItemContainer = styled.div`
   justify-content: space-between;
 `;
 
-export const ItemImg = styled.img`
+export const ItemImg = styled(SVG) <SVGStyleProps>`
   cursor: pointer;
-`;
+  & path{
+    fill: ${(props) => props.color};
+  }
+  `;
 export const AuthContainer = styled.div`
   display: flex;
   width: 120px;
