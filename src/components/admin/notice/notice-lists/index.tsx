@@ -18,32 +18,30 @@ const NotificationList: React.FC<{ item: NoticePropsType }> = ({ item }) => {
   const hour = `${postDate.substr(9, 1)}:${postDate.substr(10, 2)}`;
   const date = `${year}/${month}/${day}\u00a0${hour}`;
   return (
-    <S.Wrapper>
-      <S.List fixed={item.fix === "FIX"}>
-        <img src={item.fix === "FIX" ? fixed : unFixed} />
-        <h1>{item.title}</h1>
-        <S.Date>{date}</S.Date>
-        <S.Views>
-          <img src={view} />
-          <span>{viewDivideby1000}천</span>
-        </S.Views>
-        <S.Hearts>
-          <img src={heart} />
-          <span>{item.heart}</span>
-        </S.Hearts>
-        <S.SeeMore onClick={() => setSeeMoreModal(true)}>
-          <img src={seeMore} />
-          {seeMoreModal ? (
-            <SeeMoreModal
-              optionList={seeMoreOptionList}
-              setModalStatus={setSeeMoreModal}
-            />
-          ) : (
-            ""
-          )}
-        </S.SeeMore>
-      </S.List>
-    </S.Wrapper>
+
+    <S.List fixed={item.fix === "FIX"}>
+      <img src={item.fix === "FIX" ? fixed : unFixed} />
+      <h1>{item.title}</h1>
+      <S.Date>{date}</S.Date>
+      <S.Views>
+        <img src={view} />
+        <span>{viewDivideby1000}천</span>
+      </S.Views>
+      <S.Hearts>
+        <img src={heart} />
+        <span>{item.heart}</span>
+      </S.Hearts>
+      <S.SeeMore onClick={() => setSeeMoreModal(true)}>
+        <img src={seeMore} />
+        {seeMoreModal && (
+          <SeeMoreModal
+            optionList={seeMoreOptionList}
+            setModalStatus={setSeeMoreModal}
+          />
+        )}
+      </S.SeeMore>
+    </S.List>
+
   );
 };
 export default NotificationList;
