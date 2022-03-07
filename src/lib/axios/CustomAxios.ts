@@ -1,8 +1,21 @@
-import axios, { AxiosInstance } from 'axios';
+import axios, { AxiosError, AxiosInstance } from 'axios';
 
-export const customAxios: AxiosInstance = axios.create({
-  baseURL: `server`, // 기본 서버 주소 입력
-  headers: {
-    access_token:'Token',
-  },
+const instance: AxiosInstance = axios.create({
+  baseURL: `${process.env.REACT_APP_BASE_URL}`,
+  timeout: 10000,
 });
+
+instance.interceptors.request.use(
+  async function (config) {
+    const access_token = localStorage.getItem('access_token');
+    access_token ? config.headers = {
+      Authorization: `Bearer ${access_token}`,
+    } : null;
+    return config;
+  },
+  function (err: AxiosError) {
+    return Promise.reject(err)
+  }
+)
+
+export default instance;
