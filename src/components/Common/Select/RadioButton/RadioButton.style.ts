@@ -8,6 +8,7 @@ export const Wrapper = styled.label`
   display: flex;
   align-items: center;
   margin-right: 55px;
+  cursor: pointer;
   > p {
     font-family: Roboto;
     font-style: normal;
@@ -29,7 +30,6 @@ export const RadioButtonRect = styled.div`
   align-items: center;
   justify-content: center;
   border: 1px solid ${(props) => props.theme.color.gray_color3};
-  cursor: pointer;
 `;
 
 export const RadioButtonBox = styled.input<{ checked: boolean }>`

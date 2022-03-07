@@ -1,10 +1,7 @@
 import styled from 'styled-components'
 
-export const Wrapper = styled.ul`
-  margin-top: 27px;
-`
 export const List = styled.li<{
-    fixed : boolean
+  fixed: boolean
 }>`
   width: 1200px;
   height: 65px;
@@ -22,7 +19,7 @@ export const List = styled.li<{
     font-weight: normal;
     font-size: 18px;
     line-height: 21px;
-    color: ${(props)=>props.fixed ? "#FFB500" : "#555555"};
+    color: ${(props) => props.fixed ? "#FFB500" : "#555555"};
   }
 `
 export const Date = styled.em`
@@ -61,9 +58,14 @@ export const Hearts = styled(Views)`
     margin-left: 7px;
   }
 `
-export const SeeMore = styled.label`
+export const SeeMore = styled.button`
   display: flex;
   margin-left: 37px;
   position: relative;
   cursor: pointer;
+  > div >.seeMoreModal {
+    position: absolute; 
+    top: 24px;
+    right: 0;
+  }
 `

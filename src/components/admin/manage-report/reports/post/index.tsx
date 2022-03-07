@@ -1,7 +1,7 @@
 import * as S from "./styles";
 import Type from "../../../../../assets/img/common/questionPostIcon.svg";
 import { PostReportPropsType } from "../../../constants";
-import UseReplaceKeyword from "../../../../../util/hooks/useReplaceKeyword/index";
+import UseReplaceKeyword from '../../../../Common/search/replaceKeyword/index'
 
 interface PropsType {
   PostReport: PostReportPropsType;
