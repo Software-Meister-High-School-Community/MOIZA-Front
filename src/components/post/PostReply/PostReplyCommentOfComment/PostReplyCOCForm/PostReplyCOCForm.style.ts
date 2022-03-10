@@ -35,6 +35,24 @@ export const PostReplyCOCFormHeaderDate = styled.pre`
   font-weight: normal;
 `;
 
+export const PostReplyMenuButton = styled.button`
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: 0px;
+  outline: none;
+  cursor: pointer;
+  margin-left: 25px;
+
+  img {
+    width: 100%;
+    object-fit: cover;
+  }
+`;
+
 export const PostReplyCOCFormBreakPoint = styled.div`
   width: 2px;
   height: 2px;

@@ -9,10 +9,9 @@ export const Fix = styled.div`
     font-size: ${({ theme }) => theme.fontSize.body_large};
     color: ${({ theme }) => theme.color.gray_color4};
   }
-  > div {
+  > img {
     width: 20px;
     height: 20px;
-    background: black;
     margin-right: 8px;
   }
 `;

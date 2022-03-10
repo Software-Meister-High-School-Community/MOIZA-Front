@@ -9,7 +9,7 @@ export const PostReplyCOCBox = styled.div`
   padding: 20px 30px;
   box-sizing: border-box;
   border: 1px solid ${(props) => props.theme.color.gray_color3};
-  background-color: ${(props) => props.theme.color.gray_color1};
+  background-color: #efefef;
   border-radius: 5px;
 `;
 export const PostReplyCOCInputWrap = styled.div`
