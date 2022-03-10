@@ -7,6 +7,7 @@ import { useState } from "react";
 import PostReplyCommentOfComment from "../PostReplyCommentOfComment";
 import { seeMoreOption } from "../../constants/index";
 import SeeMoreModal from "../../../Common/seeMoreModal";
+import FixPin from "../../../../assets/img/post/Pin.svg";
 
 interface IPostReplyCommentProps {
   commentData: ICommnet;
@@ -26,7 +27,7 @@ const PostReplyComment: React.FC<IPostReplyCommentProps> = ({
     <>
       {fixState ? (
         <PRC.Fix>
-          <div />
+          <img src={FixPin} alt="" />
           <p>작성자님이 고정한 댓글</p>
         </PRC.Fix>
       ) : (
@@ -58,13 +59,11 @@ const PostReplyComment: React.FC<IPostReplyCommentProps> = ({
             onClick={() => setSeeMoreModalStatus(true)}
           >
             <img src={menuCircle} alt="menu" />
-            {seeMoreModalStatus ? (
+            {seeMoreModalStatus && (
               <SeeMoreModal
                 optionList={seeMoreOption}
                 setModalStatus={setSeeMoreModalStatus}
               />
-            ) : (
-              ""
             )}
           </PRC.PostReplyCommentMenuButton>
         </PRC.PostReplyCommentHeaderWrap>
