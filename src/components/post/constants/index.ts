@@ -95,4 +95,8 @@ export const seeMoreOption: SeeMoreOptionInterface[] = [
     option: "수정",
     onClickFunction: () => console.log("asd"),
   },
+  {
+    option: "삭제",
+    onClickFunction: () => {},
+  },
 ];
