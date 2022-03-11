@@ -100,3 +100,14 @@ export const seeMoreOption: SeeMoreOptionInterface[] = [
     onClickFunction: () => {},
   },
 ];
+
+export const writeSeeMoreOption: SeeMoreOptionInterface[] = [
+  {
+    option: "상단 고정",
+    onClickFunction: () => console.log("asd"),
+  },
+  {
+    option: "신고",
+    onClickFunction: () => {},
+  },
+];
