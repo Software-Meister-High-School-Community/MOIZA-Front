@@ -28,6 +28,11 @@ export const PostReplyCOCFormHeaderText = styled.p`
   }
 `;
 
+export const miniWrap = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
 export const PostReplyCOCFormHeaderDate = styled.pre`
   color: ${(props) => props.theme.color.gray_color4};
   font-size: 12px;
@@ -44,12 +49,14 @@ export const PostReplyMenuButton = styled.button`
   background: none;
   border: 0px;
   outline: none;
+  position: relative;
   cursor: pointer;
-  margin-left: 25px;
-
-  img {
-    width: 100%;
-    object-fit: cover;
+  margin-left: 15px;
+  margin-bottom: 3px;
+  > div > .seeMoreModal {
+    position: absolute;
+    top: 24px;
+    right: 0;
   }
 `;
 

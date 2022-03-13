@@ -56,7 +56,9 @@ const PostReplyComment: React.FC<IPostReplyCommentProps> = ({
             {commentData.createDate}
           </PRC.PostReplyCommentDate>
           <PRC.PostReplyCommentMenuButton
-            onClick={() => setSeeMoreModalStatus(true)}
+            onClick={() => {
+              setSeeMoreModalStatus((status) => !status);
+            }}
           >
             <img src={menuCircle} alt="menu" />
             {seeMoreModalStatus && (

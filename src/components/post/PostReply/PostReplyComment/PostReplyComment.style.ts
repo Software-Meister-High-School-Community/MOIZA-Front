@@ -100,12 +100,13 @@ export const PostReplyCommentMenuButton = styled.button`
   background: none;
   border: 0px;
   outline: none;
+  position: relative;
   cursor: pointer;
   margin-left: 25px;
-
-  img {
-    width: 100%;
-    object-fit: cover;
+  > div > .seeMoreModal {
+    position: absolute;
+    top: 24px;
+    right: 0;
   }
 `;
 

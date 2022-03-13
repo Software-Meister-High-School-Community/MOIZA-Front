@@ -27,18 +27,22 @@ const PostReplyCOCForm: React.FC<IPostReplyCOCFormProps> = ({
           <PRCOCF.PostReplyCOCFormBreakPoint />
           <span>{commentOfComment.studentState}</span>
         </PRCOCF.PostReplyCOCFormHeaderText>
-        <PRCOCF.PostReplyCOCFormHeaderDate>
-          {commentOfComment.createDate}
-        </PRCOCF.PostReplyCOCFormHeaderDate>
-        <PRCOCF.PostReplyMenuButton onClick={() => setSeeMoreModalStatus(true)}>
-          <img src={menuCircle} alt="menu" />
-          {seeMoreModalStatus && (
-            <SeeMoreModal
-              optionList={seeMoreOption}
-              setModalStatus={setSeeMoreModalStatus}
-            />
-          )}
-        </PRCOCF.PostReplyMenuButton>
+        <PRCOCF.miniWrap>
+          <PRCOCF.PostReplyCOCFormHeaderDate>
+            {commentOfComment.createDate}
+          </PRCOCF.PostReplyCOCFormHeaderDate>
+          <PRCOCF.PostReplyMenuButton
+            onClick={() => setSeeMoreModalStatus(true)}
+          >
+            <img src={menuCircle} alt="menu" />
+            {seeMoreModalStatus && (
+              <SeeMoreModal
+                optionList={seeMoreOption}
+                setModalStatus={setSeeMoreModalStatus}
+              />
+            )}
+          </PRCOCF.PostReplyMenuButton>
+        </PRCOCF.miniWrap>
       </PRCOCF.PostReplyCOCFormHeaderWrap>
       <PRCOCF.PostReplyCOCFormText
         withPicture={commentOfComment?.picture?.length !== 0}
