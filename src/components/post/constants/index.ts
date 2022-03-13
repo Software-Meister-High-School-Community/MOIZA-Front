@@ -111,3 +111,10 @@ export const writeSeeMoreOption: SeeMoreOptionInterface[] = [
     onClickFunction: () => {},
   },
 ];
+
+export const UserSeeMoreOption: SeeMoreOptionInterface[] = [
+  {
+    option: "신고",
+    onClickFunction: () => {},
+  },
+];

@@ -1,5 +1,5 @@
 import { ICommnet } from "../../../../interface/Post/Post.type";
-import * as PRC from "./PostReplyComment.style";
+import * as PRC from "./PostComment.style";
 import menuCircle from "../../../../assets/img/common/seeMoreBtnIcon.svg";
 import commentIcon from "../../../../assets/img/common/comment.svg";
 import ImgSplit from "../../../Common/ImgSplit";
@@ -14,10 +14,7 @@ interface IPostReplyCommentProps {
   id: number;
 }
 
-const PostReplyComment: React.FC<IPostReplyCommentProps> = ({
-  commentData,
-  id,
-}) => {
+const PostComment: React.FC<IPostReplyCommentProps> = ({ commentData, id }) => {
   const [fold, setFold] = useState(true);
   const [seeMoreModalStatus, setSeeMoreModalStatus] = useState(false);
   const [fixState, setFixState] = useState(true);
@@ -97,4 +94,4 @@ const PostReplyComment: React.FC<IPostReplyCommentProps> = ({
   );
 };
 
-export default PostReplyComment;
+export default PostComment;

@@ -10,7 +10,7 @@ import questionCircle from "../../../assets/img/post/QuestionIcon.svg";
 import BookReadCircle from "../../../assets/img/post/BookReadIcon.svg";
 import SubmitButton from "../../Common/Button/SubmitButton";
 import { IPostReplyDataProps } from "../../../interface/Post/Post.type";
-import PostReplyComment from "./PostReplyComment";
+import PostReplyComment from "./PostComment";
 import ImgSplit from "../../Common/ImgSplit";
 import PostReplyMakeForm from "./PostReplyMakeForm";
 import SeeMoreModal from "../../Common/seeMoreModal";
