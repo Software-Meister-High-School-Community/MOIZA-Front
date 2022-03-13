@@ -45,7 +45,7 @@ const Router = () => {
         <Route path="/search" element={<SearchPage />} />
         <Route path="/result/:title" element={<ResultPage />} />
         <Route path="/list/:listname" element={<PostList />} />
-        <Route path="/list/reply/:postid" element={<PostReplyPage />} />
+        <Route path="/list/:listname/:postid" element={<PostReplyPage />} />
         <Route path="/mypage/:userid" element={<MyPage />} />
         <Route path="/postwrite/:writefield" element={<PostWrite />} />
         <Route path="/follow/:userid" element={<Follow />} />
