@@ -115,5 +115,8 @@ export const Buttons = styled.div`
     background-color: #ffffff;
     border: 1px solid #E0E0E0;
     border-radius: 5px;
+    :last-child {
+      margin-top: 14px;
+    }
   }
 `

@@ -1,9 +1,10 @@
-import React from "react";
+import React, { ChangeEvent, ChangeEventHandler } from "react";
 import * as S from "./styles";
 import Arrow from "../../../../../assets/img/common/arrow.svg";
 import { useState } from "react";
 import { UserReportPropsType } from "../../../constants";
 import UseReplaceKeyword from '../../../../Common/search/replaceKeyword/index'
+import { userSuspension } from "../../../../../api/admin";
 
 interface PropsType {
   userReport: UserReportPropsType;
@@ -40,12 +41,19 @@ const ReportOfUser: React.FC<PropsType> = ({ userReport, searchKeyword }) => {
           />
         </S.History>
       </S.Summary>
-      {showDetail ? <Detail /> : ""}
+      {showDetail && <Detail />}
     </S.Wrapper>
   );
 };
 
 const Detail = () => {
+  const [suspension, setSuspension] = useState<null | number>(null)
+  const onChangeSuspension = (e: ChangeEvent<HTMLInputElement>) => {
+    setSuspension(Number(e.target.value));
+  }
+  const onClickSuspension = () => {
+    userSuspension(1)
+  }
   return (
     <S.DetailWrapper>
       <S.Line />
@@ -58,16 +66,16 @@ const Detail = () => {
           게시물 신고
           <p>3</p>
         </S.ReportCount>
-        <S.ReportCount style={{ marginRight: "35px" }}>
+        <S.ReportCount>
           답변 신고
           <p>3</p>
         </S.ReportCount>
         <S.HeigthLine />
         <S.UserFreeze>
           <p>정지</p>
-          <input type="number" />
+          <input onChange={onChangeSuspension} value={suspension || ''} type="number" />
           <p>일</p>
-          <button>확인</button>
+          <button onClick={onClickSuspension}>확인</button>
         </S.UserFreeze>
         <S.HeigthLine />
         <S.RemoveUser>사용자 탈퇴 시키기</S.RemoveUser>

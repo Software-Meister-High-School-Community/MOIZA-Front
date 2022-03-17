@@ -1,17 +1,17 @@
 import styled from "styled-components";
 
 interface StyleProps {
-    isOpen : boolean
+  isOpen: boolean
 }
 
 export const Wrapper = styled.section<StyleProps>`
   border-radius: 5px;
-  height:${(props) => props.isOpen ? "130":"60"}px;
+  height:${(props) => props.isOpen ? "130" : "60"}px;
   border: 1px solid #E0E0E0;
   background-color: #FFFFFF;
   margin-top: 10px;
 `
-export const  Summary = styled.div`
+export const Summary = styled.div`
   display: flex;
   align-items: center;
   margin: 20px 0;
@@ -29,12 +29,10 @@ export const Name = styled.p`
   letter-spacing: 0em;
   text-align: left;
   color: #000000;
-  //margin: 0 13px 0 14px;
   margin-right: 14px;
   display:flex;
   align-items:center;
   :after {
-    //padding-left: 13px;
     margin-left: 13px;
     width: 3px;
     height: 3px;
@@ -82,13 +80,13 @@ export const Count = styled.p`
     color: ${props => props.theme.color.main_blue_color};
   }
 `
-interface ArrowType{
-    isFold : boolean
+interface ArrowType {
+  isFold: boolean
 }
 export const Arrow = styled.img<ArrowType>`
   margin-left: 54px;
   transition: all ease 300ms;
-  transform: rotate(${(props)=>props.isFold ? "180":"0"}deg);
+  transform: rotate(${(props) => props.isFold ? "180" : "0"}deg);
   cursor: pointer;
 `
 
@@ -127,6 +125,9 @@ export const ReportCount = styled.p`
     text-align: left;
     color: ${props => props.theme.color.main_blue_color};
     margin-left: 20px;
+  }
+  :last-child{
+    margin-right: 35px;
   }
 `
 export const HeigthLine = styled.div`

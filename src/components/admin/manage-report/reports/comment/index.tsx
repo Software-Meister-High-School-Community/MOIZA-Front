@@ -1,7 +1,8 @@
-import React, { useMemo } from 'react'
+import React from 'react'
 import * as S from './styles'
 import { CommentReportPropsType } from '../../../constants'
 import UseReplaceKeyword from '../../../../Common/search/replaceKeyword/index'
+import { removeComment } from '../../../../../api/comments'
 
 interface PropsType {
     commentProps: CommentReportPropsType
@@ -9,6 +10,9 @@ interface PropsType {
 }
 
 const ReportsofComment: React.FC<PropsType> = ({ commentProps, searchKeyword }) => {
+    const onClickRemoveComment = () => {
+        removeComment(1)
+    }
     return (
         <S.Wrapper>
             <div style={{ display: "flex" }}>
@@ -31,7 +35,7 @@ const ReportsofComment: React.FC<PropsType> = ({ commentProps, searchKeyword }) 
                 </S.ReportContent>
                 <S.Buttons>
                     <button>본문 확인</button>
-                    <button style={{ marginTop: "14px" }}>답변 삭제</button>
+                    <button onClick={onClickRemoveComment}>답변 삭제</button>
                 </S.Buttons>
             </S.ReportMainContent>
         </S.Wrapper>
