@@ -36,9 +36,6 @@ export const BtnDiv = styled.div`
   display: flex;
   justify-content: flex-end;
   margin-bottom: 80px;
-  > button {
-    margin-right: 40px;
-  }
 `;
 
 export const SecondPage = styled.div`

@@ -1,4 +1,5 @@
 import React, { FC } from "react";
+import { Link } from "react-router-dom";
 import SubmitButton from "../Common/Button/SubmitButton";
 import Puzzle from "../../assets/img/introduce/puzzle.svg";
 import DownArrow from "../../assets/img/introduce/downArrow.svg";
@@ -20,13 +21,17 @@ const Introduce: FC = () => {
             </p>
           </S.firstTitleDiv>
           <S.BtnDiv>
-            <SubmitButton
-              big
-              text={"바로 가입하기"}
-              yellow
-              handleClick={() => {}}
-            />
-            <SubmitButton big text={"로그인하기"} handleClick={() => {}} />
+            <Link to="/signup" style={{ margin: "0 40px 0 0" }}>
+              <SubmitButton
+                big
+                text={"바로 가입하기"}
+                yellow
+                handleClick={() => {}}
+              />
+            </Link>
+            <Link to="/login">
+              <SubmitButton big text={"로그인하기"} handleClick={() => {}} />
+            </Link>
           </S.BtnDiv>
           <S.arrowDiv>
             <img src={DownArrow} alt="arrow" />
