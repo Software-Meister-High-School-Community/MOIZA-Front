@@ -2,6 +2,7 @@ import * as S from "./styles";
 import Type from "../../../../../assets/img/common/questionPostIcon.svg";
 import { PostReportPropsType } from "../../../constants";
 import UseReplaceKeyword from '../../../../Common/search/replaceKeyword/index'
+import { removePost } from "../../../../../api/feeds";
 
 interface PropsType {
   PostReport: PostReportPropsType;
@@ -9,6 +10,9 @@ interface PropsType {
 }
 
 const ReportOfPost: React.FC<PropsType> = ({ PostReport, searchKeyword }) => {
+  const onClickRemovePost = () => {
+    removePost(1)
+  }
   return (
     <S.Wrapper>
       <section className="summary">
@@ -43,7 +47,7 @@ const ReportOfPost: React.FC<PropsType> = ({ PostReport, searchKeyword }) => {
           <div>
             신고<p>{PostReport.history}회</p>
           </div>
-          <S.Button>게시물 삭제</S.Button>
+          <S.Button onClick={onClickRemovePost}>게시물 삭제</S.Button>
         </S.Bottom>
       </S.Details>
     </S.Wrapper>

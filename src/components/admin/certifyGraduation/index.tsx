@@ -1,5 +1,6 @@
 import React, { ChangeEvent, FormEvent, useCallback, useState } from 'react';
 import styled from 'styled-components';
+import { acceptGraduate, rejectGraduate } from '../../../api/admin';
 import SearchInPage from '../../Common/search/searchInPage';
 import Radio from '../../Common/Select/RadioButton'
 
@@ -40,6 +41,12 @@ const CertifyGraduation: React.FC = () => {
     const onKeyPressSearch = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault()
     }
+    const accept = () => {
+        acceptGraduate(1)
+    }
+    const reject = () => {
+        rejectGraduate(1)
+    }
     return (
         <Wrapper>
             <Options>
@@ -57,8 +64,8 @@ const CertifyGraduation: React.FC = () => {
                         <button className='patchFile'>파일 확인</button>
                     </PatchFile>
                     <ApproveDenyButton>
-                        <button className='approve'>승인</button>
-                        <button className='deny'>거절</button>
+                        <button className='approve' onClick={accept}>승인</button>
+                        <button className='deny' onClick={reject}>거절</button>
                     </ApproveDenyButton>
                 </List>
             </RequestLists>
