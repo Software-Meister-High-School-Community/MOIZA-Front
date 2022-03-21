@@ -21,6 +21,7 @@ import Follow from "./pages/follow";
 import EditProfile from "./components/edit-profile";
 import TempList from "./components/post/temporary/TempList";
 import ResultPage from "./pages/result/ResultPage";
+import IntroducePage from "./pages/introduce";
 
 const Router = () => {
   return (
@@ -28,6 +29,7 @@ const Router = () => {
       <Header />
       <Routes>
         <Route path="/" element={<MainPage />} />
+        <Route path="/intro" element={<IntroducePage />} />
         <Route path="/notice" element={<NoticeList />} />
         <Route path="/shownotice" element={<ShowNotice />} />
         <Route path="/admin" element={<Admin />} />
