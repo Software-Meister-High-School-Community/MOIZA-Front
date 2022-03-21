@@ -133,7 +133,7 @@ const PostReply: React.FC = () => {
               <Path pathArray={PostListReplyPathArr} />
               <PR.PostReplyWrap>
                 <PR.PostReplyHeaderWrap>
-                  <PR.PostReplyIconCircle src={questionCircle} />
+                  <PR.PostReplyIconCircle src={questionCircle} alt="postIcon" />
                   <PR.PostReplyInfoWrap>
                     <PR.PostReplyTitle>{postData.title}</PR.PostReplyTitle>
                     <PR.PostReplyWriterWrap>

@@ -7,7 +7,7 @@ const NoticePost: React.FC = () => {
   return (
     <S.Wrapper>
       <S.List fixed={true}>
-        <img src={fixed} />
+        <img src={fixed} alt="" />
         <h1>모이자에 오신 여러분 환영합니다!</h1>
         <S.Date>
           <span>22/01/21 8:29</span>
