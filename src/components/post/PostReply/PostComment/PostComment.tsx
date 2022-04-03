@@ -1,5 +1,5 @@
 import { ICommnet } from "../../../../interface/Post/Post.type";
-import * as PRC from "./PostReplyComment.style";
+import * as PRC from "./PostComment.style";
 import menuCircle from "../../../../assets/img/common/seeMoreBtnIcon.svg";
 import commentIcon from "../../../../assets/img/common/comment.svg";
 import ImgSplit from "../../../Common/ImgSplit";
@@ -7,16 +7,14 @@ import { useState } from "react";
 import PostReplyCommentOfComment from "../PostReplyCommentOfComment";
 import { seeMoreOption } from "../../constants/index";
 import SeeMoreModal from "../../../Common/seeMoreModal";
+import FixPin from "../../../../assets/img/post/Pin.svg";
 
 interface IPostReplyCommentProps {
   commentData: ICommnet;
   id: number;
 }
 
-const PostReplyComment: React.FC<IPostReplyCommentProps> = ({
-  commentData,
-  id,
-}) => {
+const PostComment: React.FC<IPostReplyCommentProps> = ({ commentData, id }) => {
   const [fold, setFold] = useState(true);
   const [seeMoreModalStatus, setSeeMoreModalStatus] = useState(false);
   const [fixState, setFixState] = useState(true);
@@ -26,7 +24,7 @@ const PostReplyComment: React.FC<IPostReplyCommentProps> = ({
     <>
       {fixState ? (
         <PRC.Fix>
-          <div />
+          <img src={FixPin} alt="" />
           <p>작성자님이 고정한 댓글</p>
         </PRC.Fix>
       ) : (
@@ -55,16 +53,16 @@ const PostReplyComment: React.FC<IPostReplyCommentProps> = ({
             {commentData.createDate}
           </PRC.PostReplyCommentDate>
           <PRC.PostReplyCommentMenuButton
-            onClick={() => setSeeMoreModalStatus(true)}
+            onClick={() => {
+              setSeeMoreModalStatus((status) => !status);
+            }}
           >
             <img src={menuCircle} alt="menu" />
-            {seeMoreModalStatus ? (
+            {seeMoreModalStatus && (
               <SeeMoreModal
                 optionList={seeMoreOption}
                 setModalStatus={setSeeMoreModalStatus}
               />
-            ) : (
-              ""
             )}
           </PRC.PostReplyCommentMenuButton>
         </PRC.PostReplyCommentHeaderWrap>
@@ -96,4 +94,4 @@ const PostReplyComment: React.FC<IPostReplyCommentProps> = ({
   );
 };
 
-export default PostReplyComment;
+export default PostComment;

@@ -28,11 +28,36 @@ export const PostReplyCOCFormHeaderText = styled.p`
   }
 `;
 
+export const miniWrap = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
 export const PostReplyCOCFormHeaderDate = styled.pre`
   color: ${(props) => props.theme.color.gray_color4};
   font-size: 12px;
   font-style: normal;
   font-weight: normal;
+`;
+
+export const PostReplyMenuButton = styled.button`
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: 0px;
+  outline: none;
+  position: relative;
+  cursor: pointer;
+  margin-left: 15px;
+  margin-bottom: 3px;
+  > div > .seeMoreModal {
+    position: absolute;
+    top: 24px;
+    right: 0;
+  }
 `;
 
 export const PostReplyCOCFormBreakPoint = styled.div`

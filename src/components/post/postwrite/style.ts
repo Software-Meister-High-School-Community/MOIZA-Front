@@ -94,6 +94,7 @@ export const TempList = styled.p`
   line-height: 19px;
   text-align: right;
   text-decoration: underline;
+  cursor: pointer;
 `;
 
 export const SubmitBtn = styled.section`

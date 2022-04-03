@@ -9,10 +9,9 @@ export const Fix = styled.div`
     font-size: ${({ theme }) => theme.fontSize.body_large};
     color: ${({ theme }) => theme.color.gray_color4};
   }
-  > div {
+  > img {
     width: 20px;
     height: 20px;
-    background: black;
     margin-right: 8px;
   }
 `;
@@ -101,12 +100,13 @@ export const PostReplyCommentMenuButton = styled.button`
   background: none;
   border: 0px;
   outline: none;
+  position: relative;
   cursor: pointer;
   margin-left: 25px;
-
-  img {
-    width: 100%;
-    object-fit: cover;
+  > div > .seeMoreModal {
+    position: absolute;
+    top: 24px;
+    right: 0;
   }
 `;
 
