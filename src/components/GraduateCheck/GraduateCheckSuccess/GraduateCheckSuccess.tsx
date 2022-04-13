@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router";
 import SubmitButton from "../../Common/Button/SubmitButton";
 import * as GCS from "./GraduateCheckSuccess.style";
-import * as Imgs from "../../../assets/img/index";
+import Success from "../../../assets/img/graduateCheck/graduateSuccessIcon.svg";
 
 const GraduateCheckSuccess = () => {
   const navigate = useNavigate();
@@ -9,7 +9,7 @@ const GraduateCheckSuccess = () => {
   return (
     <GCS.GraduateCheckSuccessBox>
       <GCS.GraduateCheckSuccessTitleWrap>
-        <GCS.GraduateCheckSuccessImg src={Imgs.GraduateCheckSuccessIcon} />
+        <GCS.GraduateCheckSuccessImg src={Success} />
         <GCS.GraduateCheckSuccessTitle>
           <strong>졸업 인증 신청</strong>이 완료되었습니다.
         </GCS.GraduateCheckSuccessTitle>

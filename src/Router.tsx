@@ -8,19 +8,20 @@ import FindAuthDataPage from "./pages/FindId/FindId.page";
 import WriteNotice from "./components/admin/write-notice";
 import SearchPage from "./pages/search/SearchPage";
 import MainPage from "./pages/mainpage/mainpage";
-import NoticeList from "./components/notice/noticelist/NoticeList";
-import ShowNotice from "./components/notice/shownotice/ShowNotice";
+import NoticeList from "./pages/notice/NoticeListPage";
+import ShowNotice from "./pages/notice/ShowNoticePage";
 import SignupSuccess from "./components/Signup/SignupSuccess";
 import GraduateCheckPage from "./pages/GraduateCheck/GraduateCheckPage";
 import GraduateCheckSuccess from "./components/GraduateCheck/GraduateCheckSuccess";
-import PostList from "./components/post/postlist/PostList";
+import PostList from "./pages/post/PostListPage";
 import MyPage from "./components/mypage/index";
 import PostReplyPage from "./pages/PostReply/PostReplyPage";
-import PostWrite from "./components/post/postwrite/PostWrite";
+import PostWrite from "./pages/post/PostWritePage";
 import Follow from "./pages/follow";
-import EditProfile from './components/edit-profile'
+import EditProfile from "./components/edit-profile";
 import TempList from "./components/post/temporary/TempList";
 import ResultPage from "./pages/result/ResultPage";
+import IntroducePage from "./pages/introduce";
 
 const Router = () => {
   return (
@@ -28,6 +29,7 @@ const Router = () => {
       <Header />
       <Routes>
         <Route path="/" element={<MainPage />} />
+        <Route path="/intro" element={<IntroducePage />} />
         <Route path="/notice" element={<NoticeList />} />
         <Route path="/shownotice" element={<ShowNotice />} />
         <Route path="/admin" element={<Admin />} />
@@ -45,12 +47,12 @@ const Router = () => {
         <Route path="/search" element={<SearchPage />} />
         <Route path="/result/:title" element={<ResultPage />} />
         <Route path="/list/:listname" element={<PostList />} />
-        <Route path="/list/reply/:postid" element={<PostReplyPage />} />
+        <Route path="/list/:listname/:postid" element={<PostReplyPage />} />
         <Route path="/mypage/:userid" element={<MyPage />} />
         <Route path="/postwrite/:writefield" element={<PostWrite />} />
         <Route path="/follow/:userid" element={<Follow />} />
-        <Route path="/mypage/:userid" element={<MyPage/>}/>
-        <Route path="/editprofile/:userid" element={<EditProfile/>}/>
+        <Route path="/mypage/:userid" element={<MyPage />} />
+        <Route path="/editprofile/:userid" element={<EditProfile />} />
         <Route path="/templist/:tempfield" element={<TempList />} />
       </Routes>
     </BrowserRouter>

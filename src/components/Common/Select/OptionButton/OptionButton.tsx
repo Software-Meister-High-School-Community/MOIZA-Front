@@ -4,7 +4,7 @@ import {
   OptionButtonBoxText,
   OptionButtonCheckRect,
 } from "./OptionButton.style";
-import * as Imgs from "../../../../assets/img";
+import checkIcon from "../../../../assets/img/common/check.svg";
 
 const OptionButton: React.FC<IOptionButtonProps> = ({
   text,
@@ -17,10 +17,7 @@ const OptionButton: React.FC<IOptionButtonProps> = ({
       onClick={() => (onClick ? onClick(text) : null)}
     >
       <OptionButtonBoxText>{text}</OptionButtonBoxText>
-      <OptionButtonCheckRect
-        isSelected={isSelected}
-        src={Imgs.CommonOptionCheckImg}
-      />
+      <OptionButtonCheckRect isSelected={isSelected} src={checkIcon} />
     </OptionButtonBox>
   );
 };

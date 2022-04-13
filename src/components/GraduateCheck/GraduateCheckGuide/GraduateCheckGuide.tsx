@@ -1,10 +1,10 @@
 import * as GCG from "./GraduateCheckGuide.style";
-import * as Imgs from "../../../assets/img/index";
 import * as CONST from "../ConsTant/index";
 import { GraduateCheckFooterWrap } from "../GraduateCheck.style";
 import SubmitButton from "../../Common/Button/SubmitButton";
 import React, { Dispatch, SetStateAction } from "react";
 import { useNavigate } from "react-router";
+import bechelorCap from "../../../assets/img/graduateCheck/bachelorCap.svg";
 
 interface IGraduateCheckGuideProps {
   setPart: Dispatch<SetStateAction<string>>;
@@ -18,9 +18,7 @@ const GraduateCheckGuide: React.FC<IGraduateCheckGuideProps> = ({
   return (
     <>
       <GCG.GraduateCheckGuideBox>
-        <GCG.GraduateCheckGuidebachelorCapImg
-          src={Imgs.GraduateCheckbachelorCap}
-        />
+        <GCG.GraduateCheckGuidebachelorCapImg src={bechelorCap} />
         <GCG.GraduateCheckGuideTitle style={{ marginBottom: 16 }}>
           졸업생 인증을 하는 이유
         </GCG.GraduateCheckGuideTitle>

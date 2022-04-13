@@ -1,7 +1,7 @@
-import React, { useRef } from "react";
 import * as UR from "./UserResult.style";
-import Slider from "react-slick";
-import * as IMG from "../../../assets/img/result";
+// import Slider from "react-slick";
+import onPrevImg from "../../../assets/img/common/prevBtnIcon.svg";
+import onNextImg from "../../../assets/img/common/nextBtnIcon.svg";
 import useUserResult from "../../../hooks/result/userResult/useUserResult";
 const UserResult = () => {
   const { slider, users, sliderSettings, handleNext, handlePrevious } =
@@ -11,12 +11,12 @@ const UserResult = () => {
       {users.length > 6 && (
         <UR.ButtonBox>
           <UR.prevButton
-            src={IMG.onPrevImg}
+            src={onPrevImg}
             onClick={handlePrevious}
             alt="prevBtn 이미지"
           />
           <UR.NextButton
-            src={IMG.onNextImg}
+            src={onNextImg}
             onClick={handleNext}
             alt="nextBtn 이미지"
           />

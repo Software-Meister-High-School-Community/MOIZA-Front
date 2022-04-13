@@ -1,8 +1,8 @@
 import useNestedComment from "../../../../hooks/post/comment/useComment";
 import SubmitButton from "../../../Common/Button/SubmitButton";
 import * as PRMF from "./PostReplyMakeForm.style";
-import x from "../../../../assets/img/Common/x.svg";
-import plus from "../../../../assets/img/Common/addFile.svg";
+import x from "../../../../assets/img/common/X.svg";
+import plus from "../../../../assets/img/common/plus.svg";
 
 const PostReplyMakeForm = () => {
   const { makeCommentData, onChangeValue, onChangeFile, onRemoveFile } =

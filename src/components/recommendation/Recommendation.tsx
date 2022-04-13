@@ -1,8 +1,9 @@
 import React, { useEffect } from "react";
 import * as R from "./Recommendation.style";
-import * as IMGS from "../../assets/img/index";
 import { useSelectColor } from "../../hooks/recommendation/useSelectColor";
 import { dateTransform } from "../../util/dateTransform";
+import questionIcon from "../../assets/img/recommendation/questionIcon.svg";
+import commonIcon from "../../assets/img/recommendation/commonIcon.svg";
 const Recommendation = () => {
   const items = [
     {
@@ -56,9 +57,9 @@ const Recommendation = () => {
           return (
             <R.ItemBox key={idx} backgroundColor={useSelectColor}>
               {type === "q" ? (
-                <R.ItemImg src={IMGS.Question} />
+                <R.ItemImg src={questionIcon} />
               ) : (
-                <R.ItemImg src={IMGS.Normal} />
+                <R.ItemImg src={commonIcon} />
               )}
               <R.ItemTitle>{title}</R.ItemTitle>
               <R.User>{name}님의 게시물</R.User>

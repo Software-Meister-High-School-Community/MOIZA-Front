@@ -1,9 +1,10 @@
 import useGraduateCheck from "../../../hooks/graduateCheck/useGraduateCheck";
 import { byteTransform } from "../../../util/byteTransform";
 import * as GCF from "./GraduateCheckForm.style";
-import * as Imgs from "../../../assets/img/index";
 import { GraduateCheckFooterWrap } from "../GraduateCheck.style";
 import SubmitButton from "../../Common/Button/SubmitButton";
+import plusIcon from "../../../assets/img/common/plus.svg";
+import deleteIcon from "../../../assets/img/common/X.svg";
 
 const GraduateCheckForm: React.FC = () => {
   const { file, setFile, onChangeFile, handleUploadFile } = useGraduateCheck();
@@ -34,11 +35,11 @@ const GraduateCheckForm: React.FC = () => {
               <GCF.GraduateCheckFormFileDeleteButton
                 onClick={() => setFile(null)}
               >
-                <img src={Imgs.GraduateCheckFileDelete} alt="delete" />
+                <img src={deleteIcon} alt="delete" />
               </GCF.GraduateCheckFormFileDeleteButton>
             </>
           ) : (
-            <GCF.GraduateCheckFormFileAddImg src={Imgs.GraduateCheckFileAdd} />
+            <GCF.GraduateCheckFormFileAddImg src={plusIcon} />
           )}
         </GCF.GraduateCheckFormInputLabel>
         <GCF.GruduateCheckFormGuideText>

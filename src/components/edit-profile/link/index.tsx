@@ -1,6 +1,6 @@
 import React,{useMemo,useState,ChangeEvent,useCallback} from 'react'
 import * as S from './styles'
-import addLinkIcon from '../../../assets/img/edit-profile/addLink.svg'
+import addLinkIcon from '../../../assets/img/common/plus.svg'
 
 const maximumLinkCount = 3
 type nameOfInputType = "firstLink" | "secondLink" | "thirdLink";

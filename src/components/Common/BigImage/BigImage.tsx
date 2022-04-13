@@ -1,11 +1,11 @@
 import { AnimatePresence, useViewportScroll } from "framer-motion";
 import React, { Dispatch, SetStateAction } from "react";
 import * as BI from "./BigImage.style";
-import leftArrow from "../../../assets/img/Common/leftArrowBlack.svg";
-import rightArrow from "../../../assets/img/Common/rightArrowBlack.svg";
 import useBigImage from "../../../hooks/Common/useBigImage";
-import plusMG from "../../../assets/img/Common/plusMagnifyingGlass.svg";
-import minusMG from "../../../assets/img/Common/minusMagnifyingGlass.svg";
+import plusMG from "../../../assets/img/common/BigImage/plusMagnifyingGlass.svg";
+import minusMG from "../../../assets/img/common/BigImage/minusMagnifyingGlass.svg";
+import LeftArrow from "../../../assets/img/common/prevBtnIcon.svg";
+import RightArrow from "../../../assets/img/common/nextBtnIcon.svg";
 
 interface IBigImageProps {
   imgs: string[];
@@ -70,14 +70,14 @@ const BigImage: React.FC<IBigImageProps> = ({ imgs, handleDisplay }) => {
         onClick={decreaseIndex}
         currentY={scrollY.get()}
       >
-        <img src={leftArrow} alt="next" />
+        <img src={LeftArrow} alt="next" />
       </BI.BigImageButton>
       <BI.BigImageButton
         direction="right"
         onClick={increaseIndex}
         currentY={scrollY.get()}
       >
-        <img src={rightArrow} alt="prev" />
+        <img src={RightArrow} alt="prev" />
       </BI.BigImageButton>
       <BI.BigImageMagnifyButton
         style={{ top: scrollY.get() + 807 }}

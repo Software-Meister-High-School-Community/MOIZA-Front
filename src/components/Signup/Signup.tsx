@@ -4,7 +4,10 @@ import SignupForm from "./SignupForm";
 import SignupProcedure from "./SignupProcedure";
 import SignupTermsForm from "./SignupTermsForm";
 import SignupIdPwForm from "./SignupIdPwForm";
-import * as Imgs from "../../assets/img";
+import Procedure1 from "../../assets/img/signup/signupProcedure1.svg";
+import Procedure2 from "../../assets/img/signup/signupProcedure2.svg";
+import Procedure3 from "../../assets/img/signup/signupProcedure3.svg";
+
 import StepProgressBar from "react-step-progress";
 import * as CONST from "./Constant/index";
 import useSignup from "../../hooks/signup/useSignup";
@@ -23,11 +26,7 @@ const Signup: React.FC = () => {
     <SignupIdPwForm />,
   ];
 
-  const procedureImgs: string[] = [
-    Imgs.SignupProcedure1,
-    Imgs.SignupProcedure2,
-    Imgs.SignupProcedure3,
-  ];
+  const procedureImgs: string[] = [Procedure1, Procedure2, Procedure3];
 
   return (
     <S.SignupBox>

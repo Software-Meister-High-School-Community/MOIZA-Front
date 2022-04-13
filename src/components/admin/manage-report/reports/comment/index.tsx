@@ -1,21 +1,25 @@
-import React,{useMemo} from 'react'
+import React from 'react'
 import * as S from './styles'
-import {CommentReportPropsType} from '../../../constants'
-import UseReplaceKeyword from '../../../../../util/hooks/useReplaceKeyword/index'
+import { CommentReportPropsType } from '../../../constants'
+import UseReplaceKeyword from '../../../../Common/search/replaceKeyword/index'
+import { removeComment } from '../../../../../api/comments'
 
 interface PropsType {
-    commentProps : CommentReportPropsType
-    searchKeyword : string
+    commentProps: CommentReportPropsType
+    searchKeyword: string
 }
 
-const ReportsofComment:React.FC<PropsType> = ({commentProps,searchKeyword}) => {
+const ReportsofComment: React.FC<PropsType> = ({ commentProps, searchKeyword }) => {
+    const onClickRemoveComment = () => {
+        removeComment(1)
+    }
     return (
         <S.Wrapper>
-            <div style={{display:"flex"}}>
+            <div style={{ display: "flex" }}>
                 <S.UserInfo>
-                    <img/>
+                    <img />
                     <S.Name>
-                        <UseReplaceKeyword fontColor="#0048FF" keyword={searchKeyword} string={commentProps.userName}/>
+                        <UseReplaceKeyword fontColor="#0048FF" keyword={searchKeyword} string={commentProps.userName} />
                     </S.Name>
                     <S.School>{commentProps.school}</S.School>
                     <S.UserType>{commentProps.userType}</S.UserType>
@@ -27,14 +31,14 @@ const ReportsofComment:React.FC<PropsType> = ({commentProps,searchKeyword}) => {
             </div>
             <S.ReportMainContent>
                 <S.ReportContent>
-                    <UseReplaceKeyword fontColor="#0048FF" keyword={searchKeyword} string={commentProps.comment}/>
+                    <UseReplaceKeyword fontColor="#0048FF" keyword={searchKeyword} string={commentProps.comment} />
                 </S.ReportContent>
                 <S.Buttons>
                     <button>본문 확인</button>
-                    <button style={{marginTop:"14px"}}>답변 삭제</button>
+                    <button onClick={onClickRemoveComment}>답변 삭제</button>
                 </S.Buttons>
             </S.ReportMainContent>
         </S.Wrapper>
     )
 }
-export default  ReportsofComment
+export default ReportsofComment

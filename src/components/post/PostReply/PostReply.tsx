@@ -1,17 +1,19 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import Path from "../../Common/path";
-import { PostListPathArr } from "../constants";
+import { PostListReplyPathArr, seeMoreOption } from "../constants";
 import * as PR from "./PostReply.style";
-import menuCircle from "../../../assets/img/post/menuCircle.svg";
-import heart from "../../../assets/img/admin/icons/heart.svg";
-import view from "../../../assets/img/admin/icons/view.svg";
-import questionCircle from "../../../assets/img/post/questionCircle.svg";
+import menuCircle from "../../../assets/img/common/seeMoreBtnIcon.svg";
+import heart from "../../../assets/img/common/onHeart.svg";
+import view from "../../../assets/img/common/openEye.svg";
+import questionCircle from "../../../assets/img/post/QuestionIcon.svg";
+import BookReadCircle from "../../../assets/img/post/BookReadIcon.svg";
 import SubmitButton from "../../Common/Button/SubmitButton";
 import { IPostReplyDataProps } from "../../../interface/Post/Post.type";
-import PostReplyComment from "./PostReplyComment";
+import PostReplyComment from "./PostComment";
 import ImgSplit from "../../Common/ImgSplit";
 import PostReplyMakeForm from "./PostReplyMakeForm";
+import SeeMoreModal from "../../Common/seeMoreModal";
 
 const PostReply: React.FC = () => {
   const exampleData = {
@@ -110,6 +112,7 @@ const PostReply: React.FC = () => {
   const [postData, setPostData] = useState<IPostReplyDataProps>();
   const [isLoading, setIsLoading] = useState(true);
   const [isMake, setMake] = useState(false);
+  const [seeMoreModalStatus, setSeeMoreModalStatus] = useState<boolean>(false);
 
   const { postid } = useParams();
 
@@ -127,10 +130,10 @@ const PostReply: React.FC = () => {
         <>
           {postData && (
             <>
-              <Path pathArray={PostListPathArr} />
+              <Path pathArray={PostListReplyPathArr} />
               <PR.PostReplyWrap>
                 <PR.PostReplyHeaderWrap>
-                  <PR.PostReplyIconCircle src={questionCircle} />
+                  <PR.PostReplyIconCircle src={questionCircle} alt="postIcon" />
                   <PR.PostReplyInfoWrap>
                     <PR.PostReplyTitle>{postData.title}</PR.PostReplyTitle>
                     <PR.PostReplyWriterWrap>
@@ -150,10 +153,17 @@ const PostReply: React.FC = () => {
                       </PR.PostReplyWriterInfoTextWrap>
                       <PR.PostReplyDateInfoWrap>
                         <pre>작성일 {postData.createDate}</pre>
-                        <pre>마지막 수정일 {postData.createDate}</pre>
                       </PR.PostReplyDateInfoWrap>
-                      <PR.PostReplyMenuButton>
+                      <PR.PostReplyMenuButton
+                        onClick={() => setSeeMoreModalStatus(true)}
+                      >
                         <img src={menuCircle} alt="menu" />
+                        {seeMoreModalStatus && (
+                          <SeeMoreModal
+                            optionList={seeMoreOption}
+                            setModalStatus={setSeeMoreModalStatus}
+                          />
+                        )}
                       </PR.PostReplyMenuButton>
                     </PR.PostReplyWriterWrap>
                   </PR.PostReplyInfoWrap>
