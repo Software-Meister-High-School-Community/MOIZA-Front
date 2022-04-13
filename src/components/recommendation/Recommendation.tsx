@@ -52,9 +52,9 @@ const Recommendation = () => {
     <R.Wrapper>
       <R.Phrases>팔로잉한 유저의 추천게시물</R.Phrases>
       <R.ItemContainer>
-        {items.map(({ id, type, title, name, date }) => {
+        {items.map(({ id, type, title, name, date }, idx) => {
           return (
-            <R.ItemBox key={id} backgroundColor={useSelectColor}>
+            <R.ItemBox key={idx} backgroundColor={useSelectColor}>
               {type === "q" ? (
                 <R.ItemImg src={IMGS.Question} />
               ) : (

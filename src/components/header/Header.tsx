@@ -1,22 +1,15 @@
 import React, { useState } from "react";
 import * as H from "./Header.styled";
 import headerLogo from "../../assets/img/header/headerLogo.svg";
-import categoryImg from "../../assets/img/header/categoryImg.svg";
 import searchImg from "../../assets/img/header/searchImg.svg";
 import profileImg from "../../assets/img/header/profileImg.svg";
-import noticeImg from "../../assets/img/header/noticeImg.svg";
-import Notice from "./notice";
+import noticeImg from "../../assets/img/header/alarmImg.svg";
+import Alarm from "./alarm";
 import CategoryDropdown from "./category/CategoryDropdown";
 
 const Header: React.FC = () => {
   const loginCheck = localStorage.getItem("Token");
-  const [noticeState, setNoticeState] = useState<boolean>(false);
-
-  const handleDisplay: any = () => {
-    let isDisplay = "none";
-    noticeState ? (isDisplay = "block") : (isDisplay = "none");
-    return isDisplay;
-  };
+  const [noticeVisible, setNoticeVisble] = useState<boolean>(false);
 
   return (
     <>
@@ -37,7 +30,7 @@ const Header: React.FC = () => {
 
           <H.ItemImg
             src={noticeImg}
-            onClick={() => setNoticeState(!noticeState)}
+            onClick={() => setNoticeVisble(!noticeVisible)}
           />
         </H.ItemContainer>
 
@@ -57,9 +50,9 @@ const Header: React.FC = () => {
           )}
         </H.AuthContainer>
       </H.Container>
-      <Notice
-        noticeState={noticeState}
-        noticeClose={() => setNoticeState(false)}
+      <Alarm
+        alarmVisible={noticeVisible}
+        alarmClose={() => setNoticeVisble(false)}
       />
     </>
   );

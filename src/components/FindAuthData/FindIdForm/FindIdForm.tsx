@@ -5,7 +5,7 @@ import * as FIF from "./FindIdForm.style";
 import FindIdResult from "./FindIdResult";
 import FindIdCertification from "./FindIdCertification";
 import SubmitButton from "../../Common/Button/SubmitButton";
-import React, { Dispatch, SetStateAction } from "react";
+import React, { Dispatch, SetStateAction, useEffect } from "react";
 
 interface IFindIdForm {
   setTab: Dispatch<SetStateAction<string>>;
@@ -24,7 +24,6 @@ const FindIdForm: React.FC<IFindIdForm> = ({ setTab }) => {
     goToResult,
     result,
   } = useFindId();
-
   return (
     <>
       <FIF.FindIdFormBox>
@@ -32,7 +31,7 @@ const FindIdForm: React.FC<IFindIdForm> = ({ setTab }) => {
           <>
             {idPart === "이메일 입력" && (
               <>
-                <FIF.FindIdFormTitle>이메일 입력</FIF.FindIdFormTitle>
+                ~<FIF.FindIdFormTitle>이메일 입력</FIF.FindIdFormTitle>
                 <FIF.FindIdFormInputWrap>
                   <FIF.FindIdFormTextInputWrap>
                     <FIF.FindIdFormTextInput

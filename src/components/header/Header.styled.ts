@@ -1,10 +1,6 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-interface StyleProps{
-    isDisplay:string
-}
-
 export const Container = styled.header`
     display: flex;
     align-items: center;
@@ -56,7 +52,7 @@ export const AuthContainer = styled.div`
     justify-content:space-between;
 `
 
-export const AuthText = styled.a`
-    font-size:${(props)=> props.theme.fontSize.body_medium};
+export const AuthText = styled.p`
+    font-size:${(props) => props.theme.fontSize.body_medium};
     cursor: pointer;
 `
