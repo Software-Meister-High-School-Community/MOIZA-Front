@@ -1,9 +1,15 @@
 import React, { useState } from "react";
 import * as LF from "./LoginForm.style";
 import { Link } from "react-router-dom";
-import EyeButton from "../../Common/Button/EyeButton";
+import TextInput from "../../Common/Input/TextInput";
+import { ILoginProps } from "../../../interface/Login/Login.type";
 
-const LoginForm: React.FC = () => {
+type Props = {
+  loginData: ILoginProps;
+  handleLoginData: (e: React.ChangeEvent<HTMLInputElement>) => void;
+};
+
+const LoginForm: React.FC<Props> = ({ loginData, handleLoginData }) => {
   const [isCheck, setIsCheck] = useState<boolean>(false);
   const [isShow, setIsShow] = useState<boolean>(false);
 
@@ -12,16 +18,25 @@ const LoginForm: React.FC = () => {
       <LF.LoginFormInputWrap>
         <LF.LoginFormTextInputWrap>
           <LF.LoginFormInputTitle>아이디</LF.LoginFormInputTitle>
-          <LF.LoginFormTextInput placeholder="아이디" type="text" />
+          <TextInput
+            type="text"
+            value={loginData.account_id}
+            name={"account_id"}
+            setValue={handleLoginData}
+            placeholder={"아이디"}
+            margin={"13px 0 58px 0"}
+          />
           <LF.LoginFormInputTitle>비밀번호</LF.LoginFormInputTitle>
-          <LF.LoginFormPasswordInputWrap>
-            <LF.LoginFormPasswordInput
-              placeholder="비밀번호"
-              type={isShow ? "text" : "password"}
-            />
-
-            <EyeButton isShow={isShow} onClick={setIsShow} />
-          </LF.LoginFormPasswordInputWrap>
+          <TextInput
+            type="password"
+            value={loginData.password}
+            name="password"
+            setValue={handleLoginData}
+            isShow={isShow}
+            onClick={setIsShow}
+            margin={"13px 0 0 0"}
+            placeholder="비밀번호"
+          />
         </LF.LoginFormTextInputWrap>
         <LF.LoginFormSaveInputWrap>
           <LF.LoginFormSaveCheckButton
