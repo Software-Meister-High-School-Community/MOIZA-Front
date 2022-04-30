@@ -1,8 +1,8 @@
-import AdminMain from "../../components/admin/main";
+import AdminMain from "../../components/admin";
 
-const Admin:React.FC = () => {
+const Admin: React.FC = () => {
     return (
-        <AdminMain/>
+        <AdminMain />
     )
 }
 export default Admin
