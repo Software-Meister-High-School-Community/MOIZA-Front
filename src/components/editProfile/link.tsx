@@ -40,10 +40,10 @@ const Link: React.FC = () => {
                 <input className="writeLink" onChange={onChangeLinkList} value={links.introduce_link_url[0]} name="0" />
                 {linkInputList}
                 {
-                    linkCount < maximumLinkCount ?
-                        <button className="addLink" onClick={addLinkInput}>
-                            <img src={addLinkIcon} />링크 추가
-                        </button> : ""
+                    linkCount < maximumLinkCount &&
+                    <button className="addLink" onClick={addLinkInput}>
+                        <img src={addLinkIcon} />링크 추가
+                    </button>
                 }
             </Links>
         </>

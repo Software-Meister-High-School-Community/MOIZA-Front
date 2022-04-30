@@ -20,7 +20,6 @@ const EditProfile: React.FC = () => {
       </PersonInfo>
     ), []
   )
-  console.log(profileContent)
   return (
     <Wrapper color={profileContent.profile_background_color}>
       <div className="colorBox" />
