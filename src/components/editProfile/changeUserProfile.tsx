@@ -1,6 +1,18 @@
+import React from "react";
 import styled from 'styled-components';
+import defaultImg from "../../assets/img/common/userDefaultIcon.svg";
 
-export const ProfileImg = styled.div`
+const ChangeUserProfile: React.FC = () => {
+  return (
+    <ProfileImg>
+      <img className="profileImg" src={defaultImg} />
+      <button className="changeProfileButton">프로필 사진 바꾸기</button>
+    </ProfileImg>
+  );
+};
+export default ChangeUserProfile;
+
+const ProfileImg = styled.div`
   margin-left: 36px;
   width: 200px;
   display: flex;
