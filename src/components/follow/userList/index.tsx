@@ -1,31 +1,17 @@
-import React,{useState,useMemo,useEffect} from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import * as S from './styles';
-import {showFollowType} from '../constant';
+import { showFollowType } from '../constant';
 
 interface PropsType {
-    id : string;
-    userType : showFollowType;
+    id: string;
+    userType: showFollowType;
 }
 
-const UserList:React.FC<PropsType> = ({id,userType}) => {
-    const [followList,setFollowList] = useState({
-        following : [],
-        follower : []
-    })
-    useEffect(
-        () => {
-
-        },[userType]
-    )
-    const followLists = useMemo(
-        () => {
-
-        },[userType]
-    )
+const UserList: React.FC<PropsType> = () => {
     return (
         <S.Wrapper>
             <S.UserInfoBox>
-                <img className="profile"/>
+                <img className="profile" />
                 <S.Names>
                     <p className="username">청정원</p>
                     <p className="schoolname">미림마이스터고 재학생</p>
