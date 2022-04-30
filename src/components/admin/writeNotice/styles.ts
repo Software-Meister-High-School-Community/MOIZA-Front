@@ -89,5 +89,5 @@ export const TextCount = styled.div<{ marginTop?: string }>`
   line-height: 19px;
   text-align: right;
   color: #999999;
-  margin-top: ${(props)=>props.marginTop};
+  margin-top: ${(props) => props.marginTop};
 `
