@@ -1,6 +1,6 @@
 import { FeedType, SchoolType, UserType } from "../../interface/Common/user";
 
-export interface GraduateListType {
+export interface GraduateListResponseType {
     total_count: number;
     user_list: Array<{
         user_id: number;
@@ -10,7 +10,7 @@ export interface GraduateListType {
         verifying_image_url: string;
     }>
 }
-export interface CommentReportType {
+export interface CommentReporResponsetType {
     total_count: number;
     comment_list: Array<{
         feed_id: number;
@@ -25,7 +25,7 @@ export interface CommentReportType {
         created_at: Date;
     }>
 }
-export interface FeedReportType {
+export interface FeedReportResponseType {
     total_count: number;
     post_list: Array<{
         id: number;
@@ -41,7 +41,7 @@ export interface FeedReportType {
         created_at: Date;
     }>
 }
-export interface UserReportType {
+export interface UserReportResponseType {
     total_count: number;
     user_list: Array<{
         user_id: number;
