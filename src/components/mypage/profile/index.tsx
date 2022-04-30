@@ -6,6 +6,7 @@ import FollowButton from "../../Common/Button/SubmitButton";
 import seeMore from "../../../assets/img/common/seeMoreBtnIcon.svg";
 import SeeMoreModal from "../../Common/seeMoreModal/index";
 import { seeMoreOptionList } from "../constant";
+import { UserProfileResponseType } from "../../../models/users/response";
 
 interface PropsType {
   isMine: boolean;
@@ -14,31 +15,36 @@ interface PropsType {
 const Profile: React.FC<PropsType> = ({ isMine }) => {
   const img = "";
   const [seeMoreModalStatus, setSeeMoreModalStatus] = useState(false);
+  const [pageContent, setPageContent] = useState<UserProfileResponseType>();
   return (
     <S.Wrapper>
       <img className="userProfile" src={img || defaultProfile} alt="프로필" />
       <S.UserInfo>
         <S.PersonInfo>
-          <p className="name">장정원</p>
-          <p className="school">미림마이스터고 재학생</p>
+          <p className="name">{pageContent?.name}</p>
+          <p className="school">{pageContent?.school}</p>
         </S.PersonInfo>
         <S.ActiveInfo>
           게시물
-          <p className="postCount">15123</p>
+          <p className="postCount">{pageContent?.feed_count}</p>
           팔로워
-          <p className="followerCount">80</p>
+          <p className="followerCount">{pageContent?.follower_count}</p>
           팔로잉
-          <p className="followingCount">80</p>
+          <p className="followingCount">{pageContent?.following_count}</p>
         </S.ActiveInfo>
         <S.Introduce>
-          안녕하세여 방가방가 소개와 웹사이트 1줄넣은 모습 최대 3줄
+          {pageContent?.introduce}
         </S.Introduce>
         <S.UserLinkList>
-          <li
-            onClick={() => WindowOpenUtil("https://www.instagram.com/won_0o0/")}
-          >
-            https://www.instagram.com/won_0o0/
-          </li>
+          {
+            pageContent?.link_url?.map((item, index) => {
+              <li
+                onClick={() => WindowOpenUtil(item)}
+              >
+                {item}
+              </li>
+            })
+          }
         </S.UserLinkList>
       </S.UserInfo>
       {isMine ? (
