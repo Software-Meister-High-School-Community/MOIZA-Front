@@ -1,7 +1,7 @@
 import instance from "../../lib/axios/CustomAxios";
-import { CommentReportType, FeedReportType, GraduateListType, UserReportType } from "../../models/admin";
+import { CommentReporResponsetType, FeedReportResponseType, GraduateListResponseType, UserReportResponseType } from "../../models/admin/response";
 
-export const getCommentReports = async (keyword: string, page: number): Promise<CommentReportType> => {
+export const getCommentReports = async (keyword: string, page: number): Promise<CommentReporResponsetType> => {
     try {
         const response = await instance.get(`/reports/comments?keyword=${keyword}&page=${page}`);
         return response.data;
@@ -10,7 +10,7 @@ export const getCommentReports = async (keyword: string, page: number): Promise<
     }
 }
 
-export const getFeedReports = async (keyword: string, page: number): Promise<FeedReportType> => {
+export const getFeedReports = async (keyword: string, page: number): Promise<FeedReportResponseType> => {
     try {
         const response = await instance.get(`/reports/feeds?keyword=${keyword}&page=${page}`);
         return response.data;
@@ -19,7 +19,7 @@ export const getFeedReports = async (keyword: string, page: number): Promise<Fee
     }
 }
 
-export const getUserReports = async (keyword: string, page: number): Promise<UserReportType> => {
+export const getUserReports = async (keyword: string, page: number): Promise<GraduateListResponseType> => {
     try {
         const response = await instance.get(`/reports/users?keyword=${keyword}&page=${page}`);
         return response.data;
@@ -28,7 +28,7 @@ export const getUserReports = async (keyword: string, page: number): Promise<Use
     }
 }
 
-export const getGraduateLists = async (status: string, keyword: string, page: number): Promise<GraduateListType> => {
+export const getGraduateLists = async (status: string, keyword: string, page: number): Promise<UserReportResponseType> => {
     try {
         const response = await instance.get(`/admins/graduate/lists?status=${status}&keyword=${keyword}&page=${page}`);
         return response.data;
