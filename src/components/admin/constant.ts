@@ -79,21 +79,21 @@ export const NoticeListTestArray: NoticePropsType[] = [
         title: "모이자에 오신 여러분 환영합니다!",
         view: 1200,
         heart: 599,
-        postDate: "202201210829"
+        postDate: "2022-05-01`T`02:17:00"
     },
     {
         fix: "FIX",
         title: "모이자와 함께하기 위해서는",
         view: 1210,
         heart: 599,
-        postDate: "202201210829"
+        postDate: "2022-05-01`T`02:17:00"
     },
     {
         fix: "UNFIX",
         title: "모이자에 오신 여러분 환영합니다!",
         view: 1350,
         heart: 599,
-        postDate: "202201210829"
+        postDate: "2022-05-01`T`02:17:00"
     }
 ]
 
