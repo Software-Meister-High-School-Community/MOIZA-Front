@@ -27,7 +27,8 @@ export interface IRadioButtonProps {
 }
 
 export interface OptionArrType {
-  option: string;
+  option: string; //한글
+  value: string; //영어
 }
 
 export interface IDropdownProps {
