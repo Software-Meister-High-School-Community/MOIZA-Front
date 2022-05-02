@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import styled from 'styled-components'
 import fixed from "../../../assets/img/notice/fixedNotification.svg";
 import unFixed from "../../../assets/img/notice/notification.svg";
@@ -11,7 +11,11 @@ import { dateTransform } from "../../../util/dateTransform";
 
 const NotificationList: React.FC<{ item: NoticePropsType }> = ({ item }) => {
   const [seeMoreModal, setSeeMoreModal] = useState(false);
-  const viewDivideby1000 = Math.floor(item.view / 100) / 10;
+  const viewDivideby1000 = useMemo(
+    () => {
+      Math.floor(item.view / 100) / 10;
+    }, [item.view]
+  )
   const postDate = item.postDate;
   const date = dateTransform(postDate);
   return (

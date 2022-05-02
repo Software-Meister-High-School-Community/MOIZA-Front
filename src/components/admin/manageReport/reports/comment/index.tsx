@@ -15,7 +15,7 @@ const ReportsofComment = () => {
                 <S.Wrapper>
                     <div style={{ display: "flex" }}>
                         <S.UserInfo>
-                            <img className="userProfile" src={""} />
+                            <img className="userProfile" src={""} alt='profile' />
                             <S.Name>
                                 <UseReplaceKeyword fontColor="#0048FF" keyword={""} string={i.author.name} />
                             </S.Name>
