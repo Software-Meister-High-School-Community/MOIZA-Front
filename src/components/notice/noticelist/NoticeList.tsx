@@ -3,12 +3,12 @@ import * as S from "./style";
 import Path from "../../Common/path";
 import { NoticeListPathArr } from "../constants/index";
 import Dropdown from "../../Common/Select/dropdown";
-import { OptionArr } from "../../admin/constants";
 import NoticePost from "../noticePost/NoticePost";
 import PagiNation from "../../Common/pagination/Pagination";
+import { sortOptions } from "../../Common/Select/dropdown/options";
 
 const NoticeList: React.FC = () => {
-  const [value, setValue] = useState(OptionArr[0].option);
+  const [value, setValue] = useState(sortOptions[0].option);
   const [pagenation, setPagenation] = useState(1);
 
   return (
@@ -24,7 +24,7 @@ const NoticeList: React.FC = () => {
           <Dropdown
             value={value}
             onChangeValue={setValue}
-            options={OptionArr}
+            options={sortOptions}
           />
         </S.SelectDiv>
         <S.Post>

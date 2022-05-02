@@ -5,6 +5,7 @@ import PostResult from "./postResult";
 import UserResult from "./userResult";
 import useResult from "../../hooks/result/useResult";
 import RadioButton from "../Common/Select/RadioButton";
+import { departmentOptions, sortOptions } from "../Common/Select/dropdown/options";
 const Result: React.FC = () => {
   const {
     selectedRadio,
@@ -14,8 +15,6 @@ const Result: React.FC = () => {
     sortOption,
     setSortOption,
     radios,
-    departmentOptions,
-    sortOptions,
   } = useResult();
   return (
     <>

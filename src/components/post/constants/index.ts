@@ -75,21 +75,6 @@ export const PostWritePathArr: PathType[] = [
   },
 ];
 
-export const OptionArr: OptionArrType[] = [
-  {
-    option: "최신 순",
-  },
-  {
-    option: "오래된 순",
-  },
-  {
-    option: "조회수 순",
-  },
-  {
-    option: "좋아요 순",
-  },
-];
-
 export const seeMoreOption: SeeMoreOptionInterface[] = [
   {
     option: "수정",
@@ -97,7 +82,7 @@ export const seeMoreOption: SeeMoreOptionInterface[] = [
   },
   {
     option: "삭제",
-    onClickFunction: () => {},
+    onClickFunction: () => { },
   },
 ];
 
@@ -108,13 +93,13 @@ export const writeSeeMoreOption: SeeMoreOptionInterface[] = [
   },
   {
     option: "신고",
-    onClickFunction: () => {},
+    onClickFunction: () => { },
   },
 ];
 
 export const UserSeeMoreOption: SeeMoreOptionInterface[] = [
   {
     option: "신고",
-    onClickFunction: () => {},
+    onClickFunction: () => { },
   },
 ];

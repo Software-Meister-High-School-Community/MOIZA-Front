@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import DropDown from '../../Common/Select/dropdown/index'
-import { OptionArr } from '../constants/index'
-import NotificationList from './notice-lists/index'
-import { NoticePropsType, NoticeListTestArray } from '../constants/index';
+import NotificationList from './NotificationBox'
+import { NoticePropsType, NoticeListTestArray } from '../constant';
+import { sortOptions } from '../../Common/Select/dropdown/options';
 
 const Notification = () => {
-    const [value, setValue] = useState(OptionArr[0].option);
+    const [value, setValue] = useState(sortOptions[0].option);
     const [noticeList, setNoticeList] = useState<NoticePropsType[]>([])
     useEffect(
         () => {
@@ -14,7 +14,7 @@ const Notification = () => {
     )
     return (
         <section className="noticeListWrapper">
-            <DropDown value={value} onChangeValue={setValue} options={OptionArr} />
+            <DropDown value={value} onChangeValue={setValue} options={sortOptions} />
             {noticeList.map((item, index) => (
                 <NotificationList item={item} key={index} />
             ))}

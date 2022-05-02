@@ -1,1 +1,1 @@
-export type showFollowType = "Follower" | "Following"
+export type showFollowType = "follower" | "following"

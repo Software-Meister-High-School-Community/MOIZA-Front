@@ -5,7 +5,7 @@ import LoginPage from "./pages/Login/LoginPage";
 import SignupPage from "./pages/Signup/SignupPage";
 import CategoryPage from "./pages/category/CategoryPage";
 import FindAuthDataPage from "./pages/FindId/FindId.page";
-import WriteNotice from "./components/admin/write-notice";
+import WriteNotice from "./components/admin/writeNotice";
 import SearchPage from "./pages/search/SearchPage";
 import MainPage from "./pages/mainpage/mainpage";
 import NoticeList from "./pages/notice/NoticeListPage";
@@ -18,7 +18,7 @@ import MyPage from "./components/mypage/index";
 import PostReplyPage from "./pages/PostReply/PostReplyPage";
 import PostWrite from "./pages/post/PostWritePage";
 import Follow from "./pages/follow";
-import EditProfile from "./components/edit-profile";
+import EditProfile from "./components/editProfile";
 import TempList from "./components/post/temporary/TempList";
 import ResultPage from "./pages/result/ResultPage";
 import IntroducePage from "./pages/introduce";
@@ -48,11 +48,11 @@ const Router = () => {
         <Route path="/result/:title" element={<ResultPage />} />
         <Route path="/list/:listname" element={<PostList />} />
         <Route path="/list/:listname/:postid" element={<PostReplyPage />} />
-        <Route path="/mypage/:userid" element={<MyPage />} />
+        <Route path="/mypage" element={<MyPage />} />
         <Route path="/postwrite/:writefield" element={<PostWrite />} />
         <Route path="/follow/:userid" element={<Follow />} />
         <Route path="/mypage/:userid" element={<MyPage />} />
-        <Route path="/editprofile/:userid" element={<EditProfile />} />
+        <Route path="/editprofile" element={<EditProfile />} />
         <Route path="/templist/:tempfield" element={<TempList />} />
       </Routes>
     </BrowserRouter>

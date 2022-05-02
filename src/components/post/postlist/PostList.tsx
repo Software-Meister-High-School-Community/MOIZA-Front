@@ -5,14 +5,14 @@ import Write from "../../../assets/img/common/writePen.svg";
 import Path from "../../Common/path";
 import { PostListPathArr } from "../constants";
 import Dropdown from "../../Common/Select/dropdown";
-import { OptionArr } from "../constants";
 import RadioButton from "../../Common/Select/RadioButton";
 import { TypeArr } from "../constants";
 import PostForm from "../../Common/postform/PostForm";
 import PagiNation from "../../Common/pagination/Pagination";
+import { sortOptions } from "../../Common/Select/dropdown/options";
 
 const PostList: React.FC = () => {
-  const [value, setValue] = useState(OptionArr[0].option);
+  const [value, setValue] = useState(sortOptions[0].option);
   const [seleted, setSeleted] = useState("all");
   const [pagenation, setPagenation] = useState(1);
 
@@ -42,7 +42,7 @@ const PostList: React.FC = () => {
             <Dropdown
               value={value}
               onChangeValue={setValue}
-              options={OptionArr}
+              options={sortOptions}
             />
           </S.SelectDiv>
           <S.PosFormtDiv>

@@ -12,24 +12,6 @@ const useResult = () => {
         { id: "2", summary: "질문" },
         { id: "3", summary: "일반" },
     ];
-    const departmentOptions = [
-        { option: "모든 분야" },
-        { option: "Front-End" },
-        { option: "Back-End" },
-        { option: "IOS" },
-        { option: "Android" },
-        { option: "Design" },
-        { option: "Game" },
-        { option: "Security" },
-        { option: "Embedded" },
-        { option: "AI" },
-    ];
-    const sortOptions = [
-        { option: "최신 순" },
-        { option: "오래된 순" },
-        { option: "조회수 순" },
-        { option: "좋아요 순" },
-    ];
     return {
         selectedRadio,
         setSelectedRadio,
@@ -38,8 +20,6 @@ const useResult = () => {
         sortOption,
         setSortOption,
         radios,
-        departmentOptions,
-        sortOptions
     }
 }
 
