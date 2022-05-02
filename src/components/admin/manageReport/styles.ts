@@ -4,7 +4,7 @@ export const Wrapper = styled.section`
 `
 export const Types = styled.div`
   display: flex;
-  margin: 41px 0 30px 0;
+  margin: 36px 0 20px 0;
   > form {
     margin-left: auto;
   }
