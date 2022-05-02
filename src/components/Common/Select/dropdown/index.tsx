@@ -35,7 +35,7 @@ const Dropdown: React.FC<IDropdownProps> = ({
         </label>
         <div className="list">
           {isFold
-            ? options.map((item) => (
+            && options.map((item) => (
               <S.Option
                 key={item.value}
                 onClick={() => onClickOption(item.value)}
@@ -44,7 +44,7 @@ const Dropdown: React.FC<IDropdownProps> = ({
                 {item.option}
               </S.Option>
             ))
-            : ""}
+          }
         </div>
       </OutsideClickHandler>
     </S.Wrapper>
