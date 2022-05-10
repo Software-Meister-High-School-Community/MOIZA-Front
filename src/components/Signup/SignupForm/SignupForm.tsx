@@ -21,9 +21,11 @@ const SignupForm: React.FC = () => {
   const {
     sexSelect,
     setSexSelect,
-    studentStatus,
-    setStudentStatus,
+    userType,
+    setUserType,
     sendCertificationNumber,
+    setSendCertificationNumber,
+    notCheckCertificationNumber,
     isInfoComplete,
     handleInfo,
     onSendCertificationNumber,
@@ -35,10 +37,10 @@ const SignupForm: React.FC = () => {
     setUserInfo((prev) => ({
       ...prev,
       sex: sexSelect,
-      schoolSelect: schoolSelect,
-      studentStatus: studentStatus,
+      school: schoolSelect,
+      user_type: userType,
     }));
-  }, [sexSelect, schoolSelect, studentStatus, setUserInfo]);
+  }, [sexSelect, schoolSelect, userType, setUserInfo]);
 
   return (
     <SignupFormsWrap>
@@ -46,9 +48,9 @@ const SignupForm: React.FC = () => {
         <SF.SignupFormTitle marginBottom={36}>구분</SF.SignupFormTitle>
         <SF.SignupFormFlexWrap>
           <RadioButton
-            selected={studentStatus}
-            setSelected={setStudentStatus}
-            radioArray={CONST.StudentStatusList}
+            selected={userType}
+            setSelected={setUserType}
+            radioArray={CONST.UserTypeList}
             name="studentStatusSelect"
           />
         </SF.SignupFormFlexWrap>
@@ -70,10 +72,10 @@ const SignupForm: React.FC = () => {
         </SF.SignupFormBirthTitleWrap>
         <TextInput
           width="250"
-          value={userInfo.birth}
+          value={userInfo.birthday}
           setValue={handleInfo}
           type="text"
-          name="birth"
+          name="birthday"
           margin={"0px 0px 70px 0px"}
         />
         <SF.SignupFormTitle marginBottom={36}>성별</SF.SignupFormTitle>
@@ -107,13 +109,13 @@ const SignupForm: React.FC = () => {
             setValue={handleInfo}
             type="text"
           />
-          {studentStatus === "재학생" && (
+          {userType === "STUDENT" && (
             <SF.SignupFormSchoolMailText>
               {schoolEmailTransform(schoolSelect)}
             </SF.SignupFormSchoolMailText>
           )}
           <SF.SignupFormSubmitButton
-            isGraduate={studentStatus === "졸업생"}
+            isGraduate={userType === "USER"}
             onClick={onSendCertificationNumber}
           >
             인증번호 보내기
@@ -132,7 +134,7 @@ const SignupForm: React.FC = () => {
             인증하기
           </SF.SignupFormSubmitButton>
         </SF.SignupFormFlexWrap>
-        {studentStatus === "졸업생" && (
+        {userType === "졸업생" && (
           <SF.SignupFormAlertText>
             ※ 가입 후 졸업 인증을 하시면 모이자 이용이 가능합니다.
           </SF.SignupFormAlertText>

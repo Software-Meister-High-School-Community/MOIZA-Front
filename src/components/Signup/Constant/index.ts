@@ -13,18 +13,18 @@ interface ISexListProps {
 
 export const SexList: ISexListProps[] = [
   {
-    id: "남성",
+    id: "MALE",
     summary: "남성",
   },
   {
-    id: "여성",
+    id: "FEMALE",
     summary: "여성",
   },
 ];
 
-export const StudentStatusList: ISexListProps[] = [
-  { id: "재학생", summary: "재학생" },
-  { id: "졸업생", summary: "졸업생" },
+export const UserTypeList: ISexListProps[] = [
+  { id: "STUDENT", summary: "재학생" },
+  { id: "USER", summary: "졸업생" },
 ];
 
 export const SignupPartList: string[] = [

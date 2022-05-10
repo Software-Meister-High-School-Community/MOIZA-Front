@@ -13,7 +13,7 @@ const NotificationList: React.FC<{ item: NoticePropsType }> = ({ item }) => {
   const [seeMoreModal, setSeeMoreModal] = useState(false);
   const viewDivideby1000 = useMemo(
     () => {
-      Math.floor(item.view / 100) / 10;
+      return Math.floor(item.view / 100) / 10;
     }, [item.view]
   )
   const postDate = item.postDate;

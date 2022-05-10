@@ -8,10 +8,10 @@ import {
 export const SignupFormData = atom<ISignupFormDataProps>({
   key: "registerInfo",
   default: {
-    studentStatus: "",
+    user_type: "",
     name: "",
-    birth: "",
-    schoolSelect: "광주소프트웨어마이스터고등학교",
+    birthday: "",
+    school: "광주소프트웨어마이스터고등학교",
     sex: "",
     email: "",
     certificationNumber: "",
@@ -26,8 +26,8 @@ export const SignupTermsFormData = atom<ISignupTermsFormDataProps>({
 export const SignupIdPwFormData = atom<ISignupIdPwFormDataProps>({
   key: "SignupIdPwFormDatta",
   default: {
-    id: "",
-    pw: "",
+    account_id: "",
+    password: "",
     checkPw: "",
   },
 });

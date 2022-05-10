@@ -16,7 +16,7 @@ const SignupIdPwForm: React.FC = () => {
     isCheckPwShow,
     setIsCheckPwShow,
     handleIdPw,
-    goToLogin,
+    submitAuthData,
   } = useSignupIdPw();
 
   const authData = useRecoilValue(SignupIdPwFormData);
@@ -33,14 +33,14 @@ const SignupIdPwForm: React.FC = () => {
         <div style={{ display: "flex", marginBottom: 72 }}>
           <TextInput
             width="340"
-            name="id"
+            name="account_id"
             type="text"
-            value={authData.id}
+            value={authData.account_id}
             setValue={handleIdPw}
           />
           <SIPF.SignupIdPwDoubleCheckButton
-            enabled={authData.id !== ""}
-            disabled={authData.id === ""}
+            enabled={authData.account_id !== ""}
+            disabled={authData.account_id === ""}
           >
             아이디 중복확인
           </SIPF.SignupIdPwDoubleCheckButton>
@@ -49,8 +49,8 @@ const SignupIdPwForm: React.FC = () => {
         <TextInput
           width="340"
           type="password"
-          name="pw"
-          value={authData.pw}
+          name="password"
+          value={authData.password}
           setValue={handleIdPw}
           isShow={isPwShow}
           onClick={setIsPwShow}
@@ -75,7 +75,7 @@ const SignupIdPwForm: React.FC = () => {
           blue
           big
           disable={isNull}
-          handleClick={goToLogin}
+          handleClick={submitAuthData}
         />
       </SignupFooterWrap>
     </SignupFormsWrap>
