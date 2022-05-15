@@ -6,11 +6,14 @@ import {
   useResetRecoilState,
   useSetRecoilState,
 } from "recoil";
+import { postSignup } from "../../api/signup";
+import { ISignupProps } from "../../interface/Signup/Signup.type";
 import {
   SignupFormData,
   SignupIdPwFormData,
 } from "../../store/Signup/registerInfoAtom";
 import { signupPart } from "../../store/Signup/signupPartAtom";
+import schoolTransform from "../../util/schoolTransform";
 
 const useSignupIdPw = () => {
   const setPart = useSetRecoilState(signupPart);
@@ -31,18 +34,47 @@ const useSignupIdPw = () => {
     [setAuthData]
   );
 
-  const goToLogin = () => {
-    console.log(userInfo);
-    console.log(authData);
-    setPart("약관동의");
-    resetInfo();
-    resetAuth();
-    if (userInfo.studentStatus === "졸업생") {
+  const submitAuthData = useCallback(async () => {
+    if (userInfo.user_type === "USER") {
       navigate("/graduatecheck");
       return;
     }
-    navigate("/signupsuccess");
-  };
+
+    const { account_id, password, checkPw } = authData;
+    const {
+      name,
+      school,
+      user_type,
+      birthday,
+      sex,
+      email,
+      certificationNumber,
+    } = userInfo;
+
+    const signupData: ISignupProps = {
+      account_id,
+      password,
+      checkPw,
+      name,
+      school: schoolTransform.schoolToAbbreviationName(school),
+      user_type,
+      birthday,
+      sex,
+      email,
+      certificationNumber,
+    };
+
+    try {
+      await postSignup(signupData);
+      window.alert("회원가입 성공");
+      setPart("약관동의");
+      resetInfo();
+      resetAuth();
+      navigate("/signupsuccess");
+    } catch (error) {
+      window.alert("회원가입 실패");
+    }
+  }, [navigate, resetAuth, resetInfo, setPart, authData, userInfo]);
 
   return {
     isPwShow,
@@ -50,7 +82,7 @@ const useSignupIdPw = () => {
     isCheckPwShow,
     setIsCheckPwShow,
     handleIdPw,
-    goToLogin,
+    submitAuthData,
   };
 };
 

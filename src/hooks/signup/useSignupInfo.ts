@@ -1,18 +1,18 @@
-import { useCallback, useMemo, useState } from "react";
-import { useRecoilState, useRecoilValue, useSetRecoilState } from "recoil";
+import { useCallback, useEffect, useMemo, useState } from "react";
+import { useRecoilState, useSetRecoilState } from "recoil";
 import {
-  registerSchoolSelect,
-  SignupFormData,
-} from "../../store/Signup/registerInfoAtom";
+  headSignupCheckCertification,
+  postSignupCertification,
+} from "../../api/signup";
+import { SignupFormData } from "../../store/Signup/registerInfoAtom";
 import { signupPart } from "../../store/Signup/signupPartAtom";
-import { schoolEmailTransform } from "../../util/schoolEmailTransform";
+import schoolTransform from "../../util/schoolTransform";
 import { signupFormDataNullcheck } from "../../util/signupDataNullCheck";
 
 const useSignupInfo = () => {
   const setPart = useSetRecoilState(signupPart);
-  const schoolSelect = useRecoilValue(registerSchoolSelect);
-  const [sexSelect, setSexSelect] = useState("남성");
-  const [studentStatus, setStudentStatus] = useState("재학생");
+  const [sexSelect, setSexSelect] = useState("MALE");
+  const [userType, setUserType] = useState("STUDENT");
   const [userInfo, setUserInfo] = useRecoilState(SignupFormData);
   const [sendCertificationNumber, setSendCertificationNumber] = useState(false);
   const [notCheckCertificationNumber, setNotCheckCertificationNumber] =
@@ -30,9 +30,9 @@ const useSignupInfo = () => {
   const setFullEmail = useCallback((): void => {
     setUserInfo((prev) => ({
       ...prev,
-      email: userInfo.email + schoolEmailTransform(userInfo.schoolSelect),
+      email: userInfo.email + schoolTransform.schoolToEmail(userInfo.school),
     }));
-  }, [userInfo.schoolSelect, setUserInfo, userInfo.email]);
+  }, [userInfo.school, setUserInfo, userInfo.email]);
 
   const handleInfo = useCallback(
     (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -46,17 +46,36 @@ const useSignupInfo = () => {
     [setUserInfo]
   );
 
-  const onSendCertificationNumber = () => {
-    console.log(userInfo.email + schoolEmailTransform(schoolSelect));
-    setSendCertificationNumber(true);
-  };
+  const onSendCertificationNumber = useCallback(async () => {
+    try {
+      await postSignupCertification({
+        scope: "EMAIL",
+        type: "SIGN_UP",
+        value: userInfo.email,
+      });
+      window.alert("인증번호 전송 성공");
+      setSendCertificationNumber(true);
+    } catch (error) {
+      window.alert("인증번호 전송 실패");
+    }
+  }, [userInfo.email]);
 
-  const checkCertification = () => {
-    setNotCheckCertificationNumber(false);
-  };
+  const checkCertification = useCallback(async () => {
+    try {
+      await headSignupCheckCertification({
+        email: userInfo.email,
+        auth_code: userInfo.certificationNumber,
+        type: "SIGN_UP",
+      });
+      setNotCheckCertificationNumber(false);
+      window.alert("인증 성공");
+    } catch (error) {
+      window.alert("인증 실패");
+    }
+  }, [userInfo.certificationNumber, userInfo.email]);
 
   const goToSetPw = () => {
-    if (studentStatus !== "졸업생") {
+    if (userType !== "USER") {
       setFullEmail();
     }
     setPart("아이디 / 비밀번호");
@@ -66,8 +85,8 @@ const useSignupInfo = () => {
   return {
     sexSelect,
     setSexSelect,
-    studentStatus,
-    setStudentStatus,
+    userType,
+    setUserType,
     sendCertificationNumber,
     setSendCertificationNumber,
     notCheckCertificationNumber,
