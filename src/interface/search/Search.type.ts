@@ -1,14 +1,15 @@
 import { Dispatch } from 'react';
 import { SetStateAction } from 'react';
-export interface ISearchProps{
+
+export interface ISearchProps {
     visible: boolean;
-    currentSearch:Dispatch<SetStateAction<string>>;
+    currentSearch: Dispatch<SetStateAction<string>>;
     searchRecords: SearchRecord[];
-    onDelete:(SearchRecordId:number)=>void,
-    onReset:()=>void,
+    onDelete: (SearchRecordId: number) => void,
+    onReset: () => void,
 }
 
-export interface SearchRecord{
-    id : number;
+export interface SearchRecord {
+    id: number;
     title: string;
 }
